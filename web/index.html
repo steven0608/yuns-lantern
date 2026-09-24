@@ -18,21 +18,29 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="Yun's Lantern · 小云的灯笼 — a bilingual English/中文 learning adventure for ages 3–5. No ads, no tracking.">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="yuns_lantern">
+  <meta name="apple-mobile-web-app-title" content="Yun's Lantern">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>yuns_lantern</title>
+  <title>Yun's Lantern · 小云的灯笼</title>
+  <meta name="theme-color" content="#C8643B">
+  <style>
+    html, body { margin: 0; height: 100%; background: #FBF1E1; overflow: hidden; touch-action: none; overscroll-behavior: none; }
+    #boot { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+    #boot span { font-size: 72px; animation: bob 1.4s ease-in-out infinite; }
+    @keyframes bob { 50% { transform: translateY(-14px); } }
+  </style>
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <div id="boot"><span>🏮</span></div>
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader

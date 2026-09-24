@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Content pipeline (must be deterministic and valid)
+        run: |
+          python tools/build_content.py
+          python tools/validate_content.py
+          python tools/build_vo_script.py
+          git diff --exit-code content/ docs/VO_SCRIPT.md
+      - uses: subosito/flutter-action@v2
+        with: { channel: stable, cache: true }
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test

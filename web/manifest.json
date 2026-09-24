@@ -1,12 +1,12 @@
 {
-    "name": "yuns_lantern",
-    "short_name": "yuns_lantern",
+    "name": "Yun's Lantern · 小云的灯笼",
+    "short_name": "Yun's Lantern",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
-    "orientation": "portrait-primary",
+    "background_color": "#FBF1E1",
+    "theme_color": "#C8643B",
+    "description": "A bilingual English/中文 learning adventure for ages 3–5. No ads, no tracking.",
+    "orientation": "landscape",
     "prefer_related_applications": false,
     "icons": [
         {
