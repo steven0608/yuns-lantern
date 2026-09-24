@@ -1,0 +1,51 @@
+import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+/// Parent-controlled settings. Stored only on this device (no accounts, no
+/// sync) — CLAUDE.md forbids any personal-data collection or network use.
+class Settings extends ChangeNotifier {
+  Settings(this._p);
+  final SharedPreferences _p;
+
+  static Future<Settings> load() async => Settings(await SharedPreferences.getInstance());
+
+  double get voVolume => _p.getDouble('voVolume') ?? 1.0;
+  set voVolume(double v) => _set(() => _p.setDouble('voVolume', v));
+
+  double get sfxVolume => _p.getDouble('sfxVolume') ?? 0.7;
+  set sfxVolume(double v) => _set(() => _p.setDouble('sfxVolume', v));
+
+  /// Drives minAge gating (SPEC §5). Defaults to 3 so a new install fits the
+  /// youngest child; 4+ activities appear once the parent says so.
+  int get childAge => _p.getInt('childAge') ?? 3;
+  set childAge(int v) => _set(() => _p.setInt('childAge', v));
+
+  Set<String> get hiddenActivities => (_p.getStringList('hidden') ?? const []).toSet();
+  void setActivityHidden(String id, bool hidden) {
+    final s = hiddenActivities;
+    hidden ? s.add(id) : s.remove(id);
+    _set(() => _p.setStringList('hidden', s.toList()..sort()));
+  }
+
+  /// 0 = off. Suggests a break after a round; never locks mid-activity (§11).
+  int get breakMinutes => _p.getInt('breakMinutes') ?? 0;
+  set breakMinutes(int v) => _set(() => _p.setInt('breakMinutes', v));
+
+  /// 'auto' | 'en' | 'zh'.
+  String get localeOverride => _p.getString('locale') ?? 'auto';
+  set localeOverride(String v) => _set(() => _p.setString('locale', v));
+
+  bool get purchased => _p.getBool('purchased') ?? false;
+  set purchased(bool v) => _set(() => _p.setBool('purchased', v));
+
+  /// Debug builds only — lets QA reach paid content without StoreKit.
+  bool get devUnlock => kDebugMode && (_p.getBool('devUnlock') ?? false);
+  set devUnlock(bool v) => _set(() => _p.setBool('devUnlock', v));
+
+  bool get fullAccess => purchased || devUnlock;
+
+  void _set(Future<bool> Function() write) {
+    write();
+    notifyListeners();
+  }
+}

@@ -1,0 +1,268 @@
+{
+  "_comment": "Story mode content. Every line here is final copy, recorded verbatim by the voice actors. Lines are short by design: 1-2 sentences, spoken in under 6 seconds, because a 3-year-old will not sit through more. Each chapter gates 3 activities and awards one colored light.",
+  "title": {
+    "en": "Yun's Lantern",
+    "zh": "小云的灯笼",
+    "pinyin": "xiǎo yún de dēng long"
+  },
+  "hero": {
+    "id": "yun",
+    "en": "Yun",
+    "zh": "小云",
+    "pinyin": "xiǎo yún",
+    "species": "red panda",
+    "designNotes": "Small red panda, warm rust fur, cream face markings, carries a paper lantern on a short stick. Rounded silhouette, no sharp angles. Expressive eyes, always kind. Never frightened, never scolds. Yun is the child's peer, not a teacher."
+  },
+  "premise": {
+    "en": "The big lantern at the top of the hill has gone dark. Yun sets out to find eight little lights to bring it back.",
+    "zh": "山顶上的大灯笼灭了。小云出发去找八个小灯光，把它重新点亮。"
+  },
+  "lightColors": [
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "blue",
+    "purple",
+    "pink",
+    "white"
+  ],
+  "chapters": [
+    {
+      "number": 1,
+      "id": "orchard",
+      "region": {
+        "en": "The Apple Orchard",
+        "zh": "苹果园",
+        "pinyin": "píng guǒ yuán"
+      },
+      "skill": "counting 1-5, number-quantity correspondence",
+      "lightColor": "red",
+      "free": true,
+      "open": {
+        "en": "Yun's lantern went out. Look — a tiny red light, way up in the apple tree!",
+        "zh": "小云的灯笼灭了。快看——苹果树上有一点红色的光！"
+      },
+      "beat": {
+        "en": "The apples are too high. If we help Bear fill his basket, maybe he will lift us up.",
+        "zh": "苹果太高了。我们帮熊装满篮子，他也许会把我们举高。"
+      },
+      "close": {
+        "en": "You did it! One red light. Seven more to find.",
+        "zh": "你做到了！一个红色的光。还要找七个。"
+      },
+      "activities": [
+        "count_feed",
+        "match_it",
+        "what_is_it"
+      ]
+    },
+    {
+      "number": 2,
+      "id": "shapevillage",
+      "region": {
+        "en": "Shape Village",
+        "zh": "形状村",
+        "pinyin": "xíng zhuàng cūn"
+      },
+      "skill": "circle, square, triangle, rectangle, semicircle",
+      "lightColor": "orange",
+      "free": true,
+      "open": {
+        "en": "In Shape Village every house is a different shape. The wind blew the roofs away!",
+        "zh": "形状村里，每座房子都是不一样的形状。大风把屋顶吹跑了！"
+      },
+      "beat": {
+        "en": "A round roof for a round house. Can you help each one find its own?",
+        "zh": "圆的屋顶配圆的房子。你能帮它们找到自己的吗？"
+      },
+      "close": {
+        "en": "Every house has its roof back. Here is your orange light!",
+        "zh": "每座房子都有屋顶了。这是你的橙色灯光！"
+      },
+      "activities": [
+        "shape_sorter",
+        "find_the_same",
+        "match_it"
+      ]
+    },
+    {
+      "number": 3,
+      "id": "rainbowriver",
+      "region": {
+        "en": "Rainbow River",
+        "zh": "彩虹河",
+        "pinyin": "cǎi hóng hé"
+      },
+      "skill": "sorting and classification by color and category",
+      "lightColor": "yellow",
+      "free": false,
+      "open": {
+        "en": "The river washed everything into one big pile. Duck cannot find anything!",
+        "zh": "河水把所有东西冲成了一大堆。鸭子什么都找不到了！"
+      },
+      "beat": {
+        "en": "Let's put the things that go together, together.",
+        "zh": "我们把一样的东西放在一起吧。"
+      },
+      "close": {
+        "en": "All tidy. Duck says thank you — and gives you a yellow light.",
+        "zh": "都整理好了。鸭子谢谢你——送你一个黄色的灯光。"
+      },
+      "activities": [
+        "match_it",
+        "float_or_sink",
+        "find_the_same"
+      ]
+    },
+    {
+      "number": 4,
+      "id": "bigmountain",
+      "region": {
+        "en": "Big Mountain",
+        "zh": "大山",
+        "pinyin": "dà shān"
+      },
+      "skill": "size, length, and height comparison and ordering",
+      "lightColor": "green",
+      "free": false,
+      "open": {
+        "en": "The mountain is very tall. Yun is very small. We will need a ladder.",
+        "zh": "山很高。小云很小。我们需要一个梯子。"
+      },
+      "beat": {
+        "en": "Short step, then taller, then tallest. That is how a ladder is built.",
+        "zh": "先矮的，再高一点，最后最高的。梯子就是这样搭的。"
+      },
+      "close": {
+        "en": "Up we go! At the top, a green light was waiting.",
+        "zh": "我们爬上去啦！山顶上有一个绿色的灯光在等你。"
+      },
+      "activities": [
+        "big_and_small",
+        "count_feed",
+        "where_is_it"
+      ]
+    },
+    {
+      "number": 5,
+      "id": "mistyforest",
+      "region": {
+        "en": "The Misty Forest",
+        "zh": "迷雾林",
+        "pinyin": "mí wù lín"
+      },
+      "skill": "spatial position: up, down, inside, outside, in front, behind",
+      "lightColor": "blue",
+      "free": false,
+      "open": {
+        "en": "The fog is thick here. Yun can hear friends, but cannot see them.",
+        "zh": "这里的雾很浓。小云能听见朋友，可是看不见他们。"
+      },
+      "beat": {
+        "en": "Owl says: I am up. Frog says: I am down. Can you find them?",
+        "zh": "猫头鹰说：我在上面。青蛙说：我在下面。你能找到他们吗？"
+      },
+      "close": {
+        "en": "Everyone found. The fog lifts, and a blue light shines through.",
+        "zh": "大家都找到了。雾散开了，一个蓝色的灯光照进来。"
+      },
+      "activities": [
+        "where_is_it",
+        "what_is_it",
+        "puzzle_pieces"
+      ]
+    },
+    {
+      "number": 6,
+      "id": "starrymeadow",
+      "region": {
+        "en": "The Starry Meadow",
+        "zh": "星空原",
+        "pinyin": "xīng kōng yuán"
+      },
+      "skill": "AB, ABB, ABC patterns and pattern extension",
+      "lightColor": "purple",
+      "free": false,
+      "open": {
+        "en": "At night the flowers here light up in a pattern. But some have gone dark.",
+        "zh": "晚上，这里的花会按规律亮起来。可是有几朵灭了。"
+      },
+      "beat": {
+        "en": "Red, blue, red, blue... what comes next?",
+        "zh": "红色、蓝色、红色、蓝色……接下来是什么？"
+      },
+      "close": {
+        "en": "The whole meadow is glowing again. A purple light floats up to you.",
+        "zh": "整片草原又亮起来了。一个紫色的灯光飘到你面前。"
+      },
+      "activities": [
+        "pattern_parade",
+        "find_the_same",
+        "match_it"
+      ]
+    },
+    {
+      "number": 7,
+      "id": "mirrorlake",
+      "region": {
+        "en": "Mirror Lake",
+        "zh": "镜子湖",
+        "pinyin": "jìng zi hú"
+      },
+      "skill": "symmetry, same and different",
+      "lightColor": "pink",
+      "free": false,
+      "open": {
+        "en": "The lake shows everything twice. One on top, one underneath.",
+        "zh": "湖面把每样东西都照出两个。上面一个，下面一个。"
+      },
+      "beat": {
+        "en": "Butterfly lost one wing in the water. Can you make both sides match?",
+        "zh": "蝴蝶的一只翅膀掉进水里了。你能让两边一模一样吗？"
+      },
+      "close": {
+        "en": "Butterfly can fly again. She leaves you a pink light.",
+        "zh": "蝴蝶又能飞了。她留给你一个粉色的灯光。"
+      },
+      "activities": [
+        "mirror_match",
+        "find_the_same",
+        "big_and_small"
+      ]
+    },
+    {
+      "number": 8,
+      "id": "lighthouse",
+      "region": {
+        "en": "The Lantern Hill",
+        "zh": "灯笼山",
+        "pinyin": "dēng long shān"
+      },
+      "skill": "mixed review of all prior skills",
+      "lightColor": "white",
+      "free": false,
+      "open": {
+        "en": "Seven lights. One to go. The big lantern is just up this path.",
+        "zh": "七个灯光了。还差一个。大灯笼就在这条路的尽头。"
+      },
+      "beat": {
+        "en": "The last light is inside the lantern itself. It only needs a little help waking up.",
+        "zh": "最后一个灯光就在大灯笼里面。它只是需要一点帮助醒过来。"
+      },
+      "close": {
+        "en": "Look at that! The whole hill is bright. You brought the light back, and Yun will never forget it.",
+        "zh": "快看！整座山都亮了。是你把光带回来的，小云永远不会忘记。"
+      },
+      "activities": [
+        "day_and_night",
+        "count_feed",
+        "shape_sorter"
+      ]
+    }
+  ],
+  "replay": {
+    "en": "Want to visit Yun again?",
+    "zh": "想再去看看小云吗？"
+  }
+}

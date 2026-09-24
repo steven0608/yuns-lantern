@@ -1,0 +1,35 @@
+name: yuns_lantern
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.3
+
+dependencies:
+  audioplayers: ^6.8.1
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  in_app_purchase: ^3.3.1
+  intl: ^0.20.3
+  shared_preferences: ^2.5.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - content/vocab.json
+    - content/phrases.json
+    - content/story.json
+    - content/activities.json
+    - assets/images/
+    - assets/audio/sfx/
+    - assets/audio/vo/en/
+    - assets/audio/vo/zh/

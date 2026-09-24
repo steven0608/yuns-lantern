@@ -1,0 +1,28 @@
+{
+  "_comment": "PLACEHOLDER art until the Phase 4 illustration set lands. Maps every vocab id (plus scene/decor ids) to an emoji. ItemArt prefers assets/images/items/{id}.png when that file exists, so real art can be dropped in one file at a time.",
+  "items": {
+    "apple":"🍎","banana":"🍌","orange":"🍊","grape":"🍇","strawberry":"🍓","watermelon":"🍉","carrot":"🥕","corn":"🌽","mushroom":"🍄","egg":"🥚","bread":"🍞","cookie":"🍪",
+    "cat":"🐱","dog":"🐶","rabbit":"🐰","bird":"🐦","fish":"🐟","duck":"🦆","bear":"🐻","elephant":"🐘","mouse":"🐭","owl":"🦉","frog":"🐸","turtle":"🐢","butterfly":"🦋","bee":"🐝","panda":"🐼",
+    "car":"🚗","bus":"🚌","boat":"⛵","train":"🚂","plane":"✈️","bike":"🚲",
+    "ball":"⚽","block":"🧊","teddy":"🧸","drum":"🥁","kite":"🪁","balloon":"🎈",
+    "sun":"☀️","moon":"🌙","star":"⭐","cloud":"☁️","tree":"🌳","flower":"🌸","leaf":"🍃","rock":"🪨","shell":"🐚","rainbow":"🌈",
+    "hat":"👒","shoe":"👟","sock":"🧦","scarf":"🧣","umbrella":"☂️",
+    "cup":"☕","spoon":"🥄","bowl":"🥣","key":"🔑","book":"📘","lamp":"💡","clock":"⏰","pillow":"🛏️","toothbrush":"🪥","key_lantern":"🏮",
+    "box":"📦","basket":"🧺"
+  },
+  "categories": {"food":"🍎","animal":"🐾","vehicle":"🚗","toy":"🧸","nature":"🌳","clothing":"👕","household":"🏠"},
+  "activities": {
+    "count_feed":"🍎","match_it":"🎨","big_and_small":"🐘","shape_sorter":"🔺","find_the_same":"🔍","where_is_it":"📦",
+    "puzzle_pieces":"🧩","day_and_night":"🌗","float_or_sink":"💧","what_is_it":"❓","pattern_parade":"🎏","mirror_match":"🦋"
+  },
+  "scenes": {
+    "orchard":      {"emoji":["🌳","🍎","🐻","🌳"], "sky":"#F7D9A8", "ground":"#9CC77E"},
+    "shapevillage": {"emoji":["🏠","🔺","🏡","🟦"], "sky":"#F5C9A0", "ground":"#D9B98C"},
+    "rainbowriver": {"emoji":["🌈","🦆","🐟","🌿"], "sky":"#CFE3E8", "ground":"#7FB7C9"},
+    "bigmountain":  {"emoji":["⛰️","🪜","🐐","☁️"], "sky":"#D6E2F0", "ground":"#A7B98C"},
+    "mistyforest":  {"emoji":["🌲","🦉","🐸","🌫️"], "sky":"#C9D3CB", "ground":"#7E9C7A"},
+    "starrymeadow": {"emoji":["⭐","🌙","🌼","✨"], "sky":"#4A4A7A", "ground":"#6F8F6A"},
+    "mirrorlake":   {"emoji":["🦢","🌸","🪞","🌷"], "sky":"#F2D0D8", "ground":"#8FB9D6"},
+    "lighthouse":   {"emoji":["🏮","⛰️","🌟","🏮"], "sky":"#2F3558", "ground":"#5B6B4E"}
+  }
+}
