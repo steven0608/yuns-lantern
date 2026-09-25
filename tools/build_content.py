@@ -229,13 +229,18 @@ def build_day_and_night():
 
 def build_float_or_sink():
     """Open-ended sandbox. No wrong answers, no scoring -- the child drops any
-    object and learns what actually happens. Endlessly replayable on purpose."""
+    object and learns what actually happens. Endlessly replayable on purpose.
+    3 floaters + 3 sinkers per round (kMaxInteractiveItems); each round's set
+    is new, so rounds never repeat."""
     floats = [i["id"] for i in ITEMS if i.get("floats") is True]
     sinks = [i["id"] for i in ITEMS if i.get("floats") is False]
-    rounds = []
-    for k in range(12):
-        f = list(dict.fromkeys([floats[(k * 3 + j) % len(floats)] for j in range(4)]))
-        s_ = list(dict.fromkeys([sinks[(k * 2 + j) % len(sinks)] for j in range(4)]))
+    rounds, seen = [], set()
+    while len(rounds) < 12:
+        f = sorted(rng.sample(floats, 3))
+        s_ = sorted(rng.sample(sinks, 3))
+        if (tuple(f), tuple(s_)) in seen:
+            continue
+        seen.add((tuple(f), tuple(s_)))
         rounds.append({"floats": f, "sinks": s_,
                        "vo": ["floatsink.floats", "floatsink.sinks", "floatsink.intro"] +
                              [f"item.{x}" for x in f + s_]})

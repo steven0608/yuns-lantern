@@ -120,7 +120,12 @@ class HintController {
 /// Soft breathing glow around the correct target when [active]. Never red,
 /// never flashing — a gentle invitation, not a warning.
 class GentlePulse extends StatefulWidget {
-  const GentlePulse({super.key, required this.active, required this.child, this.radius = 28});
+  const GentlePulse({
+    super.key,
+    required this.active,
+    required this.child,
+    this.radius = 28,
+  });
   final bool active;
   final Widget child;
   final double radius;
@@ -129,9 +134,12 @@ class GentlePulse extends StatefulWidget {
   State<GentlePulse> createState() => _GentlePulseState();
 }
 
-class _GentlePulseState extends State<GentlePulse> with SingleTickerProviderStateMixin {
-  late final AnimationController _c =
-      AnimationController(vsync: this, duration: const Duration(milliseconds: 1100));
+class _GentlePulseState extends State<GentlePulse>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _c = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 1100),
+  );
 
   @override
   void initState() {
@@ -143,7 +151,9 @@ class _GentlePulseState extends State<GentlePulse> with SingleTickerProviderStat
   void didUpdateWidget(GentlePulse old) {
     super.didUpdateWidget(old);
     if (widget.active && !_c.isAnimating) _c.repeat(reverse: true);
-    if (!widget.active && _c.isAnimating) _c.animateTo(0, duration: kStandardEase);
+    if (!widget.active && _c.isAnimating) {
+      _c.animateTo(0, duration: kStandardEase);
+    }
   }
 
   @override
@@ -164,7 +174,11 @@ class _GentlePulseState extends State<GentlePulse> with SingleTickerProviderStat
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(widget.radius),
               boxShadow: [
-                BoxShadow(color: Palette.lantern.withValues(alpha: 0.65 * t), blurRadius: 30 * t, spreadRadius: 10 * t),
+                BoxShadow(
+                  color: Palette.lantern.withValues(alpha: 0.65 * t),
+                  blurRadius: 30 * t,
+                  spreadRadius: 10 * t,
+                ),
               ],
             ),
             child: child,
@@ -186,9 +200,12 @@ class HintHandLayer extends StatefulWidget {
   State<HintHandLayer> createState() => _HintHandLayerState();
 }
 
-class _HintHandLayerState extends State<HintHandLayer> with SingleTickerProviderStateMixin {
-  late final AnimationController _c =
-      AnimationController(vsync: this, duration: const Duration(milliseconds: 1800));
+class _HintHandLayerState extends State<HintHandLayer>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _c = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 1800),
+  );
   HintMove? _move;
   int _loops = 0;
   Timer? _loop; // pause between demonstrations; cancelled on dispose
@@ -230,7 +247,13 @@ class _HintHandLayerState extends State<HintHandLayer> with SingleTickerProvider
   Offset? _centerOf(GlobalKey? k) {
     final box = k?.currentContext?.findRenderObject() as RenderBox?;
     final me = _layer.currentContext?.findRenderObject() as RenderBox?;
-    if (box == null || me == null || !box.attached || !me.attached || !box.hasSize) return null;
+    if (box == null ||
+        me == null ||
+        !box.attached ||
+        !me.attached ||
+        !box.hasSize) {
+      return null;
+    }
     return me.globalToLocal(box.localToGlobal(box.size.center(Offset.zero)));
   }
 
@@ -238,7 +261,11 @@ class _HintHandLayerState extends State<HintHandLayer> with SingleTickerProvider
   Widget build(BuildContext context) {
     if (_move == null) return const SizedBox.expand();
     return IgnorePointer(
-      child: CustomPaint(key: _layer, size: Size.infinite, painter: _HandPainter(this)),
+      child: CustomPaint(
+        key: _layer,
+        size: Size.infinite,
+        painter: _HandPainter(this),
+      ),
     );
   }
 }
@@ -248,7 +275,13 @@ class _HandPainter extends CustomPainter {
   final _HintHandLayerState state;
 
   static final TextPainter _hand = TextPainter(
-    text: const TextSpan(text: '👆', style: TextStyle(fontSize: 64, shadows: [Shadow(color: Palette.shadow, blurRadius: 8)])),
+    text: const TextSpan(
+      text: '👆',
+      style: TextStyle(
+        fontSize: 64,
+        shadows: [Shadow(color: Palette.shadow, blurRadius: 8)],
+      ),
+    ),
     textDirection: TextDirection.ltr,
   )..layout();
 
@@ -261,10 +294,15 @@ class _HandPainter extends CustomPainter {
     final b = state._centerOf(move.to) ?? a;
     final t = state._c.value;
     // press (0–.2), travel (.2–.75), release (.75–1)
-    final travel = Curves.easeInOut.transform(((t - 0.2) / 0.55).clamp(0.0, 1.0));
+    final travel = Curves.easeInOut.transform(
+      ((t - 0.2) / 0.55).clamp(0.0, 1.0),
+    );
     final pos = Offset.lerp(a, b, travel)!;
     final press = t < 0.2 ? t / 0.2 : (t > 0.75 ? 1 - (t - 0.75) / 0.25 : 1.0);
-    final opacity = (t > 0.9 ? (1 - t) / 0.1 : math.min(1.0, t / 0.08)).clamp(0.0, 1.0);
+    final opacity = (t > 0.9 ? (1 - t) / 0.1 : math.min(1.0, t / 0.08)).clamp(
+      0.0,
+      1.0,
+    );
     canvas.save();
     canvas.translate(pos.dx - 10, pos.dy - 6);
     canvas.scale(1.0 - 0.15 * press);

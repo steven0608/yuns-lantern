@@ -41,10 +41,22 @@ class _WhatIsItState extends State<WhatIsIt> with TickerProviderStateMixin {
   bool _solved = false;
 
   /// Reveal tier: 0 = fully misted, 1 = clear. About 10s on its own.
-  late final AnimationController _clear = AnimationController(vsync: this, duration: const Duration(seconds: 10));
-  late final AnimationController _flip = AnimationController(vsync: this, duration: const Duration(milliseconds: 750));
-  late final AnimationController _wiggle = AnimationController(vsync: this, duration: const Duration(milliseconds: 520));
-  late final AnimationController _idle = AnimationController(vsync: this, duration: const Duration(seconds: 3))..repeat();
+  late final AnimationController _clear = AnimationController(
+    vsync: this,
+    duration: const Duration(seconds: 10),
+  );
+  late final AnimationController _flip = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 750),
+  );
+  late final AnimationController _wiggle = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 520),
+  );
+  late final AnimationController _idle = AnimationController(
+    vsync: this,
+    duration: const Duration(seconds: 3),
+  )..repeat();
 
   @override
   void initState() {
@@ -71,14 +83,21 @@ class _WhatIsItState extends State<WhatIsIt> with TickerProviderStateMixin {
   void _helpChanged() {
     if (!_misty || _solved || _hints.level.value < 1) return;
     final remaining = 1 - _clear.value;
-    _clear.animateTo(1, duration: Duration(milliseconds: (remaining * 3500).round() + 200), curve: Curves.easeOut);
+    _clear.animateTo(
+      1,
+      duration: Duration(milliseconds: (remaining * 3500).round() + 200),
+      curve: Curves.easeOut,
+    );
   }
 
   void _solve() {
     if (_solved) return;
     setState(() => _solved = true);
     _clear.stop();
-    Future.wait([_flip.forward(), rc.audio.playSequence(['item.$_answer'])]).then((_) {
+    Future.wait([
+      _flip.forward(),
+      rc.audio.playSequence(['item.$_answer']),
+    ]).then((_) {
       if (mounted) rc.complete();
     });
   }
@@ -91,34 +110,42 @@ class _WhatIsItState extends State<WhatIsIt> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, box) {
-      final w = box.maxWidth, h = box.maxHeight;
-      final card = (h * 0.18).clamp(kMinTouchTarget, 150.0);
-      const gap = kMinTargetGap - kHitSlop;
-      final row = card + kHitSlop;
-      final panelH = math.min(h - row - 24, 560.0);
-      final panelW = math.min(w * 0.9, panelH * 1.45);
-      return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        SizedBox(width: panelW, height: panelH, child: _panel(panelH)),
-        const SizedBox(height: 20),
-        IgnorePointer(
-          ignoring: _solved,
-          child: Row(mainAxisSize: MainAxisSize.min, children: [
-            for (final (i, id) in _choices.indexed) ...[
-              if (i > 0) const SizedBox(width: gap),
-              ChoiceCard(
-                id: id,
-                correct: id == _answer,
-                hints: rc.hints,
-                onCorrect: _solve,
-                size: card,
-                hintKey: id == _answer ? _answerKey : null,
+    return LayoutBuilder(
+      builder: (context, box) {
+        final w = box.maxWidth, h = box.maxHeight;
+        final card = (h * 0.18).clamp(kMinTouchTarget, 150.0);
+        const gap = kMinTargetGap - kHitSlop;
+        final row = card + kHitSlop;
+        final panelH = math.min(h - row - 24, 560.0);
+        final panelW = math.min(w * 0.9, panelH * 1.45);
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(width: panelW, height: panelH, child: _panel(panelH)),
+            const SizedBox(height: 20),
+            IgnorePointer(
+              ignoring: _solved,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  for (final (i, id) in _choices.indexed) ...[
+                    if (i > 0) const SizedBox(width: gap),
+                    ChoiceCard(
+                      id: id,
+                      correct: id == _answer,
+                      hints: rc.hints,
+                      onCorrect: _solve,
+                      size: card,
+                      hintKey: id == _answer ? _answerKey : null,
+                    ),
+                  ],
+                ],
               ),
-            ],
-          ]),
-        ),
-      ]);
-    });
+            ),
+          ],
+        );
+      },
+    );
   }
 
   Widget _panel(double panelH) {
@@ -127,21 +154,35 @@ class _WhatIsItState extends State<WhatIsIt> with TickerProviderStateMixin {
       behavior: HitTestBehavior.opaque,
       onTapDown: (_) => _pokePanel(),
       child: AnimatedBuilder(
-        animation: Listenable.merge([_flip, _wiggle, _clear, _idle, rc.hints.level]),
+        animation: Listenable.merge([
+          _flip,
+          _wiggle,
+          _clear,
+          _idle,
+          rc.hints.level,
+        ]),
         builder: (_, _) {
           final f = _flip.value;
           final front = f <= 0.5;
-          final wig = math.sin(_wiggle.value * math.pi * 4) * 0.035 * (1 - _wiggle.value);
+          final wig =
+              math.sin(_wiggle.value * math.pi * 4) *
+              0.035 *
+              (1 - _wiggle.value);
           // Card-flip: the mystery side turns away, the colour side turns in.
           final m = Matrix4.identity()
             ..setEntry(3, 2, 0.0012)
             ..rotateY((front ? f : f - 1) * math.pi)
             ..rotateZ(wig);
-          final pop = front ? 1.0 : 1 + 0.07 * math.sin((f - 0.5) * 2 * math.pi);
+          final pop = front
+              ? 1.0
+              : 1 + 0.07 * math.sin((f - 0.5) * 2 * math.pi);
           return Transform(
             alignment: Alignment.center,
             transform: m,
-            child: Transform.scale(scale: pop, child: _face(front: front, art: art)),
+            child: Transform.scale(
+              scale: pop,
+              child: _face(front: front, art: art),
+            ),
           );
         },
       ),
@@ -160,18 +201,27 @@ class _WhatIsItState extends State<WhatIsIt> with TickerProviderStateMixin {
         ),
         borderRadius: BorderRadius.circular(40),
         border: Border.all(color: Palette.card, width: 6),
-        boxShadow: const [BoxShadow(color: Palette.shadow, blurRadius: 18, offset: Offset(0, 8))],
+        boxShadow: const [
+          BoxShadow(
+            color: Palette.shadow,
+            blurRadius: 18,
+            offset: Offset(0, 8),
+          ),
+        ],
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(34),
-        child: Stack(fit: StackFit.expand, children: [
-          CustomPaint(painter: _TwinklePainter(_idle.value, warm: !front)),
-          Center(
-            child: front
-                ? Transform.scale(scale: breathe, child: _mystery(art))
-                : ItemArt(_answer, size: art),
-          ),
-        ]),
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            CustomPaint(painter: _TwinklePainter(_idle.value, warm: !front)),
+            Center(
+              child: front
+                  ? Transform.scale(scale: breathe, child: _mystery(art))
+                  : ItemArt(_answer, size: art),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -183,27 +233,42 @@ class _WhatIsItState extends State<WhatIsIt> with TickerProviderStateMixin {
       Widget item = ItemArt(_answer, size: art);
       if (sigma > 0.3) {
         item = ImageFiltered(
-          imageFilter: ui.ImageFilter.blur(sigmaX: sigma, sigmaY: sigma, tileMode: TileMode.decal),
+          imageFilter: ui.ImageFilter.blur(
+            sigmaX: sigma,
+            sigmaY: sigma,
+            tileMode: TileMode.decal,
+          ),
           child: item,
         );
       }
       return SizedBox.square(
         dimension: art * 1.6,
-        child: Stack(alignment: Alignment.center, children: [
-          item,
-          IgnorePointer(child: CustomPaint(size: Size.square(art * 1.6), painter: _MistPainter(c, _idle.value))),
-        ]),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            item,
+            IgnorePointer(
+              child: CustomPaint(
+                size: Size.square(art * 1.6),
+                painter: _MistPainter(c, _idle.value),
+              ),
+            ),
+          ],
+        ),
       );
     }
     // Silhouette; once help is on, a hint of colour seeps through.
-    return Stack(alignment: Alignment.center, children: [
-      ItemArt(_answer, size: art, silhouette: true),
-      AnimatedOpacity(
-        opacity: rc.hints.level.value >= 1 ? 0.3 : 0,
-        duration: const Duration(milliseconds: 600),
-        child: ItemArt(_answer, size: art),
-      ),
-    ]);
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        ItemArt(_answer, size: art, silhouette: true),
+        AnimatedOpacity(
+          opacity: rc.hints.level.value >= 1 ? 0.3 : 0,
+          duration: const Duration(milliseconds: 600),
+          child: ItemArt(_answer, size: art),
+        ),
+      ],
+    );
   }
 }
 
@@ -224,7 +289,11 @@ class _MistPainter extends CustomPainter {
     for (var i = 0; i < 7; i++) {
       final a = i * 2 * math.pi / 7 + math.sin(t * 2 * math.pi + i) * 0.08;
       final dist = r * (0.12 + 0.45 * clear) + (i.isEven ? r * 0.05 : 0);
-      canvas.drawCircle(c + Offset(math.cos(a), math.sin(a)) * dist, r * (0.2 - 0.08 * clear), paint);
+      canvas.drawCircle(
+        c + Offset(math.cos(a), math.sin(a)) * dist,
+        r * (0.2 - 0.08 * clear),
+        paint,
+      );
     }
     canvas.drawCircle(c, r * 0.22 * (1 - clear), paint);
   }
@@ -239,7 +308,14 @@ class _TwinklePainter extends CustomPainter {
   final double t;
   final bool warm;
 
-  static const _spots = [(0.1, 0.16), (0.88, 0.12), (0.08, 0.82), (0.92, 0.78), (0.5, 0.07), (0.74, 0.9)];
+  static const _spots = [
+    (0.1, 0.16),
+    (0.88, 0.12),
+    (0.08, 0.82),
+    (0.92, 0.78),
+    (0.5, 0.07),
+    (0.74, 0.9),
+  ];
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -256,7 +332,10 @@ class _TwinklePainter extends CustomPainter {
         ..quadraticBezierTo(c.dx, c.dy, c.dx - r, c.dy)
         ..quadraticBezierTo(c.dx, c.dy, c.dx, c.dy - r)
         ..close();
-      canvas.drawPath(p, Paint()..color = Palette.lantern.withValues(alpha: glow));
+      canvas.drawPath(
+        p,
+        Paint()..color = Palette.lantern.withValues(alpha: glow),
+      );
     }
   }
 

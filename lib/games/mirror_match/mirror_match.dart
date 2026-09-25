@@ -30,17 +30,27 @@ class MirrorMatch extends StatefulWidget {
   State<MirrorMatch> createState() => _MirrorMatchState();
 }
 
-class _MirrorMatchState extends State<MirrorMatch> with TickerProviderStateMixin {
+class _MirrorMatchState extends State<MirrorMatch>
+    with TickerProviderStateMixin {
   RoundContext get rc => widget.rc;
   late final String _subject = rc.round.str('subject');
 
   /// 2 columns × rows: `cells` 4 → 2 rows, 6 → 3 rows. One tray piece per
   /// row, so the interactive cap bounds the rows too.
-  late final int _rows = (rc.round.integer('cells') ~/ 2).clamp(1, kMaxInteractiveItems);
+  late final int _rows = (rc.round.integer('cells') ~/ 2).clamp(
+    1,
+    kMaxInteractiveItems,
+  );
 
   late final List<int> _trayOrder;
-  late final List<GlobalKey> _tileKeys = List.generate(_rows, (_) => GlobalKey());
-  late final List<GlobalKey> _slotKeys = List.generate(_rows, (_) => GlobalKey());
+  late final List<GlobalKey> _tileKeys = List.generate(
+    _rows,
+    (_) => GlobalKey(),
+  );
+  late final List<GlobalKey> _slotKeys = List.generate(
+    _rows,
+    (_) => GlobalKey(),
+  );
   final Set<int> _placed = {};
 
   /// The piece last dropped on the wrong row: help focuses on it.
@@ -73,9 +83,18 @@ class _MirrorMatchState extends State<MirrorMatch> with TickerProviderStateMixin
     }
     _trayOrder = sorted && _rows > 1 ? [...order.skip(1), order.first] : order;
 
-    _shine = AnimationController(vsync: this, duration: const Duration(milliseconds: 3200))..repeat();
-    _enter = AnimationController(vsync: this, duration: Duration(milliseconds: 500 + 120 * _rows))..forward();
-    _flap = AnimationController(vsync: this, duration: const Duration(milliseconds: 1100));
+    _shine = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 3200),
+    )..repeat();
+    _enter = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 500 + 120 * _rows),
+    )..forward();
+    _flap = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1100),
+    );
     rc.hints.guide = () {
       final p = _focus;
       return p == null ? null : HintMove(_tileKeys[p], _slotKeys[p]);
@@ -97,9 +116,10 @@ class _MirrorMatchState extends State<MirrorMatch> with TickerProviderStateMixin
     rc.hints.succeeded();
     if (!_done) return;
     rc.audio.sfx(Sfx.sparkle);
-    Future.wait([rc.audio.playVO('item.$_subject'), _flap.forward(from: 0)]).then((_) {
-      if (mounted) rc.complete();
-    });
+    Future.wait([rc.audio.playVO('item.$_subject'), _flap.forward(from: 0)])
+        .then((_) {
+          if (mounted) rc.complete();
+        });
   }
 
   void _reject(String data) {
@@ -109,50 +129,77 @@ class _MirrorMatchState extends State<MirrorMatch> with TickerProviderStateMixin
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, box) {
-      final w = box.maxWidth, h = box.maxHeight;
-      final wide = w >= h;
-      final tile = (math.min(w, h) * 0.2).clamp(kMinTouchTarget, 150.0);
-      final extent = tile + kHitSlop; // a tile plus its slop padding
-      const gap = kMinTargetGap - kHitSlop; // + slop = 64px visible gap
-      const trayPad = 10.0;
-      const spacing = 32.0;
+    return LayoutBuilder(
+      builder: (context, box) {
+        final w = box.maxWidth, h = box.maxHeight;
+        final wide = w >= h;
+        final tile = (math.min(w, h) * 0.2).clamp(kMinTouchTarget, 150.0);
+        final extent = tile + kHitSlop; // a tile plus its slop padding
+        const gap = kMinTargetGap - kHitSlop; // + slop = 64px visible gap
+        const trayPad = 10.0;
+        const spacing = 32.0;
 
-      // As few tray columns as fit: a phone in landscape needs two for 3 rows.
-      double span(int n) => n * extent + (n - 1) * gap + trayPad * 2;
-      var cols = wide ? 1 : _rows;
-      while (wide && cols < _rows && span((_rows / cols).ceil()) > h) {
-        cols++;
-      }
-      final trayW = span(cols);
-      final trayH = span((_rows / cols).ceil());
-      final frame = math.max(
-        0.0,
-        wide
-            ? math.min(math.min(h, w - trayW - spacing), 680.0)
-            : math.min(math.min(w, h - trayH - spacing), 680.0),
-      );
-      final pad = frame * 0.045;
-      final art = math.max(0.0, frame - pad * 2 - 8); // minus the 4px border
-      final pieceSize = Size(art / 2, art / _rows);
+        // As few tray columns as fit: a phone in landscape needs two for 3 rows.
+        double span(int n) => n * extent + (n - 1) * gap + trayPad * 2;
+        var cols = wide ? 1 : _rows;
+        while (wide && cols < _rows && span((_rows / cols).ceil()) > h) {
+          cols++;
+        }
+        final trayW = span(cols);
+        final trayH = span((_rows / cols).ceil());
+        final frame = math.max(
+          0.0,
+          wide
+              ? math.min(math.min(h, w - trayW - spacing), 680.0)
+              : math.min(math.min(w, h - trayH - spacing), 680.0),
+        );
+        final pad = frame * 0.045;
+        final art = math.max(0.0, frame - pad * 2 - 8); // minus the 4px border
+        final pieceSize = Size(art / 2, art / _rows);
 
-      // The mirror is look-only: taps fall through to the scaffold's sparkle
-      // (drop targets find pieces by their bounds, not by hit testing).
-      final mirror = IgnorePointer(child: _mirror(frame, pad, art, pieceSize, tile));
-      final tray = _tray(tile, trayW - trayPad * 2, trayPad, pieceSize);
-      return Center(
-        child: wide
-            ? Row(mainAxisSize: MainAxisSize.min, children: [mirror, const SizedBox(width: spacing), tray])
-            : Column(mainAxisSize: MainAxisSize.min, children: [mirror, const SizedBox(height: spacing), tray]),
-      );
-    });
+        // The mirror is look-only: taps fall through to the scaffold's sparkle
+        // (drop targets find pieces by their bounds, not by hit testing).
+        final mirror = IgnorePointer(
+          child: _mirror(frame, pad, art, pieceSize, tile),
+        );
+        final tray = _tray(tile, trayW - trayPad * 2, trayPad, pieceSize);
+        return Center(
+          child: wide
+              ? Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    mirror,
+                    const SizedBox(width: spacing),
+                    tray,
+                  ],
+                )
+              : Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    mirror,
+                    const SizedBox(height: spacing),
+                    tray,
+                  ],
+                ),
+        );
+      },
+    );
   }
 
-  Widget _mirror(double frame, double pad, double art, Size piece, double tile) {
+  Widget _mirror(
+    double frame,
+    double pad,
+    double art,
+    Size piece,
+    double tile,
+  ) {
     final seam = math.max(6.0, art * 0.022);
     // Scale of a tray tile's picture relative to the slot, so a dropped piece
     // grows smoothly from tray size to full size.
-    final tileScale = math.min(tile * 0.84 / math.max(piece.width, 1), tile * 0.84 / math.max(piece.height, 1));
+    final tileScale = math.min(
+      tile * 0.84 / math.max(piece.width, 1),
+      tile * 0.84 / math.max(piece.height, 1),
+    );
 
     return Container(
       width: frame,
@@ -162,69 +209,111 @@ class _MirrorMatchState extends State<MirrorMatch> with TickerProviderStateMixin
         color: Palette.card,
         borderRadius: BorderRadius.circular(frame * 0.08),
         border: Border.all(color: Palette.paperDeep, width: 4),
-        boxShadow: const [BoxShadow(color: Palette.shadow, blurRadius: 14, offset: Offset(0, 8))],
+        boxShadow: const [
+          BoxShadow(
+            color: Palette.shadow,
+            blurRadius: 14,
+            offset: Offset(0, 8),
+          ),
+        ],
       ),
-      child: Stack(clipBehavior: Clip.none, children: [
-        // The right half is the glassy mirror side.
-        Positioned(
-          left: art / 2,
-          top: 0,
-          width: art / 2,
-          height: art,
-          child: ClipRRect(
-            borderRadius: BorderRadius.horizontal(right: Radius.circular(frame * 0.05)),
-            child: CustomPaint(painter: _GlassPainter(_shine)),
-          ),
-        ),
-        Positioned.fill(child: CustomPaint(painter: _RowLinesPainter(_rows))),
-        ValueListenableBuilder<int>(
-          valueListenable: rc.hints.level,
-          builder: (_, level, _) => AnimatedBuilder(
-            animation: _flap,
-            builder: (_, child) {
-              // Two soft wing-beats around the mirror line.
-              final t = _flap.value;
-              return Transform(
-                alignment: Alignment.center,
-                transform: Matrix4.identity()
-                  ..translateByDouble(0, -art * 0.04 * math.sin(math.pi * t), 0, 1)
-                  ..scaleByDouble(1 - 0.14 * (1 - math.cos(t * math.pi * 4)) / 2, 1, 1, 1),
-                child: child,
-              );
-            },
-            child: Row(children: [
-              Column(children: [
-                for (var r = 0; r < _rows; r++)
-                  SizedBox.fromSize(size: piece, child: _Piece(subject: _subject, art: art, rows: _rows, row: r)),
-              ]),
-              Column(children: [
-                for (var r = 0; r < _rows; r++) _slot(r, piece, art, tileScale, level),
-              ]),
-            ]),
-          ),
-        ),
-        // The mirror line itself; it softens once both sides match.
-        Positioned(
-          left: art / 2 - seam / 2,
-          width: seam,
-          top: -pad * 0.4,
-          bottom: -pad * 0.4,
-          child: IgnorePointer(
-            child: AnimatedOpacity(
-              opacity: _done ? 0.2 : 1,
-              duration: const Duration(milliseconds: 500),
-              child: CustomPaint(painter: _SeamPainter(_shine)),
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          // The right half is the glassy mirror side.
+          Positioned(
+            left: art / 2,
+            top: 0,
+            width: art / 2,
+            height: art,
+            child: ClipRRect(
+              borderRadius: BorderRadius.horizontal(
+                right: Radius.circular(frame * 0.05),
+              ),
+              child: CustomPaint(painter: _GlassPainter(_shine)),
             ),
           ),
-        ),
-      ]),
+          Positioned.fill(child: CustomPaint(painter: _RowLinesPainter(_rows))),
+          ValueListenableBuilder<int>(
+            valueListenable: rc.hints.level,
+            builder: (_, level, _) => AnimatedBuilder(
+              animation: _flap,
+              builder: (_, child) {
+                // Two soft wing-beats around the mirror line.
+                final t = _flap.value;
+                return Transform(
+                  alignment: Alignment.center,
+                  transform: Matrix4.identity()
+                    ..translateByDouble(
+                      0,
+                      -art * 0.04 * math.sin(math.pi * t),
+                      0,
+                      1,
+                    )
+                    ..scaleByDouble(
+                      1 - 0.14 * (1 - math.cos(t * math.pi * 4)) / 2,
+                      1,
+                      1,
+                      1,
+                    ),
+                  child: child,
+                );
+              },
+              child: Row(
+                children: [
+                  Column(
+                    children: [
+                      for (var r = 0; r < _rows; r++)
+                        SizedBox.fromSize(
+                          size: piece,
+                          child: _Piece(
+                            subject: _subject,
+                            art: art,
+                            rows: _rows,
+                            row: r,
+                          ),
+                        ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      for (var r = 0; r < _rows; r++)
+                        _slot(r, piece, art, tileScale, level),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          // The mirror line itself; it softens once both sides match.
+          Positioned(
+            left: art / 2 - seam / 2,
+            width: seam,
+            top: -pad * 0.4,
+            bottom: -pad * 0.4,
+            child: IgnorePointer(
+              child: AnimatedOpacity(
+                opacity: _done ? 0.2 : 1,
+                duration: const Duration(milliseconds: 500),
+                child: CustomPaint(painter: _SeamPainter(_shine)),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
   Widget _slot(int r, Size piece, double art, double tileScale, int level) {
     final placed = _placed.contains(r);
     final hinted = !placed && level >= 1 && _focus == r;
-    final mirrored = _Piece(subject: _subject, art: art, rows: _rows, row: r, flipped: true);
+    final mirrored = _Piece(
+      subject: _subject,
+      art: art,
+      rows: _rows,
+      row: r,
+      flipped: true,
+    );
     return DropTarget(
       key: _slotKeys[r],
       id: 'row$r',
@@ -240,57 +329,68 @@ class _MirrorMatchState extends State<MirrorMatch> with TickerProviderStateMixin
             ? TweenAnimationBuilder<double>(
                 tween: Tween(begin: 0, end: 1),
                 duration: const Duration(milliseconds: 620),
-                builder: (_, t, child) => Stack(fit: StackFit.expand, children: [
-                  Transform.scale(
-                    scale: tileScale + (1 - tileScale) * Curves.easeOutBack.transform(t),
-                    child: child,
-                  ),
-                  CustomPaint(painter: _GlintPainter(t)),
-                ]),
+                builder: (_, t, child) => Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Transform.scale(
+                      scale:
+                          tileScale +
+                          (1 - tileScale) * Curves.easeOutBack.transform(t),
+                      child: child,
+                    ),
+                    CustomPaint(painter: _GlintPainter(t)),
+                  ],
+                ),
                 child: mirrored,
               )
-            : Stack(fit: StackFit.expand, children: [
-                CustomPaint(painter: _DashedCellPainter()),
-                // Second-miss help: a faint reflection shows what belongs here.
-                AnimatedOpacity(
-                  opacity: hinted ? 0.28 : 0,
-                  duration: kStandardEase,
-                  child: mirrored,
-                ),
-              ]),
+            : Stack(
+                fit: StackFit.expand,
+                children: [
+                  CustomPaint(painter: _DashedCellPainter()),
+                  // Second-miss help: a faint reflection shows what belongs here.
+                  AnimatedOpacity(
+                    opacity: hinted ? 0.28 : 0,
+                    duration: kStandardEase,
+                    child: mirrored,
+                  ),
+                ],
+              ),
       ),
     );
   }
 
   Widget _tray(double tile, double innerW, double pad, Size piece) {
-    return Stack(children: [
-      // Backdrop only: taps between pieces fall through to the sparkle.
-      Positioned.fill(
-        child: IgnorePointer(
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              color: Palette.card.withValues(alpha: 0.45),
-              borderRadius: BorderRadius.circular(36),
+    return Stack(
+      children: [
+        // Backdrop only: taps between pieces fall through to the sparkle.
+        Positioned.fill(
+          child: IgnorePointer(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: Palette.card.withValues(alpha: 0.45),
+                borderRadius: BorderRadius.circular(36),
+              ),
             ),
           ),
         ),
-      ),
-      Padding(
-        padding: EdgeInsets.all(pad),
-        child: SizedBox(
-          width: innerW,
-          child: Wrap(
-            alignment: WrapAlignment.center,
-            // Spacing + each piece's 12px slop each side = 64px visible gap.
-            spacing: kMinTargetGap - kHitSlop,
-            runSpacing: kMinTargetGap - kHitSlop,
-            children: [
-              for (final (i, p) in _trayOrder.indexed) _tile(i, p, tile, piece),
-            ],
+        Padding(
+          padding: EdgeInsets.all(pad),
+          child: SizedBox(
+            width: innerW,
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              // Spacing + each piece's 12px slop each side = 64px visible gap.
+              spacing: kMinTargetGap - kHitSlop,
+              runSpacing: kMinTargetGap - kHitSlop,
+              children: [
+                for (final (i, p) in _trayOrder.indexed)
+                  _tile(i, p, tile, piece),
+              ],
+            ),
           ),
         ),
-      ),
-    ]);
+      ],
+    );
   }
 
   Widget _tile(int slotInTray, int p, double tile, Size piece) {
@@ -302,7 +402,10 @@ class _MirrorMatchState extends State<MirrorMatch> with TickerProviderStateMixin
         final t = ((ms - 200 - slotInTray * 120) / 380).clamp(0.0, 1.0);
         return Opacity(
           opacity: t,
-          child: Transform.scale(scale: 0.6 + 0.4 * Curves.easeOutBack.transform(t), child: child),
+          child: Transform.scale(
+            scale: 0.6 + 0.4 * Curves.easeOutBack.transform(t),
+            child: child,
+          ),
         );
       },
       child: KeyedSubtree(
@@ -318,7 +421,13 @@ class _MirrorMatchState extends State<MirrorMatch> with TickerProviderStateMixin
             child: FittedBox(
               child: SizedBox.fromSize(
                 size: piece,
-                child: _Piece(subject: _subject, art: piece.width * 2, rows: _rows, row: p, flipped: true),
+                child: _Piece(
+                  subject: _subject,
+                  art: piece.width * 2,
+                  rows: _rows,
+                  row: p,
+                  flipped: true,
+                ),
               ),
             ),
           ),
@@ -331,7 +440,13 @@ class _MirrorMatchState extends State<MirrorMatch> with TickerProviderStateMixin
 /// One row of the left half of [subject]'s picture, optionally mirrored.
 /// The whole picture is laid out at [art]×[art] and clipped to the cell.
 class _Piece extends StatelessWidget {
-  const _Piece({required this.subject, required this.art, required this.rows, required this.row, this.flipped = false});
+  const _Piece({
+    required this.subject,
+    required this.art,
+    required this.rows,
+    required this.row,
+    this.flipped = false,
+  });
   final String subject;
   final double art;
   final int rows, row;
@@ -374,11 +489,23 @@ class _GlassTile extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            Color.alphaBlend(Palette.water.withValues(alpha: 0.28), Palette.card),
-            Color.alphaBlend(Palette.water.withValues(alpha: 0.12), Palette.card),
+            Color.alphaBlend(
+              Palette.water.withValues(alpha: 0.28),
+              Palette.card,
+            ),
+            Color.alphaBlend(
+              Palette.water.withValues(alpha: 0.12),
+              Palette.card,
+            ),
           ],
         ),
-        boxShadow: const [BoxShadow(color: Palette.shadow, blurRadius: 10, offset: Offset(0, 6))],
+        boxShadow: const [
+          BoxShadow(
+            color: Palette.shadow,
+            blurRadius: 10,
+            offset: Offset(0, 6),
+          ),
+        ],
       ),
       child: child,
     );
@@ -400,7 +527,10 @@ class _GlassPainter extends CustomPainter {
         ..shader = LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [Palette.water.withValues(alpha: 0.32), Palette.water.withValues(alpha: 0.14)],
+          colors: [
+            Palette.water.withValues(alpha: 0.32),
+            Palette.water.withValues(alpha: 0.14),
+          ],
         ).createShader(rect),
     );
     final streak = Paint()
@@ -408,10 +538,16 @@ class _GlassPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
     final w = size.width, h = size.height;
-    canvas.drawLine(Offset(w * 0.52, h * 0.3), Offset(w * 0.86, h * 0.1),
-        streak..strokeWidth = math.max(6, w * 0.08));
-    canvas.drawLine(Offset(w * 0.62, h * 0.38), Offset(w * 0.9, h * 0.22),
-        streak..strokeWidth = math.max(3, w * 0.035));
+    canvas.drawLine(
+      Offset(w * 0.52, h * 0.3),
+      Offset(w * 0.86, h * 0.1),
+      streak..strokeWidth = math.max(6, w * 0.08),
+    );
+    canvas.drawLine(
+      Offset(w * 0.62, h * 0.38),
+      Offset(w * 0.9, h * 0.22),
+      streak..strokeWidth = math.max(3, w * 0.035),
+    );
 
     // Glint: sweeps during the first third of each cycle, then rests.
     final t = shine.value / 0.35;
@@ -428,7 +564,11 @@ class _GlassPainter extends CustomPainter {
               Palette.card.withValues(alpha: 0.45),
               Palette.card.withValues(alpha: 0),
             ],
-            stops: [(x - 0.12).clamp(0.0, 1.0), x.clamp(0.0, 1.0), (x + 0.12).clamp(0.0, 1.0)],
+            stops: [
+              (x - 0.12).clamp(0.0, 1.0),
+              x.clamp(0.0, 1.0),
+              (x + 0.12).clamp(0.0, 1.0),
+            ],
           ).createShader(rect),
       );
     }
@@ -446,11 +586,16 @@ class _SeamPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final rect = Offset.zero & size;
-    final rrect = RRect.fromRectAndRadius(rect, Radius.circular(size.width / 2));
+    final rrect = RRect.fromRectAndRadius(
+      rect,
+      Radius.circular(size.width / 2),
+    );
     canvas.drawRRect(
       rrect,
       Paint()
-        ..shader = const LinearGradient(colors: [Palette.waterDeep, Palette.card, Palette.water]).createShader(rect),
+        ..shader = const LinearGradient(
+          colors: [Palette.waterDeep, Palette.card, Palette.water],
+        ).createShader(rect),
     );
     final y = size.height * Curves.easeInOut.transform(shine.value);
     canvas.save();
@@ -484,7 +629,11 @@ class _RowLinesPainter extends CustomPainter {
     for (var r = 1; r < rows; r++) {
       final y = size.height * r / rows;
       for (var x = 6.0; x < size.width - 6; x += 16) {
-        canvas.drawLine(Offset(x, y), Offset(math.min(x + 8, size.width - 6), y), paint);
+        canvas.drawLine(
+          Offset(x, y),
+          Offset(math.min(x + 8, size.width - 6), y),
+          paint,
+        );
       }
     }
   }
@@ -498,8 +647,14 @@ class _DashedCellPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final inset = math.max(5.0, size.shortestSide * 0.06);
-    final rrect = RRect.fromRectAndRadius((Offset.zero & size).deflate(inset), Radius.circular(size.shortestSide * 0.14));
-    canvas.drawRRect(rrect, Paint()..color = Palette.card.withValues(alpha: 0.3));
+    final rrect = RRect.fromRectAndRadius(
+      (Offset.zero & size).deflate(inset),
+      Radius.circular(size.shortestSide * 0.14),
+    );
+    canvas.drawRRect(
+      rrect,
+      Paint()..color = Palette.card.withValues(alpha: 0.3),
+    );
     final stroke = Paint()
       ..color = Palette.waterDeep.withValues(alpha: 0.5)
       ..style = PaintingStyle.stroke
@@ -508,7 +663,10 @@ class _DashedCellPainter extends CustomPainter {
     const dash = 9.0;
     for (final metric in (Path()..addRRect(rrect)).computeMetrics()) {
       for (var d = 0.0; d < metric.length; d += dash * 2) {
-        canvas.drawPath(metric.extractPath(d, math.min(d + dash, metric.length)), stroke);
+        canvas.drawPath(
+          metric.extractPath(d, math.min(d + dash, metric.length)),
+          stroke,
+        );
       }
     }
   }
@@ -540,7 +698,11 @@ class _GlintPainter extends CustomPainter {
             Palette.card.withValues(alpha: 0.7 * fade),
             Palette.card.withValues(alpha: 0),
           ],
-          stops: [(x - 0.15).clamp(0.0, 1.0), x.clamp(0.0, 1.0), (x + 0.15).clamp(0.0, 1.0)],
+          stops: [
+            (x - 0.15).clamp(0.0, 1.0),
+            x.clamp(0.0, 1.0),
+            (x + 0.15).clamp(0.0, 1.0),
+          ],
         ).createShader(rect),
     );
   }

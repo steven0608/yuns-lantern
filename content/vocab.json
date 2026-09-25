@@ -59,8 +59,8 @@
 
     {"id":"sun","en":"sun","zh":"太阳","pinyin":"tài yáng","category":"nature","color":"yellow","shape":"circle","size":"huge","countable":false,"floats":null,"timeOfDay":"day"},
     {"id":"moon","en":"moon","zh":"月亮","pinyin":"yuè liang","category":"nature","color":"white","shape":"semicircle","size":"huge","countable":false,"floats":null,"timeOfDay":"night"},
-    {"id":"star","en":"star","zh":"星星","pinyin":"xīng xing","category":"nature","color":"yellow","shape":"irregular","size":"tiny","countable":true,"floats":null,"timeOfDay":"night"},
-    {"id":"cloud","en":"cloud","zh":"云","pinyin":"yún","category":"nature","color":"white","shape":"irregular","size":"large","countable":true,"floats":null,"timeOfDay":"day"},
+    {"id":"star","en":"star","zh":"星星","pinyin":"xīng xing","category":"nature","color":"yellow","shape":"irregular","size":"huge","countable":true,"floats":null,"timeOfDay":"night"},
+    {"id":"cloud","en":"cloud","zh":"云","pinyin":"yún","category":"nature","color":"white","shape":"irregular","size":"huge","countable":true,"floats":null,"timeOfDay":"day"},
     {"id":"tree","en":"tree","zh":"树","pinyin":"shù","category":"nature","color":"green","shape":"triangle","size":"huge","countable":true,"floats":null,"timeOfDay":"both"},
     {"id":"flower","en":"flower","zh":"花","pinyin":"huā","category":"nature","color":"pink","shape":"circle","size":"tiny","countable":true,"floats":true,"timeOfDay":"day"},
     {"id":"leaf","en":"leaf","zh":"叶子","pinyin":"yè zi","category":"nature","color":"green","shape":"irregular","size":"tiny","countable":true,"floats":true,"timeOfDay":null},
@@ -74,9 +74,9 @@
     {"id":"scarf","en":"scarf","zh":"围巾","pinyin":"wéi jīn","category":"clothing","color":"purple","shape":"rectangle","size":"medium","countable":true,"floats":true,"timeOfDay":null},
     {"id":"umbrella","en":"umbrella","zh":"雨伞","pinyin":"yǔ sǎn","category":"clothing","color":"blue","shape":"triangle","size":"medium","countable":true,"floats":true,"timeOfDay":null},
 
-    {"id":"cup","en":"cup","zh":"杯子","pinyin":"bēi zi","category":"household","color":"white","shape":"circle","size":"small","countable":true,"floats":true,"timeOfDay":null},
+    {"id":"cup","en":"cup","zh":"杯子","pinyin":"bēi zi","category":"household","color":"white","shape":"circle","size":"small","countable":true,"floats":false,"timeOfDay":null},
     {"id":"spoon","en":"spoon","zh":"勺子","pinyin":"sháo zi","category":"household","color":"white","shape":"irregular","size":"small","countable":true,"floats":false,"timeOfDay":null},
-    {"id":"bowl","en":"bowl","zh":"碗","pinyin":"wǎn","category":"household","color":"white","shape":"semicircle","size":"small","countable":true,"floats":true,"timeOfDay":null},
+    {"id":"bowl","en":"bowl","zh":"碗","pinyin":"wǎn","category":"household","color":"white","shape":"semicircle","size":"small","countable":true,"floats":false,"timeOfDay":null},
     {"id":"key","en":"key","zh":"钥匙","pinyin":"yào shi","category":"household","color":"yellow","shape":"irregular","size":"tiny","countable":true,"floats":false,"timeOfDay":null},
     {"id":"book","en":"book","zh":"书","pinyin":"shū","category":"household","color":"blue","shape":"rectangle","size":"small","countable":true,"floats":true,"timeOfDay":"both"},
     {"id":"lamp","en":"lamp","zh":"台灯","pinyin":"tái dēng","category":"household","color":"yellow","shape":"triangle","size":"medium","countable":true,"floats":false,"timeOfDay":"night"},

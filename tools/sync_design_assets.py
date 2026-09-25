@@ -27,7 +27,7 @@ def copy_art():
         "tiles": lambda n: n.startswith("icon_"),      # home screen activity tiles
         "lights": lambda n: n.startswith("light_"),    # story lanterns, one per chapter
         "scenes": lambda n: n.startswith("scene_"),    # chapter illustrations
-        "ui": lambda n: n in ("home_bg.png", "map.png", "yun_idle.png", "yun_happy.png", "yun_sleepy.png"),
+        "ui": lambda n: n in ("home_bg.png", "map.png", "map_phone.png", "yun_idle.png", "yun_happy.png", "yun_sleepy.png"),
     }
     for folder, match in groups.items():
         (IMG / folder).mkdir(parents=True, exist_ok=True)
@@ -37,6 +37,17 @@ def copy_art():
     # Props that aren't vocabulary (Where Is It? containers).
     (IMG / "items").mkdir(exist_ok=True)
     shutil.copy2(PNG / "items" / "basket.png", IMG / "items" / "basket.png")
+
+
+def copy_audio():
+    """design/audio (music loops, stings, new SFX) -> assets/audio."""
+    src = ROOT / "design" / "audio"
+    for sub in ("music", "sfx"):
+        if (src / sub).exists():
+            (ROOT / "assets" / "audio" / sub).mkdir(parents=True, exist_ok=True)
+            for f in (src / sub).iterdir():
+                if f.suffix in (".mp3", ".wav"):
+                    shutil.copy2(f, ROOT / "assets" / "audio" / sub / f.name)
 
 
 def app_icons():
@@ -54,7 +65,7 @@ def app_icons():
 
 def pubspec_assets():
     dirs = ["content/"]
-    for base in ["assets/images", "assets/audio/sfx", "assets/audio/vo", "assets/fonts"]:
+    for base in ["assets/images", "assets/audio/sfx", "assets/audio/music", "assets/audio/vo", "assets/fonts"]:
         root = ROOT / base
         if not root.exists():
             continue
@@ -71,5 +82,6 @@ def pubspec_assets():
 
 if __name__ == "__main__":
     copy_art()
+    copy_audio()
     app_icons()
     pubspec_assets()

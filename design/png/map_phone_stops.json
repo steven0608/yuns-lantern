@@ -1,0 +1,85 @@
+{
+ "_comment": "Stop centres in logical pt on an 844x390 stage (iPhone landscape). Targets 88 pt, stop 8 is 1.2x (106 pt). Scale x/y with the stage; never shrink targets.",
+ "size": [
+  844,
+  390
+ ],
+ "stops": [
+  [
+   140,
+   302
+  ],
+  [
+   292,
+   302
+  ],
+  [
+   444,
+   302
+  ],
+  [
+   596,
+   302
+  ],
+  [
+   740,
+   140
+  ],
+  [
+   588,
+   140
+  ],
+  [
+   436,
+   140
+  ],
+  [
+   275,
+   140
+  ]
+ ],
+ "target": 88,
+ "lastScale": 1.2,
+ "ipad": {
+  "size": [
+   1194,
+   834
+  ],
+  "stops": [
+   [
+    150,
+    700
+   ],
+   [
+    330,
+    592
+   ],
+   [
+    520,
+    668
+   ],
+   [
+    660,
+    495
+   ],
+   [
+    470,
+    385
+   ],
+   [
+    640,
+    262
+   ],
+   [
+    860,
+    330
+   ],
+   [
+    1010,
+    150
+   ]
+  ],
+  "target": 104,
+  "lastScale": 1.2
+ }
+}

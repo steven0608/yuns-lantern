@@ -35,10 +35,22 @@ class ItemCard extends StatelessWidget {
         color: color,
         borderRadius: BorderRadius.circular(size * 0.26),
         border: Border.all(color: Palette.paper, width: 3),
-        boxShadow: elevated ? const [BoxShadow(color: Palette.shadow, blurRadius: 10, offset: Offset(0, 6))] : null,
+        boxShadow: elevated
+            ? const [
+                BoxShadow(
+                  color: Palette.shadow,
+                  blurRadius: 10,
+                  offset: Offset(0, 6),
+                ),
+              ]
+            : null,
       ),
       alignment: Alignment.center,
-      child: child ?? (id == null ? null : ItemArt(id!, size: size * 0.58, silhouette: silhouette)),
+      child:
+          child ??
+          (id == null
+              ? null
+              : ItemArt(id!, size: size * 0.58, silhouette: silhouette)),
     );
   }
 }
@@ -71,8 +83,12 @@ class ChoiceCard extends StatefulWidget {
   State<ChoiceCard> createState() => _ChoiceCardState();
 }
 
-class _ChoiceCardState extends State<ChoiceCard> with SingleTickerProviderStateMixin {
-  late final AnimationController _wobble = AnimationController(vsync: this, duration: const Duration(milliseconds: 420));
+class _ChoiceCardState extends State<ChoiceCard>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _wobble = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 420),
+  );
 
   @override
   void dispose() {
@@ -94,22 +110,29 @@ class _ChoiceCardState extends State<ChoiceCard> with SingleTickerProviderStateM
   Widget build(BuildContext context) {
     return ValueListenableBuilder<int>(
       valueListenable: widget.hints.level,
-      builder: (_, level, child) => GentlePulse(active: widget.correct && level >= 1, child: child!),
+      builder: (_, level, child) =>
+          GentlePulse(active: widget.correct && level >= 1, child: child!),
       child: AnimatedBuilder(
         animation: _wobble,
         builder: (_, child) {
           final t = _wobble.value;
-          return Transform.rotate(angle: 0.08 * (1 - t) * math.sin(t * 18), child: child);
+          return Transform.rotate(
+            angle: 0.08 * (1 - t) * math.sin(t * 18),
+            child: child,
+          );
         },
         child: TouchTarget(
           key: widget.hintKey,
           onTap: _tap,
           sound: widget.correct ? Sfx.snap : Sfx.tap,
           size: Size.square(widget.size),
-          child: ItemCard(id: widget.id, size: widget.size, child: widget.child),
+          child: ItemCard(
+            id: widget.id,
+            size: widget.size,
+            child: widget.child,
+          ),
         ),
       ),
     );
   }
-
 }

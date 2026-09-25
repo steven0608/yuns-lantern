@@ -1,5 +1,7 @@
 import 'dart:math' as math;
 
+import '../../core/audio/music_scope.dart';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -63,6 +65,18 @@ class GameDef {
   /// Shortened prompt for the 8s idle nudge; defaults to [prompt].
   final List<String> Function(Round r)? shortPrompt;
   final List<Color> background;
+
+  /// The same engine playing another activity's rounds (a v3 game on a v2
+  /// engine): only the id — and so the rounds loaded — changes.
+  GameDef forActivity(String activityId) => activityId == id
+      ? this
+      : GameDef(
+          id: activityId,
+          build: build,
+          prompt: prompt,
+          shortPrompt: shortPrompt,
+          background: background,
+        );
 }
 
 /// Standard shell (SPEC §7.7): home button top-left, replay-the-question
@@ -114,40 +128,64 @@ class _ActivityScaffoldState extends State<ActivityScaffold> {
       body: DropZoneScope(
         child: Container(
           decoration: BoxDecoration(
-            gradient: LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: widget.background),
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: widget.background,
+            ),
           ),
-          child: LayoutBuilder(builder: (context, box) {
-            final insets = ActivityScaffold.contentInsets(box.biggest);
-            return Stack(fit: StackFit.expand, children: [
-              // Taps on empty space still sparkle (§7.5).
-              GestureDetector(behavior: HitTestBehavior.opaque, onTapDown: _ambientTap),
-              SafeArea(child: Padding(padding: insets, child: widget.body)),
-              for (final p in List.of(_sparkles))
-                TapSparkle(key: ObjectKey(p), at: p, onDone: () => setState(() => _sparkles.remove(p))),
-              SafeArea(
-                child: Align(
-                  alignment: Alignment.topLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.all(4),
-                    child: RoundButton(icon: Icons.home_rounded, onTap: widget.onHome),
+          child: LayoutBuilder(
+            builder: (context, box) {
+              final insets = ActivityScaffold.contentInsets(box.biggest);
+              return Stack(
+                fit: StackFit.expand,
+                children: [
+                  // Taps on empty space still sparkle (§7.5).
+                  GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onTapDown: _ambientTap,
                   ),
-                ),
-              ),
-              if (widget.onReplay != null)
-                SafeArea(
-                  child: Align(
-                    alignment: Alignment.topRight,
-                    child: Padding(
-                      padding: const EdgeInsets.all(4),
-                      child: RoundButton(icon: Icons.volume_up_rounded, onTap: widget.onReplay!),
+                  SafeArea(
+                    child: Padding(padding: insets, child: widget.body),
+                  ),
+                  for (final p in List.of(_sparkles))
+                    TapSparkle(
+                      key: ObjectKey(p),
+                      at: p,
+                      onDone: () => setState(() => _sparkles.remove(p)),
+                    ),
+                  SafeArea(
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.all(4),
+                        child: RoundButton(
+                          icon: Icons.home_rounded,
+                          onTap: widget.onHome,
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              if (widget.hints != null) HintHandLayer(hints: widget.hints!),
-              if (widget.overlay != null) widget.overlay!,
-              if (kDebugMode) const _DebugCaption(),
-            ]);
-          }),
+                  if (widget.onReplay != null)
+                    SafeArea(
+                      child: Align(
+                        alignment: Alignment.topRight,
+                        child: Padding(
+                          padding: const EdgeInsets.all(4),
+                          child: RoundButton(
+                            icon: Icons.volume_up_rounded,
+                            onTap: widget.onReplay!,
+                          ),
+                        ),
+                      ),
+                    ),
+                  if (widget.hints != null) HintHandLayer(hints: widget.hints!),
+                  if (widget.overlay != null) widget.overlay!,
+                  if (kDebugMode) const _DebugCaption(),
+                ],
+              );
+            },
+          ),
         ),
       ),
     );
@@ -192,7 +230,10 @@ class _ActivitySessionState extends State<ActivitySession> {
     super.didChangeDependencies();
     if (_generation == 0) {
       _activity = _s.content.activities[widget.game.id]!;
-      _roundIndex = _s.progress.nextRound(_activity.id, _activity.rounds.length);
+      _roundIndex = _s.progress.nextRound(
+        _activity.id,
+        _activity.rounds.length,
+      );
       _startRound();
     }
   }
@@ -203,23 +244,40 @@ class _ActivitySessionState extends State<ActivitySession> {
     _generation++;
     _hints = HintController(
       speak: (k) => _s.audio.playVO(k),
-      onIdlePrompt: () => _s.audio.playSequence((widget.game.shortPrompt ?? widget.game.prompt)(_round)),
+      onIdlePrompt: () => _s.audio.playSequence(
+        (widget.game.shortPrompt ?? widget.game.prompt)(_round),
+      ),
     );
     _phase = _Phase.playing;
     final gen = _generation;
     _s.audio.playSequence(widget.game.prompt(_round)).then((_) {
-      if (mounted && gen == _generation && _phase == _Phase.playing) _hints.start();
+      if (mounted && gen == _generation && _phase == _Phase.playing) {
+        _hints.start();
+      }
     });
   }
 
   void _complete() {
     if (_phase != _Phase.playing) return;
     _hints.stop();
-    _s.progress.roundCompleted(_activity.id, _roundIndex, _activity.rounds.length);
-    _s.audio.sfx(Sfx.success);
-    _s.audio.playVO(_hints.rotate(const ['feedback.success1', 'feedback.success2', 'feedback.success3', 'feedback.success4']));
+    _s.progress.roundCompleted(
+      _activity.id,
+      _roundIndex,
+      _activity.rounds.length,
+    );
+    _s.audio.sting(Music.celebrate);
+    _s.audio.playVO(
+      _hints.rotate(const [
+        'feedback.success1',
+        'feedback.success2',
+        'feedback.success3',
+        'feedback.success4',
+      ]),
+    );
     final mins = _s.settings.breakMinutes;
-    _suggestBreak = mins > 0 && DateTime.now().difference(_s.progress.sessionStart).inMinutes >= mins;
+    _suggestBreak =
+        mins > 0 &&
+        DateTime.now().difference(_s.progress.sessionStart).inMinutes >= mins;
     setState(() => _phase = _Phase.celebrating);
   }
 
@@ -237,7 +295,10 @@ class _ActivitySessionState extends State<ActivitySession> {
     if (widget.onFinished != null) return widget.onFinished!();
     final old = _hints;
     setState(() {
-      _roundIndex = _s.progress.nextRound(_activity.id, _activity.rounds.length);
+      _roundIndex = _s.progress.nextRound(
+        _activity.id,
+        _activity.rounds.length,
+      );
       _startRound();
     });
     WidgetsBinding.instance.addPostFrameCallback((_) => old.dispose());
@@ -255,7 +316,12 @@ class _ActivitySessionState extends State<ActivitySession> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => MusicScope(
+    track: Music.lands,
+    child: Builder(builder: _body),
+  );
+
+  Widget _body(BuildContext context) {
     final rc = RoundContext(
       round: _round,
       hints: _hints,
@@ -274,24 +340,35 @@ class _ActivitySessionState extends State<ActivitySession> {
       },
       body: IgnorePointer(
         ignoring: _phase != _Phase.playing,
-        child: KeyedSubtree(key: ValueKey('${_activity.id}/$_roundIndex/$_generation'), child: widget.game.build(rc)),
+        child: KeyedSubtree(
+          key: ValueKey('${_activity.id}/$_roundIndex/$_generation'),
+          child: widget.game.build(rc),
+        ),
       ),
       overlay: switch (_phase) {
         _Phase.playing => null,
-        _Phase.celebrating => Celebration(onDone: _celebrationDone, lightColor: widget.lightColor),
+        _Phase.celebrating => Celebration(
+          onDone: _celebrationDone,
+          lightColor: widget.lightColor,
+        ),
         _Phase.choosing => _ChoicePanel(
-            storyMode: widget.onFinished != null,
-            sleepy: _suggestBreak,
-            onNext: _next,
-            onHome: _home,
-          ),
+          storyMode: widget.onFinished != null,
+          sleepy: _suggestBreak,
+          onNext: _next,
+          onHome: _home,
+        ),
       },
     );
   }
 }
 
 class _ChoicePanel extends StatelessWidget {
-  const _ChoicePanel({required this.storyMode, required this.sleepy, required this.onNext, required this.onHome});
+  const _ChoicePanel({
+    required this.storyMode,
+    required this.sleepy,
+    required this.onNext,
+    required this.onHome,
+  });
   final bool storyMode;
   final bool sleepy;
   final VoidCallback onNext;
@@ -307,23 +384,35 @@ class _ChoicePanel extends StatelessWidget {
       child: ColoredBox(
         color: const Color(0x66FBEBD2),
         child: Center(
-          child: Column(mainAxisSize: MainAxisSize.min, children: [
-            Yun(size: 150, mood: sleepy ? YunMood.sleepy : YunMood.happy),
-            const SizedBox(height: 16),
-            Row(mainAxisSize: MainAxisSize.min, children: [
-              if (!storyMode) ...[
-                RoundButton(icon: Icons.home_rounded, onTap: onHome, diameter: 112),
-                const SizedBox(width: kMinTargetGap),
-              ],
-              RoundButton(
-                icon: storyMode ? Icons.arrow_forward_rounded : Icons.replay_rounded,
-                onTap: onNext,
-                diameter: 128,
-                color: Palette.lantern,
-                iconColor: Palette.card,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Yun(size: 150, mood: sleepy ? YunMood.sleepy : YunMood.happy),
+              const SizedBox(height: 16),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (!storyMode) ...[
+                    RoundButton(
+                      icon: Icons.home_rounded,
+                      onTap: onHome,
+                      diameter: 112,
+                    ),
+                    const SizedBox(width: kMinTargetGap),
+                  ],
+                  RoundButton(
+                    icon: storyMode
+                        ? Icons.arrow_forward_rounded
+                        : Icons.replay_rounded,
+                    onTap: onNext,
+                    diameter: 128,
+                    color: Palette.lantern,
+                    iconColor: Palette.card,
+                  ),
+                ],
               ),
-            ]),
-          ]),
+            ],
+          ),
         ),
       ),
     );
@@ -348,8 +437,14 @@ class _DebugCaption extends StatelessWidget {
             child: Container(
               margin: const EdgeInsets.only(bottom: 10),
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-              decoration: BoxDecoration(color: const Color(0xCC2B2B2B), borderRadius: BorderRadius.circular(12)),
-              child: Text('🔊 ${line ?? ''}', style: const TextStyle(color: Color(0xFFFFF3E0), fontSize: 15)),
+              decoration: BoxDecoration(
+                color: const Color(0xCC2B2B2B),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Text(
+                '🔊 ${line ?? ''}',
+                style: const TextStyle(color: Color(0xFFFFF3E0), fontSize: 15),
+              ),
             ),
           ),
         ),

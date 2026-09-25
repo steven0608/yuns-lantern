@@ -1030,7 +1030,7 @@
       {
        "key": "tiny",
        "items": [
-        "key",
+        "toothbrush",
         "grape"
        ]
       },
@@ -1044,8 +1044,8 @@
       {
        "key": "huge",
        "items": [
-        "rainbow",
-        "bus"
+        "tree",
+        "cloud"
        ]
       }
      ],
@@ -1062,21 +1062,21 @@
       {
        "key": "small",
        "items": [
-        "bowl",
-        "block"
+        "mushroom",
+        "bowl"
        ]
       },
       {
        "key": "medium",
        "items": [
-        "pillow",
-        "corn"
+        "kite",
+        "pillow"
        ]
       },
       {
        "key": "large",
        "items": [
-        "cloud",
+        "watermelon",
         "car"
        ]
       }
@@ -1095,7 +1095,7 @@
        "key": "tiny",
        "items": [
         "frog",
-        "flower"
+        "leaf"
        ]
       },
       {
@@ -1141,7 +1141,7 @@
        "key": "huge",
        "items": [
         "bus",
-        "train"
+        "moon"
        ]
       }
      ],
@@ -1168,13 +1168,13 @@
     {
      "dimension": "size",
      "orderedSmallToLarge": [
-      "star",
+      "flower",
       "orange",
       "key_lantern"
      ],
      "vo": [
       "comparing.order_small_big",
-      "item.star",
+      "item.flower",
       "item.orange",
       "item.key_lantern"
      ]
@@ -1254,11 +1254,25 @@
      "orderedSmallToLarge": [
       "lamp",
       "boat",
-      "tree"
+      "star"
      ],
      "vo": [
       "comparing.order_small_big",
       "item.lamp",
+      "item.boat",
+      "item.star"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "teddy",
+      "boat",
+      "tree"
+     ],
+     "vo": [
+      "comparing.order_small_big",
+      "item.teddy",
       "item.boat",
       "item.tree"
      ]
@@ -1266,28 +1280,28 @@
     {
      "dimension": "size",
      "orderedSmallToLarge": [
-      "teddy",
-      "cloud",
-      "elephant"
+      "umbrella",
+      "watermelon",
+      "rainbow"
      ],
      "vo": [
       "comparing.order_small_big",
-      "item.teddy",
-      "item.cloud",
-      "item.elephant"
+      "item.umbrella",
+      "item.watermelon",
+      "item.rainbow"
      ]
     },
     {
      "dimension": "size",
      "orderedSmallToLarge": [
-      "umbrella",
-      "bear",
+      "cookie",
+      "pillow",
       "bus"
      ],
      "vo": [
       "comparing.order_small_big",
-      "item.umbrella",
-      "item.bear",
+      "item.cookie",
+      "item.pillow",
       "item.bus"
      ]
     },
@@ -1322,14 +1336,14 @@
     {
      "dimension": "size",
      "orderedSmallToLarge": [
-      "leaf",
-      "bread",
+      "book",
+      "watermelon",
       "bus"
      ],
      "vo": [
       "comparing.order_small_big",
-      "item.leaf",
-      "item.bread",
+      "item.book",
+      "item.watermelon",
       "item.bus"
      ]
     },
@@ -1337,42 +1351,28 @@
      "dimension": "size",
      "orderedSmallToLarge": [
       "apple",
-      "cloud",
+      "watermelon",
       "elephant"
      ],
      "vo": [
       "comparing.order_small_big",
       "item.apple",
-      "item.cloud",
+      "item.watermelon",
       "item.elephant"
      ]
     },
     {
      "dimension": "size",
      "orderedSmallToLarge": [
-      "banana",
-      "panda",
+      "owl",
+      "boat",
       "moon"
      ],
      "vo": [
       "comparing.order_small_big",
-      "item.banana",
-      "item.panda",
-      "item.moon"
-     ]
-    },
-    {
-     "dimension": "size",
-     "orderedSmallToLarge": [
-      "bowl",
-      "boat",
-      "tree"
-     ],
-     "vo": [
-      "comparing.order_small_big",
-      "item.bowl",
+      "item.owl",
       "item.boat",
-      "item.tree"
+      "item.moon"
      ]
     }
    ]
@@ -1397,15 +1397,15 @@
      "variant": 0,
      "examples": {
       "circle": [
-       "grape",
-       "ball"
+       "sun",
+       "drum"
       ],
       "square": [
        "block"
       ],
       "triangle": [
-       "plane",
-       "carrot"
+       "boat",
+       "plane"
       ]
      },
      "vo": [
@@ -1424,16 +1424,16 @@
      "variant": 0,
      "examples": {
       "circle": [
-       "egg",
-       "balloon"
+       "ball",
+       "watermelon"
       ],
       "triangle": [
-       "tree",
-       "umbrella"
+       "plane",
+       "boat"
       ],
       "rectangle": [
-       "bus",
-       "toothbrush"
+       "book",
+       "pillow"
       ]
      },
      "vo": [
@@ -1455,12 +1455,12 @@
        "block"
       ],
       "rectangle": [
-       "pillow",
-       "toothbrush"
+       "book",
+       "bus"
       ],
       "semicircle": [
-       "bowl",
-       "turtle"
+       "hat",
+       "shell"
       ]
      },
      "vo": [
@@ -1479,46 +1479,46 @@
      "variant": 0,
      "examples": {
       "circle": [
-       "sun",
-       "clock"
+       "clock",
+       "cup"
       ],
       "square": [
        "block"
       ],
       "semicircle": [
-       "moon",
+       "hat",
+       "shell"
+      ]
+     },
+     "vo": [
+      "shape.circle",
+      "shape.square",
+      "shape.semicircle",
+      "shapes.intro"
+     ]
+    },
+    {
+     "shapes": [
+      "triangle",
+      "rectangle",
+      "semicircle"
+     ],
+     "variant": 0,
+     "examples": {
+      "triangle": [
+       "tree",
+       "lamp"
+      ],
+      "rectangle": [
+       "train",
+       "bus"
+      ],
+      "semicircle": [
+       "shell",
        "hat"
       ]
      },
      "vo": [
-      "shape.circle",
-      "shape.square",
-      "shape.semicircle",
-      "shapes.intro"
-     ]
-    },
-    {
-     "shapes": [
-      "triangle",
-      "rectangle",
-      "semicircle"
-     ],
-     "variant": 0,
-     "examples": {
-      "triangle": [
-       "plane",
-       "boat"
-      ],
-      "rectangle": [
-       "toothbrush",
-       "book"
-      ],
-      "semicircle": [
-       "rainbow",
-       "bowl"
-      ]
-     },
-     "vo": [
       "shape.triangle",
       "shape.rectangle",
       "shape.semicircle",
@@ -1535,19 +1535,19 @@
      "variant": 0,
      "examples": {
       "circle": [
-       "watermelon",
-       "egg"
+       "drum",
+       "key_lantern"
       ],
       "square": [
        "block"
       ],
       "triangle": [
-       "lamp",
-       "boat"
+       "kite",
+       "strawberry"
       ],
       "rectangle": [
-       "bread",
-       "scarf"
+       "toothbrush",
+       "bus"
       ]
      },
      "vo": [
@@ -1568,8 +1568,8 @@
      "variant": 0,
      "examples": {
       "circle": [
-       "balloon",
-       "cup"
+       "cup",
+       "apple"
       ],
       "triangle": [
        "umbrella",
@@ -3307,121 +3307,34 @@
     {
      "floats": [
       "apple",
-      "banana",
-      "orange",
-      "strawberry"
-     ],
-     "sinks": [
-      "grape",
-      "carrot",
-      "egg",
-      "cookie"
-     ],
-     "vo": [
-      "floatsink.floats",
-      "floatsink.sinks",
-      "floatsink.intro",
-      "item.apple",
-      "item.banana",
-      "item.orange",
-      "item.strawberry",
-      "item.grape",
-      "item.carrot",
-      "item.egg",
-      "item.cookie"
-     ]
-    },
-    {
-     "floats": [
-      "strawberry",
-      "watermelon",
       "corn",
-      "mushroom"
+      "kite"
      ],
      "sinks": [
-      "egg",
-      "cookie",
-      "car",
-      "bus"
-     ],
-     "vo": [
-      "floatsink.floats",
-      "floatsink.sinks",
-      "floatsink.intro",
-      "item.strawberry",
-      "item.watermelon",
-      "item.corn",
-      "item.mushroom",
-      "item.egg",
-      "item.cookie",
-      "item.car",
-      "item.bus"
-     ]
-    },
-    {
-     "floats": [
-      "mushroom",
-      "bread",
-      "boat",
-      "ball"
-     ],
-     "sinks": [
-      "car",
-      "bus",
-      "train",
-      "plane"
-     ],
-     "vo": [
-      "floatsink.floats",
-      "floatsink.sinks",
-      "floatsink.intro",
-      "item.mushroom",
-      "item.bread",
-      "item.boat",
-      "item.ball",
-      "item.car",
-      "item.bus",
-      "item.train",
-      "item.plane"
-     ]
-    },
-    {
-     "floats": [
-      "ball",
-      "block",
-      "teddy",
-      "drum"
-     ],
-     "sinks": [
-      "train",
-      "plane",
-      "bike",
+      "carrot",
+      "lamp",
       "rock"
      ],
      "vo": [
       "floatsink.floats",
       "floatsink.sinks",
       "floatsink.intro",
-      "item.ball",
-      "item.block",
-      "item.teddy",
-      "item.drum",
-      "item.train",
-      "item.plane",
-      "item.bike",
+      "item.apple",
+      "item.corn",
+      "item.kite",
+      "item.carrot",
+      "item.lamp",
       "item.rock"
      ]
     },
     {
      "floats": [
-      "drum",
-      "kite",
-      "balloon",
-      "flower"
+      "corn",
+      "flower",
+      "pillow"
      ],
      "sinks": [
-      "bike",
-      "rock",
+      "egg",
       "shell",
       "shoe"
      ],
@@ -3429,136 +3342,162 @@
       "floatsink.floats",
       "floatsink.sinks",
       "floatsink.intro",
-      "item.drum",
-      "item.kite",
-      "item.balloon",
+      "item.corn",
       "item.flower",
-      "item.bike",
-      "item.rock",
+      "item.pillow",
+      "item.egg",
       "item.shell",
       "item.shoe"
      ]
     },
     {
      "floats": [
-      "flower",
-      "leaf",
-      "hat",
-      "sock"
+      "ball",
+      "book",
+      "mushroom"
      ],
      "sinks": [
-      "shell",
-      "shoe",
-      "spoon",
+      "carrot",
+      "grape",
       "key"
      ],
      "vo": [
       "floatsink.floats",
       "floatsink.sinks",
       "floatsink.intro",
-      "item.flower",
-      "item.leaf",
-      "item.hat",
-      "item.sock",
-      "item.shell",
-      "item.shoe",
-      "item.spoon",
+      "item.ball",
+      "item.book",
+      "item.mushroom",
+      "item.carrot",
+      "item.grape",
       "item.key"
      ]
     },
     {
      "floats": [
-      "sock",
-      "scarf",
-      "umbrella",
-      "cup"
+      "hat",
+      "mushroom",
+      "toothbrush"
      ],
      "sinks": [
-      "spoon",
-      "key",
-      "lamp",
-      "clock"
+      "carrot",
+      "cup",
+      "key"
      ],
      "vo": [
       "floatsink.floats",
       "floatsink.sinks",
       "floatsink.intro",
-      "item.sock",
-      "item.scarf",
-      "item.umbrella",
+      "item.hat",
+      "item.mushroom",
+      "item.toothbrush",
+      "item.carrot",
       "item.cup",
-      "item.spoon",
-      "item.key",
-      "item.lamp",
-      "item.clock"
+      "item.key"
      ]
     },
     {
      "floats": [
-      "cup",
-      "bowl",
-      "book",
-      "pillow"
+      "bread",
+      "hat",
+      "kite"
      ],
      "sinks": [
-      "lamp",
-      "clock",
-      "grape",
-      "carrot"
+      "bus",
+      "egg",
+      "shell"
      ],
      "vo": [
       "floatsink.floats",
       "floatsink.sinks",
       "floatsink.intro",
-      "item.cup",
-      "item.bowl",
-      "item.book",
-      "item.pillow",
-      "item.lamp",
-      "item.clock",
-      "item.grape",
-      "item.carrot"
+      "item.bread",
+      "item.hat",
+      "item.kite",
+      "item.bus",
+      "item.egg",
+      "item.shell"
+     ]
+    },
+    {
+     "floats": [
+      "kite",
+      "leaf",
+      "orange"
+     ],
+     "sinks": [
+      "bus",
+      "carrot",
+      "spoon"
+     ],
+     "vo": [
+      "floatsink.floats",
+      "floatsink.sinks",
+      "floatsink.intro",
+      "item.kite",
+      "item.leaf",
+      "item.orange",
+      "item.bus",
+      "item.carrot",
+      "item.spoon"
      ]
     },
     {
      "floats": [
       "pillow",
-      "toothbrush",
-      "key_lantern",
-      "apple"
+      "sock",
+      "umbrella"
      ],
      "sinks": [
-      "grape",
-      "carrot",
-      "egg",
-      "cookie"
+      "cookie",
+      "shell",
+      "shoe"
      ],
      "vo": [
       "floatsink.floats",
       "floatsink.sinks",
       "floatsink.intro",
       "item.pillow",
-      "item.toothbrush",
-      "item.key_lantern",
-      "item.apple",
-      "item.grape",
-      "item.carrot",
-      "item.egg",
-      "item.cookie"
+      "item.sock",
+      "item.umbrella",
+      "item.cookie",
+      "item.shell",
+      "item.shoe"
+     ]
+    },
+    {
+     "floats": [
+      "bread",
+      "corn",
+      "teddy"
+     ],
+     "sinks": [
+      "bowl",
+      "car",
+      "train"
+     ],
+     "vo": [
+      "floatsink.floats",
+      "floatsink.sinks",
+      "floatsink.intro",
+      "item.bread",
+      "item.corn",
+      "item.teddy",
+      "item.bowl",
+      "item.car",
+      "item.train"
      ]
     },
     {
      "floats": [
       "apple",
       "banana",
-      "orange",
-      "strawberry"
+      "book"
      ],
      "sinks": [
-      "egg",
-      "cookie",
-      "car",
-      "bus"
+      "key",
+      "plane",
+      "spoon"
      ],
      "vo": [
       "floatsink.floats",
@@ -3566,66 +3505,79 @@
       "floatsink.intro",
       "item.apple",
       "item.banana",
-      "item.orange",
-      "item.strawberry",
-      "item.egg",
-      "item.cookie",
-      "item.car",
-      "item.bus"
+      "item.book",
+      "item.key",
+      "item.plane",
+      "item.spoon"
      ]
     },
     {
      "floats": [
-      "strawberry",
-      "watermelon",
+      "block",
       "corn",
-      "mushroom"
+      "hat"
      ],
      "sinks": [
-      "car",
-      "bus",
-      "train",
-      "plane"
+      "cup",
+      "shoe",
+      "spoon"
      ],
      "vo": [
       "floatsink.floats",
       "floatsink.sinks",
       "floatsink.intro",
-      "item.strawberry",
-      "item.watermelon",
+      "item.block",
       "item.corn",
-      "item.mushroom",
-      "item.car",
-      "item.bus",
-      "item.train",
-      "item.plane"
+      "item.hat",
+      "item.cup",
+      "item.shoe",
+      "item.spoon"
      ]
     },
     {
      "floats": [
-      "mushroom",
-      "bread",
-      "boat",
-      "ball"
+      "flower",
+      "leaf",
+      "teddy"
      ],
      "sinks": [
-      "train",
-      "plane",
-      "bike",
+      "bus",
+      "carrot",
       "rock"
      ],
      "vo": [
       "floatsink.floats",
       "floatsink.sinks",
       "floatsink.intro",
-      "item.mushroom",
-      "item.bread",
-      "item.boat",
-      "item.ball",
-      "item.train",
-      "item.plane",
-      "item.bike",
+      "item.flower",
+      "item.leaf",
+      "item.teddy",
+      "item.bus",
+      "item.carrot",
       "item.rock"
+     ]
+    },
+    {
+     "floats": [
+      "ball",
+      "boat",
+      "drum"
+     ],
+     "sinks": [
+      "bus",
+      "egg",
+      "plane"
+     ],
+     "vo": [
+      "floatsink.floats",
+      "floatsink.sinks",
+      "floatsink.intro",
+      "item.ball",
+      "item.boat",
+      "item.drum",
+      "item.bus",
+      "item.egg",
+      "item.plane"
      ]
     }
    ]
@@ -3645,8 +3597,8 @@
      "tier": "silhouette",
      "answer": "banana",
      "distractors": [
-      "butterfly",
-      "corn"
+      "duck",
+      "bear"
      ],
      "vo": [
       "whatisit.intro",
@@ -3657,8 +3609,8 @@
      "tier": "silhouette",
      "answer": "corn",
      "distractors": [
-      "fish",
-      "cat"
+      "shoe",
+      "teddy"
      ],
      "vo": [
       "whatisit.intro",
@@ -3669,8 +3621,8 @@
      "tier": "silhouette",
      "answer": "cat",
      "distractors": [
-      "mouse",
-      "fish"
+      "elephant",
+      "panda"
      ],
      "vo": [
       "whatisit.intro",
@@ -3681,8 +3633,8 @@
      "tier": "silhouette",
      "answer": "dog",
      "distractors": [
-      "teddy",
-      "panda"
+      "leaf",
+      "boat"
      ],
      "vo": [
       "whatisit.intro",
@@ -3693,8 +3645,8 @@
      "tier": "silhouette",
      "answer": "rabbit",
      "distractors": [
-      "spoon",
-      "cat"
+      "bee",
+      "teddy"
      ],
      "vo": [
       "whatisit.intro",
@@ -3705,8 +3657,8 @@
      "tier": "silhouette",
      "answer": "bird",
      "distractors": [
-      "owl",
-      "sock"
+      "train",
+      "fish"
      ],
      "vo": [
       "whatisit.intro",
@@ -3717,8 +3669,8 @@
      "tier": "silhouette",
      "answer": "fish",
      "distractors": [
-      "frog",
-      "leaf"
+      "cat",
+      "duck"
      ],
      "vo": [
       "whatisit.intro",
@@ -3729,8 +3681,8 @@
      "tier": "silhouette",
      "answer": "duck",
      "distractors": [
-      "bike",
-      "mouse"
+      "shoe",
+      "rabbit"
      ],
      "vo": [
       "whatisit.intro",
@@ -3741,8 +3693,8 @@
      "tier": "silhouette",
      "answer": "bear",
      "distractors": [
-      "fish",
-      "key"
+      "corn",
+      "sock"
      ],
      "vo": [
       "whatisit.intro",
@@ -3753,8 +3705,8 @@
      "tier": "silhouette",
      "answer": "elephant",
      "distractors": [
-      "banana",
-      "panda"
+      "rock",
+      "mouse"
      ],
      "vo": [
       "whatisit.intro",
@@ -3765,8 +3717,8 @@
      "tier": "silhouette",
      "answer": "mouse",
      "distractors": [
-      "corn",
-      "star"
+      "sock",
+      "leaf"
      ],
      "vo": [
       "whatisit.intro",
@@ -3777,8 +3729,8 @@
      "tier": "silhouette",
      "answer": "owl",
      "distractors": [
-      "fish",
-      "rock"
+      "bear",
+      "corn"
      ],
      "vo": [
       "whatisit.intro",
@@ -3789,8 +3741,8 @@
      "tier": "reveal",
      "answer": "banana",
      "distractors": [
-      "bus",
-      "rock"
+      "cat",
+      "frog"
      ],
      "vo": [
       "whatisit.intro",
@@ -3801,8 +3753,8 @@
      "tier": "reveal",
      "answer": "corn",
      "distractors": [
-      "turtle",
-      "panda"
+      "plane",
+      "turtle"
      ],
      "vo": [
       "whatisit.intro",
@@ -3813,8 +3765,8 @@
      "tier": "reveal",
      "answer": "cat",
      "distractors": [
-      "corn",
-      "bear"
+      "duck",
+      "boat"
      ],
      "vo": [
       "whatisit.intro",
@@ -3825,8 +3777,8 @@
      "tier": "reveal",
      "answer": "dog",
      "distractors": [
-      "butterfly",
-      "bus"
+      "bird",
+      "bike"
      ],
      "vo": [
       "whatisit.intro",
@@ -3837,8 +3789,8 @@
      "tier": "reveal",
      "answer": "rabbit",
      "distractors": [
-      "fish",
-      "rock"
+      "car",
+      "bear"
      ],
      "vo": [
       "whatisit.intro",
@@ -3849,8 +3801,8 @@
      "tier": "reveal",
      "answer": "bird",
      "distractors": [
-      "cat",
-      "train"
+      "mouse",
+      "dog"
      ],
      "vo": [
       "whatisit.intro",
@@ -3861,8 +3813,8 @@
      "tier": "reveal",
      "answer": "fish",
      "distractors": [
-      "owl",
-      "car"
+      "panda",
+      "mouse"
      ],
      "vo": [
       "whatisit.intro",
@@ -3873,8 +3825,8 @@
      "tier": "reveal",
      "answer": "duck",
      "distractors": [
-      "cat",
-      "butterfly"
+      "fish",
+      "frog"
      ],
      "vo": [
       "whatisit.intro",
@@ -3885,8 +3837,8 @@
      "tier": "reveal",
      "answer": "bear",
      "distractors": [
-      "leaf",
-      "rock"
+      "banana",
+      "butterfly"
      ],
      "vo": [
       "whatisit.intro",
@@ -3897,8 +3849,8 @@
      "tier": "reveal",
      "answer": "elephant",
      "distractors": [
-      "teddy",
-      "corn"
+      "key",
+      "bird"
      ],
      "vo": [
       "whatisit.intro",
@@ -3909,8 +3861,8 @@
      "tier": "reveal",
      "answer": "mouse",
      "distractors": [
-      "bus",
-      "cloud"
+      "leaf",
+      "plane"
      ],
      "vo": [
       "whatisit.intro",
@@ -3921,8 +3873,8 @@
      "tier": "reveal",
      "answer": "owl",
      "distractors": [
-      "butterfly",
-      "leaf"
+      "key",
+      "spoon"
      ],
      "vo": [
       "whatisit.intro",
@@ -3954,8 +3906,8 @@
      "answer": "apple",
      "choices": [
       "banana",
-      "apple",
-      "grape"
+      "grape",
+      "apple"
      ],
      "vo": [
       "pattern.intro",
@@ -3974,8 +3926,8 @@
      "answer": "cat",
      "choices": [
       "dog",
-      "cat",
-      "bird"
+      "bird",
+      "cat"
      ],
      "vo": [
       "pattern.intro",
@@ -3993,9 +3945,9 @@
      ],
      "answer": "ball",
      "choices": [
-      "ball",
+      "block",
       "balloon",
-      "block"
+      "ball"
      ],
      "vo": [
       "pattern.intro",
@@ -4013,9 +3965,9 @@
      ],
      "answer": "star",
      "choices": [
+      "star",
       "cloud",
-      "moon",
-      "star"
+      "moon"
      ],
      "vo": [
       "pattern.intro",
@@ -4033,9 +3985,9 @@
      ],
      "answer": "flower",
      "choices": [
+      "flower",
       "leaf",
-      "shell",
-      "flower"
+      "shell"
      ],
      "vo": [
       "pattern.intro",
@@ -4053,8 +4005,8 @@
      ],
      "answer": "car",
      "choices": [
-      "train",
       "car",
+      "train",
       "boat"
      ],
      "vo": [
@@ -4073,8 +4025,8 @@
      ],
      "answer": "hat",
      "choices": [
-      "shoe",
       "hat",
+      "shoe",
       "sock"
      ],
      "vo": [
@@ -4114,8 +4066,8 @@
      "answer": "duck",
      "choices": [
       "duck",
-      "fish",
-      "frog"
+      "frog",
+      "fish"
      ],
      "vo": [
       "pattern.intro",
@@ -4155,8 +4107,8 @@
      "answer": "banana",
      "choices": [
       "banana",
-      "apple",
-      "grape"
+      "grape",
+      "apple"
      ],
      "vo": [
       "pattern.intro",
@@ -4176,8 +4128,8 @@
      "answer": "dog",
      "choices": [
       "dog",
-      "cat",
-      "bird"
+      "bird",
+      "cat"
      ],
      "vo": [
       "pattern.intro",
@@ -4196,9 +4148,9 @@
      ],
      "answer": "block",
      "choices": [
-      "block",
       "balloon",
-      "ball"
+      "ball",
+      "block"
      ],
      "vo": [
       "pattern.intro",
@@ -4218,8 +4170,8 @@
      "answer": "moon",
      "choices": [
       "moon",
-      "cloud",
-      "star"
+      "star",
+      "cloud"
      ],
      "vo": [
       "pattern.intro",
@@ -4238,8 +4190,8 @@
      ],
      "answer": "leaf",
      "choices": [
-      "flower",
       "leaf",
+      "flower",
       "shell"
      ],
      "vo": [
@@ -4259,8 +4211,8 @@
      ],
      "answer": "boat",
      "choices": [
-      "train",
       "car",
+      "train",
       "boat"
      ],
      "vo": [
@@ -4280,8 +4232,8 @@
      ],
      "answer": "shoe",
      "choices": [
-      "shoe",
       "sock",
+      "shoe",
       "hat"
      ],
      "vo": [
@@ -4301,8 +4253,8 @@
      ],
      "answer": "bowl",
      "choices": [
-      "spoon",
       "bowl",
+      "spoon",
       "cup"
      ],
      "vo": [
@@ -4322,9 +4274,9 @@
      ],
      "answer": "frog",
      "choices": [
+      "frog",
       "duck",
-      "fish",
-      "frog"
+      "fish"
      ],
      "vo": [
       "pattern.intro",
@@ -4343,9 +4295,9 @@
      ],
      "answer": "cloud",
      "choices": [
-      "sun",
+      "cloud",
       "star",
-      "cloud"
+      "sun"
      ],
      "vo": [
       "pattern.intro",
@@ -4366,8 +4318,8 @@
      "answer": "apple",
      "choices": [
       "apple",
-      "banana",
-      "grape"
+      "grape",
+      "banana"
      ],
      "vo": [
       "pattern.intro",
@@ -4388,8 +4340,8 @@
      "answer": "cat",
      "choices": [
       "cat",
-      "bird",
-      "dog"
+      "dog",
+      "bird"
      ],
      "vo": [
       "pattern.intro",
@@ -4431,8 +4383,8 @@
      ],
      "answer": "star",
      "choices": [
-      "moon",
       "cloud",
+      "moon",
       "star"
      ],
      "vo": [
@@ -4454,8 +4406,8 @@
      "answer": "flower",
      "choices": [
       "leaf",
-      "shell",
-      "flower"
+      "flower",
+      "shell"
      ],
      "vo": [
       "pattern.intro",
@@ -4475,8 +4427,8 @@
      ],
      "answer": "car",
      "choices": [
-      "car",
       "train",
+      "car",
       "boat"
      ],
      "vo": [
@@ -4519,9 +4471,9 @@
      ],
      "answer": "cup",
      "choices": [
-      "cup",
       "spoon",
-      "bowl"
+      "bowl",
+      "cup"
      ],
      "vo": [
       "pattern.intro",
@@ -4541,9 +4493,9 @@
      ],
      "answer": "duck",
      "choices": [
-      "frog",
       "fish",
-      "duck"
+      "duck",
+      "frog"
      ],
      "vo": [
       "pattern.intro",
@@ -4564,8 +4516,8 @@
      "answer": "sun",
      "choices": [
       "cloud",
-      "sun",
-      "star"
+      "star",
+      "sun"
      ],
      "vo": [
       "pattern.intro",
@@ -4584,9 +4536,9 @@
      ],
      "answer": "banana",
      "choices": [
-      "grape",
       "banana",
-      "apple"
+      "apple",
+      "grape"
      ],
      "vo": [
       "pattern.intro",
@@ -4606,8 +4558,8 @@
      "answer": "dog",
      "choices": [
       "dog",
-      "bird",
-      "cat"
+      "cat",
+      "bird"
      ],
      "vo": [
       "pattern.intro",
@@ -4626,9 +4578,9 @@
      ],
      "answer": "block",
      "choices": [
-      "balloon",
+      "block",
       "ball",
-      "block"
+      "balloon"
      ],
      "vo": [
       "pattern.intro",
@@ -4648,8 +4600,8 @@
      "answer": "moon",
      "choices": [
       "cloud",
-      "star",
-      "moon"
+      "moon",
+      "star"
      ],
      "vo": [
       "pattern.intro",
@@ -4669,8 +4621,8 @@
      "answer": "leaf",
      "choices": [
       "flower",
-      "shell",
-      "leaf"
+      "leaf",
+      "shell"
      ],
      "vo": [
       "pattern.intro",
@@ -4711,8 +4663,8 @@
      "answer": "shoe",
      "choices": [
       "hat",
-      "sock",
-      "shoe"
+      "shoe",
+      "sock"
      ],
      "vo": [
       "pattern.intro",
@@ -4731,9 +4683,9 @@
      ],
      "answer": "bowl",
      "choices": [
-      "cup",
+      "spoon",
       "bowl",
-      "spoon"
+      "cup"
      ],
      "vo": [
       "pattern.intro",
@@ -4752,9 +4704,9 @@
      ],
      "answer": "frog",
      "choices": [
-      "frog",
       "fish",
-      "duck"
+      "duck",
+      "frog"
      ],
      "vo": [
       "pattern.intro",
@@ -4774,8 +4726,8 @@
      "answer": "cloud",
      "choices": [
       "cloud",
-      "sun",
-      "star"
+      "star",
+      "sun"
      ],
      "vo": [
       "pattern.intro",
@@ -4795,9 +4747,9 @@
      ],
      "answer": "apple",
      "choices": [
-      "apple",
       "grape",
-      "banana"
+      "banana",
+      "apple"
      ],
      "vo": [
       "pattern.intro",
@@ -4817,8 +4769,8 @@
      ],
      "answer": "cat",
      "choices": [
-      "cat",
       "dog",
+      "cat",
       "bird"
      ],
      "vo": [
@@ -4839,9 +4791,9 @@
      ],
      "answer": "ball",
      "choices": [
-      "block",
       "balloon",
-      "ball"
+      "ball",
+      "block"
      ],
      "vo": [
       "pattern.intro",
@@ -4861,8 +4813,8 @@
      ],
      "answer": "star",
      "choices": [
-      "star",
       "moon",
+      "star",
       "cloud"
      ],
      "vo": [
@@ -4884,8 +4836,8 @@
      "answer": "flower",
      "choices": [
       "shell",
-      "leaf",
-      "flower"
+      "flower",
+      "leaf"
      ],
      "vo": [
       "pattern.intro",
@@ -4906,8 +4858,8 @@
      "answer": "car",
      "choices": [
       "car",
-      "train",
-      "boat"
+      "boat",
+      "train"
      ],
      "vo": [
       "pattern.intro",
@@ -4927,9 +4879,9 @@
      ],
      "answer": "hat",
      "choices": [
+      "shoe",
       "hat",
-      "sock",
-      "shoe"
+      "sock"
      ],
      "vo": [
       "pattern.intro",
@@ -4971,9 +4923,9 @@
      ],
      "answer": "duck",
      "choices": [
+      "fish",
       "duck",
-      "frog",
-      "fish"
+      "frog"
      ],
      "vo": [
       "pattern.intro",
@@ -4993,9 +4945,9 @@
      ],
      "answer": "sun",
      "choices": [
-      "sun",
       "cloud",
-      "star"
+      "star",
+      "sun"
      ],
      "vo": [
       "pattern.intro",
@@ -5014,9 +4966,9 @@
      ],
      "answer": "banana",
      "choices": [
-      "apple",
       "grape",
-      "banana"
+      "banana",
+      "apple"
      ],
      "vo": [
       "pattern.intro",
@@ -5036,8 +4988,8 @@
      "answer": "dog",
      "choices": [
       "bird",
-      "dog",
-      "cat"
+      "cat",
+      "dog"
      ],
      "vo": [
       "pattern.intro",
@@ -5056,8 +5008,8 @@
      ],
      "answer": "block",
      "choices": [
-      "block",
       "balloon",
+      "block",
       "ball"
      ],
      "vo": [
@@ -5077,8 +5029,8 @@
      ],
      "answer": "moon",
      "choices": [
-      "moon",
       "star",
+      "moon",
       "cloud"
      ],
      "vo": [
@@ -5098,9 +5050,9 @@
      ],
      "answer": "leaf",
      "choices": [
-      "leaf",
       "shell",
-      "flower"
+      "flower",
+      "leaf"
      ],
      "vo": [
       "pattern.intro",
@@ -5119,9 +5071,9 @@
      ],
      "answer": "boat",
      "choices": [
+      "car",
       "boat",
-      "train",
-      "car"
+      "train"
      ],
      "vo": [
       "pattern.intro",
@@ -5140,9 +5092,9 @@
      ],
      "answer": "shoe",
      "choices": [
+      "sock",
       "shoe",
-      "hat",
-      "sock"
+      "hat"
      ],
      "vo": [
       "pattern.intro",
@@ -5161,9 +5113,9 @@
      ],
      "answer": "bowl",
      "choices": [
-      "cup",
       "bowl",
-      "spoon"
+      "spoon",
+      "cup"
      ],
      "vo": [
       "pattern.intro",
@@ -5182,9 +5134,9 @@
      ],
      "answer": "frog",
      "choices": [
-      "fish",
       "duck",
-      "frog"
+      "frog",
+      "fish"
      ],
      "vo": [
       "pattern.intro",
@@ -5203,9 +5155,9 @@
      ],
      "answer": "cloud",
      "choices": [
-      "sun",
       "cloud",
-      "star"
+      "star",
+      "sun"
      ],
      "vo": [
       "pattern.intro",
@@ -5226,8 +5178,8 @@
      "answer": "apple",
      "choices": [
       "grape",
-      "apple",
-      "banana"
+      "banana",
+      "apple"
      ],
      "vo": [
       "pattern.intro",
@@ -5248,8 +5200,8 @@
      "answer": "cat",
      "choices": [
       "dog",
-      "bird",
-      "cat"
+      "cat",
+      "bird"
      ],
      "vo": [
       "pattern.intro",
@@ -5269,9 +5221,9 @@
      ],
      "answer": "ball",
      "choices": [
-      "balloon",
       "block",
-      "ball"
+      "ball",
+      "balloon"
      ],
      "vo": [
       "pattern.intro",
@@ -5291,9 +5243,9 @@
      ],
      "answer": "star",
      "choices": [
+      "moon",
       "cloud",
-      "star",
-      "moon"
+      "star"
      ],
      "vo": [
       "pattern.intro",
@@ -5313,9 +5265,9 @@
      ],
      "answer": "flower",
      "choices": [
+      "flower",
       "leaf",
-      "shell",
-      "flower"
+      "shell"
      ],
      "vo": [
       "pattern.intro",
@@ -5335,9 +5287,9 @@
      ],
      "answer": "car",
      "choices": [
+      "train",
       "car",
-      "boat",
-      "train"
+      "boat"
      ],
      "vo": [
       "pattern.intro",
@@ -5357,8 +5309,8 @@
      ],
      "answer": "hat",
      "choices": [
-      "hat",
       "shoe",
+      "hat",
       "sock"
      ],
      "vo": [
@@ -5379,9 +5331,9 @@
      ],
      "answer": "cup",
      "choices": [
+      "spoon",
       "cup",
-      "bowl",
-      "spoon"
+      "bowl"
      ],
      "vo": [
       "pattern.intro",
@@ -5401,9 +5353,9 @@
      ],
      "answer": "duck",
      "choices": [
-      "fish",
+      "frog",
       "duck",
-      "frog"
+      "fish"
      ],
      "vo": [
       "pattern.intro",
@@ -5423,9 +5375,9 @@
      ],
      "answer": "sun",
      "choices": [
-      "cloud",
       "sun",
-      "star"
+      "star",
+      "cloud"
      ],
      "vo": [
       "pattern.intro",
@@ -5444,9 +5396,9 @@
      ],
      "answer": "grape",
      "choices": [
+      "grape",
       "apple",
-      "banana",
-      "grape"
+      "banana"
      ],
      "vo": [
       "pattern.intro",
@@ -5486,8 +5438,8 @@
      ],
      "answer": "balloon",
      "choices": [
-      "block",
       "balloon",
+      "block",
       "ball"
      ],
      "vo": [
@@ -5507,9 +5459,9 @@
      ],
      "answer": "cloud",
      "choices": [
-      "moon",
       "star",
-      "cloud"
+      "cloud",
+      "moon"
      ],
      "vo": [
       "pattern.intro",
@@ -5528,9 +5480,9 @@
      ],
      "answer": "shell",
      "choices": [
+      "flower",
       "shell",
-      "leaf",
-      "flower"
+      "leaf"
      ],
      "vo": [
       "pattern.intro",
@@ -5549,9 +5501,9 @@
      ],
      "answer": "train",
      "choices": [
+      "train",
       "boat",
-      "car",
-      "train"
+      "car"
      ],
      "vo": [
       "pattern.intro",
@@ -5570,9 +5522,9 @@
      ],
      "answer": "sock",
      "choices": [
+      "shoe",
       "hat",
-      "sock",
-      "shoe"
+      "sock"
      ],
      "vo": [
       "pattern.intro",
@@ -5591,9 +5543,9 @@
      ],
      "answer": "spoon",
      "choices": [
+      "cup",
       "bowl",
-      "spoon",
-      "cup"
+      "spoon"
      ],
      "vo": [
       "pattern.intro",
@@ -5613,8 +5565,8 @@
      "answer": "fish",
      "choices": [
       "duck",
-      "fish",
-      "frog"
+      "frog",
+      "fish"
      ],
      "vo": [
       "pattern.intro",
@@ -5633,8 +5585,8 @@
      ],
      "answer": "star",
      "choices": [
-      "cloud",
       "star",
+      "cloud",
       "sun"
      ],
      "vo": [

@@ -19,6 +19,8 @@ JOBS = {
 for f in os.listdir(SRC):
     if f.startswith(("icon_", "light_")):
         JOBS.setdefault(f, []).append((f.replace(".svg", ".png"), 320 if f.startswith("icon_") else 240))
+    if f == "map_phone.svg":
+        JOBS.setdefault(f, []).append(("map_phone.png", 2532))  # @3x
     if f.startswith("scene_") or f in ("map.svg", "home_bg.svg"):
         JOBS.setdefault(f, []).append((f.replace(".svg", ".png"), 2388))
 

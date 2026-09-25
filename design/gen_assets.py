@@ -25,6 +25,8 @@ NAMED = {
     "white": "#F7F1E6", "black": "#3B3533",
 }
 SILHOUETTE = "#3E3150"  # item_art.dart
+LINE_C = "#EAD9BF"
+CARD_STROKE = ' stroke="#EAD9BF" stroke-width="3"'
 STICK = "#6B4A2B"
 
 # --- yun.dart painter colours ----------------------------------------------
@@ -349,11 +351,39 @@ def icon_body(aid):
                 + circle(50, 62, 7, CARD) + circle(110, 62, 7, CARD)
                 + ellipse(80, 82, 5.5, 31, INK)
                 + f'<path d="M77 54 Q70 38 62 34 M83 54 Q90 38 98 34" fill="none" stroke="{INK}" stroke-width="3" stroke-linecap="round"/>')
+    if aid == "first_words":  # listen_find
+        return (tile(WATER, .66)
+                + rect(20, 30, 92, 76, CARD, 20) + f'<path d="M40 104 L34 128 L60 104 Z" fill="{CARD}"/>'
+                + apple_g(38, 34, .56)
+                + f'<path d="M122 56 Q134 68 122 80 M132 46 Q152 68 132 90" fill="none" stroke="{WATER_DEEP}" stroke-width="7" stroke-linecap="round"/>')
+    if aid == "lines_curves":  # trace
+        return (tile(LANTERN, .68)
+                + f'<path d="M24 112 Q44 64 64 104 T104 96 T132 56" fill="none" stroke="{RUST_DEEP}" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 16"/>'
+                + f'<g transform="rotate(-45 128 48)">{rect(112, 38, 44, 20, NAMED["orange"], 6)}{rect(150, 38, 10, 20, NAMED["pink"], 4)}'
+                + f'<path d="M112 38 L98 48 L112 58 Z" fill="#F3D9B5"/><path d="M103 44.5 L98 48 L103 51.5 Z" fill="{INK}"/></g>'
+                + circle(24, 112, 9, RUST_DEEP))
+    if aid == "color_me":  # color_fill
+        return (tile(NAMED["pink"], .72)
+                + f'<path d="M80 26 C122 26 146 52 142 84 C139 108 118 104 110 114 C100 128 116 140 92 140 C48 142 18 118 18 84 C18 50 44 26 80 26 Z" fill="{CARD}"/>'
+                + circle(54, 62, 12, NAMED["red"]) + circle(86, 50, 12, NAMED["yellow"]) + circle(116, 70, 12, NAMED["blue"])
+                + circle(48, 98, 12, NAMED["green"]) + circle(84, 118, 11, "#EAD9BF"))
+    if aid == "echo_drums":  # music_echo
+        return (tile(NAMED["purple"], .72)
+                + rect(34, 70, 92, 62, NAMED["red"], 12) + ellipse(80, 70, 46, 16, "#F3D9B5")
+                + ellipse(80, 132, 46, 10, darken(NAMED["red"], .25))
+                + f'<path d="M40 86 L60 120 L80 86 L100 120 L120 86" fill="none" stroke="{CARD}" stroke-width="5" stroke-linejoin="round"/>'
+                + f'<path d="M58 60 L40 22 M102 60 L120 22" stroke="{STICK}" stroke-width="7" stroke-linecap="round"/>'
+                + circle(40, 22, 8, "#F3D9B5") + circle(120, 22, 8, "#F3D9B5"))
+    if aid == "memory_pairs":  # memory_pairs
+        return (tile(NAMED["green"], .72)
+                + f'<g transform="rotate(-8 52 82)">{rect(22, 36, 60, 88, NIGHT, 14)}{sparkle(52, 80, 18, LANTERN)}</g>'
+                + f'<g transform="rotate(8 108 82)">{rect(78, 36, 60, 88, CARD, 14, CARD_STROKE)}{apple_g(84, 54, .48)}</g>')
     raise KeyError(aid)
 
 
 ACTIVITIES = ["count_feed", "match_it", "shape_sorter", "find_the_same", "float_or_sink", "what_is_it",
-              "big_and_small", "where_is_it", "puzzle_pieces", "day_and_night", "pattern_parade", "mirror_match"]
+              "big_and_small", "where_is_it", "puzzle_pieces", "day_and_night", "pattern_parade", "mirror_match",
+              "first_words", "lines_curves", "color_me", "echo_drums", "memory_pairs"]
 
 # ===========================================================================
 # Scenes (8 chapters), 1194x834 = iPad 11" landscape, from placeholder_art.json
@@ -531,7 +561,7 @@ def scene_body(sid):
 # ===========================================================================
 # Story map, home background, app icon
 # ===========================================================================
-MAP_STOPS = [(150, 700), (330, 592), (520, 668), (660, 505), (470, 385), (640, 262), (860, 330), (1010, 168)]
+MAP_STOPS = [(150, 700), (330, 592), (520, 668), (660, 495), (470, 385), (640, 262), (860, 330), (1010, 168)]
 
 
 def catmull(points):
@@ -567,6 +597,36 @@ def map_body():
     o.append(f'<path d="{d}" fill="none" stroke="#EAD3AE" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>')
     o.append(f'<path d="{d}" fill="none" stroke="{RUST}" stroke-width="10" stroke-linecap="round" stroke-dasharray="1 24"/>')
     # the big lantern itself is the chapter-8 stop, drawn by the screen so it can light up
+    return "".join(o)
+
+
+# ---- phone story map: 844 x 390 pt (iPhone landscape), 2 x 4 snake -----------
+# Stops keep 88 pt targets with >= 64 pt gaps, stay inside the notch safe area
+# (59 pt each side) and clear the home button (top-left, 88 pt). The big
+# lantern (stop 8) is 1.2x. Coordinates also go to map_phone_stops.json.
+PW, PH = 844, 390
+PHONE_STOPS = [(140, 302), (292, 302), (444, 302), (596, 302), (740, 140), (588, 140), (436, 140), (275, 140)]
+
+
+def map_phone_body():
+    o = [rect(0, 0, PW, PH, "#F8EAD3")]
+    o.append(cloud(470, 42, .45, CARD, .85) + cloud(640, 30, .38, CARD, .85))
+    # Lantern Hill rises behind stop 8 (top-left)
+    o.append(f'<path d="M110 390 C160 250 220 110 275 96 C330 110 380 200 420 260 L420 390 Z" fill="#E3CCA6"/>')
+    o.append(f'<path d="M0 230 C140 200 300 236 460 214 S720 180 844 206 V390 H0 Z" fill="#EEDCBD"/>')
+    o.append(f'<path d="M0 300 C180 276 360 318 560 292 S780 270 844 284 V390 H0 Z" fill="#E6D2AE"/>')
+    # region vignettes, placed in the 64 pt gaps between stops
+    o.append(apple_tree(104, 250, .22) + apple_tree(182, 244, .19))                                        # 1 orchard
+    o.append(house(282, 248, "square", "#FFF1DE", NAMED["blue"], .22) + house(326, 250, "round", "#FFE3C8", NAMED["green"], .2))  # 2
+    o.append(f'<path d="M500 390 C510 360 530 340 520 320" fill="none" stroke="{WATER}" stroke-width="14" stroke-linecap="round"/>')  # 3
+    o.append(gumdrop(800, 250, 42, 90, "#A9B3CB") + gumdrop(776, 250, 26, 56, "#BCC5D8"))               # 4 mountain
+    o.append("".join(gumdrop(x, 190, 9, 36, "#7E9C7A") for x in (672, 688, 704)))                             # 5 forest
+    o.append("".join(sparkle(x, y, r, NAMED["purple"]) for x, y, r in ((520, 96, 6), (650, 90, 5), (612, 212, 4))))  # 6 meadow
+    o.append(ellipse(436, 214, 34, 9, "#9FC4DC"))                                                       # 7 lake
+    # the path: bottom row left to right, up the right side, top row right to left
+    d = catmull(PHONE_STOPS)
+    o.append(f'<path d="{d}" fill="none" stroke="#EAD3AE" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>')
+    o.append(f'<path d="{d}" fill="none" stroke="{RUST}" stroke-width="7" stroke-linecap="round" stroke-dasharray="1 17"/>')
     return "".join(o)
 
 
@@ -611,6 +671,12 @@ def main():
     save("basket.svg", svg(140, 112, basket_g(0, 0, 1.0), "0 -10 140 122"))
     save("bear.svg", svg(240, 266, bear_g()))
     save("map.svg", svg(W, H, map_body()))
+    save("map_phone.svg", svg(PW, PH, map_phone_body()))
+    import json
+    with open(os.path.join(os.path.dirname(OUT), "png", "map_phone_stops.json"), "w", encoding="utf-8") as fh:
+        json.dump({"_comment": "Stop centres in logical pt on an 844x390 stage (iPhone landscape). Targets 88 pt, stop 8 is 1.2x (106 pt). Scale x/y with the stage; never shrink targets.",
+                   "size": [PW, PH], "stops": PHONE_STOPS, "target": 88, "lastScale": 1.2,
+                   "ipad": {"size": [W, H], "stops": MAP_STOPS[:7] + [(1010, 150)], "target": 104, "lastScale": 1.2}}, fh, indent=1)
     save("home_bg.svg", svg(W, H, home_body()))
     save("app_icon.svg", svg(1024, 1024, app_icon_body()))
     print("\n".join(sorted(os.listdir(OUT))))

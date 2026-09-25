@@ -141,6 +141,8 @@ for a in acts["activities"]:
 
         elif aid == "float_or_sink":
             check_ids(tag, r["floats"] + r["sinks"])
+            if len(r["floats"]) + len(r["sinks"]) > MAX_INTERACTIVE:
+                err(f"{tag}: too many items")
             if set(r["floats"]) & set(r["sinks"]):
                 err(f"{tag}: item both floats and sinks")
             for i in r["floats"]:

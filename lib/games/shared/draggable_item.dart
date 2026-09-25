@@ -34,8 +34,12 @@ class DraggableItem extends StatefulWidget {
   State<DraggableItem> createState() => _DraggableItemState();
 }
 
-class _DraggableItemState extends State<DraggableItem> with SingleTickerProviderStateMixin {
-  late final AnimationController _fly = AnimationController(vsync: this, duration: const Duration(milliseconds: 320));
+class _DraggableItemState extends State<DraggableItem>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _fly = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 320),
+  );
   OverlayEntry? _entry;
   final ValueNotifier<Offset> _pos = ValueNotifier(Offset.zero);
   Offset _home = Offset.zero;
@@ -43,9 +47,9 @@ class _DraggableItemState extends State<DraggableItem> with SingleTickerProvider
   bool _lifted = false;
 
   Size get _size => Size(
-        widget.size.width < kMinTouchTarget ? kMinTouchTarget : widget.size.width,
-        widget.size.height < kMinTouchTarget ? kMinTouchTarget : widget.size.height,
-      );
+    widget.size.width < kMinTouchTarget ? kMinTouchTarget : widget.size.width,
+    widget.size.height < kMinTouchTarget ? kMinTouchTarget : widget.size.height,
+  );
 
   @override
   void dispose() {
@@ -55,7 +59,8 @@ class _DraggableItemState extends State<DraggableItem> with SingleTickerProvider
     super.dispose();
   }
 
-  RenderBox get _overlayBox => Overlay.of(context).context.findRenderObject()! as RenderBox;
+  RenderBox get _overlayBox =>
+      Overlay.of(context).context.findRenderObject()! as RenderBox;
 
   void _start(DragStartDetails d) {
     final scope = DropZoneScope.of(context);
@@ -63,7 +68,9 @@ class _DraggableItemState extends State<DraggableItem> with SingleTickerProvider
     scope?.dragging.value = true;
     final box = context.findRenderObject()! as RenderBox;
     // The visible item sits inside the hit-slop padding.
-    _home = _overlayBox.globalToLocal(box.localToGlobal(const Offset(kHitSlop / 2, kHitSlop / 2)));
+    _home = _overlayBox.globalToLocal(
+      box.localToGlobal(const Offset(kHitSlop / 2, kHitSlop / 2)),
+    );
     _pos.value = _home;
     _entry = OverlayEntry(builder: _buildFloating);
     Overlay.of(context).insert(_entry!);
@@ -82,7 +89,8 @@ class _DraggableItemState extends State<DraggableItem> with SingleTickerProvider
     }
   }
 
-  Offset get _globalCenter => _overlayBox.localToGlobal(_pos.value + _size.center(Offset.zero));
+  Offset get _globalCenter =>
+      _overlayBox.localToGlobal(_pos.value + _size.center(Offset.zero));
 
   Future<void> _end([DragEndDetails? _]) async {
     if (!_lifted || _fly.isAnimating) return;
@@ -93,7 +101,8 @@ class _DraggableItemState extends State<DraggableItem> with SingleTickerProvider
 
     if (target != null && target.widget.willAccept(widget.data)) {
       final r = target.globalRect!;
-      final dest = _overlayBox.globalToLocal(r.center) - _size.center(Offset.zero);
+      final dest =
+          _overlayBox.globalToLocal(r.center) - _size.center(Offset.zero);
       audio.sfx(Sfx.snap);
       await _flyTo(dest, shrink: true);
       _finish();
@@ -119,7 +128,11 @@ class _DraggableItemState extends State<DraggableItem> with SingleTickerProvider
 
   Future<void> _flyTo(Offset dest, {bool shrink = false}) async {
     final from = _pos.value;
-    void tick() => _pos.value = Offset.lerp(from, dest, kStandardCurve.transform(_fly.value))!;
+    void tick() => _pos.value = Offset.lerp(
+      from,
+      dest,
+      kStandardCurve.transform(_fly.value),
+    )!;
     _fly.addListener(tick);
     _shrink = shrink;
     await _fly.forward(from: 0);
@@ -142,7 +155,13 @@ class _DraggableItemState extends State<DraggableItem> with SingleTickerProvider
               scale: scale,
               child: DecoratedBox(
                 decoration: const BoxDecoration(
-                  boxShadow: [BoxShadow(color: Palette.shadow, blurRadius: 18, offset: Offset(0, 10))],
+                  boxShadow: [
+                    BoxShadow(
+                      color: Palette.shadow,
+                      blurRadius: 18,
+                      offset: Offset(0, 10),
+                    ),
+                  ],
                   shape: BoxShape.circle,
                 ),
                 child: child,

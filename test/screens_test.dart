@@ -2,7 +2,11 @@
 // without errors, fills the screen, and keeps touch targets compliant.
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:yuns_lantern/books/books_screen.dart';
+import 'package:yuns_lantern/books/reader_screen.dart';
 import 'package:yuns_lantern/core/ui/touch_target.dart';
+import 'package:yuns_lantern/play/catalog_view.dart';
+import 'package:yuns_lantern/play/lands_screen.dart';
 import 'package:yuns_lantern/screens/home_screen.dart';
 import 'package:yuns_lantern/screens/parent/parent_area.dart';
 import 'package:yuns_lantern/screens/parent/parent_gate.dart';
@@ -41,6 +45,41 @@ void main() {
         expectTouchTargetsCompliant(tester);
       });
 
+      testWidgets('play: lands and a land · $tag', (tester) async {
+        final s = await testServices(locale: locale);
+        expect(s.lands, isNotEmpty);
+        await pumpApp(tester, s, home: const LandsScreen(), size: size);
+        await tester.pump(const Duration(seconds: 2));
+        expect(tester.takeException(), isNull);
+        // ≤ 6 lands + home + page arrows on screen (EXPANSION §4)
+        expect(find.byType(TouchTarget).hitTestable().evaluate().length, lessThanOrEqualTo(6 + 3));
+        expectTouchTargetsCompliant(tester);
+        final multi = s.lands.firstWhere((l) => s.gamesInLand(l.id).length > 1);
+        await pumpApp(tester, s, home: LandScreen(land: multi), size: size);
+        await tester.pump(const Duration(seconds: 2));
+        expect(tester.takeException(), isNull);
+        expectTouchTargetsCompliant(tester);
+      });
+
+      testWidgets('books: shelf and every page of every tale · $tag', (tester) async {
+        final s = await testServices(locale: locale);
+        expect(s.shelves, isNotEmpty);
+        await pumpApp(tester, s, home: const BooksScreen(), size: size);
+        await tester.pump(const Duration(seconds: 2));
+        expect(tester.takeException(), isNull);
+        expectTouchTargetsCompliant(tester);
+        for (final tale in s.content.tales.where(s.taleVisible)) {
+          await pumpApp(tester, s, home: ReaderScreen(tale: tale), size: size);
+          for (var p = 1; p <= tale.pages.length; p++) {
+            expect(tester.takeException(), isNull, reason: '${tale.id} p$p');
+            expectTouchTargetsCompliant(tester, checkGaps: false);
+            await tester.tap(find.byIcon(Icons.arrow_forward_rounded));
+            await tester.pump(const Duration(milliseconds: 600));
+          }
+          expect(find.byIcon(Icons.replay_rounded), findsOneWidget, reason: 'the end panel after ${tale.id}');
+        }
+      });
+
       testWidgets('story scene · $tag', (tester) async {
         final s = await testServices(locale: locale);
         final ch = s.content.story.chapters.first;
@@ -58,6 +97,23 @@ void main() {
       });
     }
   }
+
+  testWidgets('reader: Both mode shows both languages on tablets', (tester) async {
+    final s = await testServices(locale: 'zh');
+    s.settings.bookLanguage = 'both';
+    final tale = s.content.tales.firstWhere(s.taleVisible);
+    await pumpApp(tester, s, home: ReaderScreen(tale: tale));
+    expect(find.text(tale.pages.first.zh), findsOneWidget);
+    expect(find.text(tale.pages.first.en), findsOneWidget);
+  });
+
+  testWidgets('home v3: three doors', (tester) async {
+    final s = await testServices();
+    await pumpApp(tester, s, home: const HomeScreen());
+    await tester.pump(const Duration(seconds: 2));
+    // Story, Play, Books + Yun + grown-ups
+    expect(find.byType(TouchTarget).evaluate().length, 5);
+  });
 
   testWidgets('web: portrait phone shows the turn-your-phone picture, no text', (tester) async {
     final s = await testServices();

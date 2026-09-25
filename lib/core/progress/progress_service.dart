@@ -25,10 +25,14 @@ class ProgressService extends ChangeNotifier {
     notifyListeners();
   }
 
-  Set<String> get lightsCollected => (_p.getStringList('lights') ?? const []).toSet();
+  Set<String> get lightsCollected =>
+      (_p.getStringList('lights') ?? const []).toSet();
 
   void collectLight(String chapterId) {
-    _p.setStringList('lights', (lightsCollected..add(chapterId)).toList()..sort());
+    _p.setStringList(
+      'lights',
+      (lightsCollected..add(chapterId)).toList()..sort(),
+    );
     notifyListeners();
   }
 }

@@ -36,7 +36,8 @@ Future<void> pumpApp(WidgetTester tester, Services s, {Widget? home, Size size =
 /// sit closer than the 64px minimum gap (CLAUDE.md "Enforce in code").
 void expectTouchTargetsCompliant(WidgetTester tester, {bool checkGaps = true}) {
   final rects = <Rect>[];
-  for (final e in find.byType(TouchTarget).evaluate()) {
+  // Only targets a finger can reach: skips pages a PageView keeps off-screen.
+  for (final e in find.byType(TouchTarget).hitTestable().evaluate()) {
     final box = e.renderObject! as RenderBox;
     if (!box.hasSize || !box.attached) continue;
     // Visible area = padded box minus hit slop.

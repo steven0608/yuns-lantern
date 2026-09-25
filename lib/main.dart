@@ -13,7 +13,10 @@ import 'core/storage/prefs.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Landscape only: every layout is designed for a device held sideways.
-  SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
+  ]);
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
 
   final services = await createServices();
@@ -24,7 +27,12 @@ Future<Services> createServices({bool useAudioDevice = true}) async {
   final content = await Content.load();
   final settings = await Settings.load();
   final locale = LocaleController(settings);
-  final audio = AudioService(content: content, locale: locale, settings: settings, useDevice: useAudioDevice);
+  final audio = AudioService(
+    content: content,
+    locale: locale,
+    settings: settings,
+    useDevice: useAudioDevice,
+  );
   await audio.init();
   final purchases = PurchaseService(settings);
   purchases.init(); // not awaited: the child can play while the store answers

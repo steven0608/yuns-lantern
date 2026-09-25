@@ -7,10 +7,14 @@ class Settings extends ChangeNotifier {
   Settings(this._p);
   final SharedPreferences _p;
 
-  static Future<Settings> load() async => Settings(await SharedPreferences.getInstance());
+  static Future<Settings> load() async =>
+      Settings(await SharedPreferences.getInstance());
 
   double get voVolume => _p.getDouble('voVolume') ?? 1.0;
   set voVolume(double v) => _set(() => _p.setDouble('voVolume', v));
+
+  double get musicVolume => _p.getDouble('musicVolume') ?? 0.5;
+  set musicVolume(double v) => _set(() => _p.setDouble('musicVolume', v));
 
   double get sfxVolume => _p.getDouble('sfxVolume') ?? 0.7;
   set sfxVolume(double v) => _set(() => _p.setDouble('sfxVolume', v));
@@ -20,7 +24,8 @@ class Settings extends ChangeNotifier {
   int get childAge => _p.getInt('childAge') ?? 3;
   set childAge(int v) => _set(() => _p.setInt('childAge', v));
 
-  Set<String> get hiddenActivities => (_p.getStringList('hidden') ?? const []).toSet();
+  Set<String> get hiddenActivities =>
+      (_p.getStringList('hidden') ?? const []).toSet();
   void setActivityHidden(String id, bool hidden) {
     final s = hiddenActivities;
     hidden ? s.add(id) : s.remove(id);
@@ -34,6 +39,11 @@ class Settings extends ChangeNotifier {
   /// 'auto' | 'en' | 'zh'.
   String get localeOverride => _p.getString('locale') ?? 'auto';
   set localeOverride(String v) => _set(() => _p.setString('locale', v));
+
+  /// Lantern Tales narration: 'app' (the app language) or 'both' (the app
+  /// language, then the other one — the Mandarin-learning mode, EXPANSION §1).
+  String get bookLanguage => _p.getString('bookLanguage') ?? 'app';
+  set bookLanguage(String v) => _set(() => _p.setString('bookLanguage', v));
 
   bool get purchased => _p.getBool('purchased') ?? false;
   set purchased(bool v) => _set(() => _p.setBool('purchased', v));

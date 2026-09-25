@@ -38,7 +38,10 @@ class WebStage extends StatelessWidget {
           height: h,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(24),
-            child: MediaQuery(data: MediaQuery.of(context).copyWith(size: Size(w, h)), child: child),
+            child: MediaQuery(
+              data: MediaQuery.of(context).copyWith(size: Size(w, h)),
+              child: child,
+            ),
           ),
         ),
       ),
@@ -53,8 +56,12 @@ class _TurnYourPhone extends StatefulWidget {
   State<_TurnYourPhone> createState() => _TurnYourPhoneState();
 }
 
-class _TurnYourPhoneState extends State<_TurnYourPhone> with SingleTickerProviderStateMixin {
-  late final AnimationController _c = AnimationController(vsync: this, duration: const Duration(milliseconds: 2400))..repeat();
+class _TurnYourPhoneState extends State<_TurnYourPhone>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _c = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 2400),
+  )..repeat();
 
   @override
   void dispose() {
@@ -67,32 +74,47 @@ class _TurnYourPhoneState extends State<_TurnYourPhone> with SingleTickerProvide
     return ColoredBox(
       color: Palette.paper,
       child: Center(
-        child: Column(mainAxisSize: MainAxisSize.min, children: [
-          const Yun(size: 150, mood: YunMood.happy),
-          const SizedBox(height: 32),
-          AnimatedBuilder(
-            animation: _c,
-            builder: (_, child) {
-              // hold upright, turn a quarter, hold sideways, turn back
-              final t = _c.value;
-              final turn = t < 0.25 ? 0.0 : t < 0.5 ? Curves.easeInOut.transform((t - 0.25) / 0.25) : t < 0.8 ? 1.0 : 1 - Curves.easeInOut.transform((t - 0.8) / 0.2);
-              return Transform.rotate(angle: -math.pi / 2 * turn, child: child);
-            },
-            child: Container(
-              width: 70,
-              height: 120,
-              decoration: BoxDecoration(
-                color: Palette.night,
-                borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: Palette.ink, width: 4),
-              ),
-              padding: const EdgeInsets.all(6),
-              child: DecoratedBox(
-                decoration: BoxDecoration(color: Palette.lantern, borderRadius: BorderRadius.circular(6)),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Yun(size: 150, mood: YunMood.happy),
+            const SizedBox(height: 32),
+            AnimatedBuilder(
+              animation: _c,
+              builder: (_, child) {
+                // hold upright, turn a quarter, hold sideways, turn back
+                final t = _c.value;
+                final turn = t < 0.25
+                    ? 0.0
+                    : t < 0.5
+                    ? Curves.easeInOut.transform((t - 0.25) / 0.25)
+                    : t < 0.8
+                    ? 1.0
+                    : 1 - Curves.easeInOut.transform((t - 0.8) / 0.2);
+                return Transform.rotate(
+                  angle: -math.pi / 2 * turn,
+                  child: child,
+                );
+              },
+              child: Container(
+                width: 70,
+                height: 120,
+                decoration: BoxDecoration(
+                  color: Palette.night,
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(color: Palette.ink, width: 4),
+                ),
+                padding: const EdgeInsets.all(6),
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: Palette.lantern,
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                ),
               ),
             ),
-          ),
-        ]),
+          ],
+        ),
       ),
     );
   }
@@ -116,19 +138,24 @@ class _WebStartGateState extends State<WebStartGate> {
   Widget build(BuildContext context) {
     if ((!kIsWeb && !widget.force) || _started) return widget.child;
     return Scaffold(
-      body: Stack(fit: StackFit.expand, children: [
-        Image.asset('assets/images/ui/home_bg.png', fit: BoxFit.cover),
-        Center(
-          child: TouchTarget(
-            sound: Sfx.sparkle,
-            onTap: () {
-              setState(() => _started = true);
-              context.services.audio.playVO('ui.home');
-            },
-            child: const _Breathing(child: Yun(size: 220, mood: YunMood.happy)),
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset('assets/images/ui/home_bg.png', fit: BoxFit.cover),
+          Center(
+            child: TouchTarget(
+              sound: Sfx.sparkle,
+              onTap: () {
+                setState(() => _started = true);
+                context.services.audio.playVO('ui.home');
+              },
+              child: const _Breathing(
+                child: Yun(size: 220, mood: YunMood.happy),
+              ),
+            ),
           ),
-        ),
-      ]),
+        ],
+      ),
     );
   }
 }
@@ -141,8 +168,12 @@ class _Breathing extends StatefulWidget {
   State<_Breathing> createState() => _BreathingState();
 }
 
-class _BreathingState extends State<_Breathing> with SingleTickerProviderStateMixin {
-  late final AnimationController _c = AnimationController(vsync: this, duration: const Duration(milliseconds: 1600))..repeat(reverse: true);
+class _BreathingState extends State<_Breathing>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _c = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 1600),
+  )..repeat(reverse: true);
 
   @override
   void dispose() {
@@ -152,13 +183,22 @@ class _BreathingState extends State<_Breathing> with SingleTickerProviderStateMi
 
   @override
   Widget build(BuildContext context) => ScaleTransition(
-        scale: Tween(begin: 0.96, end: 1.04).animate(CurvedAnimation(parent: _c, curve: Curves.easeInOut)),
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            boxShadow: [BoxShadow(color: Palette.lantern.withValues(alpha: 0.35), blurRadius: 60, spreadRadius: 10)],
+    scale: Tween(
+      begin: 0.96,
+      end: 1.04,
+    ).animate(CurvedAnimation(parent: _c, curve: Curves.easeInOut)),
+    child: DecoratedBox(
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        boxShadow: [
+          BoxShadow(
+            color: Palette.lantern.withValues(alpha: 0.35),
+            blurRadius: 60,
+            spreadRadius: 10,
           ),
-          child: widget.child,
-        ),
-      );
+        ],
+      ),
+      child: widget.child,
+    ),
+  );
 }

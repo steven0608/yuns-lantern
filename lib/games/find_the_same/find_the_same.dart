@@ -7,7 +7,12 @@ import '../shared/cards.dart';
 final findTheSameGame = GameDef(
   id: 'find_the_same',
   build: (rc) => Center(
-    child: ChoiceCard(id: 'star', correct: true, hints: rc.hints, onCorrect: rc.complete),
+    child: ChoiceCard(
+      id: 'star',
+      correct: true,
+      hints: rc.hints,
+      onCorrect: rc.complete,
+    ),
   ),
   prompt: (r) => r.vo.take(2).toList(),
 );

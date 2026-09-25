@@ -72,10 +72,22 @@ class AppLocalizationsZh extends AppLocalizations {
   String get languageZh => '中文';
 
   @override
+  String get bookLanguage => '故事朗读';
+
+  @override
+  String get bookLanguageApp => '跟随应用语言';
+
+  @override
+  String get bookLanguageBoth => '双语（先应用语言）';
+
+  @override
   String get sectionSound => '声音';
 
   @override
   String get voiceVolume => '语音音量';
+
+  @override
+  String get musicVolume => '音乐音量';
 
   @override
   String get effectsVolume => '音效音量';

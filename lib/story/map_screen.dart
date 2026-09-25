@@ -1,4 +1,7 @@
 import 'dart:math' as math;
+
+import '../core/audio/music_scope.dart';
+
 import 'dart:ui' show ImageFilter;
 
 import 'package:flutter/material.dart';
@@ -30,8 +33,26 @@ class MapScreen extends StatelessWidget {
   ];
   static const _board = Size(1194, 834);
 
+  /// Phone stops on the 844×390 "Story map · iPhone" board.
+  static const _phoneStops = [
+    Offset(140, 302),
+    Offset(292, 302),
+    Offset(444, 302),
+    Offset(596, 302),
+    Offset(740, 140),
+    Offset(588, 140),
+    Offset(436, 140),
+    Offset(275, 140),
+  ];
+  static const _phoneBoard = Size(844, 390);
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => MusicScope(
+    track: Music.storyMap,
+    child: Builder(builder: _body),
+  );
+
+  Widget _body(BuildContext context) {
     final s = context.services;
     return ListenableBuilder(
       listenable: Listenable.merge([s.progress, s.settings]),
@@ -46,53 +67,35 @@ class MapScreen extends StatelessWidget {
           backgroundColor: const Color(0xFFF8EAD3),
           body: LayoutBuilder(
             builder: (context, box) {
-              // Tablets: the design board's stops under the same "cover" mapping
-              // as the background, so lanterns sit on the painted path. Phones
-              // (short side < 560): that board would crop chapter 1 off-screen and
-              // crowd targets, so lanterns climb a two-row trail instead.
+              // Tablets: map.png ("Story map" board, 1194×834) under a cover
+              // mapping. Phones (short side < 560): map_phone.png, drawn for a
+              // 2×4 snake on an 844×390 stage ("Story map · iPhone" board),
+              // scaled to the screen height; narrow phones (SE) scroll sideways.
+              // Stops: design/png/map_phone_stops.json.
               final short = box.maxHeight < 560;
-              final scale = math.max(
-                box.maxWidth / _board.width,
-                box.maxHeight / _board.height,
-              );
-              final origin = Offset(
-                (box.maxWidth - _board.width * scale) / 2,
-                (box.maxHeight - _board.height * scale) / 2,
-              );
-              final node = short
-                  ? kMinTouchTarget
-                  : math.max(kMinTouchTarget, 104 * scale);
-              // Phone trail: a 2×4 snake. The top row is shifted half a step
-              // right, and the whole trail starts far enough in that the top row
-              // clears the home button by 64px; narrow phones (SE) scroll sideways.
-              const pitch =
-                  kMinTouchTarget +
-                  kMinTargetGap; // centre-to-centre, 64px visible gap
-              const trailW = 3 * pitch + pitch / 2 + kMinTouchTarget;
-              const homeClear =
-                  4 +
-                  kHitSlop / 2 +
-                  kMinTouchTarget +
-                  kMinTargetGap; // left edge of the top row
-              final trailLeft = math.max(
-                homeClear - pitch / 2,
-                (box.maxWidth - trailW) / 2,
-              );
+              final board = short ? _phoneBoard : _board;
+              final stops = short ? _phoneStops : _stops;
+              final scale = short
+                  ? math.max(
+                      1.0,
+                      box.maxHeight / board.height,
+                    ) // never below 1:1: gaps would shrink
+                  : math.max(
+                      box.maxWidth / board.width,
+                      box.maxHeight / board.height,
+                    );
               final contentW = short
-                  ? math.max(box.maxWidth, trailLeft + trailW + 16)
+                  ? math.max(box.maxWidth, board.width * scale)
                   : box.maxWidth;
-              Offset at(int i) {
-                if (!short) return origin + _stops[i] * scale;
-                final row = i ~/ 4, col = row == 0 ? i % 4 : 3 - i % 4;
-                return Offset(
-                  trailLeft +
-                      kMinTouchTarget / 2 +
-                      col * pitch +
-                      (row == 0 ? 0 : pitch / 2),
-                  box.maxHeight * (row == 0 ? 0.78 : 0.36),
-                );
-              }
-
+              final origin = Offset(
+                (contentW - board.width * scale) / 2,
+                (box.maxHeight - board.height * scale) / 2,
+              );
+              final node = math.max(
+                kMinTouchTarget,
+                (short ? 88 : 104) * scale,
+              );
+              Offset at(int i) => origin + stops[i] * scale;
               final mistAll = !chapters.every(reachable);
 
               final world = SizedBox(
@@ -102,32 +105,26 @@ class MapScreen extends StatelessWidget {
                   children: [
                     Positioned.fill(
                       child: Image.asset(
-                        'assets/images/ui/map.png',
+                        short
+                            ? 'assets/images/ui/map_phone.png'
+                            : 'assets/images/ui/map.png',
                         fit: BoxFit.cover,
                       ),
                     ),
-                    if (short)
-                      Positioned.fill(
-                        child: CustomPaint(
-                          painter: _TrailPainter([
-                            for (var i = 0; i < chapters.length; i++) at(i),
-                          ]),
-                        ),
-                      ),
                     if (mistAll) ..._mist(chapters, reachable, at, scale),
                     for (final (i, c) in chapters.indexed)
                       Positioned(
                         left:
                             at(i).dx -
-                            (i == 7 && !short ? node * 1.2 : node) / 2 -
+                            (i == 7 ? node * 1.2 : node) / 2 -
                             kHitSlop / 2,
                         top:
                             at(i).dy -
-                            (i == 7 && !short ? node * 1.2 : node) / 2 -
+                            (i == 7 ? node * 1.2 : node) / 2 -
                             kHitSlop / 2,
                         child: _ChapterLantern(
                           chapter: c,
-                          size: i == 7 && !short ? node * 1.2 : node,
+                          size: i == 7 ? node * 1.2 : node,
                           lit: lights.contains(c.id),
                           reachable: reachable(c),
                           isNext: c == next,
@@ -135,10 +132,19 @@ class MapScreen extends StatelessWidget {
                       ),
                     if (next != null)
                       Positioned(
-                        left: at(chapters.indexOf(next)).dx + node * 0.45,
-                        top: at(chapters.indexOf(next)).dy - node * 1.05,
+                        // Phones: décor in the open band between the rows (design board).
+                        left:
+                            at(chapters.indexOf(next)).dx +
+                            (short ? -30 * scale : node * 0.45),
+                        top: short
+                            ? origin.dy + 188 * scale
+                            : at(chapters.indexOf(next)).dy - node * 1.05,
                         child: IgnorePointer(
-                          child: Yun(size: math.max(80, 110 * scale)),
+                          child: Yun(
+                            size: short
+                                ? 60 * scale
+                                : math.max(80, 110 * scale),
+                          ),
                         ),
                       ),
                   ],
@@ -268,36 +274,4 @@ class _ChapterLantern extends StatelessWidget {
       ),
     );
   }
-}
-
-/// The phone trail: a soft dotted path linking the lanterns in order.
-class _TrailPainter extends CustomPainter {
-  _TrailPainter(this.points);
-  final List<Offset> points;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final path = Path()..moveTo(points.first.dx, points.first.dy);
-    for (var i = 1; i < points.length; i++) {
-      final a = points[i - 1], b = points[i];
-      path.quadraticBezierTo(
-        (a.dx + b.dx) / 2,
-        math.min(a.dy, b.dy) - 18,
-        b.dx,
-        b.dy,
-      );
-    }
-    canvas.drawPath(
-      path,
-      Paint()
-        ..color = const Color(0xCCF3E1BD)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 18
-        ..strokeCap = StrokeCap.round,
-    );
-  }
-
-  @override
-  bool shouldRepaint(_TrailPainter o) =>
-      o.points.first != points.first || o.points.last != points.last;
 }

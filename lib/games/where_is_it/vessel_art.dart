@@ -22,18 +22,18 @@ class Vessel {
   final double width, height;
 
   static Vessel of(String id) => switch (id) {
-        'basket' => const Vessel._(_Style.basket, 0.42, 0.28),
-        'cup' => const Vessel._(_Style.cup, 0.32, 0.32),
-        'bowl' => const Vessel._(_Style.bowl, 0.50, 0.24),
-        _ => const Vessel._(_Style.box, 0.40, 0.30),
-      };
+    'basket' => const Vessel._(_Style.basket, 0.42, 0.28),
+    'cup' => const Vessel._(_Style.cup, 0.32, 0.32),
+    'bowl' => const Vessel._(_Style.bowl, 0.50, 0.24),
+    _ => const Vessel._(_Style.box, 0.40, 0.30),
+  };
 
   /// Depth of the opening seen from slightly above, in px for a vessel [w] wide.
   double _rim(double w, double h) => switch (_style) {
-        _Style.box => h * 0.26,
-        _Style.bowl => w * 0.28,
-        _ => w * 0.24,
-      };
+    _Style.box => h * 0.26,
+    _Style.bowl => w * 0.28,
+    _ => w * 0.24,
+  };
 
   /// Y (px from the vessel's top) of the middle of the opening: where an
   /// actor that is *inside* is sunk to.
@@ -45,9 +45,9 @@ class Vessel {
 
   /// Y of the surface an actor sits on when the vessel is closed/upturned.
   double topSurfaceY(double w, double h) => switch (_style) {
-        _Style.box || _Style.basket => _rim(w, h) / 2,
-        _ => h * 0.04,
-      };
+    _Style.box || _Style.basket => _rim(w, h) / 2,
+    _ => h * 0.04,
+  };
 
   CustomPainter painter(VesselLayer layer, {required bool closed}) =>
       _VesselPainter(_style, layer, closed, _rim);
@@ -113,7 +113,11 @@ class _VesselPainter extends CustomPainter {
       if (closed) {
         // Flaps folded shut: a flat lid to sit on.
         canvas.drawPath(top, _fill(_cardboardLight));
-        canvas.drawLine(Offset(w * 0.5, 0), Offset(w * 0.5, d), _stroke(_cardboardDark, w * 0.012));
+        canvas.drawLine(
+          Offset(w * 0.5, 0),
+          Offset(w * 0.5, d),
+          _stroke(_cardboardDark, w * 0.012),
+        );
         canvas.drawPath(top, _stroke(_outline, w * 0.012));
         return;
       }
@@ -143,8 +147,14 @@ class _VesselPainter extends CustomPainter {
       canvas.drawPath(top, _fill(_cardboardInside));
       return;
     }
-    final face = RRect.fromLTRBAndCorners(0, d, w, h,
-        bottomLeft: Radius.circular(w * 0.04), bottomRight: Radius.circular(w * 0.04));
+    final face = RRect.fromLTRBAndCorners(
+      0,
+      d,
+      w,
+      h,
+      bottomLeft: Radius.circular(w * 0.04),
+      bottomRight: Radius.circular(w * 0.04),
+    );
     canvas.drawRRect(
       face,
       Paint()
@@ -154,8 +164,15 @@ class _VesselPainter extends CustomPainter {
           colors: [_cardboard, _cardboardDark],
         ).createShader(face.outerRect),
     );
-    canvas.drawRect(Rect.fromLTRB(w * 0.43, d, w * 0.57, d + (h - d) * 0.34), _fill(_tape.withValues(alpha: 0.8)));
-    canvas.drawLine(Offset(0, d), Offset(w, d), _stroke(_cardboardLight, w * 0.025));
+    canvas.drawRect(
+      Rect.fromLTRB(w * 0.43, d, w * 0.57, d + (h - d) * 0.34),
+      _fill(_tape.withValues(alpha: 0.8)),
+    );
+    canvas.drawLine(
+      Offset(0, d),
+      Offset(w, d),
+      _stroke(_cardboardLight, w * 0.025),
+    );
     canvas.drawRRect(face, _stroke(_outline, w * 0.012));
   }
 
@@ -180,8 +197,13 @@ class _VesselPainter extends CustomPainter {
         return;
       }
       // Handle arcs up behind whatever sits in the basket.
-      canvas.drawArc(Rect.fromLTRB(w * 0.1, -h * 0.75, w * 0.9, e * 0.9), math.pi, math.pi, false,
-          _stroke(_wickerDark, w * 0.06));
+      canvas.drawArc(
+        Rect.fromLTRB(w * 0.1, -h * 0.75, w * 0.9, e * 0.9),
+        math.pi,
+        math.pi,
+        false,
+        _stroke(_wickerDark, w * 0.06),
+      );
       canvas.drawOval(rim, _fill(_wickerInside));
       canvas.drawArc(rim, math.pi, math.pi, false, _stroke(_wicker, w * 0.04));
       return;
@@ -229,10 +251,19 @@ class _VesselPainter extends CustomPainter {
   Color get _dish => style == _Style.cup ? _porcelain : _bowlBlue;
   Color get _dishDark => style == _Style.cup ? _porcelainShade : _bowlBlueDark;
 
-  void _dishDecor(Canvas canvas, double w, double h, double top, double bottom) {
+  void _dishDecor(
+    Canvas canvas,
+    double w,
+    double h,
+    double top,
+    double bottom,
+  ) {
     if (style == _Style.cup) {
       final y = top + (bottom - top) * 0.45;
-      canvas.drawRect(Rect.fromLTRB(0, y, w, y + (bottom - top) * 0.16), _fill(_cupBand));
+      canvas.drawRect(
+        Rect.fromLTRB(0, y, w, y + (bottom - top) * 0.16),
+        _fill(_cupBand),
+      );
     } else {
       final dots = _fill(_bowlInside.withValues(alpha: 0.85));
       final y = top + (bottom - top) * 0.35;
@@ -245,20 +276,48 @@ class _VesselPainter extends CustomPainter {
   void _cupHandle(Canvas canvas, double w, double h, {required bool flipped}) {
     if (style != _Style.cup) return;
     final cy = flipped ? h * 0.42 : h * 0.58;
-    final ring = Rect.fromCenter(center: Offset(w * 0.95, cy), width: w * 0.42, height: h * 0.44);
-    canvas.drawArc(ring, -math.pi / 2, math.pi, false, _stroke(_porcelainShade, w * 0.09));
-    canvas.drawArc(ring, -math.pi / 2, math.pi, false, _stroke(_porcelain, w * 0.05));
+    final ring = Rect.fromCenter(
+      center: Offset(w * 0.95, cy),
+      width: w * 0.42,
+      height: h * 0.44,
+    );
+    canvas.drawArc(
+      ring,
+      -math.pi / 2,
+      math.pi,
+      false,
+      _stroke(_porcelainShade, w * 0.09),
+    );
+    canvas.drawArc(
+      ring,
+      -math.pi / 2,
+      math.pi,
+      false,
+      _stroke(_porcelain, w * 0.05),
+    );
   }
 
   void _openDish(Canvas canvas, double w, double h, double e) {
     final rim = Rect.fromLTWH(0, 0, w, e);
     if (layer == VesselLayer.back) {
-      canvas.drawOval(rim, _fill(style == _Style.cup ? const Color(0xFFB9A283) : _bowlInside));
+      canvas.drawOval(
+        rim,
+        _fill(style == _Style.cup ? const Color(0xFFB9A283) : _bowlInside),
+      );
       canvas.drawOval(
         Rect.fromLTWH(w * 0.12, e * 0.3, w * 0.76, e * 0.7),
-        _fill((style == _Style.cup ? const Color(0xFF9C8568) : _porcelainShade).withValues(alpha: 0.7)),
+        _fill(
+          (style == _Style.cup ? const Color(0xFF9C8568) : _porcelainShade)
+              .withValues(alpha: 0.7),
+        ),
       );
-      canvas.drawArc(rim, math.pi, math.pi, false, _stroke(_dishDark, w * 0.03));
+      canvas.drawArc(
+        rim,
+        math.pi,
+        math.pi,
+        false,
+        _stroke(_dishDark, w * 0.03),
+      );
       return;
     }
     _cupHandle(canvas, w, h, flipped: false);
@@ -276,7 +335,13 @@ class _VesselPainter extends CustomPainter {
     canvas.clipPath(body);
     _dishDecor(canvas, w, h, e / 2, h);
     canvas.restore();
-    canvas.drawArc(rim, 0, math.pi, false, _stroke(Color.lerp(_dish, const Color(0xFFFFF8EC), 0.4)!, w * 0.035));
+    canvas.drawArc(
+      rim,
+      0,
+      math.pi,
+      false,
+      _stroke(Color.lerp(_dish, const Color(0xFFFFF8EC), 0.4)!, w * 0.035),
+    );
     canvas.drawPath(body, _stroke(_outline, w * 0.012));
   }
 
@@ -307,7 +372,8 @@ class _VesselPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_VesselPainter o) => o.style != style || o.layer != layer || o.closed != closed;
+  bool shouldRepaint(_VesselPainter o) =>
+      o.style != style || o.layer != layer || o.closed != closed;
 }
 
 /// A small wooden table: the "up high" / "down low" reference.
@@ -318,8 +384,26 @@ class TablePainter extends CustomPainter {
   void paint(Canvas canvas, Size s) {
     final w = s.width, h = s.height;
     final leg = Paint()..color = const Color(0xFFA36A3C);
-    canvas.drawRRect(RRect.fromLTRBR(w * 0.06, h * 0.1, w * 0.13, h, Radius.circular(w * 0.02)), leg);
-    canvas.drawRRect(RRect.fromLTRBR(w * 0.87, h * 0.1, w * 0.94, h, Radius.circular(w * 0.02)), leg);
+    canvas.drawRRect(
+      RRect.fromLTRBR(
+        w * 0.06,
+        h * 0.1,
+        w * 0.13,
+        h,
+        Radius.circular(w * 0.02),
+      ),
+      leg,
+    );
+    canvas.drawRRect(
+      RRect.fromLTRBR(
+        w * 0.87,
+        h * 0.1,
+        w * 0.94,
+        h,
+        Radius.circular(w * 0.02),
+      ),
+      leg,
+    );
     final top = RRect.fromLTRBR(0, 0, w, h * 0.13, Radius.circular(h * 0.05));
     canvas.drawRRect(top, Paint()..color = const Color(0xFFBF824F));
     canvas.drawRRect(
@@ -363,8 +447,10 @@ class RoomPainter extends CustomPainter {
           colors: [Color(0xFFE2C49A), Color(0xFFD4B083)],
         ).createShader(floor),
     );
-    canvas.drawRect(Rect.fromLTRB(0, y - s.height * 0.012, s.width, y + s.height * 0.008),
-        Paint()..color = const Color(0xFFE9D3B0));
+    canvas.drawRect(
+      Rect.fromLTRB(0, y - s.height * 0.012, s.width, y + s.height * 0.008),
+      Paint()..color = const Color(0xFFE9D3B0),
+    );
     final board = Paint()
       ..color = const Color(0x22704C2A)
       ..strokeWidth = 1.5;

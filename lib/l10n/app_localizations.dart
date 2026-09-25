@@ -218,6 +218,24 @@ abstract class AppLocalizations {
   /// **'中文'**
   String get languageZh;
 
+  /// No description provided for @bookLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Story narration'**
+  String get bookLanguage;
+
+  /// No description provided for @bookLanguageApp.
+  ///
+  /// In en, this message translates to:
+  /// **'Same as the app'**
+  String get bookLanguageApp;
+
+  /// No description provided for @bookLanguageBoth.
+  ///
+  /// In en, this message translates to:
+  /// **'Both languages (app language first)'**
+  String get bookLanguageBoth;
+
   /// No description provided for @sectionSound.
   ///
   /// In en, this message translates to:
@@ -229,6 +247,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Voice volume'**
   String get voiceVolume;
+
+  /// No description provided for @musicVolume.
+  ///
+  /// In en, this message translates to:
+  /// **'Music volume'**
+  String get musicVolume;
 
   /// No description provided for @effectsVolume.
   ///

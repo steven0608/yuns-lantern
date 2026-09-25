@@ -10,13 +10,42 @@ import '../storage/prefs.dart';
 
 /// Placeholder SFX set produced by tools/build_sfx.py. None of them is a
 /// "wrong" sound — CLAUDE.md forbids buzzers and fail states.
-enum Sfx { tap, pickup, snap, softReturn, sparkle, success, light, splash, bubble, whoosh }
+enum Sfx {
+  tap,
+  pickup,
+  snap,
+  softReturn,
+  sparkle,
+  success,
+  light,
+  splash,
+  bubble,
+  whoosh,
+  pencil,
+  paint,
+  drum,
+  bell,
+  cardFlip,
+  pour,
+}
 
 extension on Sfx {
   String get file => switch (this) {
-        Sfx.softReturn => 'soft_return',
-        _ => name,
-      };
+    Sfx.softReturn => 'soft_return',
+    Sfx.cardFlip => 'card_flip',
+    _ => name,
+  };
+}
+
+/// Music loops and stings from the design session (design/audio, −18 LUFS).
+abstract final class Music {
+  static const home = 'home',
+      storyMap = 'story_map',
+      lands = 'lands',
+      reader = 'reader',
+      bedtime = 'bedtime';
+  static const celebrate = 'celebrate',
+      lightFound = 'light_found'; // one-shot stings
 }
 
 /// VO + SFX. Child-facing instruction is carried by audio, not text (§9), so
@@ -48,6 +77,10 @@ class AudioService {
 
   Set<String> _assets = const {};
   AudioPlayer? _vo;
+  AudioPlayer? _music;
+  final List<(int, String)> _musicStack = [];
+  String? _musicPlaying;
+  int _musicTokens = 0;
   final List<AudioPlayer> _sfx = [];
   int _sfxNext = 0;
   int _generation = 0;
@@ -58,6 +91,9 @@ class AudioService {
       final manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
       _assets = manifest.listAssets().toSet();
       _vo = AudioPlayer();
+      _music = AudioPlayer()..setReleaseMode(ReleaseMode.loop);
+      speaking.addListener(_duck);
+      settings.addListener(_duck);
       for (var i = 0; i < 4; i++) {
         _sfx.add(AudioPlayer()..setReleaseMode(ReleaseMode.stop));
       }
@@ -70,16 +106,22 @@ class AudioService {
       'assets/audio/vo/${lang ?? locale.code}/${key.replaceAll('.', '/')}.mp3';
 
   /// Speak one line. Completes when the line ends or is interrupted.
-  Future<void> playVO(String key) => playSequence([key]);
+  Future<void> playVO(String key, {String? lang}) =>
+      playSequence([key], lang: lang);
 
-  /// Speak lines back-to-back. Cancels anything already speaking.
-  Future<void> playSequence(List<String> keys, {Duration gap = const Duration(milliseconds: 180)}) async {
+  /// Speak lines back-to-back. Cancels anything already speaking. [lang]
+  /// overrides the app language (the book reader's "Both" mode).
+  Future<void> playSequence(
+    List<String> keys, {
+    String? lang,
+    Duration gap = const Duration(milliseconds: 180),
+  }) async {
     final gen = ++_generation;
     await _stopVoPlayer();
     speaking.value = true;
     for (final key in keys) {
       if (gen != _generation) return;
-      await _speak(key, gen);
+      await _speak(key, gen, lang ?? locale.code);
       if (gen != _generation) return;
       if (useDevice) await Future<void>.delayed(gap);
     }
@@ -96,8 +138,7 @@ class AudioService {
     caption.value = null;
   }
 
-  Future<void> _speak(String key, int gen) async {
-    final lang = locale.code;
+  Future<void> _speak(String key, int gen, String lang) async {
     final line = content.lineFor(key)?.of(lang);
     if (kDebugMode) caption.value = line ?? key;
     final path = voPath(key, lang);
@@ -106,9 +147,13 @@ class AudioService {
       try {
         await player.setVolume(settings.voVolume);
         await player.play(AssetSource(path.substring('assets/'.length)));
-        await player.onPlayerComplete.first.timeout(const Duration(seconds: 12));
+        await player.onPlayerComplete.first.timeout(
+          const Duration(seconds: 12),
+        );
         return;
-      } catch (_) {/* fall through to timed silence */}
+      } catch (_) {
+        /* fall through to timed silence */
+      }
     }
     if (!useDevice) return;
     // No recording yet: hold for roughly the time the line would take to say.
@@ -134,6 +179,67 @@ class AudioService {
         await p.stop();
         await p.setVolume(vol);
         await p.play(AssetSource('audio/sfx/${s.file}.wav'));
+      } catch (_) {}
+    }();
+  }
+
+  // ------------------------------------------------------------------ music
+
+  /// The screen now showing wants [track] looping. Returns a token for
+  /// [popMusic]; the previous screen's track resumes when it's popped.
+  int pushMusic(String track) {
+    final token = ++_musicTokens;
+    _musicStack.add((token, track));
+    _applyMusic();
+    return token;
+  }
+
+  void popMusic(int token) {
+    _musicStack.removeWhere((e) => e.$1 == token);
+    _applyMusic();
+  }
+
+  /// Music ducks ~12 dB (×0.25) under any voice line, so narration and
+  /// prompts always carry (design session audio notes).
+  double get _musicVolume =>
+      settings.musicVolume * (speaking.value ? 0.25 : 1.0);
+
+  void _duck() {
+    try {
+      _music?.setVolume(_musicVolume);
+    } catch (_) {}
+  }
+
+  void _applyMusic() {
+    final player = _music;
+    if (!useDevice || player == null) return;
+    final want = _musicStack.isEmpty ? null : _musicStack.last.$2;
+    if (want == _musicPlaying) return;
+    _musicPlaying = want;
+    () async {
+      try {
+        await player.stop();
+        if (want == null || settings.musicVolume <= 0) return;
+        await player.setVolume(_musicVolume);
+        await player.play(AssetSource('audio/music/$want.mp3'));
+      } catch (_) {
+        /* e.g. web before the first tap: stays silent */
+      }
+    }();
+  }
+
+  /// One-shot musical sting (celebration, a light found).
+  void sting(String name) {
+    if (!useDevice || _sfx.isEmpty) return;
+    final vol = settings.sfxVolume;
+    if (vol <= 0) return;
+    final p = _sfx[_sfxNext];
+    _sfxNext = (_sfxNext + 1) % _sfx.length;
+    () async {
+      try {
+        await p.stop();
+        await p.setVolume(vol);
+        await p.play(AssetSource('audio/music/$name.mp3'));
       } catch (_) {}
     }();
   }

@@ -10,10 +10,12 @@ import 'puzzle_pieces/puzzle_pieces.dart';
 import 'shape_sorter/shape_sorter.dart';
 import 'what_is_it/what_is_it.dart';
 import 'where_is_it/where_is_it.dart';
+import '../core/content/models.dart';
 import 'shared/activity_scaffold.dart';
 
-/// Every mini-game engine, keyed by the activity id in content/activities.json.
-/// An activity without an engine here simply doesn't appear.
+/// Every mini-game engine, keyed by engine id (a v2 activity id). Look games
+/// up through [gameFor], never directly: an activity plays on the engine its
+/// `engine` field names. An activity without an engine here simply doesn't appear.
 final Map<String, GameDef> gameRegistry = {
   for (final g in [
     countFeedGame,
@@ -31,3 +33,8 @@ final Map<String, GameDef> gameRegistry = {
   ])
     g.id: g,
 };
+
+/// The engine for an activity in content/activities.json, bound to that
+/// activity's rounds; null when no engine can play it yet.
+GameDef? gameFor(Activity activity) =>
+    gameRegistry[activity.engine]?.forActivity(activity.id);

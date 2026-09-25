@@ -36,7 +36,8 @@ class FloatOrSink extends StatefulWidget {
   State<FloatOrSink> createState() => _FloatOrSinkState();
 }
 
-class _FloatOrSinkState extends State<FloatOrSink> with SingleTickerProviderStateMixin {
+class _FloatOrSinkState extends State<FloatOrSink>
+    with SingleTickerProviderStateMixin {
   RoundContext get rc => widget.rc;
 
   late final Set<String> _floaters;
@@ -71,16 +72,26 @@ class _FloatOrSinkState extends State<FloatOrSink> with SingleTickerProviderStat
     const half = kMaxInteractiveItems ~/ 2;
     final f = rc.shuffled(floats), s = rc.shuffled(sinks);
     final picked = [...f.take(half), ...s.take(half)];
-    picked.addAll([...f.skip(half), ...s.skip(half)].take(kMaxInteractiveItems - picked.length));
+    picked.addAll(
+      [
+        ...f.skip(half),
+        ...s.skip(half),
+      ].take(kMaxInteractiveItems - picked.length),
+    );
     _floaters = picked.where(floats.contains).toSet();
     _waiting = rc.shuffled(picked);
-    _lanes = math.max(1, math.max(_floaters.length, picked.length - _floaters.length));
+    _lanes = math.max(
+      1,
+      math.max(_floaters.length, picked.length - _floaters.length),
+    );
     for (final id in picked) {
       _itemKeys[id] = GlobalKey();
     }
     _ticker = createTicker(_tick)..start();
     // Idle demo: any remaining item → the water.
-    rc.hints.guide = () => _waiting.isEmpty ? null : HintMove(_itemKeys[_waiting.first]!, _tankKey);
+    rc.hints.guide = () => _waiting.isEmpty
+        ? null
+        : HintMove(_itemKeys[_waiting.first]!, _tankKey);
   }
 
   @override
@@ -91,12 +102,12 @@ class _FloatOrSinkState extends State<FloatOrSink> with SingleTickerProviderStat
   }
 
   WaterFrame _frame(Size size) => WaterFrame(
-        geo: TankGeometry(size, _lanes),
-        time: _now,
-        drops: _drops,
-        splashes: _splashes,
-        bursts: _bursts,
-      );
+    geo: TankGeometry(size, _lanes),
+    time: _now,
+    drops: _drops,
+    splashes: _splashes,
+    bursts: _bursts,
+  );
 
   void _tick(Duration elapsed) {
     _clock.value = elapsed.inMicroseconds / Duration.microsecondsPerSecond;
@@ -118,12 +129,26 @@ class _FloatOrSinkState extends State<FloatOrSink> with SingleTickerProviderStat
   void _accept(String id, int lane) {
     if (!_waiting.contains(id)) return;
     final floats = _floaters.contains(id);
-    final taken = {for (final d in _drops) if (d.floats == floats) d.slot};
-    final free = [for (var i = 0; i < _lanes; i++) if (!taken.contains(i)) i]
-      ..sort((a, b) => (a - lane).abs().compareTo((b - lane).abs()));
+    final taken = {
+      for (final d in _drops)
+        if (d.floats == floats) d.slot,
+    };
+    final free = [
+      for (var i = 0; i < _lanes; i++)
+        if (!taken.contains(i)) i,
+    ]..sort((a, b) => (a - lane).abs().compareTo((b - lane).abs()));
     setState(() {
       _waiting.remove(id);
-      _drops.add(Drop(id: id, floats: floats, lane: lane, slot: free.first, t0: _now, seed: _drops.length * 7 + lane));
+      _drops.add(
+        Drop(
+          id: id,
+          floats: floats,
+          lane: lane,
+          slot: free.first,
+          t0: _now,
+          seed: _drops.length * 7 + lane,
+        ),
+      );
       _splashes
         ..removeWhere((s) => _now - s.t0 > 3)
         ..add(Splash(x: (lane + 0.5) / _lanes, t0: _now));
@@ -131,7 +156,10 @@ class _FloatOrSinkState extends State<FloatOrSink> with SingleTickerProviderStat
     rc.audio.sfx(Sfx.splash);
     rc.hints.succeeded();
     // "Apple… it floats!" — the name, then what the child just saw happen.
-    final line = rc.audio.playSequence(['item.$id', floats ? 'floatsink.floats' : 'floatsink.sinks']);
+    final line = rc.audio.playSequence([
+      'item.$id',
+      floats ? 'floatsink.floats' : 'floatsink.sinks',
+    ]);
     if (_waiting.isEmpty) {
       _settleAt = _now + (floats ? Drop.floatIn : Drop.sinkIn) + 0.5;
       line.then((_) => _lastLineDone = true);
@@ -158,9 +186,20 @@ class _FloatOrSinkState extends State<FloatOrSink> with SingleTickerProviderStat
     _bursts.removeWhere((b) => _now - b.t0 > 3);
     if (hit != null) {
       hit.pokedAt = _now;
-      if (hit.floats) _splashes.add(Splash(x: f.pose(hit).$1.dx / _tankSize.width, t0: _now, strength: 0.5));
+      if (hit.floats) {
+        _splashes.add(
+          Splash(
+            x: f.pose(hit).$1.dx / _tankSize.width,
+            t0: _now,
+            strength: 0.5,
+          ),
+        );
+      }
       rc.audio.sfx(hit.floats ? Sfx.splash : Sfx.bubble);
-      rc.say(['item.${hit.id}', hit.floats ? 'floatsink.floats' : 'floatsink.sinks']);
+      rc.say([
+        'item.${hit.id}',
+        hit.floats ? 'floatsink.floats' : 'floatsink.sinks',
+      ]);
     } else if (p.dy < f.surfaceAt(p.dx) + 16) {
       _splashes.add(Splash(x: at.dx, t0: _now, strength: 0.5));
       rc.audio.sfx(Sfx.splash);
@@ -172,26 +211,49 @@ class _FloatOrSinkState extends State<FloatOrSink> with SingleTickerProviderStat
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, box) {
-      final w = box.maxWidth, h = box.maxHeight;
-      // Phones in landscape are short: the dock becomes a column beside the
-      // tank and offers fewer items at a time (it refills), so every item
-      // keeps its 88px size and 64px gap instead of shrinking to fit.
-      final side = h < 520;
-      final card = side ? kMinTouchTarget : (h * 0.13).clamp(kMinTouchTarget, 120.0);
-      const gap = kMinTargetGap - kHitSlop;
-      final room = (side ? h : w) - 24;
-      final cap = ((room + gap) / (card + kHitSlop + gap)).floor().clamp(1, kMaxInteractiveItems);
-      _card = card;
-      final dock = _dock(card: card, cap: cap, vertical: side);
-      final tank = _tank();
-      return side
-          ? Row(children: [dock, const SizedBox(width: 16), Expanded(child: tank)])
-          : Column(children: [dock, const SizedBox(height: 16), Expanded(child: tank)]);
-    });
+    return LayoutBuilder(
+      builder: (context, box) {
+        final w = box.maxWidth, h = box.maxHeight;
+        // Phones in landscape are short: the dock becomes a column beside the
+        // tank and offers fewer items at a time (it refills), so every item
+        // keeps its 88px size and 64px gap instead of shrinking to fit.
+        final side = h < 520;
+        final card = side
+            ? kMinTouchTarget
+            : (h * 0.13).clamp(kMinTouchTarget, 120.0);
+        const gap = kMinTargetGap - kHitSlop;
+        final room = (side ? h : w) - 24;
+        final cap = ((room + gap) / (card + kHitSlop + gap)).floor().clamp(
+          1,
+          kMaxInteractiveItems,
+        );
+        _card = card;
+        final dock = _dock(card: card, cap: cap, vertical: side);
+        final tank = _tank();
+        return side
+            ? Row(
+                children: [
+                  dock,
+                  const SizedBox(width: 16),
+                  Expanded(child: tank),
+                ],
+              )
+            : Column(
+                children: [
+                  dock,
+                  const SizedBox(height: 16),
+                  Expanded(child: tank),
+                ],
+              );
+      },
+    );
   }
 
-  Widget _dock({required double card, required int cap, required bool vertical}) {
+  Widget _dock({
+    required double card,
+    required int cap,
+    required bool vertical,
+  }) {
     const gap = kMinTargetGap - kHitSlop;
     final cell = card + kHitSlop;
     // Fixed size, so the tank never shifts as the dock empties.
@@ -201,86 +263,102 @@ class _FloatOrSinkState extends State<FloatOrSink> with SingleTickerProviderStat
     return SizedBox(
       width: vertical ? across : along,
       height: vertical ? along : across,
-      child: Stack(children: [
-        // Decoration only: taps on the empty dock fall through to the
-        // scaffold's sparkle, so every touch still answers.
-        Positioned.fill(
-          child: IgnorePointer(
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                color: Palette.card.withValues(alpha: 0.55),
-                borderRadius: BorderRadius.circular(40),
-                border: Border.all(color: Palette.paperDeep, width: 3),
+      child: Stack(
+        children: [
+          // Decoration only: taps on the empty dock fall through to the
+          // scaffold's sparkle, so every touch still answers.
+          Positioned.fill(
+            child: IgnorePointer(
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: Palette.card.withValues(alpha: 0.55),
+                  borderRadius: BorderRadius.circular(40),
+                  border: Border.all(color: Palette.paperDeep, width: 3),
+                ),
               ),
             ),
           ),
-        ),
-        Center(
-          child: Flex(
-            direction: vertical ? Axis.vertical : Axis.horizontal,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              for (final (i, id) in shown.indexed) ...[
-                if (i > 0) const SizedBox(width: gap, height: gap),
-                KeyedSubtree(
-                  key: _itemKeys[id],
-                  child: _PopIn(
-                    child: DraggableItem(
-                      key: ValueKey(id),
-                      data: id,
-                      size: Size.square(card),
-                      onTouched: rc.hints.touched,
-                      child: ItemCard(id: id, size: card),
+          Center(
+            child: Flex(
+              direction: vertical ? Axis.vertical : Axis.horizontal,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                for (final (i, id) in shown.indexed) ...[
+                  if (i > 0) const SizedBox(width: gap, height: gap),
+                  KeyedSubtree(
+                    key: _itemKeys[id],
+                    child: _PopIn(
+                      child: DraggableItem(
+                        key: ValueKey(id),
+                        data: id,
+                        size: Size.square(card),
+                        onTouched: rc.hints.touched,
+                        child: ItemCard(id: id, size: card),
+                      ),
                     ),
                   ),
-                ),
+                ],
               ],
-            ],
+            ),
           ),
-        ),
-      ]),
+        ],
+      ),
     );
   }
 
   Widget _tank() {
     return ValueListenableBuilder<int>(
       valueListenable: rc.hints.level,
-      builder: (_, level, child) => GentlePulse(active: level >= 1, radius: kTankRadius, child: child!),
+      builder: (_, level, child) =>
+          GentlePulse(active: level >= 1, radius: kTankRadius, child: child!),
       child: DecoratedBox(
         key: _tankKey,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(kTankRadius),
-          boxShadow: const [BoxShadow(color: Palette.shadow, blurRadius: 16, offset: Offset(0, 8))],
+          boxShadow: const [
+            BoxShadow(
+              color: Palette.shadow,
+              blurRadius: 16,
+              offset: Offset(0, 8),
+            ),
+          ],
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(kTankRadius),
-          child: LayoutBuilder(builder: (context, box) {
-            _tankSize = box.biggest;
-            return GestureDetector(
-              behavior: HitTestBehavior.opaque,
-              onTapDown: (d) => _tapWater(d.localPosition),
-              child: Stack(fit: StackFit.expand, children: [
-                ValueListenableBuilder<double>(
-                  valueListenable: _clock,
-                  builder: (_, _, _) => _water(box.biggest),
-                ),
-                // Invisible lanes: wherever the child lets go over the tank,
-                // the item goes in right there. Every lane accepts anything.
-                Row(children: [
-                  for (var i = 0; i < _lanes; i++)
-                    Expanded(
-                      child: DropTarget(
-                        id: 'lane$i',
-                        radius: 0,
-                        willAccept: (_) => true,
-                        onAccept: (id) => _accept(id, i),
-                        child: const _LaneGlow(),
-                      ),
+          child: LayoutBuilder(
+            builder: (context, box) {
+              _tankSize = box.biggest;
+              return GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                onTapDown: (d) => _tapWater(d.localPosition),
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    ValueListenableBuilder<double>(
+                      valueListenable: _clock,
+                      builder: (_, _, _) => _water(box.biggest),
                     ),
-                ]),
-              ]),
-            );
-          }),
+                    // Invisible lanes: wherever the child lets go over the tank,
+                    // the item goes in right there. Every lane accepts anything.
+                    Row(
+                      children: [
+                        for (var i = 0; i < _lanes; i++)
+                          Expanded(
+                            child: DropTarget(
+                              id: 'lane$i',
+                              radius: 0,
+                              willAccept: (_) => true,
+                              onAccept: (id) => _accept(id, i),
+                              child: const _LaneGlow(),
+                            ),
+                          ),
+                      ],
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
@@ -288,11 +366,14 @@ class _FloatOrSinkState extends State<FloatOrSink> with SingleTickerProviderStat
 
   Widget _water(Size size) {
     final f = _frame(size);
-    return Stack(fit: StackFit.expand, children: [
-      CustomPaint(painter: TankBackPainter(f)),
-      for (final d in _drops) _inWater(d, f),
-      CustomPaint(painter: TankFrontPainter(f)),
-    ]);
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        CustomPaint(painter: TankBackPainter(f)),
+        for (final d in _drops) _inWater(d, f),
+        CustomPaint(painter: TankFrontPainter(f)),
+      ],
+    );
   }
 
   /// A dropped item. It arrives on its dock card (that's what the child let
@@ -310,10 +391,17 @@ class _FloatOrSinkState extends State<FloatOrSink> with SingleTickerProviderStat
       height: box,
       child: Transform.rotate(
         angle: tilt,
-        child: Stack(alignment: Alignment.center, children: [
-          if (cardFade > 0) Opacity(opacity: cardFade, child: ItemCard(size: box, elevated: false)),
-          ItemArt(d.id, size: box * lerpDouble(0.58, 0.86, grow)!),
-        ]),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            if (cardFade > 0)
+              Opacity(
+                opacity: cardFade,
+                child: ItemCard(size: box, elevated: false),
+              ),
+            ItemArt(d.id, size: box * lerpDouble(0.58, 0.86, grow)!),
+          ],
+        ),
       ),
     );
   }

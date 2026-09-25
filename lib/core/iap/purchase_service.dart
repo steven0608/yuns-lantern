@@ -35,7 +35,10 @@ class PurchaseService extends ChangeNotifier {
         state = PurchaseState.unavailable;
         return;
       }
-      _sub = _iap!.purchaseStream.listen(_onPurchases, onError: (_) => _setState(PurchaseState.failed));
+      _sub = _iap!.purchaseStream.listen(
+        _onPurchases,
+        onError: (_) => _setState(PurchaseState.failed),
+      );
       final resp = await _iap!.queryProductDetails({productId});
       product = resp.productDetails.isEmpty ? null : resp.productDetails.first;
       notifyListeners();
@@ -48,7 +51,9 @@ class PurchaseService extends ChangeNotifier {
     final p = product;
     if (_iap == null || p == null) return _setState(PurchaseState.unavailable);
     _setState(PurchaseState.pending);
-    await _iap!.buyNonConsumable(purchaseParam: PurchaseParam(productDetails: p));
+    await _iap!.buyNonConsumable(
+      purchaseParam: PurchaseParam(productDetails: p),
+    );
   }
 
   /// Required by App Review.

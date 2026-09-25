@@ -32,15 +32,20 @@ class YunsLanternApp extends StatelessWidget {
           ],
           theme: ThemeData(
             useMaterial3: true,
-            colorScheme: ColorScheme.fromSeed(seedColor: Palette.rust, surface: Palette.paper),
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Palette.rust,
+              surface: Palette.paper,
+            ),
             scaffoldBackgroundColor: Palette.paper,
             // Bundled fonts only (CLAUDE.md): Fredoka for Latin, Noto Sans SC subset for 中文.
             fontFamily: 'Fredoka',
             fontFamilyFallback: const ['NotoSansSC'],
-            pageTransitionsTheme: const PageTransitionsTheme(builders: {
-              TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
-              TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
-            }),
+            pageTransitionsTheme: const PageTransitionsTheme(
+              builders: {
+                TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+                TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+              },
+            ),
           ),
           builder: (context, child) => WebStage(child: child!),
           home: home ?? const WebStartGate(child: HomeScreen()),
@@ -52,14 +57,17 @@ class YunsLanternApp extends StatelessWidget {
 
 /// Gentle fade-and-scale route used for all child navigation.
 Route<T> softRoute<T>(Widget page) => PageRouteBuilder<T>(
-      transitionDuration: const Duration(milliseconds: 380),
-      reverseTransitionDuration: const Duration(milliseconds: 280),
-      pageBuilder: (_, _, _) => page,
-      transitionsBuilder: (_, a, _, child) {
-        final c = CurvedAnimation(parent: a, curve: kStandardCurve);
-        return FadeTransition(
-          opacity: c,
-          child: ScaleTransition(scale: Tween(begin: 0.96, end: 1.0).animate(c), child: child),
-        );
-      },
+  transitionDuration: const Duration(milliseconds: 380),
+  reverseTransitionDuration: const Duration(milliseconds: 280),
+  pageBuilder: (_, _, _) => page,
+  transitionsBuilder: (_, a, _, child) {
+    final c = CurvedAnimation(parent: a, curve: kStandardCurve);
+    return FadeTransition(
+      opacity: c,
+      child: ScaleTransition(
+        scale: Tween(begin: 0.96, end: 1.0).animate(c),
+        child: child,
+      ),
     );
+  },
+);

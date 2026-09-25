@@ -34,7 +34,8 @@ class TouchTarget extends StatefulWidget {
   State<TouchTarget> createState() => _TouchTargetState();
 }
 
-class _TouchTargetState extends State<TouchTarget> with SingleTickerProviderStateMixin {
+class _TouchTargetState extends State<TouchTarget>
+    with SingleTickerProviderStateMixin {
   late final AnimationController _bump = AnimationController(
     vsync: this,
     duration: const Duration(milliseconds: 220),
@@ -55,8 +56,13 @@ class _TouchTargetState extends State<TouchTarget> with SingleTickerProviderStat
   Widget build(BuildContext context) {
     final s = widget.size;
     Widget visible = ConstrainedBox(
-      constraints: const BoxConstraints(minWidth: kMinTouchTarget, minHeight: kMinTouchTarget),
-      child: s == null ? widget.child : SizedBox.fromSize(size: s, child: widget.child),
+      constraints: const BoxConstraints(
+        minWidth: kMinTouchTarget,
+        minHeight: kMinTouchTarget,
+      ),
+      child: s == null
+          ? widget.child
+          : SizedBox.fromSize(size: s, child: widget.child),
     );
     visible = AnimatedBuilder(
       animation: _bump,
@@ -73,7 +79,9 @@ class _TouchTargetState extends State<TouchTarget> with SingleTickerProviderStat
         builder: (_, on, child) => on
             ? DecoratedBox(
                 position: DecorationPosition.foreground,
-                decoration: BoxDecoration(border: Border.all(color: const Color(0xFFE040FB), width: 2)),
+                decoration: BoxDecoration(
+                  border: Border.all(color: const Color(0xFFE040FB), width: 2),
+                ),
                 child: child,
               )
             : child!,
@@ -89,7 +97,10 @@ class _TouchTargetState extends State<TouchTarget> with SingleTickerProviderStat
         behavior: HitTestBehavior.opaque,
         onTapDown: (_) => _down(),
         onTap: widget.onTap,
-        child: Padding(padding: const EdgeInsets.all(kHitSlop / 2), child: visible),
+        child: Padding(
+          padding: const EdgeInsets.all(kHitSlop / 2),
+          child: visible,
+        ),
       ),
     );
   }
@@ -123,7 +134,13 @@ class RoundButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: color,
           shape: BoxShape.circle,
-          boxShadow: const [BoxShadow(color: Palette.shadow, blurRadius: 10, offset: Offset(0, 5))],
+          boxShadow: const [
+            BoxShadow(
+              color: Palette.shadow,
+              blurRadius: 10,
+              offset: Offset(0, 5),
+            ),
+          ],
           border: Border.all(color: Palette.paper, width: 4),
         ),
         child: Icon(icon, color: iconColor, size: diameter * 0.5),

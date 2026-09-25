@@ -42,7 +42,8 @@ class _Piece {
   String get data => 'piece:$scene:$q';
 }
 
-class _PuzzlePiecesState extends State<PuzzlePieces> with TickerProviderStateMixin {
+class _PuzzlePiecesState extends State<PuzzlePieces>
+    with TickerProviderStateMixin {
   RoundContext get rc => widget.rc;
   String get _scene => rc.round.str('scene');
   SceneArt? _art(String scene) => rc.content.art.scenes[scene];
@@ -58,8 +59,10 @@ class _PuzzlePiecesState extends State<PuzzlePieces> with TickerProviderStateMix
   bool _done = false;
 
   /// Picture comes alive on completion.
-  late final AnimationController _alive =
-      AnimationController(vsync: this, duration: const Duration(milliseconds: 2400));
+  late final AnimationController _alive = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 2400),
+  );
 
   @override
   void initState() {
@@ -72,11 +75,16 @@ class _PuzzlePiecesState extends State<PuzzlePieces> with TickerProviderStateMix
       // scene keeps its distinctive content. Top quadrants are mostly sky,
       // and skies look alike across chapters, so a top hole could be
       // ambiguous against decoys.
-      final order = [...rc.shuffled([2, 3]), ...rc.shuffled([0, 1])];
+      final order = [
+        ...rc.shuffled([2, 3]),
+        ...rc.shuffled([0, 1]),
+      ];
       _holes = order.take(pieces).toSet();
     }
     final right = [for (final q in _holes) _Piece(_scene, q)];
-    final wanted = math.min(rc.round.integer('candidates'), kMaxInteractiveItems) - right.length;
+    final wanted =
+        math.min(rc.round.integer('candidates'), kMaxInteractiveItems) -
+        right.length;
     final decoyScenes = _decoyScenes();
     final decoys = [
       for (var i = 0; i < wanted && decoyScenes.isNotEmpty; i++)
@@ -106,18 +114,22 @@ class _PuzzlePiecesState extends State<PuzzlePieces> with TickerProviderStateMix
     double dist(String id) {
       final o = scenes[id]!;
       if (me == null) return 0;
-      return _colorDistance(me.sky, o.sky) + _colorDistance(me.ground, o.ground);
+      return _colorDistance(me.sky, o.sky) +
+          _colorDistance(me.ground, o.ground);
     }
 
-    final others = scenes.keys.where((k) => k != _scene).toList()..sort((a, b) => dist(b).compareTo(dist(a)));
+    final others = scenes.keys.where((k) => k != _scene).toList()
+      ..sort((a, b) => dist(b).compareTo(dist(a)));
     // Vary rounds among the few most distinct.
     return rc.shuffled(others.take(4));
   }
 
-  static double _colorDistance(Color a, Color b) =>
-      math.sqrt(math.pow(a.r - b.r, 2) + math.pow(a.g - b.g, 2) + math.pow(a.b - b.b, 2));
+  static double _colorDistance(Color a, Color b) => math.sqrt(
+    math.pow(a.r - b.r, 2) + math.pow(a.g - b.g, 2) + math.pow(a.b - b.b, 2),
+  );
 
-  bool _fits(_Piece p) => p.scene == _scene && _holes.contains(p.q) && !_filled.contains(p.q);
+  bool _fits(_Piece p) =>
+      p.scene == _scene && _holes.contains(p.q) && !_filled.contains(p.q);
 
   /// The piece the hand would demonstrate: the one just tried, else the first
   /// right piece still in the tray.
@@ -151,31 +163,43 @@ class _PuzzlePiecesState extends State<PuzzlePieces> with TickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     final clear = cornerClearance(MediaQuery.sizeOf(context));
-    return LayoutBuilder(builder: (context, box) {
-      final l = PuzzleLayout.solve(box.biggest, pieces: _tray.length, clearance: clear);
-      final frame = _frame(l);
-      final tray = _trayPanel(l);
-      if (l.below) {
-        return Center(
-          child: Column(mainAxisSize: MainAxisSize.min, children: [
-            frame,
-            const SizedBox(height: PuzzleLayout.gap),
-            tray,
-          ]),
+    return LayoutBuilder(
+      builder: (context, box) {
+        final l = PuzzleLayout.solve(
+          box.biggest,
+          pieces: _tray.length,
+          clearance: clear,
         );
-      }
-      return Padding(
-        // Keep the tray a full target gap from the corner buttons on phones.
-        padding: EdgeInsets.only(right: clear),
-        child: Center(
-          child: Row(mainAxisSize: MainAxisSize.min, children: [
-            frame,
-            const SizedBox(width: PuzzleLayout.gap),
-            tray,
-          ]),
-        ),
-      );
-    });
+        final frame = _frame(l);
+        final tray = _trayPanel(l);
+        if (l.below) {
+          return Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                frame,
+                const SizedBox(height: PuzzleLayout.gap),
+                tray,
+              ],
+            ),
+          );
+        }
+        return Padding(
+          // Keep the tray a full target gap from the corner buttons on phones.
+          padding: EdgeInsets.only(right: clear),
+          child: Center(
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                frame,
+                const SizedBox(width: PuzzleLayout.gap),
+                tray,
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 
   // ── The frame ─────────────────────────────────────────────────────────
@@ -191,7 +215,9 @@ class _PuzzlePiecesState extends State<PuzzlePieces> with TickerProviderStateMix
         borderRadius: BorderRadius.circular(22),
         boxShadow: [
           BoxShadow(
-            color: _done ? Palette.lantern.withValues(alpha: 0.55) : Palette.shadow,
+            color: _done
+                ? Palette.lantern.withValues(alpha: 0.55)
+                : Palette.shadow,
             blurRadius: _done ? 30 : 14,
             offset: const Offset(0, 6),
           ),
@@ -205,31 +231,45 @@ class _PuzzlePiecesState extends State<PuzzlePieces> with TickerProviderStateMix
           child: SizedBox(
             width: l.frameW,
             height: l.frameH,
-            child: Stack(children: [
-              if (ghost && !_done)
+            child: Stack(
+              children: [
+                if (ghost && !_done)
+                  Positioned.fill(
+                    child: ColorFiltered(
+                      colorFilter: const ColorFilter.mode(
+                        Color(0x33FBF1E1),
+                        BlendMode.srcATop,
+                      ),
+                      child: SceneStill(art: art),
+                    ),
+                  ),
+                for (var q = 0; q < 4; q++)
+                  Positioned(
+                    left: (q % 2) * cw,
+                    top: (q ~/ 2) * ch,
+                    width: cw,
+                    height: ch,
+                    child: _cell(q, l, ghost),
+                  ),
+                if (_done)
+                  Positioned.fill(
+                    child: AnimatedBuilder(
+                      animation: _alive,
+                      builder: (_, _) => SceneStill(
+                        art: art,
+                        pan: Curves.easeInOut.transform(_alive.value) * 0.6,
+                      ),
+                    ),
+                  ),
                 Positioned.fill(
-                  child: ColorFiltered(
-                    colorFilter: const ColorFilter.mode(Color(0x33FBF1E1), BlendMode.srcATop),
-                    child: SceneStill(art: art),
+                  child: AnimatedOpacity(
+                    opacity: _done ? 0 : 1,
+                    duration: const Duration(milliseconds: 400),
+                    child: const CustomPaint(painter: _SeamPainter()),
                   ),
                 ),
-              for (var q = 0; q < 4; q++)
-                Positioned(left: (q % 2) * cw, top: (q ~/ 2) * ch, width: cw, height: ch, child: _cell(q, l, ghost)),
-              if (_done)
-                Positioned.fill(
-                  child: AnimatedBuilder(
-                    animation: _alive,
-                    builder: (_, _) => SceneStill(art: art, pan: Curves.easeInOut.transform(_alive.value) * 0.6),
-                  ),
-                ),
-              Positioned.fill(
-                child: AnimatedOpacity(
-                  opacity: _done ? 0 : 1,
-                  duration: const Duration(milliseconds: 400),
-                  child: const CustomPaint(painter: _SeamPainter()),
-                ),
-              ),
-            ]),
+              ],
+            ),
           ),
         ),
       ),
@@ -238,7 +278,9 @@ class _PuzzlePiecesState extends State<PuzzlePieces> with TickerProviderStateMix
 
   Widget _cell(int q, PuzzleLayout l, bool ghost) {
     final art = _art(_scene);
-    if (!_holes.contains(q)) return Quadrant(art: art, q: q, width: l.pieceW, height: l.pieceH);
+    if (!_holes.contains(q)) {
+      return Quadrant(art: art, q: q, width: l.pieceW, height: l.pieceH);
+    }
     if (_filled.contains(q)) {
       // A placed piece settles with a tiny bounce.
       return TweenAnimationBuilder<double>(
@@ -290,7 +332,10 @@ class _PuzzlePiecesState extends State<PuzzlePieces> with TickerProviderStateMix
                       curve: Curves.easeOutBack,
                       builder: (_, t, child) => Opacity(
                         opacity: t.clamp(0.0, 1.0),
-                        child: Transform.scale(scale: 0.7 + 0.3 * t, child: child),
+                        child: Transform.scale(
+                          scale: 0.7 + 0.3 * t,
+                          child: child,
+                        ),
                       ),
                       child: KeyedSubtree(
                         key: _pieceKeys[p.data],
@@ -298,7 +343,12 @@ class _PuzzlePiecesState extends State<PuzzlePieces> with TickerProviderStateMix
                           data: p.data,
                           size: Size(l.pieceW, l.pieceH),
                           onTouched: rc.hints.touched,
-                          child: _PieceTile(art: _art(p.scene), q: p.q, width: l.pieceW, height: l.pieceH),
+                          child: _PieceTile(
+                            art: _art(p.scene),
+                            q: p.q,
+                            width: l.pieceW,
+                            height: l.pieceH,
+                          ),
                         ),
                       ),
                     ),
@@ -312,7 +362,13 @@ class _PuzzlePiecesState extends State<PuzzlePieces> with TickerProviderStateMix
 /// Quadrant [q] of a scene rendered at twice the cell size and clipped, so
 /// the four cells line up into exactly the whole picture.
 class Quadrant extends StatelessWidget {
-  const Quadrant({super.key, required this.art, required this.q, required this.width, required this.height});
+  const Quadrant({
+    super.key,
+    required this.art,
+    required this.q,
+    required this.width,
+    required this.height,
+  });
   final SceneArt? art;
   final int q;
   final double width, height;
@@ -337,7 +393,12 @@ class Quadrant extends StatelessWidget {
 }
 
 class _PieceTile extends StatelessWidget {
-  const _PieceTile({required this.art, required this.q, required this.width, required this.height});
+  const _PieceTile({
+    required this.art,
+    required this.q,
+    required this.width,
+    required this.height,
+  });
   final SceneArt? art;
   final int q;
   final double width, height;
@@ -348,12 +409,24 @@ class _PieceTile extends StatelessWidget {
     return DecoratedBox(
       decoration: const BoxDecoration(
         borderRadius: r,
-        boxShadow: [BoxShadow(color: Palette.shadow, blurRadius: 10, offset: Offset(0, 5))],
+        boxShadow: [
+          BoxShadow(
+            color: Palette.shadow,
+            blurRadius: 10,
+            offset: Offset(0, 5),
+          ),
+        ],
       ),
       child: DecoratedBox(
         position: DecorationPosition.foreground,
-        decoration: BoxDecoration(borderRadius: r, border: Border.all(color: Palette.card, width: 3)),
-        child: ClipRRect(borderRadius: r, child: Quadrant(art: art, q: q, width: width, height: height)),
+        decoration: BoxDecoration(
+          borderRadius: r,
+          border: Border.all(color: Palette.card, width: 3),
+        ),
+        child: ClipRRect(
+          borderRadius: r,
+          child: Quadrant(art: art, q: q, width: width, height: height),
+        ),
       ),
     );
   }
@@ -380,8 +453,15 @@ class _HolePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawRect(Offset.zero & size, Paint()..color = Palette.paper.withValues(alpha: seeThrough ? 0.62 : 0.94));
-    final r = RRect.fromRectAndRadius((Offset.zero & size).deflate(size.shortestSide * 0.07), const Radius.circular(12));
+    canvas.drawRect(
+      Offset.zero & size,
+      Paint()
+        ..color = Palette.paper.withValues(alpha: seeThrough ? 0.62 : 0.94),
+    );
+    final r = RRect.fromRectAndRadius(
+      (Offset.zero & size).deflate(size.shortestSide * 0.07),
+      const Radius.circular(12),
+    );
     final dash = Paint()
       ..color = Palette.inkSoft.withValues(alpha: 0.5)
       ..style = PaintingStyle.stroke
@@ -407,8 +487,16 @@ class _SeamPainter extends CustomPainter {
     final p = Paint()
       ..color = Palette.card.withValues(alpha: 0.9)
       ..strokeWidth = 3;
-    canvas.drawLine(Offset(size.width / 2, 0), Offset(size.width / 2, size.height), p);
-    canvas.drawLine(Offset(0, size.height / 2), Offset(size.width, size.height / 2), p);
+    canvas.drawLine(
+      Offset(size.width / 2, 0),
+      Offset(size.width / 2, size.height),
+      p,
+    );
+    canvas.drawLine(
+      Offset(0, size.height / 2),
+      Offset(size.width, size.height / 2),
+      p,
+    );
   }
 
   @override

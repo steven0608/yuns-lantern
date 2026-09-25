@@ -15,7 +15,9 @@ class LocaleController extends ChangeNotifier {
     final o = _settings.localeOverride;
     if (o == 'en' || o == 'zh') return Locale(o);
     final device = WidgetsBinding.instance.platformDispatcher.locale;
-    return device.languageCode == 'zh' ? const Locale('zh') : const Locale('en');
+    return device.languageCode == 'zh'
+        ? const Locale('zh')
+        : const Locale('en');
   }
 
   String get code => locale.languageCode;

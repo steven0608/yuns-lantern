@@ -23,6 +23,10 @@ Each iteration: build the next unchecked items → run the validators → review
 - [ ] Landing page design on the canvas (EN + 中文)
 - [ ] Landing page source in `landing/` (static, no third-party requests)
 
+### Iteration 2b: phone layouts (requested by the app session) ✅
+- [x] `design/png/map_phone.png`: 844 × 390 map whose path winds as a 2 × 4 snake (88 pt stops, ≥ 64 pt gaps) + Map (iPhone) board
+- [x] Adopt app-side map changes on the Map board: stop 4 → (660,495), last lantern 1.2×
+
 ### Iteration 3: engine and game art
 - [ ] 15 engine (land) icons
 - [ ] 63 new game icons (composed from engine + theme art)
@@ -40,13 +44,14 @@ Each iteration: build the next unchecked items → run the validators → review
 - [ ] Tale page art template + covers for all 75
 
 ### Iteration 8: audio
-- [ ] Music loops (lands, map, bedtime), synthesized placeholders, `design/audio/`
-- [ ] New SFX (pencil, paint, drum, bell, card_flip, pour) via `tools/build_sfx.py`
+- [x] Music: 5 seamless loops (home, story_map, lands, reader, bedtime) + 2 stings (celebrate, light_found), −18/−16 LUFS, `design/audio/gen_audio.py`
+- [x] New SFX (pencil, paint, drum, bell, card_flip, pour), `design/audio/sfx/`
 - [ ] VO script v3 (games + tales), both languages, for voice actors
 - [ ] English placeholder narration for tales 1–5 (debug only; no local Mandarin voice available: needs a voice actor)
 
 ### Iteration 9: video
-- [ ] Animatic / trailer from canvas assets, `design/video/` (mp4, 1194 × 834 and 1080 × 1920 cut)
+- [x] 30 s bilingual trailer animatic, 1920 × 1080 + 4:5 cut, `design/video/render_video.py`
+- [ ] Trailer v2 once Home v3, Books and vocab art exist (show the real 3-door home and a Reader page); fix the subtitle overlapping a hill lantern on the end card
 
 ### Iteration 10: screens per engine
 - [ ] One mock screen per new engine (15 boards)
@@ -60,5 +65,7 @@ Each iteration: build the next unchecked items → run the validators → review
 - [ ] Palette `inkSoft` fails 4.5:1 for small text on paper (4.26:1)
 
 ## Log
+- **Iteration 2b**: phone map (map_phone.png @3x + map_phone_stops.json, gap-checked), Map (iPhone) board, iPad map stop 4 / 1.2× lantern; peer notified.
+- **Iteration 2 (audio + video)**: music loops, stings, 6 new SFX; 30 s trailer animatic; Catalog + Library boards published; peer notified to sync.
 - **Iteration 1b**: HANDOFF.md for the app session (web + iPhone + iPad); ownership split; Pages branch mismatch flagged (workflow triggers on main, repo uses master).
 - **Iteration 1**: catalog + library + validators + spec v3; tales 1–5; canvas boards "Game catalog" and "Story library".

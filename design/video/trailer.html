@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Yun's Lantern trailer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Noto+Sans+SC:wght@500;700&amp;family=ZCOOL+KuaiLe&amp;display=swap">
+<style>
+  /* Deterministic animatic: render_video.py calls window.render(t) for every frame. */
+  html, body { margin: 0; background: #3A3D6B; }
+  #stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; font-family: 'Fredoka', 'Noto Sans SC', sans-serif; color: #4A3426; }
+  .layer { position: absolute; inset: 0; opacity: 0; }
+  .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 50%; }
+  .abs { position: absolute; }
+  .cap { position: absolute; left: 0; right: 0; bottom: 84px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .cap .en { font-weight: 600; font-size: 56px; line-height: 1.1; }
+  .cap .zh { font-family: 'ZCOOL KuaiLe', 'Noto Sans SC', sans-serif; font-size: 50px; }
+  .pill { background: rgba(255,248,236,0.92); border-radius: 36px; padding: 18px 40px; box-shadow: 0 10px 30px rgba(58,61,107,0.25); text-align: center; }
+  .night .en { color: #FFE9C9; } .night .zh { color: #E8A93C; }
+  .grid { position: absolute; left: 50%; top: 250px; display: grid; grid-template-columns: repeat(6, 190px); gap: 34px 40px; transform: translateX(-50%); }
+  .grid img { width: 190px; height: 190px; }
+  .book { position: absolute; left: 260px; top: 150px; width: 1400px; height: 620px; background: #FFF8EC; border-radius: 36px; box-shadow: 0 30px 80px rgba(58,61,107,0.35); display: flex; overflow: hidden; }
+  .book .pic { width: 760px; height: 100%; object-fit: cover; }
+  .book .txt { flex: 1; padding: 64px 56px; display: flex; flex-direction: column; justify-content: center; gap: 36px; }
+  .book .txt .en { font-weight: 600; font-size: 46px; line-height: 1.3; }
+  .book .txt .zh { font-family: 'Noto Sans SC', sans-serif; font-weight: 500; font-size: 42px; line-height: 1.5; color: #9E4726; }
+  .logo { position: absolute; left: 150px; top: 250px; width: 1000px; text-align: left; }
+  .logo .zh { font-family: 'ZCOOL KuaiLe', sans-serif; font-size: 170px; color: #FFE9C9; line-height: 1.05; }
+  .logo .en { font-weight: 600; font-size: 96px; color: #E8A93C; }
+  .logo .sub { margin-top: 26px; font-size: 34px; color: #D9D4CC; font-family: 'Noto Sans SC', sans-serif; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- 1. The big lantern has gone dark -->
+  <div class="layer" id="s1">
+    <img class="bg" id="s1bg" src="../png/scene_lighthouse.png" alt="">
+    <div class="cap night"><div class="en">The big lantern has gone dark…</div><div class="zh">山顶上的大灯笼灭了……</div></div>
+  </div>
+  <!-- 2. Yun sets out: lights appear along the map -->
+  <div class="layer" id="s2">
+    <img class="bg" src="../png/map.png" alt="">
+    <div id="lights"></div>
+    <img class="abs" id="yun2" src="../png/yun_idle.png" alt="" style="width: 190px">
+    <div class="cap"><div class="pill"><div class="en">Yun sets out to find eight little lights</div><div class="zh">小云出发去找八个小灯光</div></div></div>
+  </div>
+  <!-- 3. Count and Feed -->
+  <div class="layer" id="s3">
+    <img class="bg" src="../png/scene_orchard.png" alt="">
+    <img class="abs" src="../png/items/bear.png" alt="" style="left: 1080px; top: 330px; width: 520px">
+    <div id="apples"></div>
+    <div class="abs" id="count" style="left: 820px; top: 70px; font-weight: 600; font-size: 150px; color: #9E4726; text-shadow: 0 6px 0 #FFF8EC"></div>
+    <div class="cap"><div class="pill"><div class="en">Count, sort, match and play</div><div class="zh">数一数、分一分、玩一玩</div></div></div>
+  </div>
+  <!-- 4. 75 games -->
+  <div class="layer" id="s4" style="background: #FBF1E1">
+    <div class="grid" id="grid"></div>
+    <div class="cap"><div class="en">75 games, all tap and drag</div><div class="zh">七十五个游戏，点一点、拖一拖</div></div>
+  </div>
+  <!-- 5. Lantern Tales in two languages -->
+  <div class="layer" id="s5" style="background: #F4E0C2">
+    <div class="book">
+      <div style="position: relative; width: 760px; height: 100%; flex-shrink: 0"><img class="pic" src="../png/scene_orchard.png" alt=""><img src="../png/items/bear.png" alt="" style="position: absolute; left: 250px; top: 250px; width: 300px"></div>
+      <div class="txt"><div class="en" id="t5en"></div><div class="zh" id="t5zh"></div></div>
+    </div>
+    <div class="cap" style="bottom: 70px"><div class="en">75 Lantern Tales · English, 中文, or both</div></div>
+  </div>
+  <!-- 6. The hill lights up + logo -->
+  <div class="layer" id="s6">
+    <img class="bg" id="s6bg" src="../png/scene_lighthouse.png" alt="">
+    <div class="abs" id="glow" style="left: 50%; top: 50%; width: 1600px; height: 1600px; margin: -800px 0 0 -800px; border-radius: 50%; background: radial-gradient(circle, rgba(255,233,168,0.55), rgba(255,233,168,0) 60%)"></div>
+    <div class="logo">
+      <div class="zh">小云的灯笼</div>
+      <div class="en">Yun's Lantern</div>
+      <div class="sub">Ages 3–5 · No ads · No tracking · 无广告 · 不收集任何信息</div>
+    </div>
+  </div>
+</div>
+<script>
+  const clamp = (x) => Math.max(0, Math.min(1, x));
+  const seg = (t, a, b) => clamp((t - a) / (b - a));
+  const ease = (x) => 1 - Math.pow(1 - x, 3);
+  const $ = (id) => document.getElementById(id);
+  // scene windows (seconds): fade 0.6 s in and out
+  const S = { s1: [0, 4.4], s2: [4, 9.4], s3: [9, 14.4], s4: [14, 19.4], s5: [19, 24.4], s6: [24, 30] };
+  const lightColors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'white'];
+  const stops = [[150, 700], [330, 592], [520, 668], [660, 495], [470, 385], [640, 262], [860, 330], [1010, 150]];
+  const icons = ['count_feed', 'match_it', 'shape_sorter', 'find_the_same', 'float_or_sink', 'what_is_it',
+    'big_and_small', 'where_is_it', 'puzzle_pieces', 'day_and_night', 'pattern_parade', 'mirror_match'];
+  const tale = [["Bear has a big, empty basket.", "小熊有一个空空的大篮子。"],
+    ["One red apple. Plop! Into the basket.", "一个红苹果。扑通！放进篮子。"],
+    ["Two apples, three apples. Bear counts each one.", "两个苹果，三个苹果。小熊一个一个地数。"]];
+  // map is 1194x834 drawn cover into 1920x1080 -> scale 1.608, offset y -130
+  const MS = 1920 / 1194, MY = (1080 - 834 * MS) / 2;
+  lightColors.forEach((c, i) => {
+    const im = document.createElement('img');
+    im.src = `../png/light_${c}.png`; im.className = 'abs'; im.id = 'L' + i;
+    Object.assign(im.style, { width: '110px', left: (stops[i][0] * MS - 55) + 'px', top: (stops[i][1] * MS + MY - 75) + 'px' });
+    $('lights').appendChild(im);
+  });
+  for (let i = 0; i < 4; i++) {
+    const im = document.createElement('img');
+    im.src = '../png/items/apple.png'; im.className = 'abs'; im.id = 'A' + i; im.style.width = '130px';
+    $('apples').appendChild(im);
+  }
+  icons.forEach((id) => {
+    const im = document.createElement('img');
+    im.src = `../png/icon_${id}.png`; im.alt = '';
+    $('grid').appendChild(im);
+  });
+
+  window.render = (t) => {
+    for (const [id, [a, b]] of Object.entries(S)) {
+      const o = Math.min(seg(t, a, a + 0.6), 1 - seg(t, b - 0.6, b));
+      $(id).style.opacity = (id === 's1' && t < 0.6) ? seg(t, 0, 0.6) : (id === 's6' && t > 29.4 ? 1 - seg(t, 29.4, 30) : o);
+    }
+    $('s1bg').style.transform = `scale(${1.15 - 0.1 * seg(t, 0, 4.4)})`;
+    $('s1bg').style.filter = 'brightness(0.55) saturate(0.35)';  // the lights are out
+    // 2: lights appear one by one, Yun walks the path
+    lightColors.forEach((c, i) => {
+      const p = ease(seg(t, 5 + i * 0.45, 5.5 + i * 0.45));
+      const el = $('L' + i);
+      el.style.opacity = p; el.style.transform = `scale(${0.4 + 0.6 * p})`;
+    });
+    const k = seg(t, 4.6, 9) * (stops.length - 1);
+    const i0 = Math.floor(Math.min(k, stops.length - 2)), f = k - i0;
+    const x = stops[i0][0] + (stops[i0 + 1][0] - stops[i0][0]) * f, y = stops[i0][1] + (stops[i0 + 1][1] - stops[i0][1]) * f;
+    $('yun2').style.left = (x * MS + 40) + 'px'; $('yun2').style.top = (y * MS + MY - 190) + 'px';
+    $('yun2').style.transform = `translateY(${-Math.abs(Math.sin(t * 7)) * 14}px)`;
+    // 3: apples arc into Bear's basket, counting up
+    let n = 0;
+    for (let a = 0; a < 4; a++) {
+      const p = ease(seg(t, 10 + a * 0.9, 10.7 + a * 0.9));
+      if (p >= 1) n = a + 1;
+      const sx = 180 + a * 170, sy = 640, ex = 1250 + a * 40, ey = 610;
+      const el = $('A' + a);
+      el.style.left = (sx + (ex - sx) * p) + 'px';
+      el.style.top = (sy + (ey - sy) * p - Math.sin(p * Math.PI) * 260) + 'px';
+      el.style.transform = `scale(${1 - 0.45 * p})`;
+    }
+    $('count').textContent = n ? String(n) : '';
+    $('count').style.transform = `scale(${1 + 0.25 * Math.max(0, 1 - ((t - 10.7) % 0.9) / 0.3)})`;
+    // 4: icons pop in
+    [...$('grid').children].forEach((el, i) => {
+      const p = ease(seg(t, 14.4 + i * 0.16, 14.9 + i * 0.16));
+      el.style.opacity = p; el.style.transform = `scale(${0.6 + 0.4 * p}) translateY(${(1 - p) * 40}px)`;
+    });
+    // 5: tale pages turn
+    const page = Math.min(2, Math.floor(seg(t, 19.4, 24.2) * 3));
+    $('t5en').textContent = tale[page][0]; $('t5zh').textContent = tale[page][1];
+    // 6: the hill lights up
+    const g = ease(seg(t, 24.4, 27));
+    $('glow').style.opacity = g; $('glow').style.transform = `scale(${0.5 + 0.6 * g})`;
+    $('s6bg').style.filter = `brightness(${0.75 + 0.45 * g})`;
+    document.querySelector('#s6 .logo').style.opacity = ease(seg(t, 25.4, 26.6));
+    document.querySelector('#s6 .logo').style.transform = `translateY(${(1 - ease(seg(t, 25.4, 26.6))) * 40}px)`;
+  };
+  window.render(0);
+</script>
+</body>
+</html>

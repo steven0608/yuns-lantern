@@ -33,6 +33,7 @@ flutter:
     - assets/images/tiles/
     - assets/images/ui/
     - assets/audio/sfx/
+    - assets/audio/music/
     - assets/audio/vo/en/category/
     - assets/audio/vo/en/color/
     - assets/audio/vo/en/comparing/
@@ -59,6 +60,11 @@ flutter:
     - assets/audio/vo/en/story/rainbowriver/
     - assets/audio/vo/en/story/shapevillage/
     - assets/audio/vo/en/story/starrymeadow/
+    - assets/audio/vo/en/tales/tale_01/
+    - assets/audio/vo/en/tales/tale_02/
+    - assets/audio/vo/en/tales/tale_03/
+    - assets/audio/vo/en/tales/tale_04/
+    - assets/audio/vo/en/tales/tale_05/
     - assets/audio/vo/en/ui/
     - assets/audio/vo/en/whatisit/
     - assets/audio/vo/zh/category/
@@ -87,6 +93,11 @@ flutter:
     - assets/audio/vo/zh/story/rainbowriver/
     - assets/audio/vo/zh/story/shapevillage/
     - assets/audio/vo/zh/story/starrymeadow/
+    - assets/audio/vo/zh/tales/tale_01/
+    - assets/audio/vo/zh/tales/tale_02/
+    - assets/audio/vo/zh/tales/tale_03/
+    - assets/audio/vo/zh/tales/tale_04/
+    - assets/audio/vo/zh/tales/tale_05/
     - assets/audio/vo/zh/ui/
     - assets/audio/vo/zh/whatisit/
 

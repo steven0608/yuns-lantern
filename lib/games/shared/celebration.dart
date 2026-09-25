@@ -17,16 +17,21 @@ class Celebration extends StatefulWidget {
   State<Celebration> createState() => _CelebrationState();
 }
 
-class _CelebrationState extends State<Celebration> with SingleTickerProviderStateMixin {
-  late final AnimationController _c = AnimationController(vsync: this, duration: kCelebrationLength)
-    ..forward().whenComplete(() => widget.onDone?.call());
+class _CelebrationState extends State<Celebration>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _c = AnimationController(
+    vsync: this,
+    duration: kCelebrationLength,
+  )..forward().whenComplete(() => widget.onDone?.call());
   late final List<_Spark> _sparks;
 
   @override
   void initState() {
     super.initState();
     final rng = math.Random();
-    final colors = Palette.named.values.where((c) => c != Palette.named['black']).toList();
+    final colors = Palette.named.values
+        .where((c) => c != Palette.named['black'])
+        .toList();
     _sparks = List.generate(46, (i) {
       final angle = rng.nextDouble() * math.pi * 2;
       return _Spark(
@@ -54,16 +59,23 @@ class _CelebrationState extends State<Celebration> with SingleTickerProviderStat
         builder: (_, _) {
           final t = _c.value;
           final rise = Curves.elasticOut.transform((t / 0.55).clamp(0.0, 1.0));
-          return Stack(fit: StackFit.expand, children: [
-            CustomPaint(painter: _BurstPainter(_sparks, t)),
-            Align(
-              alignment: Alignment(0, 1.4 - 1.25 * rise),
-              child: Opacity(
-                opacity: t > 0.85 ? (1 - t) / 0.15 : 1,
-                child: Yun(size: 180, mood: YunMood.happy, lanternColor: widget.lightColor),
+          return Stack(
+            fit: StackFit.expand,
+            children: [
+              CustomPaint(painter: _BurstPainter(_sparks, t)),
+              Align(
+                alignment: Alignment(0, 1.4 - 1.25 * rise),
+                child: Opacity(
+                  opacity: t > 0.85 ? (1 - t) / 0.15 : 1,
+                  child: Yun(
+                    size: 180,
+                    mood: YunMood.happy,
+                    lanternColor: widget.lightColor,
+                  ),
+                ),
               ),
-            ),
-          ]);
+            ],
+          );
         },
       ),
     );
@@ -71,7 +83,14 @@ class _CelebrationState extends State<Celebration> with SingleTickerProviderStat
 }
 
 class _Spark {
-  _Spark({required this.dir, required this.speed, required this.color, required this.size, required this.spin, required this.star});
+  _Spark({
+    required this.dir,
+    required this.speed,
+    required this.color,
+    required this.size,
+    required this.spin,
+    required this.star,
+  });
   final Offset dir;
   final double speed, size, spin;
   final Color color;
@@ -92,7 +111,8 @@ class _BurstPainter extends CustomPainter {
       final gravity = Offset(0, 0.45 * t * t) * reach;
       final p = origin + s.dir * (reach * s.speed * ease) + gravity;
       final fade = t < 0.7 ? 1.0 : (1 - (t - 0.7) / 0.3);
-      final paint = Paint()..color = s.color.withValues(alpha: fade.clamp(0, 1));
+      final paint = Paint()
+        ..color = s.color.withValues(alpha: fade.clamp(0, 1));
       canvas.save();
       canvas.translate(p.dx, p.dy);
       canvas.rotate(s.spin * t);
@@ -130,9 +150,12 @@ class TapSparkle extends StatefulWidget {
   State<TapSparkle> createState() => _TapSparkleState();
 }
 
-class _TapSparkleState extends State<TapSparkle> with SingleTickerProviderStateMixin {
-  late final AnimationController _c = AnimationController(vsync: this, duration: const Duration(milliseconds: 600))
-    ..forward().whenComplete(widget.onDone);
+class _TapSparkleState extends State<TapSparkle>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _c = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 600),
+  )..forward().whenComplete(widget.onDone);
 
   @override
   void dispose() {
@@ -148,7 +171,10 @@ class _TapSparkleState extends State<TapSparkle> with SingleTickerProviderStateM
       child: IgnorePointer(
         child: AnimatedBuilder(
           animation: _c,
-          builder: (_, _) => CustomPaint(size: const Size(80, 80), painter: _SparklePainter(_c.value)),
+          builder: (_, _) => CustomPaint(
+            size: const Size(80, 80),
+            painter: _SparklePainter(_c.value),
+          ),
         ),
       ),
     );
@@ -161,13 +187,21 @@ class _SparklePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final c = size.center(Offset.zero);
-    final paint = Paint()..color = Palette.lantern.withValues(alpha: (1 - t) * 0.9);
+    final paint = Paint()
+      ..color = Palette.lantern.withValues(alpha: (1 - t) * 0.9);
     for (var i = 0; i < 6; i++) {
       final a = i * math.pi / 3;
-      final p = c + Offset(math.cos(a), math.sin(a)) * (10 + 26 * Curves.easeOut.transform(t));
+      final p =
+          c +
+          Offset(math.cos(a), math.sin(a)) *
+              (10 + 26 * Curves.easeOut.transform(t));
       canvas.drawCircle(p, 5 * (1 - t) + 1, paint);
     }
-    canvas.drawCircle(c, 14 * (1 - t), Paint()..color = Palette.cream.withValues(alpha: 1 - t));
+    canvas.drawCircle(
+      c,
+      14 * (1 - t),
+      Paint()..color = Palette.cream.withValues(alpha: 1 - t),
+    );
   }
 
   @override

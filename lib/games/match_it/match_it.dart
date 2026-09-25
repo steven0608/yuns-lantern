@@ -7,7 +7,12 @@ import '../shared/cards.dart';
 final matchItGame = GameDef(
   id: 'match_it',
   build: (rc) => Center(
-    child: ChoiceCard(id: 'star', correct: true, hints: rc.hints, onCorrect: rc.complete),
+    child: ChoiceCard(
+      id: 'star',
+      correct: true,
+      hints: rc.hints,
+      onCorrect: rc.complete,
+    ),
   ),
   prompt: (r) => r.vo.take(2).toList(),
 );

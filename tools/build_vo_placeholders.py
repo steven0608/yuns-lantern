@@ -38,6 +38,14 @@ def collect():
     for ch in load("story.json")["chapters"]:
         for part in ("open", "beat", "close"):
             lines[f"story.{ch['id']}.{part}"] = ch[part]
+    # Lantern Tales narration: tales.<tale_id>.p<N> (docs/EXPANSION.md §5).
+    library = CONTENT / "library.json"
+    if library.exists():
+        for tale in json.loads(library.read_text(encoding="utf-8"))["tales"]:
+            if tale.get("status") != "written":
+                continue
+            for n, page in enumerate(tale["pages"], 1):
+                lines[f"tales.{tale['id']}.p{n}"] = page
     return {k: {"en": v["en"], "zh": v["zh"]} for k, v in lines.items()}
 
 

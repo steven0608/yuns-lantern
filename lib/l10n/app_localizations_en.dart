@@ -72,10 +72,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get languageZh => '中文';
 
   @override
+  String get bookLanguage => 'Story narration';
+
+  @override
+  String get bookLanguageApp => 'Same as the app';
+
+  @override
+  String get bookLanguageBoth => 'Both languages (app language first)';
+
+  @override
   String get sectionSound => 'Sound';
 
   @override
   String get voiceVolume => 'Voice volume';
+
+  @override
+  String get musicVolume => 'Music volume';
 
   @override
   String get effectsVolume => 'Sound effects volume';

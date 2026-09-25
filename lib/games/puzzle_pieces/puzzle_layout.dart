@@ -39,7 +39,11 @@ class PuzzleLayout {
   static const _aspects = [1194 / 834, 1.0];
   static const _maxFrameW = 780.0;
 
-  static PuzzleLayout solve(Size box, {required int pieces, double clearance = 0}) {
+  static PuzzleLayout solve(
+    Size box, {
+    required int pieces,
+    double clearance = 0,
+  }) {
     PuzzleLayout? best;
     double bestArea = -1;
     void consider(double fw, double aspect, bool below, int cols) {
@@ -60,19 +64,37 @@ class PuzzleLayout {
       final w = box.width - clearance;
       for (var cols = 1; cols <= math.min(pieces, 3); cols++) {
         final rows = (pieces / cols).ceil();
-        final byWidth = (w - 2 * border - gap - kHitSlop * cols - spacing * (cols - 1)) / (1 + cols / 2);
-        final byTray = 2 * a * (h - kHitSlop * rows - spacing * (rows - 1)) / rows;
-        consider(math.min(byWidth, math.min(byTray, a * frameMaxH)), a, false, cols);
+        final byWidth =
+            (w - 2 * border - gap - kHitSlop * cols - spacing * (cols - 1)) /
+            (1 + cols / 2);
+        final byTray =
+            2 * a * (h - kHitSlop * rows - spacing * (rows - 1)) / rows;
+        consider(
+          math.min(byWidth, math.min(byTray, a * frameMaxH)),
+          a,
+          false,
+          cols,
+        );
       }
       // One row under the frame, clear of the corner buttons.
-      final byRow = 2 * (box.width - kHitSlop * pieces - spacing * (pieces - 1)) / pieces;
+      final byRow =
+          2 * (box.width - kHitSlop * pieces - spacing * (pieces - 1)) / pieces;
       final byHeight = a * (h - 2 * border - gap - kHitSlop) / 1.5;
-      consider(math.min(math.min(byRow, byHeight), box.width - 2 * border), a, true, pieces);
+      consider(
+        math.min(math.min(byRow, byHeight), box.width - 2 * border),
+        a,
+        true,
+        pieces,
+      );
     }
     // Always return something: the smallest compliant layout.
     return best ??
-        PuzzleLayout._(2 * kMinTouchTarget, 2 * kMinTouchTarget,
-            math.min(pieces, 2) * (kMinTouchTarget + kHitSlop) + spacing, false);
+        PuzzleLayout._(
+          2 * kMinTouchTarget,
+          2 * kMinTouchTarget,
+          math.min(pieces, 2) * (kMinTouchTarget + kHitSlop) + spacing,
+          false,
+        );
   }
 }
 
@@ -80,7 +102,8 @@ class PuzzleLayout {
 /// edge is only 24px from our content, level with our top row. Returns how
 /// much to pull targets in so they keep a full kMinTargetGap (CLAUDE.md).
 double cornerClearance(Size screen) {
-  const buttonEdge = 4 + kHitSlop / 2 + kMinTouchTarget; // ActivityScaffold's corner buttons
+  const buttonEdge =
+      4 + kHitSlop / 2 + kMinTouchTarget; // ActivityScaffold's corner buttons
   final insets = ActivityScaffold.contentInsets(screen);
   if (insets.top >= buttonEdge) return 0; // buttons sit above the content
   return math.max(0.0, kMinTargetGap - (insets.left - buttonEdge));
