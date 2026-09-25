@@ -25,11 +25,76 @@ flutter:
   uses-material-design: true
   generate: true
   assets:
-    - content/vocab.json
-    - content/phrases.json
-    - content/story.json
-    - content/activities.json
+    - content/
     - assets/images/
+    - assets/images/items/
+    - assets/images/lights/
+    - assets/images/scenes/
+    - assets/images/tiles/
+    - assets/images/ui/
     - assets/audio/sfx/
-    - assets/audio/vo/en/
-    - assets/audio/vo/zh/
+    - assets/audio/vo/en/category/
+    - assets/audio/vo/en/color/
+    - assets/audio/vo/en/comparing/
+    - assets/audio/vo/en/counting/
+    - assets/audio/vo/en/daynight/
+    - assets/audio/vo/en/feedback/
+    - assets/audio/vo/en/floatsink/
+    - assets/audio/vo/en/item/
+    - assets/audio/vo/en/matching/
+    - assets/audio/vo/en/mirror/
+    - assets/audio/vo/en/number/
+    - assets/audio/vo/en/pattern/
+    - assets/audio/vo/en/position/
+    - assets/audio/vo/en/puzzle/
+    - assets/audio/vo/en/shape/
+    - assets/audio/vo/en/shapes/
+    - assets/audio/vo/en/size/
+    - assets/audio/vo/en/spotsame/
+    - assets/audio/vo/en/story/bigmountain/
+    - assets/audio/vo/en/story/lighthouse/
+    - assets/audio/vo/en/story/mirrorlake/
+    - assets/audio/vo/en/story/mistyforest/
+    - assets/audio/vo/en/story/orchard/
+    - assets/audio/vo/en/story/rainbowriver/
+    - assets/audio/vo/en/story/shapevillage/
+    - assets/audio/vo/en/story/starrymeadow/
+    - assets/audio/vo/en/ui/
+    - assets/audio/vo/en/whatisit/
+    - assets/audio/vo/zh/category/
+    - assets/audio/vo/zh/color/
+    - assets/audio/vo/zh/comparing/
+    - assets/audio/vo/zh/counting/
+    - assets/audio/vo/zh/daynight/
+    - assets/audio/vo/zh/feedback/
+    - assets/audio/vo/zh/floatsink/
+    - assets/audio/vo/zh/item/
+    - assets/audio/vo/zh/matching/
+    - assets/audio/vo/zh/mirror/
+    - assets/audio/vo/zh/number/
+    - assets/audio/vo/zh/pattern/
+    - assets/audio/vo/zh/position/
+    - assets/audio/vo/zh/puzzle/
+    - assets/audio/vo/zh/shape/
+    - assets/audio/vo/zh/shapes/
+    - assets/audio/vo/zh/size/
+    - assets/audio/vo/zh/spotsame/
+    - assets/audio/vo/zh/story/bigmountain/
+    - assets/audio/vo/zh/story/lighthouse/
+    - assets/audio/vo/zh/story/mirrorlake/
+    - assets/audio/vo/zh/story/mistyforest/
+    - assets/audio/vo/zh/story/orchard/
+    - assets/audio/vo/zh/story/rainbowriver/
+    - assets/audio/vo/zh/story/shapevillage/
+    - assets/audio/vo/zh/story/starrymeadow/
+    - assets/audio/vo/zh/ui/
+    - assets/audio/vo/zh/whatisit/
+
+  # Bundled, never system fallback (CLAUDE.md). Both SIL OFL 1.1 — see assets/fonts/OFL.txt.
+  fonts:
+    - family: Fredoka
+      fonts:
+        - asset: assets/fonts/Fredoka.ttf
+    - family: NotoSansSC
+      fonts:
+        - asset: assets/fonts/NotoSansSC-subset.ttf

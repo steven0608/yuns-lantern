@@ -17,6 +17,12 @@ class Content {
 
   static Future<Content> load([AssetBundle? bundle]) async {
     final b = bundle ?? rootBundle;
+    // Which art files exist, so real illustrations replace placeholders one
+    // file at a time with no code change.
+    Set<String> files = const {};
+    try {
+      files = (await AssetManifest.loadFromAssetBundle(b)).listAssets().toSet();
+    } catch (_) {}
     // Decode on this isolate: loadString() hands files over 50KB to compute(),
     // which stalls under the widget-test clock and buys nothing for ~100KB.
     Future<Json> read(String path) async =>
@@ -38,7 +44,7 @@ class Content {
     final activities = {
       for (final a in actsJson['activities'] as List) (a as Json)['id'] as String: Activity(a),
     };
-    return Content._(vocab, phrases, activities, Story(storyJson), ArtCatalog(artJson));
+    return Content._(vocab, phrases, activities, Story(storyJson), ArtCatalog(artJson, files));
   }
 
   VocabItem item(String id) =>
@@ -62,24 +68,46 @@ class Content {
 
 /// Placeholder art lookups (assets/images/placeholder_art.json).
 class ArtCatalog {
-  ArtCatalog(Json j)
+  ArtCatalog(Json j, [this.files = const {}])
       : items = Map<String, String>.from(j['items'] as Json),
         categories = Map<String, String>.from(j['categories'] as Json),
         activityIcons = Map<String, String>.from(j['activities'] as Json),
         scenes = {
-          for (final e in (j['scenes'] as Json).entries) e.key: SceneArt(e.value as Json),
+          for (final e in (j['scenes'] as Json).entries) e.key: SceneArt(e.key, e.value as Json, files),
         };
   final Map<String, String> items;
   final Map<String, String> categories;
   final Map<String, String> activityIcons;
   final Map<String, SceneArt> scenes;
+  final Set<String> files;
+
+  /// Illustration for a vocab/prop id, when one has been drawn.
+  String? itemImage(String id) {
+    final path = 'assets/images/items/$id.png';
+    return files.contains(path) ? path : null;
+  }
+
+  String? tileImage(String activityId) {
+    final path = 'assets/images/tiles/$activityId.png';
+    return files.contains(path) ? path : null;
+  }
+
+  String? lightImage(String name) {
+    final path = 'assets/images/lights/$name.png';
+    return files.contains(path) ? path : null;
+  }
 }
 
 class SceneArt {
-  SceneArt(Json j)
-      : emoji = List<String>.from(j['emoji'] as List),
+  SceneArt(this.id, Json j, Set<String> files)
+      : image = files.contains('assets/images/scenes/$id.png') ? 'assets/images/scenes/$id.png' : null,
+        emoji = List<String>.from(j['emoji'] as List),
         sky = _hex(j['sky'] as String),
         ground = _hex(j['ground'] as String);
+  final String id;
+
+  /// The chapter illustration (design canvas export), if present.
+  final String? image;
   final List<String> emoji;
   final Color sky;
   final Color ground;

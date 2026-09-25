@@ -1,0 +1,2 @@
+Every mp3 under this folder is machine TTS (tools/build_vo_placeholders.py).
+Replace with native-speaker recordings before shipping - see docs/VO_SCRIPT.md.
