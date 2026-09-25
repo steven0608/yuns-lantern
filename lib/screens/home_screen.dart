@@ -11,6 +11,7 @@ import '../core/ui/yun.dart';
 import '../games/registry.dart';
 import '../games/shared/activity_scaffold.dart';
 import '../story/map_screen.dart';
+import '../l10n/app_localizations.dart';
 import 'parent/parent_gate.dart';
 
 /// The child's home. No text: pictures and Yun's voice only (§9). Only
@@ -51,42 +52,29 @@ class _HomeScreenState extends State<HomeScreen> {
         ];
         return Scaffold(
           body: Stack(fit: StackFit.expand, children: [
-            const CustomPaint(painter: HillsPainter()),
+            // Design canvas "Home" board: illustrated hills with the dark lantern on its peak.
+            Image.asset('assets/images/ui/home_bg.png', fit: BoxFit.cover),
             SafeArea(
               child: LayoutBuilder(builder: (context, box) {
                 final short = box.maxHeight < 560;
-                final tile = short ? 108.0 : 150.0;
+                final door = short ? 104.0 : (box.maxHeight * 0.24).clamp(120.0, 200.0);
+                final left = short ? box.maxWidth * 0.26 : box.maxWidth * 0.3;
                 return Row(children: [
                   SizedBox(
-                    width: box.maxWidth * (short ? 0.28 : 0.3),
+                    width: left,
                     child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      _StoryDoor(size: door),
+                      const SizedBox(height: kMinTargetGap - kHitSlop),
                       TouchTarget(
                         onTap: () => s.audio.playVO('ui.home'),
-                        child: Yun(size: short ? 110 : 190),
+                        child: Yun(size: short ? 96 : door * 0.95, mood: YunMood.happy),
                       ),
-                      const SizedBox(height: kMinTargetGap - kHitSlop),
-                      _MapButton(size: short ? 104 : 150),
                     ]),
                   ),
                   Expanded(
-                    child: Center(
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        padding: const EdgeInsets.symmetric(horizontal: 24),
-                        child: SizedBox(
-                          height: math.min(box.maxHeight, (tile + kMinTargetGap) * (short ? 2 : 3)),
-                          child: Wrap(
-                            direction: Axis.vertical,
-                            alignment: WrapAlignment.center,
-                            runAlignment: WrapAlignment.center,
-                            spacing: kMinTargetGap - kHitSlop,
-                            runSpacing: kMinTargetGap - kHitSlop,
-                            children: [
-                              for (final (i, g) in games.indexed) _ActivityTile(game: g, size: tile, index: i, onTap: () => _open(g)),
-                            ],
-                          ),
-                        ),
-                      ),
+                    child: Padding(
+                      padding: EdgeInsets.only(top: short ? 8 : 72, right: 16, bottom: 8),
+                      child: _TileGrid(games: games, onOpen: _open),
                     ),
                   ),
                 ]);
@@ -94,17 +82,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SafeArea(
               child: Align(
-                alignment: Alignment.bottomRight,
-                child: Padding(
-                  padding: const EdgeInsets.all(4),
-                  // Low-key on purpose: this leads to the grown-up area.
-                  child: RoundButton(
-                    icon: Icons.tune_rounded,
-                    color: const Color(0x55FFF8EC),
-                    iconColor: Palette.inkSoft,
-                    onTap: () => openParentArea(context),
-                  ),
-                ),
+                alignment: Alignment.topRight,
+                child: Padding(padding: const EdgeInsets.all(4), child: _GrownUpsButton(onTap: () => openParentArea(context))),
               ),
             ),
           ]),
@@ -114,10 +93,64 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-const _tileColors = [
-  Color(0xFFF2B880), Color(0xFFA8D5A2), Color(0xFF9CC9E8), Color(0xFFF5A3A3),
-  Color(0xFFC8B4E6), Color(0xFFF7D774), Color(0xFF8FD3C8), Color(0xFFF2A7C8),
-];
+/// Lays the activity tiles out as large as the space allows (up to 150px),
+/// keeping 88px targets and 64px gaps; falls back to a sideways-scrolling
+/// strip on short phone screens rather than shrinking below the minimum.
+class _TileGrid extends StatelessWidget {
+  const _TileGrid({required this.games, required this.onOpen});
+  final List<GameDef> games;
+  final void Function(GameDef) onOpen;
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(builder: (context, box) {
+      const gap = kMinTargetGap - kHitSlop; // + 2×12px slop = 64 visible
+      final n = games.length;
+      if (n == 0) return const SizedBox();
+      double fit(int cols, int rows) => math.min(
+            (box.maxWidth - (cols - 1) * gap) / cols - kHitSlop,
+            (box.maxHeight - (rows - 1) * gap) / rows - kHitSlop,
+          );
+      var best = 0.0;
+      var cols = 1;
+      for (var c = 1; c <= math.min(n, 6); c++) {
+        final t = math.min(fit(c, (n / c).ceil()), 150.0);
+        if (t > best) {
+          best = t;
+          cols = c;
+        }
+      }
+      if (best >= kMinTouchTarget) {
+        return Center(
+          child: SizedBox(
+            width: cols * (best + kHitSlop) + (cols - 1) * gap,
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              spacing: gap,
+              runSpacing: gap,
+              children: [for (final (i, g) in games.indexed) _ActivityTile(game: g, size: best, index: i, onTap: () => onOpen(g))],
+            ),
+          ),
+        );
+      }
+      final rows = math.max(1, ((box.maxHeight + gap) / (kMinTouchTarget + kHitSlop + gap)).floor());
+      final tile = math.max(kMinTouchTarget, (box.maxHeight - (rows - 1) * gap) / rows - kHitSlop);
+      return SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: SizedBox(
+          height: box.maxHeight,
+          child: Wrap(
+            direction: Axis.vertical,
+            alignment: WrapAlignment.center,
+            spacing: gap,
+            runSpacing: gap,
+            children: [for (final (i, g) in games.indexed) _ActivityTile(game: g, size: tile, index: i, onTap: () => onOpen(g))],
+          ),
+        ),
+      );
+    });
+  }
+}
 
 class _ActivityTile extends StatelessWidget {
   const _ActivityTile({required this.game, required this.size, required this.index, required this.onTap});
@@ -128,8 +161,8 @@ class _ActivityTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final icon = context.services.content.art.activityIcons[game.id] ?? '⭐';
-    final color = _tileColors[index % _tileColors.length];
+    final art = context.services.content.art;
+    final image = art.tileImage(game.id);
     return TweenAnimationBuilder<double>(
       tween: Tween(begin: 0, end: 1),
       duration: Duration(milliseconds: 380 + index * 70),
@@ -139,40 +172,87 @@ class _ActivityTile extends StatelessWidget {
         onTap: onTap,
         size: Size.square(size),
         semanticLabel: context.services.content.activities[game.id]!.name.of(context.lang),
-        child: Container(
+        child: DecoratedBox(
           decoration: BoxDecoration(
-            color: color,
-            borderRadius: BorderRadius.circular(size * 0.28),
-            border: Border.all(color: Palette.card, width: 5),
-            boxShadow: [BoxShadow(color: color.withValues(alpha: 0.6), blurRadius: 18, offset: const Offset(0, 8))],
+            borderRadius: BorderRadius.circular(size * 0.27),
+            boxShadow: const [BoxShadow(color: Palette.shadow, offset: Offset(0, 7))],
           ),
-          alignment: Alignment.center,
-          child: Emoji(icon, size: size * 0.5),
+          child: image != null
+              ? Image.asset(image, width: size, height: size)
+              : Container(
+                  decoration: BoxDecoration(color: Palette.card, borderRadius: BorderRadius.circular(size * 0.27)),
+                  alignment: Alignment.center,
+                  child: Emoji(art.activityIcons[game.id] ?? '⭐', size: size * 0.5),
+                ),
         ),
       ),
     );
   }
 }
 
-class _MapButton extends StatelessWidget {
-  const _MapButton({required this.size});
+/// The way into story mode: the night sky with the white lantern, glowing
+/// brighter as lights are collected.
+class _StoryDoor extends StatelessWidget {
+  const _StoryDoor({required this.size});
   final double size;
 
   @override
   Widget build(BuildContext context) {
-    final lights = context.services.progress.lightsCollected.length;
+    final s = context.services;
+    final lights = s.progress.lightsCollected.length / s.content.story.chapters.length;
+    final lantern = s.content.art.lightImage('white');
     return TouchTarget(
       onTap: () => Navigator.of(context).push(softRoute(const MapScreen())),
       size: Size.square(size),
       child: Container(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          gradient: const RadialGradient(colors: [Color(0xFFFFE2A0), Palette.lantern]),
-          border: Border.all(color: Palette.card, width: 5),
-          boxShadow: [BoxShadow(color: Palette.lantern.withValues(alpha: 0.35 + 0.08 * lights), blurRadius: 30, spreadRadius: 4)],
+          color: Palette.night,
+          boxShadow: [
+            const BoxShadow(color: Color(0x4D3A3D6B), offset: Offset(0, 8)),
+            BoxShadow(color: Palette.lantern.withValues(alpha: 0.2 + 0.5 * lights), blurRadius: 30, spreadRadius: 2),
+          ],
         ),
         alignment: Alignment.center,
-        child: Emoji('🏮', size: size * 0.48),
+        child: lantern != null ? Image.asset(lantern, height: size * 0.72) : Emoji('🏮', size: size * 0.48),
+      ),
+    );
+  }
+}
+
+/// For the parent, on the child's screen: understated, top-right, and it only
+/// leads to the arithmetic gate.
+class _GrownUpsButton extends StatelessWidget {
+  const _GrownUpsButton({required this.onTap});
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return TouchTarget(
+      onTap: onTap,
+      size: const Size(176, kMinTouchTarget),
+      child: Center(
+        child: Container(
+          height: 52,
+          padding: const EdgeInsets.fromLTRB(14, 0, 18, 0),
+          decoration: BoxDecoration(
+            color: const Color(0xEBFFF8EC),
+            borderRadius: BorderRadius.circular(26),
+            border: Border.all(color: const Color(0xFFE0CDB0), width: 1.5),
+          ),
+          child: Row(mainAxisSize: MainAxisSize.min, children: [
+            const Icon(Icons.people_alt_outlined, color: Palette.ink, size: 22),
+            const SizedBox(width: 8),
+            Flexible(
+              child: Text(
+                AppLocalizations.of(context).grownUps,
+                overflow: TextOverflow.fade,
+                softWrap: false,
+                style: const TextStyle(color: Palette.ink, fontSize: 16, fontWeight: FontWeight.w500),
+              ),
+            ),
+          ]),
+        ),
       ),
     );
   }

@@ -1,6 +1,7 @@
 {
   "@@locale": "zh",
   "appTitle": "小云的灯笼",
+  "grownUps": "家长专区",
   "gateTitle": "家长专区",
   "gateQuestion": "请输入 {a} 乘以 {b} 的结果",
   "gateClear": "清除",

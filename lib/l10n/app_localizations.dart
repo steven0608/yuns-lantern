@@ -104,6 +104,12 @@ abstract class AppLocalizations {
   /// **'Yun\'s Lantern'**
   String get appTitle;
 
+  /// No description provided for @grownUps.
+  ///
+  /// In en, this message translates to:
+  /// **'For grown-ups'**
+  String get grownUps;
+
   /// No description provided for @gateTitle.
   ///
   /// In en, this message translates to:

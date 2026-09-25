@@ -15,6 +15,19 @@ class SceneStill extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final image = art?.image;
+    if (image != null) {
+      // The chapter illustration, drifting slowly for a gentle parallax pan.
+      return ClipRect(
+        child: Transform.translate(
+          offset: Offset(-pan * 24, 0),
+          child: Transform.scale(
+            scale: 1.0 + 0.04 * pan,
+            child: Image.asset(image, fit: BoxFit.cover, width: double.infinity, height: double.infinity),
+          ),
+        ),
+      );
+    }
     final sky = art?.sky ?? Palette.paper;
     final ground = art?.ground ?? Palette.leaf;
     final emoji = art?.emoji ?? const ['🌳'];

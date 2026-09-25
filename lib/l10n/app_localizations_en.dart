@@ -13,6 +13,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appTitle => 'Yun\'s Lantern';
 
   @override
+  String get grownUps => 'For grown-ups';
+
+  @override
   String get gateTitle => 'For grown-ups';
 
   @override

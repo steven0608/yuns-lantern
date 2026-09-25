@@ -33,6 +33,8 @@ class YunsLanternApp extends StatelessWidget {
             useMaterial3: true,
             colorScheme: ColorScheme.fromSeed(seedColor: Palette.rust, surface: Palette.paper),
             scaffoldBackgroundColor: Palette.paper,
+            // Bundled fonts only (CLAUDE.md): Fredoka for Latin, Noto Sans SC subset for 中文.
+            fontFamily: 'Fredoka',
             fontFamilyFallback: const ['NotoSansSC'],
             pageTransitionsTheme: const PageTransitionsTheme(builders: {
               TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),

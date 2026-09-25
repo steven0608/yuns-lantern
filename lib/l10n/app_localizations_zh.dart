@@ -13,6 +13,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get appTitle => '小云的灯笼';
 
   @override
+  String get grownUps => '家长专区';
+
+  @override
   String get gateTitle => '家长专区';
 
   @override

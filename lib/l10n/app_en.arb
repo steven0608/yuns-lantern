@@ -1,6 +1,7 @@
 {
   "@@locale": "en",
   "appTitle": "Yun's Lantern",
+  "grownUps": "For grown-ups",
   "gateTitle": "For grown-ups",
   "gateQuestion": "Enter the result of {a} times {b}",
   "@gateQuestion": {"placeholders": {"a": {"type": "String"}, "b": {"type": "String"}}},

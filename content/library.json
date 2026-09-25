@@ -122,8 +122,33 @@
     "en": "Bear picks apples one by one, one to five, and finds a friend to share with.",
     "zh": "小熊一个一个地摘苹果，从一数到五，还找到朋友一起分享。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Bear has a big, empty basket.",
+     "zh": "小熊有一个空空的大篮子。"
+    },
+    {
+     "en": "One red apple. Plop! Into the basket.",
+     "zh": "一个红苹果。扑通！放进篮子。"
+    },
+    {
+     "en": "Two apples, three apples. Bear counts each one.",
+     "zh": "两个苹果，三个苹果。小熊一个一个地数。"
+    },
+    {
+     "en": "Four apples, five apples. The basket is full!",
+     "zh": "四个苹果，五个苹果。篮子满啦！"
+    },
+    {
+     "en": "Yun comes by. \"What a lot of apples!\"",
+     "zh": "小云走过来。“好多苹果呀！”"
+    },
+    {
+     "en": "Bear gives Yun one apple. Five apples, shared by two friends.",
+     "zh": "小熊送给小云一个苹果。五个苹果，两个好朋友一起分享。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 2,
@@ -139,8 +164,37 @@
     "en": "As night falls, Yun counts the stars that come out, all the way to ten.",
     "zh": "天黑了，小云数着一颗颗出来的星星，一直数到十。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "The sun goes down. The sky turns dark blue.",
+     "zh": "太阳落山了。天空变成了深蓝色。"
+    },
+    {
+     "en": "One little star comes out. Hello, star!",
+     "zh": "一颗小星星出来了。星星你好！"
+    },
+    {
+     "en": "Two, three, four. More stars are waking up.",
+     "zh": "两颗、三颗、四颗。更多的星星醒来了。"
+    },
+    {
+     "en": "Five, six, seven. Yun points to each one.",
+     "zh": "五颗、六颗、七颗。小云一颗一颗地指。"
+    },
+    {
+     "en": "Eight, nine... where is the last one?",
+     "zh": "八颗、九颗……最后一颗在哪里？"
+    },
+    {
+     "en": "There, above the lantern! Ten little stars.",
+     "zh": "在那里，灯笼的上面！十颗小星星。"
+    },
+    {
+     "en": "Good night, ten little stars.",
+     "zh": "晚安，十颗小星星。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 3,
@@ -156,8 +210,33 @@
     "en": "Yun has cookies for every friend: one each, until everyone has one.",
     "zh": "小云给每个朋友分饼干，一人一个，直到大家都有。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun baked four round cookies.",
+     "zh": "小云烤了四块圆圆的饼干。"
+    },
+    {
+     "en": "Here come Bear, Duck and Frog.",
+     "zh": "小熊、鸭子和青蛙来了。"
+    },
+    {
+     "en": "One for Bear. One for Duck.",
+     "zh": "小熊一块，鸭子一块。"
+    },
+    {
+     "en": "One for Frog. And one for Yun!",
+     "zh": "青蛙一块，还有小云一块！"
+    },
+    {
+     "en": "Four friends, four cookies. Everyone has one.",
+     "zh": "四个朋友，四块饼干。每个人都有一块。"
+    },
+    {
+     "en": "Crunch, crunch! Sharing tastes good.",
+     "zh": "咔嚓咔嚓！一起分享真好吃。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 4,
@@ -173,8 +252,33 @@
     "en": "At the bus stop, Yun lines up riders and seats to see which has more.",
     "zh": "在车站，小云把乘客和座位排成一排，看看哪个多。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "The little bus stops at the station. Beep beep!",
+     "zh": "小巴士停在车站。嘀嘀！"
+    },
+    {
+     "en": "The bus has four seats.",
+     "zh": "巴士上有四个座位。"
+    },
+    {
+     "en": "Five friends are waiting to get on.",
+     "zh": "有五个朋友在等着上车。"
+    },
+    {
+     "en": "One friend, one seat. Yun lines them up.",
+     "zh": "一个朋友，一个座位。小云把他们排好。"
+    },
+    {
+     "en": "One friend has no seat. There are more friends than seats!",
+     "zh": "有一个朋友没有座位。朋友比座位多！"
+    },
+    {
+     "en": "Bear waves. \"I'll take the next bus. See you soon!\"",
+     "zh": "小熊挥挥手。“我坐下一班车。一会儿见！”"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 5,
@@ -190,8 +294,37 @@
     "en": "It is Duck's birthday! How many candles go on the cake?",
     "zh": "今天是鸭子的生日！蛋糕上要插几根蜡烛呢？"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Today is Duck's birthday!",
+     "zh": "今天是鸭子的生日！"
+    },
+    {
+     "en": "Yun and Bear bring a big round cake.",
+     "zh": "小云和小熊送来一个大大的圆蛋糕。"
+    },
+    {
+     "en": "\"How old are you, Duck?\" \"I am four!\"",
+     "zh": "“鸭子，你几岁了？”“我四岁了！”"
+    },
+    {
+     "en": "Four candles for four years. One, two, three, four.",
+     "zh": "四岁插四根蜡烛。一、二、三、四。"
+    },
+    {
+     "en": "The candles glow like little lanterns.",
+     "zh": "蜡烛亮亮的，像小灯笼一样。"
+    },
+    {
+     "en": "Take a big breath... and blow!",
+     "zh": "深深吸一口气……吹！"
+    },
+    {
+     "en": "Happy birthday, Duck!",
+     "zh": "鸭子，生日快乐！"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 6,

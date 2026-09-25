@@ -6,11 +6,11 @@ Generated from `tools/build_expansion.py`. Each tale is 6–8 pages, one or two 
 
 | # | English | 中文 | Learns | Plays next | Status |
 |---|---|---|---|---|---|
-| 1 | **Bear's Five Apples**<br>Bear picks apples one by one, one to five, and finds a friend to share with. | **熊的五个苹果**<br>小熊一个一个地摘苹果，从一数到五，还找到朋友一起分享。 | Count to 5 | Count and Feed | outline |
-| 2 | **Ten Little Stars**<br>As night falls, Yun counts the stars that come out, all the way to ten. | **十颗小星星**<br>天黑了，小云数着一颗颗出来的星星，一直数到十。 | Count to 10 | Numbers Out Loud | outline |
-| 3 | **One for You, One for Me**<br>Yun has cookies for every friend: one each, until everyone has one. | **你一个我一个**<br>小云给每个朋友分饼干，一人一个，直到大家都有。 | One-to-one sharing | Share the Cookies | outline |
-| 4 | **More or Fewer?**<br>At the bus stop, Yun lines up riders and seats to see which has more. | **多还是少**<br>在车站，小云把乘客和座位排成一排，看看哪个多。 | Compare amounts | Bus Stop | outline |
-| 5 | **The Birthday Cake**<br>It is Duck's birthday! How many candles go on the cake? | **生日蛋糕**<br>今天是鸭子的生日！蛋糕上要插几根蜡烛呢？ | Count to match an age | Birthday Candles | outline |
+| 1 | **Bear's Five Apples**<br>Bear picks apples one by one, one to five, and finds a friend to share with. | **熊的五个苹果**<br>小熊一个一个地摘苹果，从一数到五，还找到朋友一起分享。 | Count to 5 | Count and Feed | written |
+| 2 | **Ten Little Stars**<br>As night falls, Yun counts the stars that come out, all the way to ten. | **十颗小星星**<br>天黑了，小云数着一颗颗出来的星星，一直数到十。 | Count to 10 | Numbers Out Loud | written |
+| 3 | **One for You, One for Me**<br>Yun has cookies for every friend: one each, until everyone has one. | **你一个我一个**<br>小云给每个朋友分饼干，一人一个，直到大家都有。 | One-to-one sharing | Share the Cookies | written |
+| 4 | **More or Fewer?**<br>At the bus stop, Yun lines up riders and seats to see which has more. | **多还是少**<br>在车站，小云把乘客和座位排成一排，看看哪个多。 | Compare amounts | Bus Stop | written |
+| 5 | **The Birthday Cake**<br>It is Duck's birthday! How many candles go on the cake? | **生日蛋糕**<br>今天是鸭子的生日！蛋糕上要插几根蜡烛呢？ | Count to match an age | Birthday Candles | written |
 
 ## Shapes and Colors · 形状和颜色
 

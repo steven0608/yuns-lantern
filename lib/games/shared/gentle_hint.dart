@@ -220,10 +220,14 @@ class _HintHandLayerState extends State<HintHandLayer> with SingleTickerProvider
     super.dispose();
   }
 
+  final GlobalKey _layer = GlobalKey();
+
+  /// Centre of [k] in this layer's coordinates. Only valid after layout, so it
+  /// is called from paint — reading render boxes during build asserts.
   Offset? _centerOf(GlobalKey? k) {
     final box = k?.currentContext?.findRenderObject() as RenderBox?;
-    final me = context.findRenderObject() as RenderBox?;
-    if (box == null || me == null || !box.attached) return null;
+    final me = _layer.currentContext?.findRenderObject() as RenderBox?;
+    if (box == null || me == null || !box.attached || !me.attached || !box.hasSize) return null;
     return me.globalToLocal(box.localToGlobal(box.size.center(Offset.zero)));
   }
 
@@ -231,34 +235,42 @@ class _HintHandLayerState extends State<HintHandLayer> with SingleTickerProvider
   Widget build(BuildContext context) {
     if (_move == null) return const SizedBox.expand();
     return IgnorePointer(
-      child: AnimatedBuilder(
-        animation: _c,
-        builder: (_, _) {
-          final a = _centerOf(_move!.from);
-          if (a == null) return const SizedBox.expand();
-          final b = _centerOf(_move!.to) ?? a;
-          final t = _c.value;
-          // press (0–.2), travel (.2–.75), release (.75–1)
-          final travel = Curves.easeInOut.transform(((t - 0.2) / 0.55).clamp(0.0, 1.0));
-          final pos = Offset.lerp(a, b, travel)!;
-          final press = t < 0.2 ? t / 0.2 : (t > 0.75 ? 1 - (t - 0.75) / 0.25 : 1.0);
-          final opacity = t > 0.9 ? (1 - t) / 0.1 : math.min(1.0, t / 0.08);
-          return Stack(children: [
-            Positioned(
-              left: pos.dx - 10,
-              top: pos.dy - 6,
-              child: Opacity(
-                opacity: opacity.clamp(0.0, 1.0),
-                child: Transform.scale(
-                  scale: 1.0 - 0.15 * press,
-                  alignment: Alignment.topLeft,
-                  child: const Text('👆', style: TextStyle(fontSize: 64, shadows: [Shadow(color: Palette.shadow, blurRadius: 8)])),
-                ),
-              ),
-            ),
-          ]);
-        },
-      ),
+      child: CustomPaint(key: _layer, size: Size.infinite, painter: _HandPainter(this)),
     );
   }
+}
+
+class _HandPainter extends CustomPainter {
+  _HandPainter(this.state) : super(repaint: state._c);
+  final _HintHandLayerState state;
+
+  static final TextPainter _hand = TextPainter(
+    text: const TextSpan(text: '👆', style: TextStyle(fontSize: 64, shadows: [Shadow(color: Palette.shadow, blurRadius: 8)])),
+    textDirection: TextDirection.ltr,
+  )..layout();
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final move = state._move;
+    if (move == null) return;
+    final a = state._centerOf(move.from);
+    if (a == null) return;
+    final b = state._centerOf(move.to) ?? a;
+    final t = state._c.value;
+    // press (0–.2), travel (.2–.75), release (.75–1)
+    final travel = Curves.easeInOut.transform(((t - 0.2) / 0.55).clamp(0.0, 1.0));
+    final pos = Offset.lerp(a, b, travel)!;
+    final press = t < 0.2 ? t / 0.2 : (t > 0.75 ? 1 - (t - 0.75) / 0.25 : 1.0);
+    final opacity = (t > 0.9 ? (1 - t) / 0.1 : math.min(1.0, t / 0.08)).clamp(0.0, 1.0);
+    canvas.save();
+    canvas.translate(pos.dx - 10, pos.dy - 6);
+    canvas.scale(1.0 - 0.15 * press);
+    canvas.saveLayer(null, Paint()..color = Color.fromRGBO(0, 0, 0, opacity));
+    _hand.paint(canvas, Offset.zero);
+    canvas.restore();
+    canvas.restore();
+  }
+
+  @override
+  bool shouldRepaint(_HandPainter old) => true;
 }
