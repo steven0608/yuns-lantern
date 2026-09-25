@@ -30,6 +30,11 @@ final matchItGame = GameDef(
 /// its size sits among the round's three.
 const _sizeOrder = ['tiny', 'small', 'medium', 'large', 'huge'];
 
+/// On phones the home and replay buttons sit on side rails level with the
+/// table. This much room at each side leaves a 64px visible gap to them
+/// (12 rail spare + 2 × 12 slop + 28).
+const double _sideRoom = 28;
+
 /// Stagger between neighbouring tubs in the closing hop.
 const int _hopStaggerMs = 260;
 const int _hopMs = 520;
@@ -220,8 +225,11 @@ class _MatchItState extends State<MatchIt> with TickerProviderStateMixin {
       final stagger = rows == 2 ? 0.5 : 0.0;
 
       double rowWidth(int cols, double pitch) => (cols - 1 + stagger) * pitch + extent + 2 * jx;
+      // Side room keeps a 64px visible gap to the home / replay buttons,
+      // which sit on side rails level with the table on phones.
+      final usable = w - 2 * _sideRoom;
       var cols = rows == 2 ? (kMaxInteractiveItems / 2).ceil() : kMaxInteractiveItems;
-      while (cols > 1 && rowWidth(cols, pitchMin) > w) {
+      while (cols > 1 && rowWidth(cols, pitchMin) > usable) {
         cols--;
       }
       final capacity = math.min(math.min(rows * cols, kMaxInteractiveItems), _things.length);
@@ -229,7 +237,7 @@ class _MatchItState extends State<MatchIt> with TickerProviderStateMixin {
       final usedRows = math.max(1, (capacity / cols).ceil());
       final pitchX = cols + stagger - 1 <= 0
           ? 0.0
-          : math.max(pitchMin, math.min((w - extent - 2 * jx) / (cols - 1 + stagger), extent * 2.0));
+          : math.max(pitchMin, math.min((usable - extent - 2 * jx) / (cols - 1 + stagger), extent * 2.0));
       final pitchY = extent + (kMinTargetGap - kHitSlop) + 2 * jy + tiltRoom;
       final tableH = (usedRows - 1) * pitchY + extent + 2 * jy;
 
