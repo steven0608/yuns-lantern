@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+import 'dart:ui' show ImageFilter;
 
 import 'package:flutter/material.dart';
 
@@ -11,11 +12,20 @@ import '../core/ui/touch_target.dart';
 import '../core/ui/yun.dart';
 import 'scene_player.dart';
 
-/// The eight lanterns on the path up Lantern Hill (SPEC §8). Collected lights
-/// glow. Chapters the family hasn't bought are misty and unreachable —
-/// never padlocked, never a sales pitch. Tapping mist just swirls it.
+/// The eight lanterns on the path up Lantern Hill (SPEC §8), laid out as on the
+/// design canvas "Story map" board (1194×834). Collected lights glow in their
+/// colour; the next chapter is ringed and Yun waits beside it. Chapters the
+/// family hasn't bought sit in mist — unreachable, never padlocked, never a
+/// sales pitch. Tapping mist just swirls it.
 class MapScreen extends StatelessWidget {
   const MapScreen({super.key});
+
+  /// Lantern centres on the 1194×834 design board, chapter 1 → 8.
+  static const _stops = [
+    Offset(150, 700), Offset(330, 592), Offset(520, 668), Offset(660, 505),
+    Offset(470, 385), Offset(640, 262), Offset(860, 330), Offset(1010, 150),
+  ];
+  static const _board = Size(1194, 834);
 
   @override
   Widget build(BuildContext context) {
@@ -25,37 +35,41 @@ class MapScreen extends StatelessWidget {
       builder: (context, _) {
         final chapters = s.content.story.chapters;
         final lights = s.progress.lightsCollected;
+        bool reachable(Chapter c) => c.free || s.settings.fullAccess;
+        final next = chapters.where((c) => reachable(c) && !lights.contains(c.id)).firstOrNull;
         return Scaffold(
+          backgroundColor: const Color(0xFFF8EAD3),
           body: LayoutBuilder(builder: (context, box) {
-            final w = box.maxWidth, h = box.maxHeight;
-            final node = (h * 0.16).clamp(kMinTouchTarget, 120.0);
-            // Winding path from bottom-left up to the great lantern top-right.
-            Offset at(int i) {
-              final t = i / (chapters.length - 1);
-              return Offset(
-                w * (0.1 + 0.72 * t) + math.sin(t * math.pi * 3) * w * 0.03,
-                h * (0.8 - 0.55 * t) + math.sin(t * math.pi * 4) * h * 0.08,
-              );
-            }
+            // Same "cover" mapping as the background image, so lanterns stay on the path.
+            final scale = math.max(box.maxWidth / _board.width, box.maxHeight / _board.height);
+            final origin = Offset(
+              (box.maxWidth - _board.width * scale) / 2,
+              (box.maxHeight - _board.height * scale) / 2,
+            );
+            Offset at(int i) => origin + _stops[i] * scale;
+            final node = math.max(kMinTouchTarget, 104 * scale);
+            final mistAll = !chapters.every(reachable);
 
             return Stack(children: [
-              Positioned.fill(child: CustomPaint(painter: _MapPainter(points: [for (var i = 0; i < chapters.length; i++) at(i)], lit: lights.length))),
-              // The great lantern: brighter with every light collected.
-              Positioned(
-                right: w * 0.03,
-                top: h * 0.04,
-                child: _GreatLantern(size: h * 0.26, glow: lights.length / chapters.length),
-              ),
+              Positioned.fill(child: Image.asset('assets/images/ui/map.png', fit: BoxFit.cover)),
+              if (mistAll) ..._mist(chapters, reachable, at, scale),
               for (final (i, c) in chapters.indexed)
                 Positioned(
-                  left: at(i).dx - node / 2 - kHitSlop / 2,
-                  top: at(i).dy - node / 2 - kHitSlop / 2,
-                  child: _ChapterNode(
+                  left: at(i).dx - (i == 7 ? node * 1.3 : node) / 2 - kHitSlop / 2,
+                  top: at(i).dy - (i == 7 ? node * 1.3 : node) / 2 - kHitSlop / 2,
+                  child: _ChapterLantern(
                     chapter: c,
-                    size: node,
+                    size: i == 7 ? node * 1.3 : node,
                     lit: lights.contains(c.id),
-                    reachable: c.free || s.settings.fullAccess,
+                    reachable: reachable(c),
+                    isNext: c == next,
                   ),
+                ),
+              if (next != null)
+                Positioned(
+                  left: at(chapters.indexOf(next)).dx + node * 0.45,
+                  top: at(chapters.indexOf(next)).dy - node * 1.05,
+                  child: IgnorePointer(child: Yun(size: math.max(80, 110 * scale))),
                 ),
               SafeArea(
                 child: Padding(
@@ -69,108 +83,71 @@ class MapScreen extends StatelessWidget {
       },
     );
   }
+
+  /// Soft fog banks over the unreached part of the hill.
+  List<Widget> _mist(List<Chapter> chapters, bool Function(Chapter) reachable, Offset Function(int) at, double scale) => [
+        for (final (i, c) in chapters.indexed)
+          if (!reachable(c))
+            Positioned(
+              left: at(i).dx - 150 * scale,
+              top: at(i).dy - 110 * scale,
+              child: IgnorePointer(
+                child: ImageFiltered(
+                  imageFilter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
+                  child: Container(
+                    width: 300 * scale,
+                    height: 220 * scale,
+                    decoration: const BoxDecoration(color: Color(0xE6F3F0EB), shape: BoxShape.circle),
+                  ),
+                ),
+              ),
+            ),
+      ];
 }
 
-class _ChapterNode extends StatelessWidget {
-  const _ChapterNode({required this.chapter, required this.size, required this.lit, required this.reachable});
+class _ChapterLantern extends StatelessWidget {
+  const _ChapterLantern({
+    required this.chapter,
+    required this.size,
+    required this.lit,
+    required this.reachable,
+    required this.isNext,
+  });
   final Chapter chapter;
   final double size;
   final bool lit;
   final bool reachable;
+  final bool isNext;
 
   @override
   Widget build(BuildContext context) {
-    final color = Palette.named[chapter.lightColor] ?? Palette.lantern;
-    final art = context.services.content.art.scenes[chapter.id];
+    final art = context.services.content.art;
+    final image = art.lightImage(lit ? chapter.lightColor : (reachable ? 'unlit' : 'misty'));
+    final glow = Palette.lantern;
     return TouchTarget(
       size: Size.square(size),
       sound: reachable ? Sfx.tap : Sfx.whoosh,
       onTap: reachable
           ? () => Navigator.of(context).push(softRoute(ChapterRunner(chapter: chapter)))
-          : () {}, // mist swirls (scale bump + whoosh); nothing to buy here
-      child: Opacity(
-        opacity: reachable ? 1 : 0.45,
-        child: Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: reachable ? Palette.card : Palette.mist,
-            border: Border.all(color: lit ? color : Palette.paperDeep, width: 6),
-            boxShadow: [
-              if (lit) BoxShadow(color: color.withValues(alpha: 0.8), blurRadius: 30, spreadRadius: 6),
-              const BoxShadow(color: Palette.shadow, blurRadius: 8, offset: Offset(0, 4)),
-            ],
-          ),
-          alignment: Alignment.center,
-          child: reachable
-              ? Text(art?.emoji.first ?? '🏮', style: TextStyle(fontSize: size * 0.42))
-              : Icon(Icons.cloud_rounded, color: Palette.card, size: size * 0.55),
+          : () {}, // mist swirls (bump + whoosh); nothing to buy here
+      child: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: !reachable || lit ? null : Palette.card.withValues(alpha: isNext ? 0.92 : 0.7),
+          boxShadow: [
+            if (isNext) BoxShadow(color: glow.withValues(alpha: 0.38), spreadRadius: 8),
+            if (isNext) BoxShadow(color: glow.withValues(alpha: 0.16), spreadRadius: 20),
+            if (lit) BoxShadow(color: (Palette.named[chapter.lightColor] ?? glow).withValues(alpha: 0.6), blurRadius: 30, spreadRadius: 4),
+          ],
+        ),
+        alignment: Alignment.center,
+        child: Opacity(
+          opacity: reachable ? 1 : 0.9,
+          child: image != null
+              ? Image.asset(image, height: size * 0.85)
+              : Icon(Icons.light_rounded, size: size * 0.6, color: Palette.named[chapter.lightColor]),
         ),
       ),
     );
   }
-}
-
-class _GreatLantern extends StatelessWidget {
-  const _GreatLantern({required this.size, required this.glow});
-  final double size;
-  final double glow;
-
-  @override
-  Widget build(BuildContext context) {
-    return IgnorePointer(
-      child: Column(children: [
-        Container(
-          width: size * 0.7,
-          height: size * 0.8,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(size * 0.3),
-            color: Color.lerp(Palette.mist, Palette.lantern, glow),
-            boxShadow: [BoxShadow(color: Palette.lantern.withValues(alpha: glow * 0.9), blurRadius: 70 * glow + 1, spreadRadius: 20 * glow)],
-          ),
-          alignment: Alignment.center,
-          child: Yun(size: size * 0.35, mood: glow >= 1 ? YunMood.happy : YunMood.idle),
-        ),
-      ]),
-    );
-  }
-}
-
-class _MapPainter extends CustomPainter {
-  _MapPainter({required this.points, required this.lit});
-  final List<Offset> points;
-  final int lit;
-
-  @override
-  void paint(Canvas canvas, Size s) {
-    final r = Offset.zero & s;
-    canvas.drawRect(r, Paint()..shader = const LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Color(0xFF52588F), Color(0xFFB39AC4), Color(0xFFF5C9A4)]).createShader(r));
-    final rng = math.Random(3);
-    for (var i = 0; i < 40; i++) {
-      canvas.drawCircle(Offset(rng.nextDouble() * s.width, rng.nextDouble() * s.height * 0.4), rng.nextDouble() * 2 + 0.6, Paint()..color = const Color(0xAAFFF3D6));
-    }
-    final hill = Path()
-      ..moveTo(0, s.height)
-      ..lineTo(0, s.height * 0.75)
-      ..quadraticBezierTo(s.width * 0.45, s.height * 0.62, s.width * 0.7, s.height * 0.3)
-      ..quadraticBezierTo(s.width * 0.82, s.height * 0.15, s.width, s.height * 0.2)
-      ..lineTo(s.width, s.height)
-      ..close();
-    canvas.drawPath(hill, Paint()..color = const Color(0xFF8DAE7A));
-    final path = Path()..moveTo(points.first.dx, points.first.dy);
-    for (var i = 1; i < points.length; i++) {
-      final a = points[i - 1], b = points[i];
-      path.quadraticBezierTo((a.dx + b.dx) / 2, a.dy, b.dx, b.dy);
-    }
-    canvas.drawPath(
-      path,
-      Paint()
-        ..color = const Color(0xFFF3E1BD)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 26
-        ..strokeCap = StrokeCap.round,
-    );
-  }
-
-  @override
-  bool shouldRepaint(_MapPainter o) => o.lit != lit || o.points.length != points.length || o.points.first != points.first;
 }
