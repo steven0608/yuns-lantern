@@ -14,9 +14,10 @@ Hard rules for every item: `CLAUDE.md`. Build order: `design/HANDOFF.md` §2. Pe
 ## Backlog
 
 ### V2 — ship the 12 games
-- [x] 9 engines merged (count_feed, float_or_sink, what_is_it, big_and_small, pattern_parade, mirror_match, where_is_it, puzzle_pieces + shared)
-- [ ] match_it, shape_sorter, find_the_same (crew agent running)
-- [ ] day_and_night
+- [x] 11 engines merged (count_feed, float_or_sink, what_is_it, big_and_small, pattern_parade, mirror_match, where_is_it, puzzle_pieces, match_it, shape_sorter, find_the_same)
+- [ ] day_and_night (crew agent running)
+- [x] DraggableItem follows global finger position (crew recommendation)
+- [ ] Vocab art matches vocab colour/shape (design session; Match It shows the swatch meanwhile)
 - [ ] Every engine: content insets keep 64 px from the home/replay buttons (games_test with `checkGaps: true`)
 - [ ] Golden tests per activity at 844×390 and 1194×834, en + zh (HANDOFF V2)
 - [ ] Web offline after first visit (service worker caching the app shell + free tier)
