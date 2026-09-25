@@ -59,6 +59,8 @@ class _DraggableItemState extends State<DraggableItem>
     super.dispose();
   }
 
+  Offset _grab = Offset.zero;
+
   RenderBox get _overlayBox =>
       Overlay.of(context).context.findRenderObject()! as RenderBox;
 
@@ -72,6 +74,9 @@ class _DraggableItemState extends State<DraggableItem>
       box.localToGlobal(const Offset(kHitSlop / 2, kHitSlop / 2)),
     );
     _pos.value = _home;
+    // Where the finger holds the card, so it stays under the finger even when
+    // the card sits inside a scaled or rotated parent (local deltas drift).
+    _grab = _overlayBox.globalToLocal(d.globalPosition) - _home;
     _entry = OverlayEntry(builder: _buildFloating);
     Overlay.of(context).insert(_entry!);
     context.services.audio.sfx(Sfx.pickup);
@@ -80,7 +85,7 @@ class _DraggableItemState extends State<DraggableItem>
 
   void _update(DragUpdateDetails d) {
     if (!_lifted || _fly.isAnimating) return;
-    _pos.value += d.delta;
+    _pos.value = _overlayBox.globalToLocal(d.globalPosition) - _grab;
     final t = DropZoneScope.of(context)?.targetAt(_globalCenter);
     if (t != _hover) {
       _hover?.hovered.value = false;
