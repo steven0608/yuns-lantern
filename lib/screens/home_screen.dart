@@ -56,35 +56,45 @@ class _HomeScreenState extends State<HomeScreen> {
             Image.asset('assets/images/ui/home_bg.png', fit: BoxFit.cover),
             SafeArea(
               child: LayoutBuilder(builder: (context, box) {
+                // HANDOFF §1: size class by the short side. Phones get the
+                // grown-ups pill in the left column so the tile grid keeps
+                // its full height; tablets keep it top-right with the grid
+                // starting a full 64px gap below it.
                 final short = box.maxHeight < 560;
-                final door = short ? 104.0 : (box.maxHeight * 0.24).clamp(120.0, 200.0);
-                final left = short ? box.maxWidth * 0.26 : box.maxWidth * 0.3;
-                return Row(children: [
-                  SizedBox(
-                    width: left,
-                    child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                      _StoryDoor(size: door),
-                      const SizedBox(height: kMinTargetGap - kHitSlop),
-                      TouchTarget(
-                        onTap: () => s.audio.playVO('ui.home'),
-                        child: Yun(size: short ? 96 : door * 0.95, mood: YunMood.happy),
-                      ),
-                    ]),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(top: short ? 8 : 72, right: 16, bottom: 8),
-                      child: _TileGrid(games: games, onOpen: _open),
+                final door = short ? 96.0 : (box.maxHeight * 0.24).clamp(120.0, 200.0);
+                final left = short ? math.max(200.0, box.maxWidth * 0.26) : box.maxWidth * 0.3;
+                const gap = kMinTargetGap - kHitSlop;
+                const pillBottom = 4 + kHitSlop / 2 + kMinTouchTarget;
+                final grownUps = _GrownUpsButton(onTap: () => openParentArea(context));
+                return Stack(children: [
+                  Row(children: [
+                    SizedBox(
+                      width: left,
+                      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                        if (short) ...[grownUps, const SizedBox(height: gap)],
+                        _StoryDoor(size: door),
+                        if (short)
+                          // Décor on phones: no room for a third 88px target plus gaps.
+                          Expanded(child: IgnorePointer(child: FittedBox(child: Yun(size: 90, mood: YunMood.happy))))
+                        else ...[
+                          const SizedBox(height: gap),
+                          TouchTarget(
+                            onTap: () => s.audio.playVO('ui.home'),
+                            child: Yun(size: door * 0.95, mood: YunMood.happy),
+                          ),
+                        ],
+                      ]),
                     ),
-                  ),
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.only(left: short ? kMinTargetGap : 0, top: short ? 8 : pillBottom + gap, right: 16, bottom: 8),
+                        child: _TileGrid(games: games, onOpen: _open),
+                      ),
+                    ),
+                  ]),
+                  if (!short) Align(alignment: Alignment.topRight, child: Padding(padding: const EdgeInsets.all(4), child: grownUps)),
                 ]);
               }),
-            ),
-            SafeArea(
-              child: Align(
-                alignment: Alignment.topRight,
-                child: Padding(padding: const EdgeInsets.all(4), child: _GrownUpsButton(onTap: () => openParentArea(context))),
-              ),
             ),
           ]),
         );

@@ -191,6 +191,7 @@ class _HintHandLayerState extends State<HintHandLayer> with SingleTickerProvider
       AnimationController(vsync: this, duration: const Duration(milliseconds: 1800));
   HintMove? _move;
   int _loops = 0;
+  Timer? _loop; // pause between demonstrations; cancelled on dispose
 
   @override
   void initState() {
@@ -198,7 +199,8 @@ class _HintHandLayerState extends State<HintHandLayer> with SingleTickerProvider
     widget.hints.hand.addListener(_changed);
     _c.addStatusListener((s) {
       if (s == AnimationStatus.completed && _move != null && ++_loops < 3) {
-        Future.delayed(const Duration(milliseconds: 350), () {
+        _loop?.cancel();
+        _loop = Timer(const Duration(milliseconds: 350), () {
           if (mounted && _move != null) _c.forward(from: 0);
         });
       }
@@ -216,6 +218,7 @@ class _HintHandLayerState extends State<HintHandLayer> with SingleTickerProvider
   @override
   void dispose() {
     widget.hints.hand.removeListener(_changed);
+    _loop?.cancel();
     _c.dispose();
     super.dispose();
   }

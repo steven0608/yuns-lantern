@@ -86,6 +86,29 @@ void main() {
     });
   });
 
+  testWidgets('hint hand demonstrates a drag without errors', (tester) async {
+    final s = await testServices();
+    final from = GlobalKey(), to = GlobalKey();
+    final hints = HintController(speak: (_) {}, onIdlePrompt: () {});
+    hints.guide = () => HintMove(from, to);
+    await pumpApp(tester, s, home: ActivityScaffold(
+      onHome: () {},
+      hints: hints,
+      body: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+        SizedBox(key: from, width: 100, height: 100),
+        SizedBox(key: to, width: 100, height: 100),
+      ]),
+    ));
+    hints.demonstrate();
+    for (var i = 0; i < 12; i++) {
+      await tester.pump(const Duration(milliseconds: 200));
+    }
+    expect(tester.takeException(), isNull);
+    expect(hints.hand.value, isNotNull);
+    await tester.pumpWidget(const SizedBox());
+    hints.dispose();
+  });
+
   testWidgets('Celebration runs ~1.8s then calls onDone', (tester) async {
     final s = await testServices();
     var done = false;
