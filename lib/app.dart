@@ -6,6 +6,7 @@ import 'core/locale/locale_controller.dart';
 import 'core/tokens.dart';
 import 'l10n/app_localizations.dart';
 import 'screens/home_screen.dart';
+import 'screens/web_shell.dart';
 
 class YunsLanternApp extends StatelessWidget {
   const YunsLanternApp({super.key, required this.services, this.home});
@@ -41,7 +42,8 @@ class YunsLanternApp extends StatelessWidget {
               TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
             }),
           ),
-          home: home ?? const HomeScreen(),
+          builder: (context, child) => WebStage(child: child!),
+          home: home ?? const WebStartGate(child: HomeScreen()),
         ),
       ),
     );

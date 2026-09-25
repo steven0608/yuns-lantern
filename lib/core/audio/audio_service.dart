@@ -81,7 +81,7 @@ class AudioService {
       if (gen != _generation) return;
       await _speak(key, gen);
       if (gen != _generation) return;
-      await Future<void>.delayed(useDevice ? gap : Duration.zero);
+      if (useDevice) await Future<void>.delayed(gap);
     }
     if (gen == _generation) {
       speaking.value = false;
