@@ -28,17 +28,19 @@ Each iteration: build the next unchecked items → run the validators → review
 - [x] Adopt app-side map changes on the Map board: stop 4 → (660,495), last lantern 1.2×
 
 ### Iteration 3: engine and game art
-- [ ] 15 engine (land) icons
+- [x] 15 engine (land) icons → design/png/lands/<engine>.png (5 new: listen, trace, color, music, memory)
 - [ ] 63 new game icons (composed from engine + theme art)
-- [ ] New IA screens, each at iPad 1194 × 834 **and** iPhone 844 × 390: Home v3 (3 doors), Lands, Land → 5 games, Books shelf, Reader (EN / 中文 / Both)
-- [ ] Web-only screens: start screen (tap Yun to begin), portrait "turn your phone" picture, desktop letterbox
+- [x] New IA screens, each at iPad 1194 × 834 **and** iPhone 844 × 390: Home v3 (3 doors), Lands, Land → 5 games, Books shelf, Reader (EN / 中文 / Both)
+- [x] Web-only screens: start screen (tap Yun to begin), portrait "turn your phone" picture (desktop letterbox is built in the app)
 
 ### Iteration 4: vocabulary art
-- [ ] SVG item art for the 64 vocab items (replaces the emoji placeholders), batch 1 of 2
-- [ ] Batch 2 + new expansion vocab (festivals, family, body)
+- [x] SVG item art for all vocab items, drawn in their vocab.json colour/shape (`design/gen_items.py`); Mirror Match items pixel-checked symmetric
+- [ ] Refresh the Land boards once game icons exist
+- [x] Batch 2 + new expansion vocab (feelings, festivals, family, body, gift, window, candle, cake): 91 items total
+- [x] Canvas board "Vocabulary items · 91"
 
 ### Iterations 5–7: stories
-- [ ] Tales 6–30 written
+- [x] Tales 6–30 written
 - [ ] Tales 31–55 written
 - [ ] Tales 56–75 written
 - [ ] Tale page art template + covers for all 75
@@ -65,6 +67,8 @@ Each iteration: build the next unchecked items → run the validators → review
 - [ ] Palette `inkSoft` fails 4.5:1 for small text on paper (4.26:1)
 
 ## Log
+- **Iteration 4**: 91 vocab items drawn (all vocab.json ids incl. 27 E2 additions), symmetric Mirror Match items verified, bear feeder moved to characters/bear_basket.png; peer notified.
+- **Iteration 3**: 13 v3 screen boards (iPad + iPhone), 5 new engine icons, 15 land icons, tales 6–30 written (30/75); vocab attribute fixes proposed to the app session.
 - **Iteration 2b**: phone map (map_phone.png @3x + map_phone_stops.json, gap-checked), Map (iPhone) board, iPad map stop 4 / 1.2× lantern; peer notified.
 - **Iteration 2 (audio + video)**: music loops, stings, 6 new SFX; 30 s trailer animatic; Catalog + Library boards published; peer notified to sync.
 - **Iteration 1b**: HANDOFF.md for the app session (web + iPhone + iPad); ownership split; Pages branch mismatch flagged (workflow triggers on main, repo uses master).

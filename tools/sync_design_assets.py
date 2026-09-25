@@ -34,9 +34,19 @@ def copy_art():
         for f in sorted(PNG.glob("*.png")):
             if match(f.name):
                 shutil.copy2(f, IMG / folder / f.name.split("_", 1)[1] if folder != "ui" else IMG / folder / f.name)
-    # Props that aren't vocabulary (Where Is It? containers).
-    (IMG / "items").mkdir(exist_ok=True)
-    shutil.copy2(PNG / "items" / "basket.png", IMG / "items" / "basket.png")
+    # Lantern Lands icons, one per engine (design/png/lands/<engine>.png).
+    if (PNG / "lands").exists():
+        (IMG / "lands").mkdir(parents=True, exist_ok=True)
+        for f in (PNG / "lands").glob("*.png"):
+            shutil.copy2(f, IMG / "lands" / f.name)
+    # Vocab item art (design/png/items/<vocab_id>.png, drawn in each item's
+    # vocab.json colour and shape) + props such as the Where Is It? basket,
+    # and characters (e.g. the Count and Feed bear with his basket).
+    for sub in ("items", "characters"):
+        if (PNG / sub).exists():
+            (IMG / sub).mkdir(parents=True, exist_ok=True)
+            for f in (PNG / sub).glob("*.png"):
+                shutil.copy2(f, IMG / sub / f.name)
 
 
 def copy_audio():

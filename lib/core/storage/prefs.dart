@@ -21,7 +21,7 @@ class Settings extends ChangeNotifier {
 
   /// Drives minAge gating (SPEC §5). Defaults to 3 so a new install fits the
   /// youngest child; 4+ activities appear once the parent says so.
-  int get childAge => _p.getInt('childAge') ?? 3;
+  int get childAge => _p.getInt('childAge') ?? (allFree ? 5 : 3);
   set childAge(int v) => _set(() => _p.setInt('childAge', v));
 
   Set<String> get hiddenActivities =>
@@ -52,7 +52,12 @@ class Settings extends ChangeNotifier {
   bool get devUnlock => kDebugMode && (_p.getBool('devUnlock') ?? false);
   set devUnlock(bool v) => _set(() => _p.setBool('devUnlock', v));
 
-  bool get fullAccess => purchased || devUnlock;
+  /// Test builds (web demo, TestFlight) unlock everything so all content can
+  /// be tested: `--dart-define=YL_ALL_FREE=true`. App Store release builds
+  /// leave it off and keep the real free tier + purchase.
+  static const allFree = bool.fromEnvironment('YL_ALL_FREE');
+
+  bool get fullAccess => allFree || purchased || devUnlock;
 
   void _set(Future<bool> Function() write) {
     write();

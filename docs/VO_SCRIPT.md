@@ -2,7 +2,7 @@
 
 **GENERATED — do not hand-edit. Edit `content/phrases.json`, `content/vocab.json`, or `content/story.json` and re-run `tools/build_vo_script.py`.**
 
-Total lines to record per language: **166** (×2 languages = **332** files)
+Total lines to record per language: **193** (×2 languages = **386** files)
 
 
 ## Direction for both voice actors
@@ -284,11 +284,13 @@ Total lines to record per language: **166** (×2 languages = **332** files)
 
 ## Object names (spoken whenever an object is named or celebrated)
 
-*64 lines*
+*91 lines*
 
 | Key | English | 中文 | Pinyin |
 |---|---|---|---|
+| `item.angry` | angry | 生气 | shēng qì |
 | `item.apple` | apple | 苹果 | píng guǒ |
+| `item.baby` | baby | 宝宝 | bǎo bao |
 | `item.ball` | ball | 球 | qiú |
 | `item.balloon` | balloon | 气球 | qì qiú |
 | `item.banana` | banana | 香蕉 | xiāng jiāo |
@@ -301,8 +303,11 @@ Total lines to record per language: **166** (×2 languages = **332** files)
 | `item.book` | book | 书 | shū |
 | `item.bowl` | bowl | 碗 | wǎn |
 | `item.bread` | bread | 面包 | miàn bāo |
+| `item.brother` | big brother | 哥哥 | gē ge |
 | `item.bus` | bus | 公共汽车 | gōng gòng qì chē |
 | `item.butterfly` | butterfly | 蝴蝶 | hú dié |
+| `item.cake` | cake | 蛋糕 | dàn gāo |
+| `item.candle` | candle | 蜡烛 | là zhú |
 | `item.car` | car | 汽车 | qì chē |
 | `item.carrot` | carrot | 胡萝卜 | hú luó bo |
 | `item.cat` | cat | 猫 | māo |
@@ -311,24 +316,39 @@ Total lines to record per language: **166** (×2 languages = **332** files)
 | `item.cookie` | cookie | 饼干 | bǐng gān |
 | `item.corn` | corn | 玉米 | yù mǐ |
 | `item.cup` | cup | 杯子 | bēi zi |
+| `item.dad` | dad | 爸爸 | bà ba |
 | `item.dog` | dog | 狗 | gǒu |
+| `item.dragon_boat` | dragon boat | 龙舟 | lóng zhōu |
 | `item.drum` | drum | 鼓 | gǔ |
 | `item.duck` | duck | 鸭子 | yā zi |
+| `item.dumpling` | dumpling | 饺子 | jiǎo zi |
+| `item.ear` | ear | 耳朵 | ěr duo |
 | `item.egg` | egg | 鸡蛋 | jī dàn |
 | `item.elephant` | elephant | 大象 | dà xiàng |
+| `item.eye` | eye | 眼睛 | yǎn jing |
 | `item.fish` | fish | 鱼 | yú |
 | `item.flower` | flower | 花 | huā |
+| `item.foot` | foot | 脚 | jiǎo |
 | `item.frog` | frog | 青蛙 | qīng wā |
+| `item.gift` | gift | 礼物 | lǐ wù |
+| `item.grandma` | grandma | 奶奶 | nǎi nai |
+| `item.grandpa` | grandpa | 爷爷 | yé ye |
 | `item.grape` | grape | 葡萄 | pú tao |
+| `item.hand` | hand | 手 | shǒu |
+| `item.happy` | happy | 开心 | kāi xīn |
 | `item.hat` | hat | 帽子 | mào zi |
 | `item.key` | key | 钥匙 | yào shi |
 | `item.key_lantern` | lantern | 灯笼 | dēng long |
 | `item.kite` | kite | 风筝 | fēng zheng |
 | `item.lamp` | lamp | 台灯 | tái dēng |
 | `item.leaf` | leaf | 叶子 | yè zi |
+| `item.mom` | mom | 妈妈 | mā ma |
 | `item.moon` | moon | 月亮 | yuè liang |
+| `item.mooncake` | mooncake | 月饼 | yuè bǐng |
 | `item.mouse` | mouse | 老鼠 | lǎo shǔ |
+| `item.mouth` | mouth | 嘴巴 | zuǐ ba |
 | `item.mushroom` | mushroom | 蘑菇 | mó gu |
+| `item.nose` | nose | 鼻子 | bí zi |
 | `item.orange` | orange | 橙子 | chéng zi |
 | `item.owl` | owl | 猫头鹰 | māo tóu yīng |
 | `item.panda` | panda | 熊猫 | xióng māo |
@@ -336,15 +356,21 @@ Total lines to record per language: **166** (×2 languages = **332** files)
 | `item.plane` | airplane | 飞机 | fēi jī |
 | `item.rabbit` | rabbit | 兔子 | tù zi |
 | `item.rainbow` | rainbow | 彩虹 | cǎi hóng |
+| `item.red_envelope` | red envelope | 红包 | hóng bāo |
 | `item.rock` | rock | 石头 | shí tou |
+| `item.sad` | sad | 难过 | nán guò |
+| `item.scared` | scared | 害怕 | hài pà |
 | `item.scarf` | scarf | 围巾 | wéi jīn |
 | `item.shell` | shell | 贝壳 | bèi ké |
 | `item.shoe` | shoe | 鞋子 | xié zi |
+| `item.sister` | big sister | 姐姐 | jiě jie |
+| `item.sleepy` | sleepy | 困了 | kùn le |
 | `item.sock` | sock | 袜子 | wà zi |
 | `item.spoon` | spoon | 勺子 | sháo zi |
 | `item.star` | star | 星星 | xīng xing |
 | `item.strawberry` | strawberry | 草莓 | cǎo méi |
 | `item.sun` | sun | 太阳 | tài yáng |
+| `item.surprised` | surprised | 惊讶 | jīng yà |
 | `item.teddy` | teddy bear | 玩具熊 | wán jù xióng |
 | `item.toothbrush` | toothbrush | 牙刷 | yá shuā |
 | `item.train` | train | 火车 | huǒ chē |
@@ -352,3 +378,4 @@ Total lines to record per language: **166** (×2 languages = **332** files)
 | `item.turtle` | turtle | 乌龟 | wū guī |
 | `item.umbrella` | umbrella | 雨伞 | yǔ sǎn |
 | `item.watermelon` | watermelon | 西瓜 | xī guā |
+| `item.window` | window | 窗户 | chuāng hu |

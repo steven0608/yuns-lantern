@@ -141,6 +141,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get purchaseOwned => '谢谢您！所有内容已解锁。';
 
   @override
+  String get allFreeNote => '测试版：所有内容已解锁。';
+
+  @override
   String get purchaseRestore => '恢复购买';
 
   @override

@@ -16,51 +16,51 @@ Generated from `tools/build_expansion.py`. Each tale is 6–8 pages, one or two 
 
 | # | English | 中文 | Learns | Plays next | Status |
 |---|---|---|---|---|---|
-| 6 | **The Round Roof**<br>In Shape Village, a round house is looking for its round roof. | **圆圆的屋顶**<br>形状村里，一座圆房子在找它圆圆的屋顶。 | Circles | Shape Sorter | outline |
-| 7 | **Triangle Mountain**<br>Yun spots triangles everywhere: mountains, roofs and slices of watermelon. | **三角形的山**<br>小云到处都看到三角形：大山、屋顶，还有西瓜片。 | Triangles around us | Shape Tracing | outline |
-| 8 | **Yun's Rainbow**<br>After the rain, Yun names each colour of the rainbow in two languages. | **小云的彩虹**<br>雨停了，小云用两种语言说出彩虹的每一种颜色。 | Colour names in two languages | Color Words | outline |
-| 9 | **Mixing Paints**<br>Yellow and blue swirl together, and something green appears! | **调颜料**<br>黄色和蓝色转呀转，变出了绿色！ | Mixing colours | Rainbow Mixing | outline |
-| 10 | **Tangram Cat**<br>Seven shapes slide together to make a cat, a boat and a house. | **七巧板小猫**<br>七块图形拼一拼，变成小猫、小船和房子。 | Shapes make pictures | Tangram Friends | outline |
+| 6 | **The Round Roof**<br>In Shape Village, a round house is looking for its round roof. | **圆圆的屋顶**<br>形状村里，一座圆房子在找它圆圆的屋顶。 | Circles | Shape Sorter | written |
+| 7 | **Triangle Mountain**<br>Yun spots triangles everywhere: mountains, roofs and slices of watermelon. | **三角形的山**<br>小云到处都看到三角形：大山、屋顶，还有西瓜片。 | Triangles around us | Shape Tracing | written |
+| 8 | **Yun's Rainbow**<br>After the rain, Yun names each colour of the rainbow in two languages. | **小云的彩虹**<br>雨停了，小云用两种语言说出彩虹的每一种颜色。 | Colour names in two languages | Color Words | written |
+| 9 | **Mixing Paints**<br>Yellow and blue swirl together, and something green appears! | **调颜料**<br>黄色和蓝色转呀转，变出了绿色！ | Mixing colours | Rainbow Mixing | written |
+| 10 | **Tangram Cat**<br>Seven shapes slide together to make a cat, a boat and a house. | **七巧板小猫**<br>七块图形拼一拼，变成小猫、小船和房子。 | Shapes make pictures | Tangram Friends | written |
 
 ## Big and Small · 大小比较
 
 | # | English | 中文 | Learns | Plays next | Status |
 |---|---|---|---|---|---|
-| 11 | **Big Shoes, Small Shoes**<br>Yun tries on Bear's big shoes and Mouse's tiny ones. | **大鞋子小鞋子**<br>小云试穿小熊的大鞋子，还有小老鼠的小鞋子。 | Big and small | Big and Small | outline |
-| 12 | **The Tallest Tower**<br>Block by block, the tower grows taller than Yun! | **最高的塔**<br>一块一块往上搭，塔比小云还高了！ | Tall and short | Stacking Cups | outline |
-| 13 | **Long Scarf, Short Scarf**<br>Grandma knits a long scarf and a short one. Who gets which? | **长围巾短围巾**<br>奶奶织了一条长围巾和一条短围巾。谁戴哪一条呢？ | Long and short | Fix the Bridge | outline |
-| 14 | **Heavy and Light**<br>A feather and a rock sit on the seesaw. Which side goes down? | **重和轻**<br>羽毛和石头坐上跷跷板。哪一边会往下沉？ | Heavy and light | Big and Small | outline |
-| 15 | **Just Right**<br>The big hat is too big, the small hat too small, and this one is just right. | **刚刚好**<br>大帽子太大，小帽子太小，这顶刚刚好。 | Fitting sizes | Stacking Cups | outline |
+| 11 | **Big Shoes, Small Shoes**<br>Yun tries on Bear's big shoes and Mouse's tiny ones. | **大鞋子小鞋子**<br>小云试穿小熊的大鞋子，还有小老鼠的小鞋子。 | Big and small | Big and Small | written |
+| 12 | **The Tallest Tower**<br>Block by block, the tower grows taller than Yun! | **最高的塔**<br>一块一块往上搭，塔比小云还高了！ | Tall and short | Stacking Cups | written |
+| 13 | **Long Scarf, Short Scarf**<br>Grandma knits a long scarf and a short one. Who gets which? | **长围巾短围巾**<br>奶奶织了一条长围巾和一条短围巾。谁戴哪一条呢？ | Long and short | Fix the Bridge | written |
+| 14 | **Heavy and Light**<br>A feather and a rock sit on the seesaw. Which side goes down? | **重和轻**<br>羽毛和石头坐上跷跷板。哪一边会往下沉？ | Heavy and light | Big and Small | written |
+| 15 | **Just Right**<br>The big hat is too big, the small hat too small, and this one is just right. | **刚刚好**<br>大帽子太大，小帽子太小，这顶刚刚好。 | Fitting sizes | Stacking Cups | written |
 
 ## Patterns and Order · 规律和顺序
 
 | # | English | 中文 | Learns | Plays next | Status |
 |---|---|---|---|---|---|
-| 16 | **Red, Blue, Red, Blue**<br>The meadow flowers glow in a pattern. What colour comes next? | **红蓝红蓝**<br>草地上的花按规律亮起来。下一朵是什么颜色？ | AB patterns | Pattern Parade | outline |
-| 17 | **The Lantern Street**<br>Friends hang lanterns, red, yellow, red, yellow, all along the street. | **灯笼街**<br>朋友们在街上挂灯笼，红、黄、红、黄，挂满整条街。 | Colour patterns | Lantern String | outline |
-| 18 | **First, Next, Last**<br>First Yun wakes up, next Yun eats breakfast, last Yun goes out to play. | **先、再、最后**<br>小云先起床，再吃早饭，最后出去玩。 | Sequencing | Morning Routine | outline |
-| 19 | **Clap Clap Stomp**<br>Bear claps, Frog stomps: clap, stomp, clap, stomp. Can you join in? | **拍拍跺跺**<br>小熊拍手，青蛙跺脚：拍、跺、拍、跺。你也来一起吧！ | Sound patterns | Clap and Stomp | outline |
-| 20 | **The Growing Flower**<br>A seed, a sprout, a bud, a flower, step by step. | **小花长大了**<br>种子、小芽、花苞、花朵，一步一步长大。 | Life-cycle order | Growing Up | outline |
+| 16 | **Red, Blue, Red, Blue**<br>The meadow flowers glow in a pattern. What colour comes next? | **红蓝红蓝**<br>草地上的花按规律亮起来。下一朵是什么颜色？ | AB patterns | Pattern Parade | written |
+| 17 | **The Lantern Street**<br>Friends hang lanterns, red, yellow, red, yellow, all along the street. | **灯笼街**<br>朋友们在街上挂灯笼，红、黄、红、黄，挂满整条街。 | Colour patterns | Lantern String | written |
+| 18 | **First, Next, Last**<br>First Yun wakes up, next Yun eats breakfast, last Yun goes out to play. | **先、再、最后**<br>小云先起床，再吃早饭，最后出去玩。 | Sequencing | Morning Routine | written |
+| 19 | **Clap Clap Stomp**<br>Bear claps, Frog stomps: clap, stomp, clap, stomp. Can you join in? | **拍拍跺跺**<br>小熊拍手，青蛙跺脚：拍、跺、拍、跺。你也来一起吧！ | Sound patterns | Clap and Stomp | written |
+| 20 | **The Growing Flower**<br>A seed, a sprout, a bud, a flower, step by step. | **小花长大了**<br>种子、小芽、花苞、花朵，一步一步长大。 | Life-cycle order | Growing Up | written |
 
 ## Where Things Are · 位置
 
 | # | English | 中文 | Learns | Plays next | Status |
 |---|---|---|---|---|---|
-| 21 | **Where Is Duck?**<br>Is Duck in the box, on the box, or under the box? | **鸭子在哪里**<br>鸭子在盒子里、盒子上，还是盒子下面？ | In, on, under | Where Is It? | outline |
-| 22 | **Owl Is Up High**<br>Owl lives up high, Frog lives down low. Who lives in the middle? | **猫头鹰在高处**<br>猫头鹰住在高高的上面，青蛙住在低低的下面。谁住在中间呢？ | Up and down | Owl's Tree House | outline |
-| 23 | **Hide and Seek in the Fog**<br>In the misty forest, friends hide behind trees and in front of rocks. | **雾里捉迷藏**<br>迷雾林里，朋友们躲在树后面，还有石头前面。 | In front and behind | Hide and Seek | outline |
-| 24 | **Setting the Table**<br>The bowl goes on the table, and the spoon goes next to the bowl. | **摆桌子**<br>碗放在桌子上，勺子放在碗旁边。 | On and next to | Set the Table | outline |
-| 25 | **Follow the Path**<br>Up the hill, down the steps, around the pond: Yun follows the path home. | **沿着小路走**<br>上山坡，下台阶，绕过池塘，小云沿着小路回家。 | Directions | Park Path | outline |
+| 21 | **Where Is Duck?**<br>Is Duck in the box, on the box, or under the box? | **鸭子在哪里**<br>鸭子在盒子里、盒子上，还是盒子下面？ | In, on, under | Where Is It? | written |
+| 22 | **Owl Is Up High**<br>Owl lives up high, Frog lives down low. Who lives in the middle? | **猫头鹰在高处**<br>猫头鹰住在高高的上面，青蛙住在低低的下面。谁住在中间呢？ | Up and down | Owl's Tree House | written |
+| 23 | **Hide and Seek in the Fog**<br>In the misty forest, friends hide behind trees and in front of rocks. | **雾里捉迷藏**<br>迷雾林里，朋友们躲在树后面，还有石头前面。 | In front and behind | Hide and Seek | written |
+| 24 | **Setting the Table**<br>The bowl goes on the table, and the spoon goes next to the bowl. | **摆桌子**<br>碗放在桌子上，勺子放在碗旁边。 | On and next to | Set the Table | written |
+| 25 | **Follow the Path**<br>Up the hill, down the steps, around the pond: Yun follows the path home. | **沿着小路走**<br>上山坡，下台阶，绕过池塘，小云沿着小路回家。 | Directions | Park Path | written |
 
 ## Nature and Seasons · 自然和季节
 
 | # | English | 中文 | Learns | Plays next | Status |
 |---|---|---|---|---|---|
-| 26 | **Rainy Day Boots**<br>Rain! Yun needs boots and an umbrella. What about sunny days? | **下雨天的雨靴**<br>下雨了！小云需要雨靴和雨伞。那晴天呢？ | Dressing for weather | Weather Wardrobe | outline |
-| 27 | **The Four Seasons Tree**<br>One tree through the year: flowers, green leaves, orange leaves, snow. | **四季树**<br>一棵树的一年：开花、绿叶、黄叶、白雪。 | Seasons | Growing Up | outline |
-| 28 | **Where Does the Sun Go?**<br>The sun goes down, the moon comes up, and the night animals wake. | **太阳去哪儿了**<br>太阳落山，月亮升起，夜里的动物醒来了。 | Day and night | Day and Night | outline |
-| 29 | **Snow Day**<br>Big ball, middle ball, small ball: Yun and Bear build a snowman. | **下雪啦**<br>大雪球、中雪球、小雪球，小云和小熊堆雪人。 | Big, middle, small | Build a Snowman | outline |
-| 30 | **The Moon Changes Shape**<br>Night after night, the moon grows round, then thin again. | **月亮变变变**<br>一夜又一夜，月亮变圆了，又变弯了。 | Moon shapes | Night Sky | outline |
+| 26 | **Rainy Day Boots**<br>Rain! Yun needs boots and an umbrella. What about sunny days? | **下雨天的雨靴**<br>下雨了！小云需要雨靴和雨伞。那晴天呢？ | Dressing for weather | Weather Wardrobe | written |
+| 27 | **The Four Seasons Tree**<br>One tree through the year: flowers, green leaves, orange leaves, snow. | **四季树**<br>一棵树的一年：开花、绿叶、黄叶、白雪。 | Seasons | Growing Up | written |
+| 28 | **Where Does the Sun Go?**<br>The sun goes down, the moon comes up, and the night animals wake. | **太阳去哪儿了**<br>太阳落山，月亮升起，夜里的动物醒来了。 | Day and night | Day and Night | written |
+| 29 | **Snow Day**<br>Big ball, middle ball, small ball: Yun and Bear build a snowman. | **下雪啦**<br>大雪球、中雪球、小雪球，小云和小熊堆雪人。 | Big, middle, small | Build a Snowman | written |
+| 30 | **The Moon Changes Shape**<br>Night after night, the moon grows round, then thin again. | **月亮变变变**<br>一夜又一夜，月亮变圆了，又变弯了。 | Moon shapes | Night Sky | written |
 
 ## Animals · 动物
 

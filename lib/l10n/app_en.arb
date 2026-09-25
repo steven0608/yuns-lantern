@@ -39,6 +39,7 @@
   "purchaseButton": "Unlock everything — {price}",
   "@purchaseButton": {"placeholders": {"price": {"type": "String"}}},
   "purchaseOwned": "Thank you! Everything is unlocked.",
+  "allFreeNote": "Test build: everything is unlocked.",
   "purchaseRestore": "Restore purchases",
   "purchaseUnavailable": "The App Store isn't available right now. Please try again later.",
   "purchasePending": "Waiting for the App Store…",

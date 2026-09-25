@@ -27,7 +27,9 @@ flutter:
   assets:
     - content/
     - assets/images/
+    - assets/images/characters/
     - assets/images/items/
+    - assets/images/lands/
     - assets/images/lights/
     - assets/images/scenes/
     - assets/images/tiles/
@@ -65,6 +67,31 @@ flutter:
     - assets/audio/vo/en/tales/tale_03/
     - assets/audio/vo/en/tales/tale_04/
     - assets/audio/vo/en/tales/tale_05/
+    - assets/audio/vo/en/tales/tale_06/
+    - assets/audio/vo/en/tales/tale_07/
+    - assets/audio/vo/en/tales/tale_08/
+    - assets/audio/vo/en/tales/tale_09/
+    - assets/audio/vo/en/tales/tale_10/
+    - assets/audio/vo/en/tales/tale_11/
+    - assets/audio/vo/en/tales/tale_12/
+    - assets/audio/vo/en/tales/tale_13/
+    - assets/audio/vo/en/tales/tale_14/
+    - assets/audio/vo/en/tales/tale_15/
+    - assets/audio/vo/en/tales/tale_16/
+    - assets/audio/vo/en/tales/tale_17/
+    - assets/audio/vo/en/tales/tale_18/
+    - assets/audio/vo/en/tales/tale_19/
+    - assets/audio/vo/en/tales/tale_20/
+    - assets/audio/vo/en/tales/tale_21/
+    - assets/audio/vo/en/tales/tale_22/
+    - assets/audio/vo/en/tales/tale_23/
+    - assets/audio/vo/en/tales/tale_24/
+    - assets/audio/vo/en/tales/tale_25/
+    - assets/audio/vo/en/tales/tale_26/
+    - assets/audio/vo/en/tales/tale_27/
+    - assets/audio/vo/en/tales/tale_28/
+    - assets/audio/vo/en/tales/tale_29/
+    - assets/audio/vo/en/tales/tale_30/
     - assets/audio/vo/en/ui/
     - assets/audio/vo/en/whatisit/
     - assets/audio/vo/zh/category/
@@ -98,6 +125,31 @@ flutter:
     - assets/audio/vo/zh/tales/tale_03/
     - assets/audio/vo/zh/tales/tale_04/
     - assets/audio/vo/zh/tales/tale_05/
+    - assets/audio/vo/zh/tales/tale_06/
+    - assets/audio/vo/zh/tales/tale_07/
+    - assets/audio/vo/zh/tales/tale_08/
+    - assets/audio/vo/zh/tales/tale_09/
+    - assets/audio/vo/zh/tales/tale_10/
+    - assets/audio/vo/zh/tales/tale_11/
+    - assets/audio/vo/zh/tales/tale_12/
+    - assets/audio/vo/zh/tales/tale_13/
+    - assets/audio/vo/zh/tales/tale_14/
+    - assets/audio/vo/zh/tales/tale_15/
+    - assets/audio/vo/zh/tales/tale_16/
+    - assets/audio/vo/zh/tales/tale_17/
+    - assets/audio/vo/zh/tales/tale_18/
+    - assets/audio/vo/zh/tales/tale_19/
+    - assets/audio/vo/zh/tales/tale_20/
+    - assets/audio/vo/zh/tales/tale_21/
+    - assets/audio/vo/zh/tales/tale_22/
+    - assets/audio/vo/zh/tales/tale_23/
+    - assets/audio/vo/zh/tales/tale_24/
+    - assets/audio/vo/zh/tales/tale_25/
+    - assets/audio/vo/zh/tales/tale_26/
+    - assets/audio/vo/zh/tales/tale_27/
+    - assets/audio/vo/zh/tales/tale_28/
+    - assets/audio/vo/zh/tales/tale_29/
+    - assets/audio/vo/zh/tales/tale_30/
     - assets/audio/vo/zh/ui/
     - assets/audio/vo/zh/whatisit/
 

@@ -344,6 +344,12 @@ abstract class AppLocalizations {
   /// **'Thank you! Everything is unlocked.'**
   String get purchaseOwned;
 
+  /// No description provided for @allFreeNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Test build: everything is unlocked.'**
+  String get allFreeNote;
+
   /// No description provided for @purchaseRestore.
   ///
   /// In en, this message translates to:

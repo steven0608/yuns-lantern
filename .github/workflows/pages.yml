@@ -21,8 +21,17 @@ jobs:
       - uses: subosito/flutter-action@v2
         with: { channel: stable, cache: true }
       - run: flutter pub get
-      - name: Build (base href = /<repo>/)
-        run: flutter build web --release --base-href "/${{ github.event.repository.name }}/"
+      - name: Build (base href = /<repo>/; test build: everything unlocked)
+        run: flutter build web --release --base-href "/${{ github.event.repository.name }}/" --dart-define=YL_ALL_FREE=true
+      - name: Cache-bust (Pages serves every file with max-age=600 and no content hash)
+        # Without this a returning visitor can run a stale main.dart.js, or a
+        # mix of old code and new assets, for up to 10 minutes after a deploy.
+        run: |
+          v=${GITHUB_SHA::8}
+          sed -i "s#src=\"flutter_bootstrap.js\"#src=\"flutter_bootstrap.js?v=$v\"#" build/web/index.html
+          sed -i "s#\"mainJsPath\":\"main.dart.js\"#\"mainJsPath\":\"main.dart.js?v=$v\"#" build/web/flutter_bootstrap.js
+          grep -q "flutter_bootstrap.js?v=$v" build/web/index.html
+          grep -q "main.dart.js?v=$v" build/web/flutter_bootstrap.js
       - uses: actions/upload-pages-artifact@v3
         with: { path: build/web }
   deploy:

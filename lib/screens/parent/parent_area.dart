@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/app_scope.dart';
 import '../../core/iap/purchase_service.dart';
+import '../../core/storage/prefs.dart';
 import '../../core/tokens.dart';
 import '../../l10n/app_localizations.dart';
 
@@ -39,6 +40,7 @@ class ParentArea extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 children: [
                   _Section(l.sectionPurchase, [
+                    if (Settings.allFree) _Note(l.allFreeNote),
                     if (s.purchases.owned || st.purchased)
                       ListTile(
                         leading: const Icon(

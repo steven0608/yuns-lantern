@@ -340,8 +340,37 @@
     "en": "In Shape Village, a round house is looking for its round roof.",
     "zh": "形状村里，一座圆房子在找它圆圆的屋顶。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "In Shape Village, every house has a roof.",
+     "zh": "形状村里，每座房子都有屋顶。"
+    },
+    {
+     "en": "Whoosh! The wind blows the roofs away.",
+     "zh": "呼！大风把屋顶吹跑了。"
+    },
+    {
+     "en": "The round house looks up. Where is my round roof?",
+     "zh": "圆房子抬头看。我的圆屋顶在哪里？"
+    },
+    {
+     "en": "A triangle roof floats by. Too pointy!",
+     "zh": "一个三角形屋顶飘过来。太尖啦！"
+    },
+    {
+     "en": "A square roof floats by. Too flat!",
+     "zh": "一个正方形屋顶飘过来。太平啦！"
+    },
+    {
+     "en": "Here comes a round roof. It fits just right!",
+     "zh": "圆圆的屋顶来了。刚刚好！"
+    },
+    {
+     "en": "Round roof, round house. Home again.",
+     "zh": "圆屋顶，圆房子。又回家了。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 7,
@@ -357,8 +386,33 @@
     "en": "Yun spots triangles everywhere: mountains, roofs and slices of watermelon.",
     "zh": "小云到处都看到三角形：大山、屋顶，还有西瓜片。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun looks at the big mountain. It has three sides.",
+     "zh": "小云看着大山。它有三条边。"
+    },
+    {
+     "en": "That is a triangle!",
+     "zh": "那是三角形！"
+    },
+    {
+     "en": "The roof of Bear's house is a triangle too.",
+     "zh": "小熊家的屋顶也是三角形。"
+    },
+    {
+     "en": "Yun's slice of watermelon? A triangle!",
+     "zh": "小云的西瓜片呢？也是三角形！"
+    },
+    {
+     "en": "Duck folds a paper boat. Its sail is a triangle.",
+     "zh": "鸭子折了一只纸船。船帆是三角形的。"
+    },
+    {
+     "en": "One, two, three corners. Triangles are everywhere!",
+     "zh": "一个、两个、三个角。到处都是三角形！"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 8,
@@ -374,8 +428,33 @@
     "en": "After the rain, Yun names each colour of the rainbow in two languages.",
     "zh": "雨停了，小云用两种语言说出彩虹的每一种颜色。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "The rain stops. The sun comes out.",
+     "zh": "雨停了。太阳出来了。"
+    },
+    {
+     "en": "Look up! A rainbow!",
+     "zh": "快看天上！一道彩虹！"
+    },
+    {
+     "en": "Red is hóng. Orange is chéng.",
+     "zh": "红色是 red。橙色是 orange。"
+    },
+    {
+     "en": "Yellow is huáng. Green is lǜ.",
+     "zh": "黄色是 yellow。绿色是 green。"
+    },
+    {
+     "en": "Blue is lán. Purple is zǐ.",
+     "zh": "蓝色是 blue。紫色是 purple。"
+    },
+    {
+     "en": "One rainbow, and two ways to say every color.",
+     "zh": "一道彩虹，每种颜色都有两种说法。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 9,
@@ -391,8 +470,33 @@
     "en": "Yellow and blue swirl together, and something green appears!",
     "zh": "黄色和蓝色转呀转，变出了绿色！"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun has three pots of paint: red, yellow and blue.",
+     "zh": "小云有三罐颜料：红色、黄色和蓝色。"
+    },
+    {
+     "en": "A little yellow, a little blue. Swirl, swirl!",
+     "zh": "一点黄色，一点蓝色。转呀转！"
+    },
+    {
+     "en": "Look! Now it is green.",
+     "zh": "看！变成绿色了。"
+    },
+    {
+     "en": "Red and yellow make orange.",
+     "zh": "红色和黄色变成橙色。"
+    },
+    {
+     "en": "Red and blue make purple.",
+     "zh": "红色和蓝色变成紫色。"
+    },
+    {
+     "en": "Yun paints a picture with every new color.",
+     "zh": "小云用新颜色画了一幅画。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 10,
@@ -408,8 +512,33 @@
     "en": "Seven shapes slide together to make a cat, a boat and a house.",
     "zh": "七块图形拼一拼，变成小猫、小船和房子。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Grandma has seven flat shapes in a box.",
+     "zh": "奶奶的盒子里有七块平平的图形。"
+    },
+    {
+     "en": "Two big triangles, and one small square...",
+     "zh": "两个大三角形，还有一个小正方形……"
+    },
+    {
+     "en": "Slide, turn, slide. What is it?",
+     "zh": "推一推，转一转。这是什么？"
+    },
+    {
+     "en": "It is a cat with pointy ears!",
+     "zh": "是一只尖耳朵的小猫！"
+    },
+    {
+     "en": "Mix them up. Now it is a boat.",
+     "zh": "打乱再拼。现在是一只小船。"
+    },
+    {
+     "en": "Same seven shapes, so many pictures!",
+     "zh": "同样的七块图形，能拼出好多图画！"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 11,
@@ -425,8 +554,33 @@
     "en": "Yun tries on Bear's big shoes and Mouse's tiny ones.",
     "zh": "小云试穿小熊的大鞋子，还有小老鼠的小鞋子。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun finds Bear's shoes by the door.",
+     "zh": "小云在门边看到小熊的鞋子。"
+    },
+    {
+     "en": "Yun puts them on. Flop, flop! Too big!",
+     "zh": "小云穿上试试。啪嗒啪嗒！太大啦！"
+    },
+    {
+     "en": "Mouse's shoes are next to them.",
+     "zh": "小老鼠的鞋子就在旁边。"
+    },
+    {
+     "en": "Yun tries them. Squeeze! Too small!",
+     "zh": "小云再试试。好挤！太小啦！"
+    },
+    {
+     "en": "Here are Yun's own shoes. Just right.",
+     "zh": "这是小云自己的鞋子。刚刚好。"
+    },
+    {
+     "en": "Big shoes, small shoes, and Yun's shoes in the middle.",
+     "zh": "大鞋子，小鞋子，小云的鞋子在中间。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 12,
@@ -442,8 +596,33 @@
     "en": "Block by block, the tower grows taller than Yun!",
     "zh": "一块一块往上搭，塔比小云还高了！"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun puts one block on the floor.",
+     "zh": "小云把一块积木放在地上。"
+    },
+    {
+     "en": "One more on top. The tower is short.",
+     "zh": "上面再放一块。塔还很矮。"
+    },
+    {
+     "en": "More and more blocks. It grows taller.",
+     "zh": "积木越来越多。塔越来越高。"
+    },
+    {
+     "en": "Now the tower is as tall as Bear's knee.",
+     "zh": "现在塔和小熊的膝盖一样高。"
+    },
+    {
+     "en": "Wobble, wobble... it stands!",
+     "zh": "晃呀晃……它站住了！"
+    },
+    {
+     "en": "The tallest tower! Yun is so happy.",
+     "zh": "最高的塔！小云好开心。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 13,
@@ -459,8 +638,33 @@
     "en": "Grandma knits a long scarf and a short one. Who gets which?",
     "zh": "奶奶织了一条长围巾和一条短围巾。谁戴哪一条呢？"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Grandma is knitting by the window.",
+     "zh": "奶奶坐在窗边织毛线。"
+    },
+    {
+     "en": "She makes a long, long scarf.",
+     "zh": "她织了一条长长的围巾。"
+    },
+    {
+     "en": "Then she makes a short little scarf.",
+     "zh": "又织了一条短短的小围巾。"
+    },
+    {
+     "en": "The long scarf goes round and round Bear's neck.",
+     "zh": "长围巾在小熊的脖子上绕了一圈又一圈。"
+    },
+    {
+     "en": "The short scarf fits Mouse just right.",
+     "zh": "短围巾给小老鼠刚刚好。"
+    },
+    {
+     "en": "Long and short, warm and cozy.",
+     "zh": "长的和短的，都暖暖和和。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 14,
@@ -476,8 +680,33 @@
     "en": "A feather and a rock sit on the seesaw. Which side goes down?",
     "zh": "羽毛和石头坐上跷跷板。哪一边会往下沉？"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun and Duck find a seesaw in the park.",
+     "zh": "小云和鸭子在公园里找到一个跷跷板。"
+    },
+    {
+     "en": "Yun puts a feather on one side.",
+     "zh": "小云在一边放了一根羽毛。"
+    },
+    {
+     "en": "Duck puts a rock on the other side.",
+     "zh": "鸭子在另一边放了一块石头。"
+    },
+    {
+     "en": "Bump! The rock side goes down.",
+     "zh": "咚！石头那边沉下去了。"
+    },
+    {
+     "en": "The rock is heavy. The feather is light.",
+     "zh": "石头很重。羽毛很轻。"
+    },
+    {
+     "en": "What if Bear sits on it? Down he goes!",
+     "zh": "要是小熊坐上去呢？一下子就沉下去了！"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 15,
@@ -493,8 +722,33 @@
     "en": "The big hat is too big, the small hat too small, and this one is just right.",
     "zh": "大帽子太大，小帽子太小，这顶刚刚好。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun wants a hat for the sunny day.",
+     "zh": "晴天到了，小云想戴一顶帽子。"
+    },
+    {
+     "en": "The first hat is big. It covers Yun's eyes!",
+     "zh": "第一顶帽子好大。把小云的眼睛都遮住了！"
+    },
+    {
+     "en": "The second hat is small. It sits on one ear.",
+     "zh": "第二顶帽子好小。只能挂在一只耳朵上。"
+    },
+    {
+     "en": "The third hat is not big and not small.",
+     "zh": "第三顶帽子不大也不小。"
+    },
+    {
+     "en": "It is just right!",
+     "zh": "刚刚好！"
+    },
+    {
+     "en": "Off Yun goes to play in the sun.",
+     "zh": "小云戴着帽子去晒太阳玩啦。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 16,
@@ -510,8 +764,33 @@
     "en": "The meadow flowers glow in a pattern. What colour comes next?",
     "zh": "草地上的花按规律亮起来。下一朵是什么颜色？"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Night comes to the Starry Meadow.",
+     "zh": "星空原的夜晚来了。"
+    },
+    {
+     "en": "The flowers light up one by one.",
+     "zh": "花朵一朵一朵亮起来。"
+    },
+    {
+     "en": "Red, blue, red, blue...",
+     "zh": "红、蓝、红、蓝……"
+    },
+    {
+     "en": "Oh! One flower is still dark.",
+     "zh": "哎呀！还有一朵没有亮。"
+    },
+    {
+     "en": "Red, blue, red... what comes next?",
+     "zh": "红、蓝、红……下一朵是什么？"
+    },
+    {
+     "en": "Blue! The pattern glows all the way across.",
+     "zh": "蓝色！整排花都按规律亮起来了。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 17,
@@ -527,8 +806,33 @@
     "en": "Friends hang lanterns, red, yellow, red, yellow, all along the street.",
     "zh": "朋友们在街上挂灯笼，红、黄、红、黄，挂满整条街。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Tonight is lantern night on Yun's street.",
+     "zh": "今晚是小云家那条街的灯笼夜。"
+    },
+    {
+     "en": "Bear hangs a red lantern.",
+     "zh": "小熊挂上一个红灯笼。"
+    },
+    {
+     "en": "Duck hangs a yellow lantern.",
+     "zh": "鸭子挂上一个黄灯笼。"
+    },
+    {
+     "en": "Red, yellow, red, yellow, all along the street.",
+     "zh": "红、黄、红、黄，挂满整条街。"
+    },
+    {
+     "en": "Which color comes next? Red!",
+     "zh": "下一个是什么颜色？红色！"
+    },
+    {
+     "en": "The whole street glows. Good night, lanterns.",
+     "zh": "整条街都亮了。灯笼们，晚安。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 18,
@@ -544,8 +848,33 @@
     "en": "First Yun wakes up, next Yun eats breakfast, last Yun goes out to play.",
     "zh": "小云先起床，再吃早饭，最后出去玩。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Good morning! First, Yun wakes up and stretches.",
+     "zh": "早上好！小云先起床，伸个懒腰。"
+    },
+    {
+     "en": "Next, Yun washes and brushes teeth.",
+     "zh": "再洗脸、刷牙。"
+    },
+    {
+     "en": "Then, breakfast! Warm rice and a little egg.",
+     "zh": "然后吃早饭！热乎乎的米饭和一个小鸡蛋。"
+    },
+    {
+     "en": "Last, Yun puts on shoes.",
+     "zh": "最后，小云穿上鞋子。"
+    },
+    {
+     "en": "First, next, then, last. Now it is time to play!",
+     "zh": "先、再、然后、最后。现在可以出去玩啦！"
+    },
+    {
+     "en": "Out the door Yun goes.",
+     "zh": "小云出门啦。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 19,
@@ -561,8 +890,33 @@
     "en": "Bear claps, Frog stomps: clap, stomp, clap, stomp. Can you join in?",
     "zh": "小熊拍手，青蛙跺脚：拍、跺、拍、跺。你也来一起吧！"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Bear has a song. Clap!",
+     "zh": "小熊有一首歌。拍！"
+    },
+    {
+     "en": "Frog has a song too. Stomp!",
+     "zh": "青蛙也有一首歌。跺！"
+    },
+    {
+     "en": "Together: clap, stomp, clap, stomp.",
+     "zh": "一起来：拍、跺、拍、跺。"
+    },
+    {
+     "en": "Duck joins in. Clap, stomp, clap...",
+     "zh": "鸭子也来了。拍、跺、拍……"
+    },
+    {
+     "en": "What comes next? Stomp!",
+     "zh": "下一个是什么？跺！"
+    },
+    {
+     "en": "Clap, stomp, clap, stomp. Everyone dances!",
+     "zh": "拍、跺、拍、跺。大家一起跳舞！"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 20,
@@ -578,8 +932,33 @@
     "en": "A seed, a sprout, a bud, a flower, step by step.",
     "zh": "种子、小芽、花苞、花朵，一步一步长大。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun plants a tiny seed in the dirt.",
+     "zh": "小云把一颗小种子种进土里。"
+    },
+    {
+     "en": "Sun and rain help it wake up.",
+     "zh": "阳光和雨水帮它醒过来。"
+    },
+    {
+     "en": "A little green sprout pokes out.",
+     "zh": "一棵绿绿的小芽钻出来了。"
+    },
+    {
+     "en": "The sprout grows leaves, and then a bud.",
+     "zh": "小芽长出叶子，又长出花苞。"
+    },
+    {
+     "en": "The bud opens. A flower!",
+     "zh": "花苞打开了。是一朵花！"
+    },
+    {
+     "en": "Seed, sprout, bud, flower. Step by step.",
+     "zh": "种子、小芽、花苞、花朵。一步一步。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 21,
@@ -595,8 +974,33 @@
     "en": "Is Duck in the box, on the box, or under the box?",
     "zh": "鸭子在盒子里、盒子上，还是盒子下面？"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Duck loves to play hide and seek.",
+     "zh": "鸭子最喜欢玩捉迷藏。"
+    },
+    {
+     "en": "Is Duck in the box? Yes! Quack!",
+     "zh": "鸭子在盒子里吗？在！嘎嘎！"
+    },
+    {
+     "en": "Now Duck is on the box.",
+     "zh": "现在鸭子在盒子上面。"
+    },
+    {
+     "en": "Now Duck is under the box. Peek!",
+     "zh": "现在鸭子在盒子下面。偷偷看！"
+    },
+    {
+     "en": "In, on, under. Duck is everywhere!",
+     "zh": "里面、上面、下面。鸭子到处跑！"
+    },
+    {
+     "en": "Where will Duck hide next?",
+     "zh": "鸭子下次会躲在哪里呢？"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 22,
@@ -612,8 +1016,33 @@
     "en": "Owl lives up high, Frog lives down low. Who lives in the middle?",
     "zh": "猫头鹰住在高高的上面，青蛙住在低低的下面。谁住在中间呢？"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Owl's tree has three homes.",
+     "zh": "猫头鹰的大树上有三个家。"
+    },
+    {
+     "en": "Owl lives at the top, up high.",
+     "zh": "猫头鹰住在最上面，高高的。"
+    },
+    {
+     "en": "Frog lives at the bottom, down low.",
+     "zh": "青蛙住在最下面，低低的。"
+    },
+    {
+     "en": "Who lives in the middle? Bird!",
+     "zh": "谁住在中间呢？小鸟！"
+    },
+    {
+     "en": "Up, middle, down. Everyone has a home.",
+     "zh": "上面、中间、下面。大家都有家。"
+    },
+    {
+     "en": "Good night, tree friends.",
+     "zh": "晚安，大树上的朋友们。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 23,
@@ -629,8 +1058,33 @@
     "en": "In the misty forest, friends hide behind trees and in front of rocks.",
     "zh": "迷雾林里，朋友们躲在树后面，还有石头前面。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "The fog rolls into the Misty Forest.",
+     "zh": "迷雾林里起雾了。"
+    },
+    {
+     "en": "Yun can hear friends, but cannot see them.",
+     "zh": "小云听得见朋友们，可是看不见。"
+    },
+    {
+     "en": "\"I am behind the tree!\" says Owl.",
+     "zh": "“我在树后面！”猫头鹰说。"
+    },
+    {
+     "en": "\"I am in front of the rock!\" says Frog.",
+     "zh": "“我在石头前面！”青蛙说。"
+    },
+    {
+     "en": "Yun looks behind and in front. Found you!",
+     "zh": "小云看看后面，看看前面。找到你们啦！"
+    },
+    {
+     "en": "The fog lifts, and everyone laughs.",
+     "zh": "雾散了，大家都笑了。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 24,
@@ -646,8 +1100,33 @@
     "en": "The bowl goes on the table, and the spoon goes next to the bowl.",
     "zh": "碗放在桌子上，勺子放在碗旁边。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Dinner time! Yun helps set the table.",
+     "zh": "吃晚饭啦！小云帮忙摆桌子。"
+    },
+    {
+     "en": "The bowl goes on the table.",
+     "zh": "碗放在桌子上。"
+    },
+    {
+     "en": "The spoon goes next to the bowl.",
+     "zh": "勺子放在碗旁边。"
+    },
+    {
+     "en": "The cup goes next to the spoon.",
+     "zh": "杯子放在勺子旁边。"
+    },
+    {
+     "en": "The rice goes in the bowl. Yum!",
+     "zh": "米饭装在碗里。好香！"
+    },
+    {
+     "en": "Everything is in its place. Let's eat!",
+     "zh": "东西都放好了。开饭啦！"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 25,
@@ -663,8 +1142,33 @@
     "en": "Up the hill, down the steps, around the pond: Yun follows the path home.",
     "zh": "上山坡，下台阶，绕过池塘，小云沿着小路回家。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun's walk home starts at the big tree.",
+     "zh": "小云从大树那里出发回家。"
+    },
+    {
+     "en": "Up the hill: one step, two steps.",
+     "zh": "上山坡：一步，两步。"
+    },
+    {
+     "en": "Down the steps, carefully.",
+     "zh": "小心地走下台阶。"
+    },
+    {
+     "en": "Around the pond, past the ducks.",
+     "zh": "绕过池塘，经过小鸭子。"
+    },
+    {
+     "en": "Over the little bridge.",
+     "zh": "走过小桥。"
+    },
+    {
+     "en": "There is the red door. Home!",
+     "zh": "看到红色的门了。到家啦！"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 26,
@@ -680,8 +1184,33 @@
     "en": "Rain! Yun needs boots and an umbrella. What about sunny days?",
     "zh": "下雨了！小云需要雨靴和雨伞。那晴天呢？"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Drip, drop! It is raining.",
+     "zh": "滴答滴答！下雨了。"
+    },
+    {
+     "en": "Yun puts on rain boots and a raincoat.",
+     "zh": "小云穿上雨靴和雨衣。"
+    },
+    {
+     "en": "Yun opens a big umbrella.",
+     "zh": "小云打开一把大伞。"
+    },
+    {
+     "en": "Splash! Puddles are fun in boots.",
+     "zh": "啪嗒！穿着雨靴踩水坑真好玩。"
+    },
+    {
+     "en": "Tomorrow will be sunny. Yun will wear a sun hat.",
+     "zh": "明天是晴天。小云要戴遮阳帽。"
+    },
+    {
+     "en": "Rain clothes, sun clothes. Ready for any day!",
+     "zh": "雨天的衣服，晴天的衣服。天天都准备好了！"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 27,
@@ -697,8 +1226,33 @@
     "en": "One tree through the year: flowers, green leaves, orange leaves, snow.",
     "zh": "一棵树的一年：开花、绿叶、黄叶、白雪。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "In spring, the tree has pink flowers.",
+     "zh": "春天，树上开满粉色的花。"
+    },
+    {
+     "en": "In summer, the leaves are big and green.",
+     "zh": "夏天，树叶又大又绿。"
+    },
+    {
+     "en": "In autumn, the leaves turn orange and fall.",
+     "zh": "秋天，树叶变黄，飘落下来。"
+    },
+    {
+     "en": "In winter, snow sits on the branches.",
+     "zh": "冬天，树枝上落满白雪。"
+    },
+    {
+     "en": "Then spring comes again.",
+     "zh": "然后，春天又来了。"
+    },
+    {
+     "en": "One tree, four seasons, all year round.",
+     "zh": "一棵树，四个季节，一年又一年。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 28,
@@ -714,8 +1268,33 @@
     "en": "The sun goes down, the moon comes up, and the night animals wake.",
     "zh": "太阳落山，月亮升起，夜里的动物醒来了。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "The sun is sleepy. It sinks behind the hill.",
+     "zh": "太阳困了。它慢慢落到山后面。"
+    },
+    {
+     "en": "The sky turns orange, then pink, then dark blue.",
+     "zh": "天空变成橙色，然后粉色，然后深蓝色。"
+    },
+    {
+     "en": "The moon comes up.",
+     "zh": "月亮升起来了。"
+    },
+    {
+     "en": "Owl opens big eyes. Night is Owl's day!",
+     "zh": "猫头鹰睁开大眼睛。晚上是猫头鹰的白天！"
+    },
+    {
+     "en": "In the morning, the sun comes back.",
+     "zh": "到了早上，太阳又回来了。"
+    },
+    {
+     "en": "Good morning, sun. Good night, Owl.",
+     "zh": "早上好，太阳。晚安，猫头鹰。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 29,
@@ -731,8 +1310,33 @@
     "en": "Big ball, middle ball, small ball: Yun and Bear build a snowman.",
     "zh": "大雪球、中雪球、小雪球，小云和小熊堆雪人。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Snow! Everything is white.",
+     "zh": "下雪了！到处都是白白的。"
+    },
+    {
+     "en": "Yun rolls a big snowball.",
+     "zh": "小云滚了一个大雪球。"
+    },
+    {
+     "en": "Bear rolls a middle snowball.",
+     "zh": "小熊滚了一个中雪球。"
+    },
+    {
+     "en": "Together they roll a small snowball.",
+     "zh": "他们一起滚了一个小雪球。"
+    },
+    {
+     "en": "Big on the bottom, middle next, small on top.",
+     "zh": "大的在下面，中的在中间，小的在最上面。"
+    },
+    {
+     "en": "A carrot nose. Hello, snowman!",
+     "zh": "插上胡萝卜鼻子。雪人你好！"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 30,
@@ -748,8 +1352,33 @@
     "en": "Night after night, the moon grows round, then thin again.",
     "zh": "一夜又一夜，月亮变圆了，又变弯了。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Tonight the moon is thin, like a smile.",
+     "zh": "今晚的月亮细细的，像一个笑脸。"
+    },
+    {
+     "en": "Each night it grows a little rounder.",
+     "zh": "每天晚上，它都变圆一点。"
+    },
+    {
+     "en": "Now it is half a circle.",
+     "zh": "现在是半个圆。"
+    },
+    {
+     "en": "Now it is round and bright!",
+     "zh": "现在圆圆的，好亮！"
+    },
+    {
+     "en": "Then it gets thinner, night by night.",
+     "zh": "然后，一夜又一夜，它又慢慢变细。"
+    },
+    {
+     "en": "Round, then thin, then round again. Good night, moon.",
+     "zh": "变圆又变细，然后又变圆。晚安，月亮。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 31,

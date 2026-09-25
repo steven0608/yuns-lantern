@@ -45,9 +45,13 @@ for it in vocab["items"]:
     if it["id"] in seen:
         err(f"vocab: duplicate id '{it['id']}'")
     seen.add(it["id"])
-    for field in ("en", "zh", "pinyin", "category", "color", "shape", "size"):
+    for field in ("en", "zh", "pinyin", "category", "shape", "size"):
         if not it.get(field):
             err(f"vocab[{it['id']}]: missing '{field}'")
+    # color may be null: the item is then kept out of colour rounds (e.g. a
+    # rainbow is every colour; an elephant isn't any palette colour).
+    if "color" not in it:
+        err(f"vocab[{it['id']}]: missing 'color' (use null to exclude from colour rounds)")
     if it["size"] not in SIZE_ORDER:
         err(f"vocab[{it['id']}]: bad size '{it['size']}'")
 

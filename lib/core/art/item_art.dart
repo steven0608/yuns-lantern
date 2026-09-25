@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../app_scope.dart';
 
-/// Draws a vocab item. Placeholder emoji today (assets/images/placeholder_art.json);
-/// Phase 4 swaps this body for Image.asset('assets/images/items/$id.png').
+/// Draws a vocab item: the design session's drawing (`assets/images/items/{id}.png`,
+/// in the item's vocab.json colour and shape) when it exists, else the
+/// placeholder emoji from assets/images/placeholder_art.json.
 class ItemArt extends StatelessWidget {
   const ItemArt(this.id, {super.key, this.size = 72, this.silhouette = false});
   final String id;
@@ -14,8 +15,14 @@ class ItemArt extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final glyph = context.services.content.art.items[id] ?? '❔';
-    return Emoji(glyph, size: size, silhouette: silhouette);
+    final art = context.services.content.art;
+    final image = art.itemImage(id);
+    if (image == null) return Emoji(art.items[id] ?? '❔', size: size, silhouette: silhouette);
+    Widget pic = Image.asset(image, width: size * 1.15, height: size * 1.15, fit: BoxFit.contain, filterQuality: FilterQuality.medium);
+    if (silhouette) {
+      pic = ColorFiltered(colorFilter: const ColorFilter.mode(Color(0xFF3E3150), BlendMode.srcIn), child: pic);
+    }
+    return ExcludeSemantics(child: pic);
   }
 }
 

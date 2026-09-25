@@ -13,9 +13,19 @@ JOBS = {
     "app_icon.svg": [("app_icon_1024.png", 1024), ("Icon-512.png", 512), ("Icon-192.png", 192), ("favicon.png", 32)],
     "yun_idle.svg": [("yun_idle.png", 440)], "yun_happy.svg": [("yun_happy.png", 440)],
     "yun_sleepy.svg": [("yun_sleepy.png", 440)],
-    "apple.svg": [("items/apple.png", 256)], "bear.svg": [("items/bear.png", 256)],
-    "basket.svg": [("items/basket.png", 256)], "light_white.svg": [("items/key_lantern.png", 192)],
+    "bear.svg": [("characters/bear_basket.png", 256)],
+    "basket.svg": [("items/basket.png", 256)],
 }
+# Vocabulary items (design/gen_items.py), one per content/vocab.json id.
+for f in sorted(os.listdir(os.path.join(SRC, "items"))) if os.path.isdir(os.path.join(SRC, "items")) else []:
+    JOBS[os.path.join("items", f)] = [(os.path.join("items", f.replace(".svg", ".png")), 256)]
+# One icon per Lantern Land (engine): its signature game's tile, 2x of the 160 pt tile.
+LANDS = {"count_feed": "count_feed", "sort_bins": "match_it", "find_same": "find_the_same", "silhouette": "what_is_it",
+         "order_line": "big_and_small", "pattern": "pattern_parade", "jigsaw": "puzzle_pieces", "position": "where_is_it",
+         "mirror": "mirror_match", "try_see": "float_or_sink", "listen_find": "first_words", "trace": "lines_curves",
+         "color_fill": "color_me", "music_echo": "echo_drums", "memory_pairs": "memory_pairs"}
+for land, icon in LANDS.items():
+    JOBS.setdefault(f"icon_{icon}.svg", []).append((f"lands/{land}.png", 320))
 for f in os.listdir(SRC):
     if f.startswith(("icon_", "light_")):
         JOBS.setdefault(f, []).append((f.replace(".svg", ".png"), 320 if f.startswith("icon_") else 240))

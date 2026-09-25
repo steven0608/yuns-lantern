@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:yuns_lantern/core/content/content_loader.dart';
 import 'package:yuns_lantern/games/registry.dart';
@@ -7,9 +10,15 @@ void main() {
 
   test('loads all content into typed models', () async {
     final c = await Content.load();
-    expect(c.vocab.length, 64);
-    expect(c.activities.length, 12);
-    expect(c.activities.values.fold<int>(0, (n, a) => n + a.rounds.length), 302);
+    // Counts come from the source files: content grows (E2 adds vocab and games).
+    final vocab = jsonDecode(File('content/vocab.json').readAsStringSync())['items'] as List;
+    final acts = jsonDecode(File('content/activities.json').readAsStringSync())['activities'] as List;
+    expect(c.vocab.length, vocab.length);
+    expect(c.vocab.length, greaterThanOrEqualTo(64));
+    expect(c.activities.length, acts.length);
+    expect(c.activities.length, greaterThanOrEqualTo(12));
+    expect(c.activities.values.fold<int>(0, (n, a) => n + a.rounds.length),
+        acts.fold<int>(0, (n, a) => n + ((a as Map)['rounds'] as List).length));
     expect(c.story.chapters.length, 8);
   });
 

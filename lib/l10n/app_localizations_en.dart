@@ -145,6 +145,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get purchaseOwned => 'Thank you! Everything is unlocked.';
 
   @override
+  String get allFreeNote => 'Test build: everything is unlocked.';
+
+  @override
   String get purchaseRestore => 'Restore purchases';
 
   @override

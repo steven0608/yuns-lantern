@@ -35,6 +35,7 @@
   "purchasePitch": "解锁全部 12 个游戏和 8 个故事章节。一次购买，永久使用。支持家人共享。",
   "purchaseButton": "全部解锁 — {price}",
   "purchaseOwned": "谢谢您！所有内容已解锁。",
+  "allFreeNote": "测试版：所有内容已解锁。",
   "purchaseRestore": "恢复购买",
   "purchaseUnavailable": "App Store 暂时无法使用，请稍后再试。",
   "purchasePending": "正在等待 App Store…",
