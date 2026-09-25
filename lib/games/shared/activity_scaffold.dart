@@ -240,17 +240,24 @@ class _ActivitySessionState extends State<ActivitySession> {
 
   Round get _round => _activity.rounds[_roundIndex];
 
+  /// A round may name its own prompt (a v3 game reusing an engine, e.g.
+  /// Birthday Candles on Count and Feed); otherwise the engine's default.
+  List<String> get _prompt => _round.data['prompt'] != null
+      ? _round.strings('prompt')
+      : widget.game.prompt(_round);
+  List<String> get _shortPrompt => _round.data['shortPrompt'] != null
+      ? _round.strings('shortPrompt')
+      : (widget.game.shortPrompt ?? widget.game.prompt)(_round);
+
   void _startRound() {
     _generation++;
     _hints = HintController(
       speak: (k) => _s.audio.playVO(k),
-      onIdlePrompt: () => _s.audio.playSequence(
-        (widget.game.shortPrompt ?? widget.game.prompt)(_round),
-      ),
+      onIdlePrompt: () => _s.audio.playSequence(_shortPrompt),
     );
     _phase = _Phase.playing;
     final gen = _generation;
-    _s.audio.playSequence(widget.game.prompt(_round)).then((_) {
+    _s.audio.playSequence(_prompt).then((_) {
       if (mounted && gen == _generation && _phase == _Phase.playing) {
         _hints.start();
       }
@@ -336,7 +343,7 @@ class _ActivitySessionState extends State<ActivitySession> {
       onHome: _home,
       onReplay: () {
         _hints.touched();
-        _s.audio.playSequence(widget.game.prompt(_round));
+        _s.audio.playSequence(_prompt);
       },
       body: IgnorePointer(
         ignoring: _phase != _Phase.playing,
