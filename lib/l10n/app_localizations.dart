@@ -296,6 +296,12 @@ abstract class AppLocalizations {
   /// **'Hide any activity your child finds frustrating.'**
   String get activitiesHelp;
 
+  /// No description provided for @activityNoGoal.
+  ///
+  /// In en, this message translates to:
+  /// **'A picture-and-sound game — open it to see what it asks.'**
+  String get activityNoGoal;
+
   /// No description provided for @sectionBreak.
   ///
   /// In en, this message translates to:

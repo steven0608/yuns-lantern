@@ -2,7 +2,7 @@
 
 **GENERATED — do not hand-edit. Edit `content/phrases.json`, `content/vocab.json`, or `content/story.json` and re-run `tools/build_vo_script.py`.**
 
-Total lines to record per language: **193** (×2 languages = **386** files)
+Total lines to record per language: **195** (×2 languages = **390** files)
 
 
 ## Direction for both voice actors
@@ -216,11 +216,12 @@ Total lines to record per language: **193** (×2 languages = **386** files)
 
 ## Prompts — Shape Sorter
 
-*1 lines*
+*2 lines*
 
 | Key | English | 中文 | Pinyin |
 |---|---|---|---|
 | `shapes.intro` | Every shape has its own home. | 每个形状都有自己的家。 | měi gè xíng zhuàng dōu yǒu zì jǐ de jiā. |
+| `shapes.sort` | Put each shape in its own hole. | 把每个形状放进它自己的洞里。 | bǎ měi gè xíng zhuàng fàng jìn tā zì jǐ de dòng lǐ. |
 
 ## Prompts — Find the Same
 
@@ -240,12 +241,13 @@ Total lines to record per language: **193** (×2 languages = **386** files)
 
 ## Prompts — Day and Night
 
-*2 lines*
+*3 lines*
 
 | Key | English | 中文 | Pinyin |
 |---|---|---|---|
 | `daynight.either` | This one can be either! You choose. | 这个都可以！你来选。 | zhè ge dōu kě yǐ! nǐ lái xuǎn. |
 | `daynight.intro` | Some things happen in the day, some at night. | 有些事在白天，有些事在晚上。 | yǒu xiē shì zài bái tiān, yǒu xiē shì zài wǎn shang. |
+| `daynight.sort` | Put each one where it belongs. | 把每个放到它该去的地方。 | bǎ měi gè fàng dào tā gāi qù de dì fang. |
 
 ## Prompts — Float or Sink
 

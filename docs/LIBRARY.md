@@ -66,88 +66,88 @@ Generated from `tools/build_expansion.py`. Each tale is 6–8 pages, one or two 
 
 | # | English | 中文 | Learns | Plays next | Status |
 |---|---|---|---|---|---|
-| 31 | **Whose Footprints?**<br>Tracks in the snow! Were they made by Duck, Bear or Rabbit? | **谁的脚印**<br>雪地上有脚印！是鸭子、小熊，还是小兔留下的？ | Animal tracks | Who Made the Tracks? | outline |
-| 32 | **Baby Animals**<br>A duckling, a kitten, a puppy: each one looks for its mum. | **动物宝宝**<br>小鸭子、小猫、小狗，每个宝宝都在找妈妈。 | Babies and parents | Animal Families | outline |
-| 33 | **Peek-a-Boo Forest**<br>Two long ears behind a bush. Who could it be? | **森林躲猫猫**<br>灌木后面露出两只长耳朵。会是谁呢？ | Recognising animals | Peek-a-Boo Animals | outline |
-| 34 | **Night Animals**<br>When Yun goes to sleep, Owl and Mouse wake up. | **夜里的动物**<br>小云睡觉的时候，猫头鹰和小老鼠醒来了。 | Day and night animals | Day and Night | outline |
-| 35 | **The Busy Bee**<br>Bee visits flower after flower, helping the garden grow. | **忙碌的小蜜蜂**<br>小蜜蜂飞过一朵又一朵花，帮助花园长大。 | How gardens grow | Plant Grows | outline |
+| 31 | **Whose Footprints?**<br>Tracks in the snow! Were they made by Duck, Bear or Rabbit? | **谁的脚印**<br>雪地上有脚印！是鸭子、小熊，还是小兔留下的？ | Animal tracks | Who Made the Tracks? | written |
+| 32 | **Baby Animals**<br>A duckling, a kitten, a puppy: each one looks for its mum. | **动物宝宝**<br>小鸭子、小猫、小狗，每个宝宝都在找妈妈。 | Babies and parents | Animal Families | written |
+| 33 | **Peek-a-Boo Forest**<br>Two long ears behind a bush. Who could it be? | **森林躲猫猫**<br>灌木后面露出两只长耳朵。会是谁呢？ | Recognising animals | Peek-a-Boo Animals | written |
+| 34 | **Night Animals**<br>When Yun goes to sleep, Owl and Mouse wake up. | **夜里的动物**<br>小云睡觉的时候，猫头鹰和小老鼠醒来了。 | Day and night animals | Day and Night | written |
+| 35 | **The Busy Bee**<br>Bee visits flower after flower, helping the garden grow. | **忙碌的小蜜蜂**<br>小蜜蜂飞过一朵又一朵花，帮助花园长大。 | How gardens grow | Plant Grows | written |
 
 ## Why Does It Happen? · 为什么
 
 | # | English | 中文 | Learns | Plays next | Status |
 |---|---|---|---|---|---|
-| 36 | **Will It Float?**<br>Apple, key, leaf and rock go in the water. Let's watch! | **会浮起来吗**<br>苹果、钥匙、树叶和石头放进水里。我们看看吧！ | Float and sink | Float or Sink | outline |
-| 37 | **The Melting Snowman**<br>The sun comes out, and the snowman slowly turns into a puddle. | **雪人融化了**<br>太阳出来了，雪人慢慢变成了一滩水。 | Melting | Melt or Not? | outline |
-| 38 | **What Plants Need**<br>A little seed needs sun, water and time. | **小种子要什么**<br>一颗小种子需要阳光、水和时间。 | What plants need | Plant Grows | outline |
-| 39 | **Magnet Friends**<br>The magnet picks up the key and the spoon, but not the leaf. | **磁铁好朋友**<br>磁铁吸起了钥匙和勺子，可是吸不起树叶。 | Magnets | Magnet Magic | outline |
-| 40 | **My Shadow**<br>When the lamp comes close, Yun's shadow grows big! | **我的影子**<br>灯靠近的时候，小云的影子变大了！ | Light and shadow | Light and Shadow | outline |
+| 36 | **Will It Float?**<br>Apple, key, leaf and rock go in the water. Let's watch! | **会浮起来吗**<br>苹果、钥匙、树叶和石头放进水里。我们看看吧！ | Float and sink | Float or Sink | written |
+| 37 | **The Melting Snowman**<br>The sun comes out, and the snowman slowly turns into a puddle. | **雪人融化了**<br>太阳出来了，雪人慢慢变成了一滩水。 | Melting | Melt or Not? | written |
+| 38 | **What Plants Need**<br>A little seed needs sun, water and time. | **小种子要什么**<br>一颗小种子需要阳光、水和时间。 | What plants need | Plant Grows | written |
+| 39 | **Magnet Friends**<br>The magnet picks up the key and the spoon, but not the leaf. | **磁铁好朋友**<br>磁铁吸起了钥匙和勺子，可是吸不起树叶。 | Magnets | Magnet Magic | written |
+| 40 | **My Shadow**<br>When the lamp comes close, Yun's shadow grows big! | **我的影子**<br>灯靠近的时候，小云的影子变大了！ | Light and shadow | Light and Shadow | written |
 
 ## Feelings and Friends · 情绪和朋友
 
 | # | English | 中文 | Learns | Plays next | Status |
 |---|---|---|---|---|---|
-| 41 | **Frog Feels Grumpy**<br>Frog's tower fell down. Frog takes three slow breaths and feels calmer. | **青蛙不高兴**<br>青蛙的塔倒了。青蛙慢慢地深呼吸三次，心里好多了。 | Naming anger, calming down | Feelings Faces | outline |
-| 42 | **Butterfly Is Scared**<br>The thunder is loud. Friends sit close until Butterfly feels safe. | **蝴蝶害怕了**<br>雷声好大。朋友们靠在一起，直到蝴蝶不再害怕。 | Fear and comfort | Feelings Faces | outline |
-| 43 | **Taking Turns**<br>One swing, two friends: first Duck, then Yun. | **轮流玩**<br>一个秋千，两个朋友：先鸭子，再小云。 | Taking turns | Memory Pairs | outline |
-| 44 | **Sorry, Duck**<br>Yun bumps Duck's drawing. "Sorry, Duck. Can I help fix it?" | **对不起，鸭子**<br>小云碰坏了鸭子的画。“对不起，鸭子。我帮你一起修好吧？” | Saying sorry | Feelings Faces | outline |
-| 45 | **A New Friend**<br>A shy rabbit arrives. Yun says hello and asks her to play. | **新朋友**<br>来了一只害羞的小兔子。小云说你好，请她一起玩。 | Welcoming others | Animal Choir | outline |
+| 41 | **Frog Feels Grumpy**<br>Frog's tower fell down. Frog takes three slow breaths and feels calmer. | **青蛙不高兴**<br>青蛙的塔倒了。青蛙慢慢地深呼吸三次，心里好多了。 | Naming anger, calming down | Feelings Faces | written |
+| 42 | **Butterfly Is Scared**<br>The thunder is loud. Friends sit close until Butterfly feels safe. | **蝴蝶害怕了**<br>雷声好大。朋友们靠在一起，直到蝴蝶不再害怕。 | Fear and comfort | Feelings Faces | written |
+| 43 | **Taking Turns**<br>One swing, two friends: first Duck, then Yun. | **轮流玩**<br>一个秋千，两个朋友：先鸭子，再小云。 | Taking turns | Memory Pairs | written |
+| 44 | **Sorry, Duck**<br>Yun bumps Duck's drawing. "Sorry, Duck. Can I help fix it?" | **对不起，鸭子**<br>小云碰坏了鸭子的画。“对不起，鸭子。我帮你一起修好吧？” | Saying sorry | Feelings Faces | written |
+| 45 | **A New Friend**<br>A shy rabbit arrives. Yun says hello and asks her to play. | **新朋友**<br>来了一只害羞的小兔子。小云说你好，请她一起玩。 | Welcoming others | Animal Choir | written |
 
 ## Every Day · 日常生活
 
 | # | English | 中文 | Learns | Plays next | Status |
 |---|---|---|---|---|---|
-| 46 | **Brush, Brush, Brush**<br>Up and down, round and round: Yun brushes every tooth. | **刷刷牙**<br>上上下下，转转圈圈，小云把每颗牙都刷干净。 | Brushing teeth | Morning Routine | outline |
-| 47 | **Getting Dressed**<br>Socks before shoes, shirt before coat: Yun gets ready. | **穿衣服**<br>先穿袜子再穿鞋，先穿衣服再穿外套，小云准备好了。 | Getting dressed in order | Weather Wardrobe | outline |
-| 48 | **Tidy Up Song**<br>Blocks in the box, books on the shelf: tidying is a game. | **收拾玩具歌**<br>积木放进盒子，书本放上书架，收拾也是游戏。 | Tidying up | Tidy Up Time | outline |
-| 49 | **Yum, Dinner!**<br>Rice in a bowl, soup with a spoon: everyone eats together. | **吃饭啦**<br>米饭装在碗里，汤用勺子喝，大家一起吃饭。 | Mealtime | Set the Table | outline |
-| 50 | **Bedtime for Yun**<br>Bath, pyjamas, one story, and a sleepy lantern glow. | **小云要睡觉**<br>洗澡、穿睡衣、听一个故事，灯笼的光暖暖的。 | Bedtime routine | Rhyme Time | outline |
+| 46 | **Brush, Brush, Brush**<br>Up and down, round and round: Yun brushes every tooth. | **刷刷牙**<br>上上下下，转转圈圈，小云把每颗牙都刷干净。 | Brushing teeth | Morning Routine | written |
+| 47 | **Getting Dressed**<br>Socks before shoes, shirt before coat: Yun gets ready. | **穿衣服**<br>先穿袜子再穿鞋，先穿衣服再穿外套，小云准备好了。 | Getting dressed in order | Weather Wardrobe | written |
+| 48 | **Tidy Up Song**<br>Blocks in the box, books on the shelf: tidying is a game. | **收拾玩具歌**<br>积木放进盒子，书本放上书架，收拾也是游戏。 | Tidying up | Tidy Up Time | written |
+| 49 | **Yum, Dinner!**<br>Rice in a bowl, soup with a spoon: everyone eats together. | **吃饭啦**<br>米饭装在碗里，汤用勺子喝，大家一起吃饭。 | Mealtime | Set the Table | written |
+| 50 | **Bedtime for Yun**<br>Bath, pyjamas, one story, and a sleepy lantern glow. | **小云要睡觉**<br>洗澡、穿睡衣、听一个故事，灯笼的光暖暖的。 | Bedtime routine | Rhyme Time | written |
 
 ## Festivals · 节日和文化
 
 | # | English | 中文 | Learns | Plays next | Status |
 |---|---|---|---|---|---|
-| 51 | **Spring Festival Dumplings**<br>The whole family folds dumplings. How many can Yun make? | **春节包饺子**<br>一家人一起包饺子。小云能包几个呢？ | Spring Festival, counting | Festival Pairs | outline |
-| 52 | **The Lantern Festival**<br>On the first full moon of the year, the sky fills with lanterns. | **元宵节看灯**<br>新年第一个月圆的晚上，到处都是灯笼。 | Lantern Festival | Spot the Lantern | outline |
-| 53 | **Mooncakes for Grandma**<br>Under the round Mid-Autumn moon, Yun shares mooncakes with Grandma. | **给奶奶的月饼**<br>中秋节的月亮圆圆的，小云和奶奶一起分月饼。 | Mid-Autumn Festival, sharing | Share the Cookies | outline |
-| 54 | **Dragon Boat Race**<br>Row together! The dragon boat moves when everyone paddles. | **赛龙舟**<br>一起划，一起划！大家一起用力，龙舟就前进了。 | Dragon Boat Festival, teamwork | Dragon Boat | outline |
-| 55 | **Paper Flowers on the Window**<br>Fold the paper, cut a shape, open it: a flower with two matching sides! | **窗花**<br>把纸折起来，剪一剪，打开，两边一模一样的花！ | Paper cutting, symmetry | Paper Cutting | outline |
+| 51 | **Spring Festival Dumplings**<br>The whole family folds dumplings. How many can Yun make? | **春节包饺子**<br>一家人一起包饺子。小云能包几个呢？ | Spring Festival, counting | Festival Pairs | written |
+| 52 | **The Lantern Festival**<br>On the first full moon of the year, the sky fills with lanterns. | **元宵节看灯**<br>新年第一个月圆的晚上，到处都是灯笼。 | Lantern Festival | Spot the Lantern | written |
+| 53 | **Mooncakes for Grandma**<br>Under the round Mid-Autumn moon, Yun shares mooncakes with Grandma. | **给奶奶的月饼**<br>中秋节的月亮圆圆的，小云和奶奶一起分月饼。 | Mid-Autumn Festival, sharing | Share the Cookies | written |
+| 54 | **Dragon Boat Race**<br>Row together! The dragon boat moves when everyone paddles. | **赛龙舟**<br>一起划，一起划！大家一起用力，龙舟就前进了。 | Dragon Boat Festival, teamwork | Dragon Boat | written |
+| 55 | **Paper Flowers on the Window**<br>Fold the paper, cut a shape, open it: a flower with two matching sides! | **窗花**<br>把纸折起来，剪一剪，打开，两边一模一样的花！ | Paper cutting, symmetry | Paper Cutting | written |
 
 ## Words and Sounds · 语言和声音
 
 | # | English | 中文 | Learns | Plays next | Status |
 |---|---|---|---|---|---|
-| 56 | **Hello, Nǐ Hǎo**<br>Yun says hello to friends in English and in Chinese. | **你好，Hello**<br>小云用中文和英文跟朋友们打招呼。 | Greetings in two languages | First Words | outline |
-| 57 | **Four Little Hills**<br>Four little hills, flat, up, down-and-up and down, make four different sounds. | **四座小山**<br>四座小山，平平的、往上的、先下后上的、往下的，发出四种不同的声音。 | Mandarin tones | Tone Hills | outline |
-| 58 | **Animal Sounds**<br>Woof or wāng wāng? A dog sounds a little different in each language. | **动物怎么叫**<br>Woof 还是汪汪？每种语言里，小狗的叫声都有点不一样。 | Animal sounds in two languages | Animal Choir | outline |
-| 59 | **Rhymes with Yun**<br>Cat, hat, bat: words that sound alike make a silly song. | **和小云一起押韵**<br>花、家、爸：听起来像的字，唱成一首好玩的歌。 | Rhyme | Rhyme Time | outline |
-| 60 | **One Word, Two Languages**<br>An apple is an apple, and also a píngguǒ! | **一个东西两个名字**<br>苹果是 píngguǒ，也是 apple！ | Bilingual naming | Word Pairs | outline |
+| 56 | **Hello, Nǐ Hǎo**<br>Yun says hello to friends in English and in Chinese. | **你好，Hello**<br>小云用中文和英文跟朋友们打招呼。 | Greetings in two languages | First Words | written |
+| 57 | **Four Little Hills**<br>Four little hills, flat, up, down-and-up and down, make four different sounds. | **四座小山**<br>四座小山，平平的、往上的、先下后上的、往下的，发出四种不同的声音。 | Mandarin tones | Tone Hills | written |
+| 58 | **Animal Sounds**<br>Woof or wāng wāng? A dog sounds a little different in each language. | **动物怎么叫**<br>Woof 还是汪汪？每种语言里，小狗的叫声都有点不一样。 | Animal sounds in two languages | Animal Choir | written |
+| 59 | **Rhymes with Yun**<br>Cat, hat, bat: words that sound alike make a silly song. | **和小云一起押韵**<br>花、家、爸：听起来像的字，唱成一首好玩的歌。 | Rhyme | Rhyme Time | written |
+| 60 | **One Word, Two Languages**<br>An apple is an apple, and also a píngguǒ! | **一个东西两个名字**<br>苹果是 píngguǒ，也是 apple！ | Bilingual naming | Word Pairs | written |
 
 ## Family and Home · 家和家人
 
 | # | English | 中文 | Learns | Plays next | Status |
 |---|---|---|---|---|---|
-| 61 | **Grandma's Garden**<br>Grandma and Yun plant carrots, corn and beans in rows. | **奶奶的菜园**<br>奶奶和小云一行一行地种胡萝卜、玉米和豆子。 | Vegetables, planting | Garden Seeds | outline |
-| 62 | **Who's in My Family?**<br>Mum, Dad, Grandma, Grandpa: every family is a little different. | **我的家人**<br>妈妈、爸爸、奶奶、爷爷，每个家都有一点不一样。 | Family words | Word Pairs | outline |
-| 63 | **Helping at Home**<br>Yun waters the plants, feeds the fish and folds the socks. | **在家帮忙**<br>小云给花浇水、喂小鱼，还叠袜子。 | Helping with chores | Tidy Up Time | outline |
-| 64 | **My Room**<br>The teddy is on the bed, and the ball is under the chair. | **我的房间**<br>小熊玩偶在床上，球在椅子下面。 | Things at home, position | Where Is It? | outline |
-| 65 | **Bath Time Boats**<br>In the bath, the boat floats and the key sinks. | **洗澡小船**<br>洗澡的时候，小船浮起来，钥匙沉下去。 | Float and sink at home | Float or Sink | outline |
+| 61 | **Grandma's Garden**<br>Grandma and Yun plant carrots, corn and beans in rows. | **奶奶的菜园**<br>奶奶和小云一行一行地种胡萝卜、玉米和豆子。 | Vegetables, planting | Garden Seeds | written |
+| 62 | **Who's in My Family?**<br>Mum, Dad, Grandma, Grandpa: every family is a little different. | **我的家人**<br>妈妈、爸爸、奶奶、爷爷，每个家都有一点不一样。 | Family words | Word Pairs | written |
+| 63 | **Helping at Home**<br>Yun waters the plants, feeds the fish and folds the socks. | **在家帮忙**<br>小云给花浇水、喂小鱼，还叠袜子。 | Helping with chores | Tidy Up Time | written |
+| 64 | **My Room**<br>The teddy is on the bed, and the ball is under the chair. | **我的房间**<br>小熊玩偶在床上，球在椅子下面。 | Things at home, position | Where Is It? | written |
+| 65 | **Bath Time Boats**<br>In the bath, the boat floats and the key sinks. | **洗澡小船**<br>洗澡的时候，小船浮起来，钥匙沉下去。 | Float and sink at home | Float or Sink | written |
 
 ## Music and Moving · 音乐和运动
 
 | # | English | 中文 | Learns | Plays next | Status |
 |---|---|---|---|---|---|
-| 66 | **The Drum Parade**<br>Boom, boom, tap: the drum parade marches through the village. | **敲鼓游行**<br>咚、咚、嗒，敲鼓游行队走过村子。 | Rhythm | Echo Drums | outline |
-| 67 | **Fast Rabbit, Slow Turtle**<br>Rabbit hops fast, Turtle walks slow, and both get there in the end. | **快兔子慢乌龟**<br>兔子跳得快，乌龟走得慢，最后都到了。 | Fast and slow | Fast and Slow | outline |
-| 68 | **Bird Sings High**<br>Bird sings high, Bear hums low. Together they make a song. | **小鸟唱高音**<br>小鸟唱得高，小熊哼得低，合在一起是一首歌。 | High and low | High and Low | outline |
-| 69 | **Dance Like Animals**<br>Stand up! Hop like a frog, waddle like a duck, stretch like a cat. | **学动物跳舞**<br>站起来！像青蛙一样跳，像鸭子一样摇，像小猫一样伸懒腰。 | Moving your body (screen break) | Animal Choir | outline |
-| 70 | **Yun's Lullaby**<br>The lanterns dim, the stars hum, and Yun drifts off to sleep. | **小云的摇篮曲**<br>灯笼暗下来，星星轻轻唱，小云慢慢睡着了。 | Calm listening | Rhyme Time | outline |
+| 66 | **The Drum Parade**<br>Boom, boom, tap: the drum parade marches through the village. | **敲鼓游行**<br>咚、咚、嗒，敲鼓游行队走过村子。 | Rhythm | Echo Drums | written |
+| 67 | **Fast Rabbit, Slow Turtle**<br>Rabbit hops fast, Turtle walks slow, and both get there in the end. | **快兔子慢乌龟**<br>兔子跳得快，乌龟走得慢，最后都到了。 | Fast and slow | Fast and Slow | written |
+| 68 | **Bird Sings High**<br>Bird sings high, Bear hums low. Together they make a song. | **小鸟唱高音**<br>小鸟唱得高，小熊哼得低，合在一起是一首歌。 | High and low | High and Low | written |
+| 69 | **Dance Like Animals**<br>Stand up! Hop like a frog, waddle like a duck, stretch like a cat. | **学动物跳舞**<br>站起来！像青蛙一样跳，像鸭子一样摇，像小猫一样伸懒腰。 | Moving your body (screen break) | Animal Choir | written |
+| 70 | **Yun's Lullaby**<br>The lanterns dim, the stars hum, and Yun drifts off to sleep. | **小云的摇篮曲**<br>灯笼暗下来，星星轻轻唱，小云慢慢睡着了。 | Calm listening | Rhyme Time | written |
 
 ## Kindness · 善良和帮助
 
 | # | English | 中文 | Learns | Plays next | Status |
 |---|---|---|---|---|---|
-| 71 | **Yun Helps Bear**<br>Bear's basket is heavy. Yun helps carry it up the hill. | **小云帮小熊**<br>小熊的篮子好重。小云帮他一起搬上山坡。 | Helping | Count and Feed | outline |
-| 72 | **Duck's Lost Hat**<br>Duck's hat blew away! Friends look high and low until they find it. | **鸭子的帽子丢了**<br>鸭子的帽子被风吹走了！朋友们到处找，终于找到了。 | Keep trying | Find the Same | outline |
-| 73 | **The Bridge for Everyone**<br>The river is too wide for one, but not for friends working together. | **大家的桥**<br>一个人过不了宽宽的河，可是朋友们一起就能搭好桥。 | Working together | Fix the Bridge | outline |
-| 74 | **Owl Can't Sleep**<br>It is daytime and Owl is sleepy. Friends play quietly so Owl can rest. | **猫头鹰睡不着**<br>白天猫头鹰想睡觉。朋友们轻轻地玩，让猫头鹰好好休息。 | Thinking of others | Owl's Tree House | outline |
-| 75 | **The Brightest Lantern**<br>Every kind thing Yun did made a little light. Together: the brightest lantern. | **最亮的灯笼**<br>小云做的每一件好事都是一点光。合在一起，就是最亮的灯笼。 | Kindness | Lantern Painter | outline |
+| 71 | **Yun Helps Bear**<br>Bear's basket is heavy. Yun helps carry it up the hill. | **小云帮小熊**<br>小熊的篮子好重。小云帮他一起搬上山坡。 | Helping | Count and Feed | written |
+| 72 | **Duck's Lost Hat**<br>Duck's hat blew away! Friends look high and low until they find it. | **鸭子的帽子丢了**<br>鸭子的帽子被风吹走了！朋友们到处找，终于找到了。 | Keep trying | Find the Same | written |
+| 73 | **The Bridge for Everyone**<br>The river is too wide for one, but not for friends working together. | **大家的桥**<br>一个人过不了宽宽的河，可是朋友们一起就能搭好桥。 | Working together | Fix the Bridge | written |
+| 74 | **Owl Can't Sleep**<br>It is daytime and Owl is sleepy. Friends play quietly so Owl can rest. | **猫头鹰睡不着**<br>白天猫头鹰想睡觉。朋友们轻轻地玩，让猫头鹰好好休息。 | Thinking of others | Owl's Tree House | written |
+| 75 | **The Brightest Lantern**<br>Every kind thing Yun did made a little light. Together: the brightest lantern. | **最亮的灯笼**<br>小云做的每一件好事都是一点光。合在一起，就是最亮的灯笼。 | Kindness | Lantern Painter | written |

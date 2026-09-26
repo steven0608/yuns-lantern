@@ -125,12 +125,16 @@ class CatalogGame {
       engine = j['engine'] as String,
       name = Bilingual.fromJson(j['name'] as Json),
       minAge = j['minAge'] as int,
+      goal = j['goal'] as String?,
       free = j['free'] as bool;
   final String id;
   final int number;
   final String engine;
   final Bilingual name;
   final int minAge;
+
+  /// One line for the parent: what this game asks the child to do.
+  final String? goal;
   final bool free;
 }
 

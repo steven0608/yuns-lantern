@@ -12,7 +12,9 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
       - name: "Workflow YAML parses (a stray colon disables a workflow)"
-        run: python -c "import yaml,glob,sys; [yaml.safe_load(open(f,encoding='utf-8')) for f in glob.glob('.github/workflows/*.yml')]; print('workflow YAML ok')"
+        run: |
+          pip install --quiet pyyaml
+          python -c "import yaml,glob; [yaml.safe_load(open(f,encoding='utf-8')) for f in glob.glob('.github/workflows/*.yml')]; print('workflow YAML ok')"
       - name: Content pipeline (must be deterministic and valid)
         run: |
           python tools/build_content.py

@@ -1394,8 +1394,37 @@
     "en": "Tracks in the snow! Were they made by Duck, Bear or Rabbit?",
     "zh": "雪地上有脚印！是鸭子、小熊，还是小兔留下的？"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "It snowed all night. The ground is white.",
+     "zh": "下了一夜的雪。地上白白的。"
+    },
+    {
+     "en": "Look! Little marks in the snow.",
+     "zh": "快看！雪地上有小小的印子。"
+    },
+    {
+     "en": "These are round with tiny toes. A rabbit hopped here!",
+     "zh": "这些圆圆的，还有小脚趾。小兔子从这里跳过去了！"
+    },
+    {
+     "en": "These are wide and flat. Duck walked here.",
+     "zh": "这些又宽又平。鸭子从这里走过。"
+    },
+    {
+     "en": "And these big ones? Bear!",
+     "zh": "那这些大大的呢？是小熊！"
+    },
+    {
+     "en": "Yun makes footprints too, right beside them.",
+     "zh": "小云也踩出脚印，就在旁边。"
+    },
+    {
+     "en": "Four friends, four kinds of footprints.",
+     "zh": "四个朋友，四种脚印。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 32,
@@ -1411,8 +1440,37 @@
     "en": "A duckling, a kitten, a puppy: each one looks for its mum.",
     "zh": "小鸭子、小猫、小狗，每个宝宝都在找妈妈。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "A little duckling says: Where is my mum?",
+     "zh": "一只小鸭子说：我的妈妈在哪里？"
+    },
+    {
+     "en": "Yun looks by the pond. Quack! There she is.",
+     "zh": "小云在池塘边找。嘎嘎！找到了。"
+    },
+    {
+     "en": "A kitten says: Where is my mum?",
+     "zh": "一只小猫说：我的妈妈在哪里？"
+    },
+    {
+     "en": "Meow! Under the warm window.",
+     "zh": "喵！在暖暖的窗户下面。"
+    },
+    {
+     "en": "A puppy says: Where is my mum?",
+     "zh": "一只小狗说：我的妈妈在哪里？"
+    },
+    {
+     "en": "Woof! Right behind the gate.",
+     "zh": "汪！就在门后面。"
+    },
+    {
+     "en": "Every baby found its mum. Yun goes home too.",
+     "zh": "每个宝宝都找到了妈妈。小云也回家了。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 33,
@@ -1428,8 +1486,37 @@
     "en": "Two long ears behind a bush. Who could it be?",
     "zh": "灌木后面露出两只长耳朵。会是谁呢？"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "The forest is quiet. Someone is hiding.",
+     "zh": "森林里静悄悄的。有谁躲起来了。"
+    },
+    {
+     "en": "Two long ears behind a bush. Who could it be?",
+     "zh": "灌木后面露出两只长耳朵。会是谁呢？"
+    },
+    {
+     "en": "Peek-a-boo! It's Rabbit.",
+     "zh": "躲猫猫！是小兔子。"
+    },
+    {
+     "en": "A stripy tail behind a tree. Who could it be?",
+     "zh": "树后面露出一条花尾巴。会是谁呢？"
+    },
+    {
+     "en": "Peek-a-boo! It's Yun.",
+     "zh": "躲猫猫！是小云。"
+    },
+    {
+     "en": "Two round eyes up in the branches...",
+     "zh": "树枝上有两只圆眼睛……"
+    },
+    {
+     "en": "Peek-a-boo, Owl! Everyone laughs.",
+     "zh": "躲猫猫，猫头鹰！大家都笑了。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 34,
@@ -1445,8 +1532,37 @@
     "en": "When Yun goes to sleep, Owl and Mouse wake up.",
     "zh": "小云睡觉的时候，猫头鹰和小老鼠醒来了。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "The sky goes dark. Yun yawns.",
+     "zh": "天黑了。小云打了个哈欠。"
+    },
+    {
+     "en": "Good night, Duck. Good night, Rabbit.",
+     "zh": "晚安，鸭子。晚安，小兔子。"
+    },
+    {
+     "en": "But some friends are just waking up.",
+     "zh": "可是有些朋友刚刚醒来。"
+    },
+    {
+     "en": "Owl opens two big round eyes. Whoo!",
+     "zh": "猫头鹰睁开圆圆的大眼睛。咕咕！"
+    },
+    {
+     "en": "Mouse comes out to look for seeds.",
+     "zh": "小老鼠出来找种子吃。"
+    },
+    {
+     "en": "They play all night while Yun dreams.",
+     "zh": "小云做梦的时候，他们玩了一整夜。"
+    },
+    {
+     "en": "In the morning, they say good night.",
+     "zh": "到了早上，他们说晚安。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 35,
@@ -1462,8 +1578,33 @@
     "en": "Bee visits flower after flower, helping the garden grow.",
     "zh": "小蜜蜂飞过一朵又一朵花，帮助花园长大。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Bzzz! A little bee wakes up early.",
+     "zh": "嗡嗡！一只小蜜蜂早早醒来。"
+    },
+    {
+     "en": "She visits a pink flower. Then a yellow one.",
+     "zh": "她飞到一朵粉花上。又飞到一朵黄花上。"
+    },
+    {
+     "en": "Yellow dust sticks to her legs.",
+     "zh": "黄黄的花粉粘在她的腿上。"
+    },
+    {
+     "en": "She carries it flower to flower, all day.",
+     "zh": "她一整天带着花粉，从这朵飞到那朵。"
+    },
+    {
+     "en": "Because of Bee, the flowers make seeds.",
+     "zh": "因为有小蜜蜂，花儿才结出种子。"
+    },
+    {
+     "en": "And seeds make more flowers. Thank you, Bee!",
+     "zh": "种子又长出更多的花。谢谢你，小蜜蜂！"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 36,
@@ -1479,8 +1620,37 @@
     "en": "Apple, key, leaf and rock go in the water. Let's watch!",
     "zh": "苹果、钥匙、树叶和石头放进水里。我们看看吧！"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun fills a big bowl with water.",
+     "zh": "小云在大盆里装满水。"
+    },
+    {
+     "en": "In goes the apple. Splash! It floats.",
+     "zh": "苹果放进去。扑通！它浮起来了。"
+    },
+    {
+     "en": "In goes the leaf. It floats too.",
+     "zh": "树叶放进去。它也浮着。"
+    },
+    {
+     "en": "In goes the key. Plop! Down it goes.",
+     "zh": "钥匙放进去。咕咚！沉下去了。"
+    },
+    {
+     "en": "In goes the rock. Down, down, down.",
+     "zh": "石头放进去。沉、沉、沉。"
+    },
+    {
+     "en": "What about the wooden boat?",
+     "zh": "那木头小船呢？"
+    },
+    {
+     "en": "It floats! Yun tries one more thing.",
+     "zh": "它浮起来了！小云再试一样东西。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 37,
@@ -1496,8 +1666,33 @@
     "en": "The sun comes out, and the snowman slowly turns into a puddle.",
     "zh": "太阳出来了，雪人慢慢变成了一滩水。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun and Bear built a snowman yesterday.",
+     "zh": "昨天小云和小熊堆了一个雪人。"
+    },
+    {
+     "en": "Today the sun is warm and bright.",
+     "zh": "今天的太阳又暖又亮。"
+    },
+    {
+     "en": "Drip. Drip. The snowman gets smaller.",
+     "zh": "滴。滴。雪人变小了。"
+    },
+    {
+     "en": "His hat slides down. His nose falls off.",
+     "zh": "他的帽子滑下来。鼻子掉了。"
+    },
+    {
+     "en": "Soon there is just a puddle and a carrot.",
+     "zh": "很快只剩下一滩水和一根胡萝卜。"
+    },
+    {
+     "en": "\"He will come back,\" says Bear, \"when it snows again.\"",
+     "zh": "“下次下雪，”小熊说，“他还会回来的。”"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 38,
@@ -1513,8 +1708,33 @@
     "en": "A little seed needs sun, water and time.",
     "zh": "一颗小种子需要阳光、水和时间。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun has one tiny seed.",
+     "zh": "小云有一颗小小的种子。"
+    },
+    {
+     "en": "Yun puts it in a pot of soft dirt.",
+     "zh": "小云把它种进松软的土里。"
+    },
+    {
+     "en": "The seed needs water. Yun pours a little.",
+     "zh": "种子需要水。小云浇了一点。"
+    },
+    {
+     "en": "The seed needs sun. Yun moves the pot to the window.",
+     "zh": "种子需要阳光。小云把花盆搬到窗边。"
+    },
+    {
+     "en": "The seed needs time. Yun waits and waits.",
+     "zh": "种子还需要时间。小云一直等呀等。"
+    },
+    {
+     "en": "One morning, a tiny green leaf!",
+     "zh": "有一天早上，长出一片小绿叶！"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 39,
@@ -1530,8 +1750,33 @@
     "en": "The magnet picks up the key and the spoon, but not the leaf.",
     "zh": "磁铁吸起了钥匙和勺子，可是吸不起树叶。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Grandpa gives Yun a red magnet.",
+     "zh": "爷爷给小云一块红色的磁铁。"
+    },
+    {
+     "en": "Yun holds it near a key. Click! It sticks.",
+     "zh": "小云把它靠近钥匙。啪！吸住了。"
+    },
+    {
+     "en": "Yun holds it near a spoon. Click! It sticks.",
+     "zh": "小云把它靠近勺子。啪！也吸住了。"
+    },
+    {
+     "en": "Yun holds it near a leaf. Nothing happens.",
+     "zh": "小云把它靠近树叶。什么也没发生。"
+    },
+    {
+     "en": "Nothing happens with the apple either.",
+     "zh": "靠近苹果，也什么都没有。"
+    },
+    {
+     "en": "Some things stick, and some things don't. Try one more!",
+     "zh": "有些东西会吸住，有些不会。再试一个吧！"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 40,
@@ -1547,8 +1792,33 @@
     "en": "When the lamp comes close, Yun's shadow grows big!",
     "zh": "灯靠近的时候，小云的影子变大了！"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "At night, Yun turns on the little lamp.",
+     "zh": "晚上，小云打开小台灯。"
+    },
+    {
+     "en": "Look on the wall! A dark Yun appears.",
+     "zh": "看墙上！出现了一个黑黑的小云。"
+    },
+    {
+     "en": "Yun waves. The shadow waves back.",
+     "zh": "小云挥挥手。影子也挥挥手。"
+    },
+    {
+     "en": "Yun steps closer to the lamp. The shadow grows huge!",
+     "zh": "小云往灯那边走。影子变得好大！"
+    },
+    {
+     "en": "Yun steps away. The shadow gets small again.",
+     "zh": "小云退回去。影子又变小了。"
+    },
+    {
+     "en": "Good night, little shadow.",
+     "zh": "晚安，小小的影子。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 41,
@@ -1564,8 +1834,37 @@
     "en": "Frog's tower fell down. Frog takes three slow breaths and feels calmer.",
     "zh": "青蛙的塔倒了。青蛙慢慢地深呼吸三次，心里好多了。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Frog built a tall block tower.",
+     "zh": "青蛙搭了一座高高的积木塔。"
+    },
+    {
+     "en": "Wobble... crash! The tower falls down.",
+     "zh": "晃呀晃……哗啦！塔倒了。"
+    },
+    {
+     "en": "Frog's face goes tight. Frog feels grumpy.",
+     "zh": "青蛙的脸绷起来了。青蛙很生气。"
+    },
+    {
+     "en": "Yun sits beside Frog. \"That was your tall one.\"",
+     "zh": "小云坐在青蛙旁边。“那是你搭得最高的。”"
+    },
+    {
+     "en": "They breathe in slowly. And out. Three times.",
+     "zh": "他们慢慢吸气。再呼气。三次。"
+    },
+    {
+     "en": "Frog feels calmer now.",
+     "zh": "青蛙慢慢平静下来了。"
+    },
+    {
+     "en": "\"Let's build it again,\" says Frog.",
+     "zh": "“我们再搭一次吧，”青蛙说。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 42,
@@ -1581,8 +1880,33 @@
     "en": "The thunder is loud. Friends sit close until Butterfly feels safe.",
     "zh": "雷声好大。朋友们靠在一起，直到蝴蝶不再害怕。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Rumble! Thunder rolls over the hill.",
+     "zh": "轰隆！雷声从山那边滚过来。"
+    },
+    {
+     "en": "Butterfly shakes. She is scared.",
+     "zh": "蝴蝶抖了一下。她害怕了。"
+    },
+    {
+     "en": "Yun sits close. Bear sits close too.",
+     "zh": "小云坐得近近的。小熊也坐得近近的。"
+    },
+    {
+     "en": "\"The thunder is loud,\" says Yun. \"We are here.\"",
+     "zh": "“雷声很大，”小云说。“我们都在这儿。”"
+    },
+    {
+     "en": "They count together: one, two, three.",
+     "zh": "他们一起数：一、二、三。"
+    },
+    {
+     "en": "The rumble goes quiet. Butterfly feels safe.",
+     "zh": "雷声渐渐轻了。蝴蝶觉得安全了。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 43,
@@ -1598,8 +1922,33 @@
     "en": "One swing, two friends: first Duck, then Yun.",
     "zh": "一个秋千，两个朋友：先鸭子，再小云。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "There is one swing in the garden.",
+     "zh": "花园里只有一个秋千。"
+    },
+    {
+     "en": "Duck wants it. Yun wants it too.",
+     "zh": "鸭子想玩。小云也想玩。"
+    },
+    {
+     "en": "\"You first,\" says Yun. \"Then me.\"",
+     "zh": "“你先玩，”小云说。“然后到我。”"
+    },
+    {
+     "en": "Duck swings high. Yun counts to ten.",
+     "zh": "鸭子荡得高高的。小云数到十。"
+    },
+    {
+     "en": "Now it's Yun's turn. Duck pushes gently.",
+     "zh": "现在轮到小云了。鸭子轻轻推她。"
+    },
+    {
+     "en": "One swing, two friends, all afternoon.",
+     "zh": "一个秋千，两个朋友，玩了一下午。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 44,
@@ -1615,8 +1964,37 @@
     "en": "Yun bumps Duck's drawing. \"Sorry, Duck. Can I help fix it?\"",
     "zh": "小云碰坏了鸭子的画。“对不起，鸭子。我帮你一起修好吧？”"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Duck is drawing a big blue boat.",
+     "zh": "鸭子在画一艘大大的蓝船。"
+    },
+    {
+     "en": "Yun runs past. Oops! The paper tears.",
+     "zh": "小云跑过去。哎呀！纸破了。"
+    },
+    {
+     "en": "Duck's eyes fill up.",
+     "zh": "鸭子的眼睛红了。"
+    },
+    {
+     "en": "Yun stops. \"Sorry, Duck. I ran too fast.\"",
+     "zh": "小云停下来。“对不起，鸭子。我跑太快了。”"
+    },
+    {
+     "en": "\"Can I help fix it?\"",
+     "zh": "“我可以帮你修好吗？”"
+    },
+    {
+     "en": "They tape the paper and draw a sail.",
+     "zh": "他们用胶带把纸粘好，又画上一张帆。"
+    },
+    {
+     "en": "Now the boat has a sail. Duck smiles.",
+     "zh": "现在小船有帆了。鸭子笑了。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 45,
@@ -1632,8 +2010,37 @@
     "en": "A shy rabbit arrives. Yun says hello and asks her to play.",
     "zh": "来了一只害羞的小兔子。小云说你好，请她一起玩。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Someone new is standing by the gate.",
+     "zh": "门口站着一个新来的朋友。"
+    },
+    {
+     "en": "It is a small rabbit. She is shy.",
+     "zh": "是一只小兔子。她有点害羞。"
+    },
+    {
+     "en": "Yun walks over slowly. \"Hello. I'm Yun.\"",
+     "zh": "小云慢慢走过去。“你好，我叫小云。”"
+    },
+    {
+     "en": "Rabbit looks at her feet.",
+     "zh": "小兔子低头看着自己的脚。"
+    },
+    {
+     "en": "\"Would you like to play with us?\"",
+     "zh": "“你想和我们一起玩吗？”"
+    },
+    {
+     "en": "Rabbit nods, just a little.",
+     "zh": "小兔子轻轻点了点头。"
+    },
+    {
+     "en": "By lunchtime, she is laughing loudest.",
+     "zh": "到了午饭的时候，她笑得最大声。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 46,
@@ -1649,8 +2056,37 @@
     "en": "Up and down, round and round: Yun brushes every tooth.",
     "zh": "上上下下，转转圈圈，小云把每颗牙都刷干净。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "After breakfast, it is toothbrush time.",
+     "zh": "吃完早饭，该刷牙了。"
+    },
+    {
+     "en": "Yun squeezes a tiny bit of toothpaste.",
+     "zh": "小云挤上一点点牙膏。"
+    },
+    {
+     "en": "Up and down on the front teeth.",
+     "zh": "前面的牙齿上上下下刷。"
+    },
+    {
+     "en": "Round and round on the back teeth.",
+     "zh": "后面的牙齿转圈圈刷。"
+    },
+    {
+     "en": "Don't forget the very back ones!",
+     "zh": "最里面的可不要忘了！"
+    },
+    {
+     "en": "Rinse, spit, and smile in the mirror.",
+     "zh": "漱漱口，吐掉，对着镜子笑一笑。"
+    },
+    {
+     "en": "All clean. See you tonight, toothbrush.",
+     "zh": "干干净净。牙刷，晚上见。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 47,
@@ -1666,8 +2102,37 @@
     "en": "Socks before shoes, shirt before coat: Yun gets ready.",
     "zh": "先穿袜子再穿鞋，先穿衣服再穿外套，小云准备好了。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun is still in pyjamas.",
+     "zh": "小云还穿着睡衣。"
+    },
+    {
+     "en": "First, take the pyjamas off.",
+     "zh": "先把睡衣脱下来。"
+    },
+    {
+     "en": "Then the shirt, over the head.",
+     "zh": "再套上衣服，从头上钻过去。"
+    },
+    {
+     "en": "Then trousers, one leg, two legs.",
+     "zh": "然后穿裤子，一条腿，两条腿。"
+    },
+    {
+     "en": "Socks before shoes. That's the rule!",
+     "zh": "先穿袜子再穿鞋。这是规矩！"
+    },
+    {
+     "en": "Last, the coat, because it is cold.",
+     "zh": "最后穿外套，因为外面冷。"
+    },
+    {
+     "en": "All dressed! Out the door.",
+     "zh": "穿好啦！出门喽。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 48,
@@ -1683,8 +2148,33 @@
     "en": "Blocks in the box, books on the shelf: tidying is a game.",
     "zh": "积木放进盒子，书本放上书架，收拾也是游戏。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Playtime is over. The floor is a mess.",
+     "zh": "玩完了。地上乱糟糟的。"
+    },
+    {
+     "en": "Yun sings: blocks in the box, blocks in the box.",
+     "zh": "小云唱着：积木放进盒子，积木放进盒子。"
+    },
+    {
+     "en": "Books go on the shelf, standing up straight.",
+     "zh": "书本放到书架上，站得直直的。"
+    },
+    {
+     "en": "The teddy goes on the bed.",
+     "zh": "小熊玩偶放到床上。"
+    },
+    {
+     "en": "Bear helps. Duck helps. It goes fast!",
+     "zh": "小熊来帮忙。鸭子来帮忙。一下子就好了！"
+    },
+    {
+     "en": "Now there is room to dance.",
+     "zh": "现在有地方跳舞啦。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 49,
@@ -1700,8 +2190,33 @@
     "en": "Rice in a bowl, soup with a spoon: everyone eats together.",
     "zh": "米饭装在碗里，汤用勺子喝，大家一起吃饭。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Something smells good. Dinner is ready!",
+     "zh": "好香呀。晚饭做好了！"
+    },
+    {
+     "en": "Yun helps carry the bowls to the table.",
+     "zh": "小云帮忙把碗端到桌上。"
+    },
+    {
+     "en": "Rice goes in the bowl. Soup gets a spoon.",
+     "zh": "米饭盛在碗里。汤要用勺子。"
+    },
+    {
+     "en": "Everyone sits down together.",
+     "zh": "大家一起坐下来。"
+    },
+    {
+     "en": "Yun tries a green bean. Yum!",
+     "zh": "小云尝了一口豆角。真好吃！"
+    },
+    {
+     "en": "\"Thank you for dinner,\" says Yun.",
+     "zh": "“谢谢您做的饭，”小云说。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 50,
@@ -1717,8 +2232,37 @@
     "en": "Bath, pyjamas, one story, and a sleepy lantern glow.",
     "zh": "洗澡、穿睡衣、听一个故事，灯笼的光暖暖的。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "The sky is dark. The day is done.",
+     "zh": "天黑了。这一天过完了。"
+    },
+    {
+     "en": "Warm bath first, with lots of bubbles.",
+     "zh": "先洗个热水澡，好多泡泡。"
+    },
+    {
+     "en": "Then soft pyjamas.",
+     "zh": "然后换上软软的睡衣。"
+    },
+    {
+     "en": "Then one story, only one.",
+     "zh": "然后听一个故事，只听一个。"
+    },
+    {
+     "en": "Yun's lantern glows small and warm.",
+     "zh": "小云的灯笼发出暖暖的小小的光。"
+    },
+    {
+     "en": "Eyes get heavy. Breathing gets slow.",
+     "zh": "眼皮越来越重。呼吸越来越慢。"
+    },
+    {
+     "en": "Good night, Yun. See you tomorrow.",
+     "zh": "晚安，小云。明天见。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 51,
@@ -1734,8 +2278,37 @@
     "en": "The whole family folds dumplings. How many can Yun make?",
     "zh": "一家人一起包饺子。小云能包几个呢？"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "It is the last night of the old year.",
+     "zh": "今天是一年里的最后一晚。"
+    },
+    {
+     "en": "The whole family sits around the table.",
+     "zh": "一家人围坐在桌子旁。"
+    },
+    {
+     "en": "Grandma rolls the little round wrappers.",
+     "zh": "奶奶擀圆圆的饺子皮。"
+    },
+    {
+     "en": "Dad puts filling in the middle. Fold and press!",
+     "zh": "爸爸把馅放在中间。一折，一捏！"
+    },
+    {
+     "en": "Yun makes a wobbly one. Everyone cheers.",
+     "zh": "小云包了一个歪歪的。大家都鼓掌。"
+    },
+    {
+     "en": "One, two, three... a whole plate of dumplings.",
+     "zh": "一个、两个、三个……包了满满一盘。"
+    },
+    {
+     "en": "Happy New Year! Let's eat.",
+     "zh": "新年快乐！开饭啦。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 52,
@@ -1751,8 +2324,37 @@
     "en": "On the first full moon of the year, the sky fills with lanterns.",
     "zh": "新年第一个月圆的晚上，到处都是灯笼。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Tonight the moon is perfectly round.",
+     "zh": "今晚的月亮圆圆的。"
+    },
+    {
+     "en": "It is the first full moon of the year.",
+     "zh": "这是一年里第一个月圆的晚上。"
+    },
+    {
+     "en": "Lanterns hang all along the street.",
+     "zh": "整条街都挂着灯笼。"
+    },
+    {
+     "en": "Red ones, yellow ones, one shaped like a rabbit!",
+     "zh": "红的、黄的，还有一个是小兔子形状的！"
+    },
+    {
+     "en": "Yun carries a little lantern too.",
+     "zh": "小云也提着一个小灯笼。"
+    },
+    {
+     "en": "They eat sweet round tangyuan.",
+     "zh": "他们吃甜甜的圆圆的汤圆。"
+    },
+    {
+     "en": "The whole street is glowing.",
+     "zh": "整条街都亮亮的。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 53,
@@ -1768,8 +2370,33 @@
     "en": "Under the round Mid-Autumn moon, Yun shares mooncakes with Grandma.",
     "zh": "中秋节的月亮圆圆的，小云和奶奶一起分月饼。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Mid-Autumn night. The moon is big and round.",
+     "zh": "中秋的晚上。月亮又大又圆。"
+    },
+    {
+     "en": "Yun carries a box of mooncakes to Grandma.",
+     "zh": "小云带着一盒月饼去奶奶家。"
+    },
+    {
+     "en": "They sit outside and look up.",
+     "zh": "他们坐在外面抬头看月亮。"
+    },
+    {
+     "en": "Grandma cuts one mooncake into four pieces.",
+     "zh": "奶奶把一个月饼切成四块。"
+    },
+    {
+     "en": "One for Grandma, one for Yun, two to share.",
+     "zh": "奶奶一块，小云一块，还有两块一起分。"
+    },
+    {
+     "en": "Round moon, round mooncake, round family.",
+     "zh": "圆圆的月亮，圆圆的月饼，团团圆圆的一家人。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 54,
@@ -1785,8 +2412,33 @@
     "en": "Row together! The dragon boat moves when everyone paddles.",
     "zh": "一起划，一起划！大家一起用力，龙舟就前进了。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Today is the dragon boat race!",
+     "zh": "今天是赛龙舟的日子！"
+    },
+    {
+     "en": "The boat has a dragon head and a long tail.",
+     "zh": "龙舟有龙头，还有长长的尾巴。"
+    },
+    {
+     "en": "Bear sits in front. Frog sits behind.",
+     "zh": "小熊坐在前面。青蛙坐在后面。"
+    },
+    {
+     "en": "Yun beats the drum: boom, boom, boom.",
+     "zh": "小云敲鼓：咚、咚、咚。"
+    },
+    {
+     "en": "Everyone paddles together on the beat.",
+     "zh": "大家跟着鼓点一起划。"
+    },
+    {
+     "en": "When they row together, the boat flies!",
+     "zh": "大家一起用力，龙舟飞快地前进！"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 55,
@@ -1802,8 +2454,37 @@
     "en": "Fold the paper, cut a shape, open it: a flower with two matching sides!",
     "zh": "把纸折起来，剪一剪，打开，两边一模一样的花！"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Grandma has red paper and small scissors.",
+     "zh": "奶奶有红纸和小剪刀。"
+    },
+    {
+     "en": "She folds the paper once. Then again.",
+     "zh": "她把纸对折一次。再折一次。"
+    },
+    {
+     "en": "Snip, snip. She cuts little shapes.",
+     "zh": "咔嚓，咔嚓。她剪出小小的形状。"
+    },
+    {
+     "en": "Yun cannot tell what it will be.",
+     "zh": "小云猜不出会是什么。"
+    },
+    {
+     "en": "Grandma opens the paper slowly...",
+     "zh": "奶奶慢慢把纸打开……"
+    },
+    {
+     "en": "A flower! Both sides look exactly the same.",
+     "zh": "一朵花！两边一模一样。"
+    },
+    {
+     "en": "They stick it on the window for everyone to see.",
+     "zh": "他们把它贴在窗户上，让大家都看见。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 56,
@@ -1819,8 +2500,33 @@
     "en": "Yun says hello to friends in English and in Chinese.",
     "zh": "小云用中文和英文跟朋友们打招呼。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun goes out to find friends.",
+     "zh": "小云出门去找朋友。"
+    },
+    {
+     "en": "Here is Bear. \"Hello, Bear!\"",
+     "zh": "遇到小熊。“你好，小熊！”"
+    },
+    {
+     "en": "Bear says: \"Nǐ hǎo, Yun!\"",
+     "zh": "小熊说：“Hello，小云！”"
+    },
+    {
+     "en": "Here is Duck. \"Good morning, Duck!\"",
+     "zh": "遇到鸭子。“早上好，鸭子！”"
+    },
+    {
+     "en": "Duck says: \"Zǎo shàng hǎo!\"",
+     "zh": "鸭子说：“Good morning！”"
+    },
+    {
+     "en": "Two ways to say hello. Both mean: I see you.",
+     "zh": "两种打招呼的说法。意思都是：我看见你啦。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 57,
@@ -1836,8 +2542,37 @@
     "en": "Four little hills, flat, up, down-and-up and down, make four different sounds.",
     "zh": "四座小山，平平的、往上的、先下后上的、往下的，发出四种不同的声音。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun finds four little hills.",
+     "zh": "小云找到四座小山。"
+    },
+    {
+     "en": "The first hill is flat on top. Mā, like a long hum.",
+     "zh": "第一座山顶是平的。妈，像长长的一声。"
+    },
+    {
+     "en": "The second hill goes up. Má, like asking a question.",
+     "zh": "第二座山往上走。麻，像在问问题。"
+    },
+    {
+     "en": "The third dips down, then up. Mǎ, like a little bounce.",
+     "zh": "第三座先下再上。马，像轻轻弹了一下。"
+    },
+    {
+     "en": "The fourth drops down fast. Mà, short and firm.",
+     "zh": "第四座一下子往下。骂，又短又干脆。"
+    },
+    {
+     "en": "Same sound, four hills, four meanings.",
+     "zh": "同样的音，四座山，四个意思。"
+    },
+    {
+     "en": "Yun sings all four. Can you?",
+     "zh": "小云把四个都唱了一遍。你也来试试？"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 58,
@@ -1853,8 +2588,33 @@
     "en": "Woof or wāng wāng? A dog sounds a little different in each language.",
     "zh": "Woof 还是汪汪？每种语言里，小狗的叫声都有点不一样。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun's dog says: Woof woof!",
+     "zh": "小云的小狗说：Woof woof！"
+    },
+    {
+     "en": "In Chinese, the same dog says: Wāng wāng!",
+     "zh": "用中文说，同一只小狗：汪汪！"
+    },
+    {
+     "en": "The cat says meow. Or miāo.",
+     "zh": "小猫说 meow。也说：喵。"
+    },
+    {
+     "en": "The duck says quack. Or gā gā.",
+     "zh": "鸭子说 quack。也说：嘎嘎。"
+    },
+    {
+     "en": "The cow says moo. Or mōu.",
+     "zh": "牛说 moo。也说：哞。"
+    },
+    {
+     "en": "Same animal, two ways to say its sound!",
+     "zh": "同一只动物，两种说法！"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 59,
@@ -1870,8 +2630,33 @@
     "en": "Cat, hat, bat: words that sound alike make a silly song.",
     "zh": "花、家、爸：听起来像的字，唱成一首好玩的歌。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun likes words that sound the same at the end.",
+     "zh": "小云喜欢结尾听起来一样的词。"
+    },
+    {
+     "en": "Cat, hat, bat. Listen: they all end the same.",
+     "zh": "花、家、妈。听：结尾都一样。"
+    },
+    {
+     "en": "A cat in a hat with a bat!",
+     "zh": "妈妈在家里种了一朵花！"
+    },
+    {
+     "en": "Now try: bear, chair, pear.",
+     "zh": "再试试：鱼、雨、雨伞的雨。"
+    },
+    {
+     "en": "A bear on a chair eating a pear!",
+     "zh": "下雨天，小鱼在水里游！"
+    },
+    {
+     "en": "Yun laughs. Silly words are the best.",
+     "zh": "小云笑了。好玩的词最有意思。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 60,
@@ -1887,8 +2672,33 @@
     "en": "An apple is an apple, and also a píngguǒ!",
     "zh": "苹果是 píngguǒ，也是 apple！"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun holds up a red apple.",
+     "zh": "小云举起一个红苹果。"
+    },
+    {
+     "en": "\"Apple,\" says Yun.",
+     "zh": "“Apple，”小云说。"
+    },
+    {
+     "en": "\"Píngguǒ,\" says Grandma.",
+     "zh": "“苹果，”奶奶说。"
+    },
+    {
+     "en": "Both are right! One thing, two names.",
+     "zh": "两个都对！一样东西，两个名字。"
+    },
+    {
+     "en": "Water is shuǐ. A cat is māo.",
+     "zh": "Water 是水。Cat 是猫。"
+    },
+    {
+     "en": "Yun knows twice as many words as yesterday.",
+     "zh": "小云会说的词，比昨天多了一倍。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 61,
@@ -1904,8 +2714,33 @@
     "en": "Grandma and Yun plant carrots, corn and beans in rows.",
     "zh": "奶奶和小云一行一行地种胡萝卜、玉米和豆子。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Grandma's garden has long straight rows.",
+     "zh": "奶奶的菜园里有一行行直直的地。"
+    },
+    {
+     "en": "In the first row: carrots, hiding underground.",
+     "zh": "第一行：胡萝卜，藏在土里。"
+    },
+    {
+     "en": "In the second row: corn, growing tall.",
+     "zh": "第二行：玉米，长得高高的。"
+    },
+    {
+     "en": "In the third row: beans, climbing up sticks.",
+     "zh": "第三行：豆子，顺着竹竿往上爬。"
+    },
+    {
+     "en": "Yun waters every row with a little can.",
+     "zh": "小云用小水壶给每一行浇水。"
+    },
+    {
+     "en": "At dinner, they eat what they grew.",
+     "zh": "吃晚饭的时候，他们吃自己种的菜。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 62,
@@ -1921,8 +2756,33 @@
     "en": "Mum, Dad, Grandma, Grandpa: every family is a little different.",
     "zh": "妈妈、爸爸、奶奶、爷爷，每个家都有一点不一样。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun draws a picture of everyone at home.",
+     "zh": "小云画了一张全家人的画。"
+    },
+    {
+     "en": "Here is Mum. Here is Dad.",
+     "zh": "这是妈妈。这是爸爸。"
+    },
+    {
+     "en": "Here is Grandma, with her glasses.",
+     "zh": "这是奶奶，戴着眼镜。"
+    },
+    {
+     "en": "Here is Grandpa, with his white hair.",
+     "zh": "这是爷爷，白头发。"
+    },
+    {
+     "en": "And here is Yun, right in the middle.",
+     "zh": "这是小云，就在中间。"
+    },
+    {
+     "en": "Every family looks a little different. That's good.",
+     "zh": "每个家都有一点不一样。这样很好。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 63,
@@ -1938,8 +2798,37 @@
     "en": "Yun waters the plants, feeds the fish and folds the socks.",
     "zh": "小云给花浇水、喂小鱼，还叠袜子。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun wants to help today.",
+     "zh": "小云今天想帮忙。"
+    },
+    {
+     "en": "First, water the plants. Not too much!",
+     "zh": "先给花浇水。别浇太多！"
+    },
+    {
+     "en": "Then, feed the fish. Just a pinch.",
+     "zh": "再喂小鱼。一小撮就够了。"
+    },
+    {
+     "en": "Then, fold the socks into pairs.",
+     "zh": "然后把袜子两只两只叠好。"
+    },
+    {
+     "en": "Yun finds one sock with no partner.",
+     "zh": "小云找到一只没有伙伴的袜子。"
+    },
+    {
+     "en": "There it is, under the chair!",
+     "zh": "在那儿呢，椅子下面！"
+    },
+    {
+     "en": "\"Thank you, Yun,\" says Mum.",
+     "zh": "“谢谢你，小云，”妈妈说。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 64,
@@ -1955,8 +2844,33 @@
     "en": "The teddy is on the bed, and the ball is under the chair.",
     "zh": "小熊玩偶在床上，球在椅子下面。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "This is Yun's room. Everything has a place.",
+     "zh": "这是小云的房间。每样东西都有自己的地方。"
+    },
+    {
+     "en": "The teddy sits on the bed.",
+     "zh": "小熊玩偶坐在床上。"
+    },
+    {
+     "en": "The books stand on the shelf.",
+     "zh": "书本立在书架上。"
+    },
+    {
+     "en": "The ball rolled under the chair.",
+     "zh": "球滚到椅子下面去了。"
+    },
+    {
+     "en": "The lantern hangs above the window.",
+     "zh": "灯笼挂在窗户上面。"
+    },
+    {
+     "en": "And Yun? Yun is right in the middle, playing.",
+     "zh": "小云呢？小云就在中间玩。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 65,
@@ -1972,8 +2886,33 @@
     "en": "In the bath, the boat floats and the key sinks.",
     "zh": "洗澡的时候，小船浮起来，钥匙沉下去。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Bath time! The water is warm.",
+     "zh": "洗澡啦！水暖暖的。"
+    },
+    {
+     "en": "Yun brings a little wooden boat.",
+     "zh": "小云带来一只小木船。"
+    },
+    {
+     "en": "The boat floats. Off it sails!",
+     "zh": "小船浮起来了。开走喽！"
+    },
+    {
+     "en": "Yun drops in a key. Plop! It sinks.",
+     "zh": "小云放进一把钥匙。咕咚！沉下去了。"
+    },
+    {
+     "en": "A rubber duck floats. A spoon sinks.",
+     "zh": "橡皮鸭子浮着。勺子沉下去。"
+    },
+    {
+     "en": "Yun tries everything. What will float next?",
+     "zh": "小云什么都试一试。下一个会浮起来吗？"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 66,
@@ -1989,8 +2928,33 @@
     "en": "Boom, boom, tap: the drum parade marches through the village.",
     "zh": "咚、咚、嗒，敲鼓游行队走过村子。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Boom! Boom! The drum parade is coming.",
+     "zh": "咚！咚！敲鼓的队伍来了。"
+    },
+    {
+     "en": "Bear beats the big drum: boom, boom.",
+     "zh": "小熊敲大鼓：咚，咚。"
+    },
+    {
+     "en": "Yun taps the little drum: tap, tap, tap.",
+     "zh": "小云敲小鼓：嗒，嗒，嗒。"
+    },
+    {
+     "en": "Boom, tap, tap. Boom, tap, tap.",
+     "zh": "咚、嗒、嗒。咚、嗒、嗒。"
+    },
+    {
+     "en": "Duck joins with a shaker. Shh, shh!",
+     "zh": "鸭子拿着沙锤加进来。沙，沙！"
+    },
+    {
+     "en": "The whole village marches behind them.",
+     "zh": "全村的人都跟在后面走。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 67,
@@ -2006,8 +2970,33 @@
     "en": "Rabbit hops fast, Turtle walks slow, and both get there in the end.",
     "zh": "兔子跳得快，乌龟走得慢，最后都到了。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Rabbit and Turtle go to the big tree.",
+     "zh": "小兔子和乌龟一起去大树那里。"
+    },
+    {
+     "en": "Rabbit hops fast. Hop hop hop hop!",
+     "zh": "小兔子跳得快。跳跳跳跳！"
+    },
+    {
+     "en": "Turtle walks slow. Step... step... step.",
+     "zh": "乌龟走得慢。一步……一步……一步。"
+    },
+    {
+     "en": "Yun claps fast for Rabbit.",
+     "zh": "小云为小兔子快快地拍手。"
+    },
+    {
+     "en": "Yun claps slow for Turtle.",
+     "zh": "小云为乌龟慢慢地拍手。"
+    },
+    {
+     "en": "Both of them reach the tree. Fast and slow both arrive.",
+     "zh": "他们都到了大树下。快的慢的，都能到。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 68,
@@ -2023,8 +3012,33 @@
     "en": "Bird sings high, Bear hums low. Together they make a song.",
     "zh": "小鸟唱得高，小熊哼得低，合在一起是一首歌。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Bird sits high in the tree and sings.",
+     "zh": "小鸟停在高高的树上唱歌。"
+    },
+    {
+     "en": "Her song goes up, up, high and light.",
+     "zh": "她的歌往上飞，高高的，轻轻的。"
+    },
+    {
+     "en": "Bear sits under the tree and hums.",
+     "zh": "小熊坐在树下哼着歌。"
+    },
+    {
+     "en": "His song goes down, down, low and warm.",
+     "zh": "他的歌往下沉，低低的，暖暖的。"
+    },
+    {
+     "en": "High and low, at the same time.",
+     "zh": "高音和低音，一起唱。"
+    },
+    {
+     "en": "Together it sounds better than either one alone.",
+     "zh": "合在一起，比一个人唱好听多了。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 69,
@@ -2040,8 +3054,33 @@
     "en": "Stand up! Hop like a frog, waddle like a duck, stretch like a cat.",
     "zh": "站起来！像青蛙一样跳，像鸭子一样摇，像小猫一样伸懒腰。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Put the tablet down. Time to move!",
+     "zh": "把平板放下。该动一动啦！"
+    },
+    {
+     "en": "Hop like a frog. Hop, hop, hop!",
+     "zh": "像青蛙一样跳。跳、跳、跳！"
+    },
+    {
+     "en": "Waddle like a duck. Left, right, left.",
+     "zh": "像鸭子一样摇。左、右、左。"
+    },
+    {
+     "en": "Stretch like a cat. Reach up high!",
+     "zh": "像小猫一样伸懒腰。往上够！"
+    },
+    {
+     "en": "Stomp like an elephant. Boom, boom!",
+     "zh": "像大象一样跺脚。咚，咚！"
+    },
+    {
+     "en": "Now sit down and breathe. Well done!",
+     "zh": "现在坐下来，喘口气。真棒！"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 70,
@@ -2057,8 +3096,37 @@
     "en": "The lanterns dim, the stars hum, and Yun drifts off to sleep.",
     "zh": "灯笼暗下来，星星轻轻唱，小云慢慢睡着了。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "The day is over. The sky is deep blue.",
+     "zh": "一天结束了。天空深深的蓝。"
+    },
+    {
+     "en": "One by one, the lanterns go dim.",
+     "zh": "灯笼一个一个暗下来。"
+    },
+    {
+     "en": "The stars hum a quiet song.",
+     "zh": "星星轻轻地哼着歌。"
+    },
+    {
+     "en": "Yun's eyes get heavy.",
+     "zh": "小云的眼皮越来越重。"
+    },
+    {
+     "en": "Tomorrow there will be more lights to find.",
+     "zh": "明天还有更多的灯光要去找。"
+    },
+    {
+     "en": "But tonight, Yun sleeps.",
+     "zh": "但是今晚，小云要睡了。"
+    },
+    {
+     "en": "Good night, Yun. Good night, lantern.",
+     "zh": "晚安，小云。晚安，灯笼。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 71,
@@ -2074,8 +3142,33 @@
     "en": "Bear's basket is heavy. Yun helps carry it up the hill.",
     "zh": "小熊的篮子好重。小云帮他一起搬上山坡。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Bear's basket is full of apples.",
+     "zh": "小熊的篮子里装满了苹果。"
+    },
+    {
+     "en": "It is heavy. Bear walks slowly.",
+     "zh": "篮子好重。小熊走得很慢。"
+    },
+    {
+     "en": "Yun sees, and runs over.",
+     "zh": "小云看见了，跑过去。"
+    },
+    {
+     "en": "\"Let me take one side,\" says Yun.",
+     "zh": "“我帮你抬一边，”小云说。"
+    },
+    {
+     "en": "Together they carry it up the hill.",
+     "zh": "他们一起把篮子抬上山坡。"
+    },
+    {
+     "en": "Two friends, one basket, not heavy at all.",
+     "zh": "两个朋友，一个篮子，一点也不重了。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 72,
@@ -2091,8 +3184,33 @@
     "en": "Duck's hat blew away! Friends look high and low until they find it.",
     "zh": "鸭子的帽子被风吹走了！朋友们到处找，终于找到了。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Whoosh! The wind takes Duck's hat.",
+     "zh": "呼！风把鸭子的帽子吹跑了。"
+    },
+    {
+     "en": "Duck runs after it, but it is gone.",
+     "zh": "鸭子追上去，可是帽子不见了。"
+    },
+    {
+     "en": "Yun looks up in the tree. Not there.",
+     "zh": "小云抬头看树上。不在那儿。"
+    },
+    {
+     "en": "Bear looks down in the grass. Not there.",
+     "zh": "小熊低头找草丛。也不在。"
+    },
+    {
+     "en": "Frog looks in the pond... there it is!",
+     "zh": "青蛙在池塘里找……找到了！"
+    },
+    {
+     "en": "Wet, but found. \"Thank you, everyone.\"",
+     "zh": "湿湿的，但是找回来了。“谢谢大家。”"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 73,
@@ -2108,8 +3226,37 @@
     "en": "The river is too wide for one, but not for friends working together.",
     "zh": "一个人过不了宽宽的河，可是朋友们一起就能搭好桥。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "The river is wide. There is no bridge.",
+     "zh": "河很宽。没有桥。"
+    },
+    {
+     "en": "Yun holds one plank. It is too short.",
+     "zh": "小云拿着一块木板。太短了。"
+    },
+    {
+     "en": "Bear brings a plank. Still too short.",
+     "zh": "小熊拿来一块。还是太短。"
+    },
+    {
+     "en": "Duck and Frog bring two more.",
+     "zh": "鸭子和青蛙又拿来两块。"
+    },
+    {
+     "en": "One by one, they lay them end to end.",
+     "zh": "他们一块接一块地铺过去。"
+    },
+    {
+     "en": "Now the bridge reaches the other side!",
+     "zh": "现在桥通到对岸啦！"
+    },
+    {
+     "en": "They walk across together.",
+     "zh": "他们一起走了过去。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 74,
@@ -2125,8 +3272,33 @@
     "en": "It is daytime and Owl is sleepy. Friends play quietly so Owl can rest.",
     "zh": "白天猫头鹰想睡觉。朋友们轻轻地玩，让猫头鹰好好休息。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "It is the middle of the day. Owl is sleepy.",
+     "zh": "大白天的。猫头鹰困了。"
+    },
+    {
+     "en": "Owl works all night, so Owl sleeps now.",
+     "zh": "猫头鹰整夜都醒着，所以白天要睡觉。"
+    },
+    {
+     "en": "Yun wants to bang the drum. But stops.",
+     "zh": "小云本来想敲鼓。可是停下来了。"
+    },
+    {
+     "en": "\"Let's play quietly,\" whispers Yun.",
+     "zh": "“我们轻轻地玩吧，”小云小声说。"
+    },
+    {
+     "en": "They tiptoe. They whisper. They giggle softly.",
+     "zh": "他们踮着脚，小声说话，轻轻地笑。"
+    },
+    {
+     "en": "Owl sleeps well. Tonight, Owl will say thank you.",
+     "zh": "猫头鹰睡得很好。晚上，他会来说谢谢。"
+    }
+   ],
+   "status": "written"
   },
   {
    "number": 75,
@@ -2142,8 +3314,41 @@
     "en": "Every kind thing Yun did made a little light. Together: the brightest lantern.",
     "zh": "小云做的每一件好事都是一点光。合在一起，就是最亮的灯笼。"
    },
-   "pages": [],
-   "status": "outline"
+   "pages": [
+    {
+     "en": "Yun has all eight little lights.",
+     "zh": "小云找齐了八个小灯光。"
+    },
+    {
+     "en": "Red for helping Bear carry apples.",
+     "zh": "红色的，是因为帮小熊搬苹果。"
+    },
+    {
+     "en": "Blue for finding Duck's lost hat.",
+     "zh": "蓝色的，是因为找回了鸭子的帽子。"
+    },
+    {
+     "en": "Green for sitting with Butterfly in the thunder.",
+     "zh": "绿色的，是因为打雷时陪着蝴蝶。"
+    },
+    {
+     "en": "One by one, Yun sends them up.",
+     "zh": "小云把它们一个一个送上去。"
+    },
+    {
+     "en": "The big lantern glows brighter than ever.",
+     "zh": "大灯笼亮得从来没有这么亮过。"
+    },
+    {
+     "en": "Every kind thing was a little light.",
+     "zh": "每一件好事，都是一点光。"
+    },
+    {
+     "en": "Together, they light up the whole hill.",
+     "zh": "合在一起，照亮了整座山。"
+    }
+   ],
+   "status": "written"
   }
  ]
 }

@@ -164,7 +164,12 @@ class ParentArea extends StatelessWidget {
                     for (final a in s.content.activities.values)
                       if (a.free || st.fullAccess)
                         SwitchListTile(
+                          isThreeLine: s.content.catalog[a.id]?.goal != null,
                           title: Text('${a.name.of(lang)}  ·  ${a.minAge}+'),
+                          subtitle: Text(
+                            s.content.catalog[a.id]?.goal ?? l.activityNoGoal,
+                            style: const TextStyle(color: Palette.inkSoft),
+                          ),
                           value: !st.hiddenActivities.contains(a.id),
                           onChanged: (v) => st.setActivityHidden(a.id, !v),
                         ),

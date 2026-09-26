@@ -257,9 +257,19 @@ class _ActivitySessionState extends State<ActivitySession> {
     );
     _phase = _Phase.playing;
     final gen = _generation;
+    // The very first time this game is opened, show the move once. Without it
+    // a new player sees objects and no hint of what to do until the 8s idle
+    // prompt — the "what am I supposed to do?" moment we are designing out.
+    final firstEver = _s.progress.timesPlayed(_activity.id) == 0;
     _s.audio.playSequence(_prompt).then((_) {
-      if (mounted && gen == _generation && _phase == _Phase.playing) {
-        _hints.start();
+      if (!mounted || gen != _generation || _phase != _Phase.playing) return;
+      _hints.start();
+      if (firstEver) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted && gen == _generation && _phase == _Phase.playing) {
+            _hints.demonstrate(speak: false);
+          }
+        });
       }
     });
   }

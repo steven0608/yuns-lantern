@@ -19,9 +19,9 @@ import 'pieces.dart';
 final shapeSorterGame = GameDef(
   id: 'shape_sorter',
   build: (rc) => ShapeSorter(rc: rc),
-  prompt: (r) => r.vo,
-  // The idle nudge is the closing line alone ("Every shape has its own home").
-  shortPrompt: (r) => r.vo.isEmpty ? const [] : [r.vo.last],
+  // r.vo names the shapes and ends with shapes.intro; sort says what to do.
+  prompt: (r) => [...r.vo, 'shapes.sort'],
+  shortPrompt: (r) => const ['shapes.sort'],
   background: const [Color(0xFFF6F2E6), Color(0xFFD7E3E1)],
 );
 

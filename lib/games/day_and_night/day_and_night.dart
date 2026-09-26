@@ -16,8 +16,9 @@ import '../shared/gentle_hint.dart';
 final dayAndNightGame = GameDef(
   id: 'day_and_night',
   build: (rc) => DayAndNight(rc: rc),
-  prompt: (r) => const ['daynight.intro'],
-  shortPrompt: (r) => const ['item.sun', 'item.moon'],
+  // intro says what is true, sort says what to do: a child needs both.
+  prompt: (r) => const ['daynight.intro', 'daynight.sort'],
+  shortPrompt: (r) => const ['daynight.sort'],
   background: const [Color(0xFFF6E3C3), Color(0xFFD9CBB8)],
 );
 

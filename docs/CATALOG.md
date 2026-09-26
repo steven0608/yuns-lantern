@@ -20,7 +20,7 @@ _Drag items into 2–3 bins by one attribute. Skill: Sorting / 分类._
 
 | # | id | English | 中文 | Age | Free | Rounds | Goal |
 |---|---|---|---|---|---|---|---|
-| 6 | `match_it` | Match It | 配对 | 3+ | ✅ | 23 | Sort by colour, shape, size or category into 2–3 bins. |
+| 6 | `match_it` | Match It | 配对 | 3+ | ✅ | 26 | Sort by colour, shape, size or category into 2–3 bins. |
 | 7 | `shape_sorter` | Shape Sorter | 形状 | 3+ | ✅ | 24 | Fit circles, squares, triangles, rectangles and semicircles. |
 | 8 | `day_and_night` | Day and Night | 白天黑夜 | 4+ |  | 14 | Sort animals and activities into day and night. |
 | 9 | `tidy_up` | Tidy Up Time | 收拾玩具 | 3+ |  | 16 | Put toys, books and clothes where they belong. |

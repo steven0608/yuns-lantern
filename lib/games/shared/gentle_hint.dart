@@ -93,9 +93,13 @@ class HintController {
     touched();
   }
 
-  void demonstrate() {
+  /// Show the next correct move. [speak] false is the silent "watch me" used
+  /// the first time a child opens a game: a demonstration is how you teach a
+  /// three-year-old a new game, and "Here, I'll help" makes no sense before
+  /// they have tried anything.
+  void demonstrate({bool speak = true}) {
     level.value = 2;
-    speak(rotate(_help));
+    if (speak) this.speak(rotate(_help));
     hand.value = guide?.call();
   }
 

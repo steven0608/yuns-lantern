@@ -279,7 +279,7 @@
    "goal": "Sort by colour, shape, size or category into 2–3 bins.",
    "minAge": 3,
    "free": true,
-   "rounds": 23,
+   "rounds": 26,
    "status": "built-content"
   },
   {

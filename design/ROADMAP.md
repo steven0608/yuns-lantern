@@ -42,7 +42,7 @@ Each iteration: build the next unchecked items → run the validators → review
 
 ### Iterations 5–7: stories
 - [x] Tales 6–30 written
-- [ ] Tales 31–55 written
+- [x] Tales 31–55 written (animals, science, feelings, routines, festivals)
 - [ ] Tales 56–75 written
 - [ ] Tale page art template + covers for all 75
 
@@ -68,6 +68,7 @@ Each iteration: build the next unchecked items → run the validators → review
 - [ ] Palette `inkSoft` fails 4.5:1 for small text on paper (4.26:1)
 
 ## Log
+- **Iteration 7**: tales 31–55 written (55/75); caught and fixed catalog drift (match_it 23→26 rounds) and a fail-state word in tale_49 copy.
 - **Iteration 6**: logo + lockups, marketing screenshots, bilingual landing page in `landing/` (zero external requests), "Logo & lockups" and "Landing page" boards.
 - **Iteration 5**: 58 new game icons (75 total) + "Game icons · 75" board; Sort It land boards use real icons; US-only + all-free decisions written into HANDOFF/EXPANSION/MONETIZATION.
 - **Iteration 4**: 91 vocab items drawn (all vocab.json ids incl. 27 E2 additions), symmetric Mirror Match items verified, bear feeder moved to characters/bear_basket.png; peer notified.

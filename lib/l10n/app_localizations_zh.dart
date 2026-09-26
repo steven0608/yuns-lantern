@@ -113,6 +113,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get activitiesHelp => '如果孩子觉得某个游戏太难，可以把它隐藏。';
 
   @override
+  String get activityNoGoal => '一个图画和声音的游戏——打开看看它让孩子做什么。';
+
+  @override
   String get sectionBreak => '休息提醒';
 
   @override

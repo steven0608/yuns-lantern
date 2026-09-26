@@ -115,6 +115,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'Hide any activity your child finds frustrating.';
 
   @override
+  String get activityNoGoal =>
+      'A picture-and-sound game — open it to see what it asks.';
+
+  @override
   String get sectionBreak => 'Break reminder';
 
   @override

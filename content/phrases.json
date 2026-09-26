@@ -65,9 +65,11 @@
     "comparing.smallest": {"en": "Which one is the smallest?", "zh": "哪一个最小？", "pinyin": "nǎ yí gè zuì xiǎo?"},
 
     "shapes.intro": {"en": "Every shape has its own home.", "zh": "每个形状都有自己的家。", "pinyin": "měi gè xíng zhuàng dōu yǒu zì jǐ de jiā."},
+    "shapes.sort": {"en": "Put each shape in its own hole.", "zh": "把每个形状放进它自己的洞里。", "pinyin": "bǎ měi gè xíng zhuàng fàng jìn tā zì jǐ de dòng lǐ."},
     "spotsame.intro": {"en": "Which one looks exactly the same?", "zh": "哪一个和它一模一样？", "pinyin": "nǎ yí gè hé tā yì mú yí yàng?"},
     "puzzle.intro": {"en": "A piece is missing. Which one fits?", "zh": "少了一块。哪一块合适？", "pinyin": "shǎo le yí kuài. nǎ yí kuài hé shì?"},
     "daynight.intro": {"en": "Some things happen in the day, some at night.", "zh": "有些事在白天，有些事在晚上。", "pinyin": "yǒu xiē shì zài bái tiān, yǒu xiē shì zài wǎn shang."},
+    "daynight.sort": {"en": "Put each one where it belongs.", "zh": "把每个放到它该去的地方。", "pinyin": "bǎ měi gè fàng dào tā gāi qù de dì fang."},
     "daynight.either": {"en": "This one can be either! You choose.", "zh": "这个都可以！你来选。", "pinyin": "zhè ge dōu kě yǐ! nǐ lái xuǎn."},
     "floatsink.intro": {"en": "Drop something in and see what happens.", "zh": "放一个进去，看看会怎么样。", "pinyin": "fàng yí gè jìn qù, kàn kan huì zěn me yàng."},
     "floatsink.floats": {"en": "It floats!", "zh": "它浮起来了！", "pinyin": "tā fú qǐ lái le!"},

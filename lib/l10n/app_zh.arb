@@ -27,6 +27,7 @@
   "childAgeHelp": "标记为 4 岁以上的游戏会在孩子满 4 岁后出现。这是为了合适，不是锁定。",
   "sectionActivities": "游戏",
   "activitiesHelp": "如果孩子觉得某个游戏太难，可以把它隐藏。",
+  "activityNoGoal": "一个图画和声音的游戏——打开看看它让孩子做什么。",
   "sectionBreak": "休息提醒",
   "breakHelp": "一轮结束后，小云会建议休息。绝不会打断游戏。",
   "breakOff": "关闭",
