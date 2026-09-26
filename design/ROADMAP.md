@@ -43,8 +43,15 @@ Each iteration: build the next unchecked items → run the validators → review
 ### Iterations 5–7: stories
 - [x] Tales 6–30 written
 - [x] Tales 31–55 written (animals, science, feelings, routines, festivals)
-- [ ] Tales 56–75 written
-- [ ] Tale page art template + covers for all 75
+- [x] Tales 56–75 written — **all 75 tales complete**, both languages, validators pass
+- [x] Tale covers (75, real art) + page-art template (548 images, `design/gen_tale_art.py`); illustrator replaces p<N>.png one at a time
+
+### Iteration 8b: clarity (Steven: "some games are not clear what to do") — HIGHEST PRIORITY
+- [x] `design/UX_GRAMMAR.md`: four roles (Take / Hold / Ask / Scene), the shadow-vs-hole rule, tray shelf, 1.4 s entry choreography, per-engine first-moment table
+- [x] Canvas board "Visual grammar · what do I do here?"
+- [ ] Fold in `docs/UX_REVIEW.md` findings when the app session's reviewer finishes
+- [ ] Apply the grammar to the existing screen boards (Activity, Land, Reader) so they model it
+- [ ] Flip catalog `status` planned → built for the 22 new E2 games (waiting on ids + round counts from the app session)
 
 ### Iteration 8: audio
 - [x] Music: 5 seamless loops (home, story_map, lands, reader, bedtime) + 2 stings (celebrate, light_found), −18/−16 LUFS, `design/audio/gen_audio.py`
@@ -68,6 +75,8 @@ Each iteration: build the next unchecked items → run the validators → review
 - [ ] Palette `inkSoft` fails 4.5:1 for small text on paper (4.26:1)
 
 ## Log
+- **Iteration 9**: tale covers + page-art template for all 75; visual grammar spec and board, answering Steven's "not clear what to do" and the app session's four UX questions.
+- **Iteration 8**: tales 56–75 written (75/75 complete); rewrote the rhyme tale so the Chinese pages rhyme in Chinese rather than transliterating English.
 - **Iteration 7**: tales 31–55 written (55/75); caught and fixed catalog drift (match_it 23→26 rounds) and a fail-state word in tale_49 copy.
 - **Iteration 6**: logo + lockups, marketing screenshots, bilingual landing page in `landing/` (zero external requests), "Logo & lockups" and "Landing page" boards.
 - **Iteration 5**: 58 new game icons (75 total) + "Game icons · 75" board; Sort It land boards use real icons; US-only + all-free decisions written into HANDOFF/EXPANSION/MONETIZATION.

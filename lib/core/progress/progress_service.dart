@@ -25,6 +25,18 @@ class ProgressService extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// True the first time a child ever opens a game on this engine. The silent
+  /// demonstration teaches the grammar, not the content, so it plays once per
+  /// engine — otherwise it repeats five times inside one land.
+  bool engineIsNew(String engineId) =>
+      !(_p.getStringList('engines') ?? const []).contains(engineId);
+
+  void markEngineSeen(String engineId) {
+    final seen = (_p.getStringList('engines') ?? const []).toSet()
+      ..add(engineId);
+    _p.setStringList('engines', seen.toList()..sort());
+  }
+
   Set<String> get lightsCollected =>
       (_p.getStringList('lights') ?? const []).toSet();
 

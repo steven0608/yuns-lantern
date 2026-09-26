@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math' as math;
 
 import '../../core/audio/music_scope.dart';
@@ -15,6 +16,7 @@ import '../../core/ui/yun.dart';
 import 'celebration.dart';
 import 'drop_target.dart';
 import 'gentle_hint.dart';
+import 'roles.dart';
 
 /// Everything a game needs for one round. Games depend only on this, core/
 /// and games/shared/ — never on each other (CLAUDE.md "Style").
@@ -215,7 +217,14 @@ class ActivitySession extends StatefulWidget {
   State<ActivitySession> createState() => _ActivitySessionState();
 }
 
-class _ActivitySessionState extends State<ActivitySession> {
+class _ActivitySessionState extends State<ActivitySession>
+    with SingleTickerProviderStateMixin {
+  /// Drives the 1.4s entry choreography (design/UX_GRAMMAR.md §3).
+  late final AnimationController _entry = AnimationController(
+    vsync: this,
+    duration: Role.entry,
+  );
+  Timer? _entryTimer;
   late Activity _activity;
   late int _roundIndex;
   late HintController _hints;
@@ -257,14 +266,21 @@ class _ActivitySessionState extends State<ActivitySession> {
     );
     _phase = _Phase.playing;
     final gen = _generation;
-    // The very first time this game is opened, show the move once. Without it
-    // a new player sees objects and no hint of what to do until the 8s idle
-    // prompt — the "what am I supposed to do?" moment we are designing out.
-    final firstEver = _s.progress.timesPlayed(_activity.id) == 0;
-    _s.audio.playSequence(_prompt).then((_) {
+    // Entry choreography (design/UX_GRAMMAR.md §3): the eye is led first — Ask
+    // halo, then the Hold ghosts, then the tray — and the spoken prompt starts
+    // at 1.4s. Sound arrives after the screen has explained itself, never
+    // instead of it, because the sound may never arrive at all.
+    final newEngine = _s.progress.engineIsNew(_activity.engine);
+    _entry.forward(from: 0);
+    _entryTimer?.cancel();
+    _entryTimer = Timer(Role.entry, () async {
+      if (!mounted || gen != _generation || _phase != _Phase.playing) return;
+      await _s.audio.playSequence(_prompt);
       if (!mounted || gen != _generation || _phase != _Phase.playing) return;
       _hints.start();
-      if (firstEver) {
+      // First game ever on this engine: show one whole move, silently.
+      if (newEngine) {
+        _s.progress.markEngineSeen(_activity.engine);
         WidgetsBinding.instance.addPostFrameCallback((_) {
           if (mounted && gen == _generation && _phase == _Phase.playing) {
             _hints.demonstrate(speak: false);
@@ -328,6 +344,8 @@ class _ActivitySessionState extends State<ActivitySession> {
 
   @override
   void dispose() {
+    _entryTimer?.cancel();
+    _entry.dispose();
     _hints.dispose();
     super.dispose();
   }
@@ -355,11 +373,14 @@ class _ActivitySessionState extends State<ActivitySession> {
         _hints.touched();
         _s.audio.playSequence(_prompt);
       },
-      body: IgnorePointer(
-        ignoring: _phase != _Phase.playing,
-        child: KeyedSubtree(
-          key: ValueKey('${_activity.id}/$_roundIndex/$_generation'),
-          child: widget.game.build(rc),
+      body: RoundEntry(
+        t: _entry,
+        child: IgnorePointer(
+          ignoring: _phase != _Phase.playing,
+          child: KeyedSubtree(
+            key: ValueKey('${_activity.id}/$_roundIndex/$_generation'),
+            child: widget.game.build(rc),
+          ),
         ),
       ),
       overlay: switch (_phase) {

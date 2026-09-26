@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:yuns_lantern/core/tokens.dart';
+import 'package:yuns_lantern/games/registry.dart';
 import 'package:yuns_lantern/games/shared/activity_scaffold.dart';
 import 'package:yuns_lantern/games/shared/cards.dart';
 import 'package:yuns_lantern/games/shared/celebration.dart';
@@ -107,6 +108,28 @@ void main() {
     expect(hints.hand.value, isNotNull);
     await tester.pumpWidget(const SizedBox());
     hints.dispose();
+  });
+
+  testWidgets('first game on an engine demonstrates the move once, silently', (tester) async {
+    final s = await testServices(firstPlay: true);
+    final game = gameRegistry['count_feed']!;
+    await pumpApp(tester, s, home: ActivitySession(game: game));
+    // Nothing yet: the eye is being led (1.4s) and then the prompt plays.
+    for (var i = 0; i < 12; i++) {
+      await tester.pump(const Duration(milliseconds: 600));
+    }
+    final hints = tester.widget<HintHandLayer>(find.byType(HintHandLayer)).hints;
+    expect(hints.hand.value, isNotNull, reason: 'the hand should show the move on a new engine');
+    expect(s.progress.engineIsNew('count_feed'), isFalse);
+
+    // Second game on the same engine: no demonstration.
+    await tester.pumpWidget(const SizedBox());
+    await pumpApp(tester, s, home: ActivitySession(game: game));
+    for (var i = 0; i < 12; i++) {
+      await tester.pump(const Duration(milliseconds: 600));
+    }
+    expect(tester.widget<HintHandLayer>(find.byType(HintHandLayer)).hints.hand.value, isNull);
+    await tester.pumpWidget(const SizedBox());
   });
 
   testWidgets('Celebration runs ~1.8s then calls onDone', (tester) async {

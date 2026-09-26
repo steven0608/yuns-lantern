@@ -11,13 +11,22 @@ import 'package:yuns_lantern/main.dart';
 const ipad = Size(1366, 1024);
 const iphone = Size(844, 390);
 
-Future<Services> testServices({String locale = 'en', bool fullAccess = true, int age = 5}) async {
+/// [firstPlay] true leaves the engines unseen, so the silent first-play
+/// demonstration runs (design/UX_GRAMMAR.md §3). Tests default to false: they
+/// exercise the steady state a child sees from the second game onwards.
+Future<Services> testServices({String locale = 'en', bool fullAccess = true, int age = 5, bool firstPlay = false}) async {
   SharedPreferences.setMockInitialValues({
     'locale': locale,
     'purchased': fullAccess,
     'childAge': age,
   });
-  return createServices(useAudioDevice: false);
+  final s = await createServices(useAudioDevice: false);
+  if (!firstPlay) {
+    for (final a in s.content.activities.values) {
+      s.progress.markEngineSeen(a.engine);
+    }
+  }
+  return s;
 }
 
 Future<void> setSurface(WidgetTester tester, Size size) async {
