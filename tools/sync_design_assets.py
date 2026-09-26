@@ -34,7 +34,7 @@ def copy_art():
         for f in sorted(PNG.glob("*.png")):
             if match(f.name):
                 shutil.copy2(f, IMG / folder / f.name.split("_", 1)[1] if folder != "ui" else IMG / folder / f.name)
-    # Lantern Lands icons, one per engine (design/png/lands/<engine>.png).
+    # Per-game icons (design/png/games/<game_id>.png) and land icons.
     if (PNG / "lands").exists():
         (IMG / "lands").mkdir(parents=True, exist_ok=True)
         for f in (PNG / "lands").glob("*.png"):
@@ -42,7 +42,7 @@ def copy_art():
     # Vocab item art (design/png/items/<vocab_id>.png, drawn in each item's
     # vocab.json colour and shape) + props such as the Where Is It? basket,
     # and characters (e.g. the Count and Feed bear with his basket).
-    for sub in ("items", "characters"):
+    for sub in ("items", "characters", "games"):
         if (PNG / sub).exists():
             (IMG / sub).mkdir(parents=True, exist_ok=True)
             for f in (PNG / sub).glob("*.png"):

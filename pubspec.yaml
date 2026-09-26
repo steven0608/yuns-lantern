@@ -28,6 +28,7 @@ flutter:
     - content/
     - assets/images/
     - assets/images/characters/
+    - assets/images/games/
     - assets/images/items/
     - assets/images/lands/
     - assets/images/lights/

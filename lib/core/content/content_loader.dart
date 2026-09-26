@@ -153,9 +153,13 @@ class ArtCatalog {
     return files.contains(path) ? path : null;
   }
 
+  /// A game's own icon (`design/png/games/{id}.png`) or, for the 12 v2
+  /// activities, their home-screen tile.
   String? tileImage(String activityId) {
-    final path = 'assets/images/tiles/$activityId.png';
-    return files.contains(path) ? path : null;
+    for (final path in ['assets/images/games/$activityId.png', 'assets/images/tiles/$activityId.png']) {
+      if (files.contains(path)) return path;
+    }
+    return null;
   }
 
   String? landImage(String engineId) {

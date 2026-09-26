@@ -29,13 +29,13 @@ Each iteration: build the next unchecked items → run the validators → review
 
 ### Iteration 3: engine and game art
 - [x] 15 engine (land) icons → design/png/lands/<engine>.png (5 new: listen, trace, color, music, memory)
-- [ ] 63 new game icons (composed from engine + theme art)
+- [x] Game icons for all 75 catalog games → design/png/games/<game_id>.png (`design/gen_game_icons.py`, composed from the item art on each land's tint)
 - [x] New IA screens, each at iPad 1194 × 834 **and** iPhone 844 × 390: Home v3 (3 doors), Lands, Land → 5 games, Books shelf, Reader (EN / 中文 / Both)
 - [x] Web-only screens: start screen (tap Yun to begin), portrait "turn your phone" picture (desktop letterbox is built in the app)
 
 ### Iteration 4: vocabulary art
 - [x] SVG item art for all vocab items, drawn in their vocab.json colour/shape (`design/gen_items.py`); Mirror Match items pixel-checked symmetric
-- [ ] Refresh the Land boards once game icons exist
+- [x] Refresh the Land boards once game icons exist
 - [x] Batch 2 + new expansion vocab (feelings, festivals, family, body, gift, window, candle, cake): 91 items total
 - [x] Canvas board "Vocabulary items · 91"
 
@@ -67,6 +67,7 @@ Each iteration: build the next unchecked items → run the validators → review
 - [ ] Palette `inkSoft` fails 4.5:1 for small text on paper (4.26:1)
 
 ## Log
+- **Iteration 5**: 58 new game icons (75 total) + "Game icons · 75" board; Sort It land boards use real icons; US-only + all-free decisions written into HANDOFF/EXPANSION/MONETIZATION.
 - **Iteration 4**: 91 vocab items drawn (all vocab.json ids incl. 27 E2 additions), symmetric Mirror Match items verified, bear feeder moved to characters/bear_basket.png; peer notified.
 - **Iteration 3**: 13 v3 screen boards (iPad + iPhone), 5 new engine icons, 15 land icons, tales 6–30 written (30/75); vocab attribute fixes proposed to the app session.
 - **Iteration 2b**: phone map (map_phone.png @3x + map_phone_stops.json, gap-checked), Map (iPhone) board, iPad map stop 4 / 1.2× lantern; peer notified.
