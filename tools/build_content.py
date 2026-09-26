@@ -322,6 +322,379 @@ def build_mirror_match():
     return rounds
 
 
+# ------------------------------------------------------------- v3 games (E2)
+#
+# More games on the twelve engines that already exist, as DATA ONLY: an
+# activity names the `engine` whose widget plays it and carries its own rounds.
+# A round may carry `prompt` / `shortPrompt` VO keys, which the scaffold speaks
+# instead of the engine's default line — that is how one engine hosts games
+# with different voices without a line of Dart.
+#
+# Every v3 builder owns a private Random seeded from SEED, so adding, removing
+# or reordering a game can never shift another game's rounds (the v2 twelve
+# share the module-level `rng` and must stay byte-identical).
+
+def r_for(tag):
+    """A private, stable RNG per game: order-independent determinism."""
+    return random.Random(SEED + sum((i + 1) * ord(c) for i, c in enumerate(tag)))
+
+def rpick(r, pool, n, exclude=()):
+    pool = [i for i in pool if i["id"] not in exclude]
+    return r.sample(pool, min(n, len(pool)))
+
+def ids(pool):
+    return [i["id"] for i in pool]
+
+
+# --- count_feed engine -------------------------------------------------------
+
+def _counting_rounds(feeders, items, prompt_key, extra_vo=()):
+    """Twenty rounds of 'give exactly N': ten to five, then ten to ten.
+    `feeders` and `items` cycle independently so no two rounds look alike."""
+    rounds = []
+    for k in range(20):
+        n = (k % 5) + 1 if k < 10 else (k - 9)
+        feeder = feeders[k % len(feeders)]
+        item = items[k % len(items)]
+        rounds.append({
+            "tier": "to_five" if k < 10 else "to_ten",
+            "target": n,
+            "feeder": feeder,
+            "item": item,
+            "supply": min(n + 3, 10),
+            "prompt": [f"item.{feeder}", prompt_key, f"number.{n}"],
+            "vo": [prompt_key, f"number.{n}", f"item.{item}", f"item.{feeder}",
+                   *extra_vo],
+        })
+    return rounds
+
+def build_birthday_candles():
+    """Candles onto a birthday cake. The plate's N empty spots are the holes
+    in the icing, so the count stays visible without a numeral."""
+    return _counting_rounds(["cake"], ["candle"], "game.candles")
+
+def build_share_cookies():
+    """One friend, N cookies: one-to-one correspondence, counted aloud."""
+    friends = ["bear", "rabbit", "panda", "dog", "cat", "duck", "mouse", "turtle"]
+    return _counting_rounds(friends, ["cookie"], "game.cookies")
+
+def build_garden_seeds():
+    """Plant this many in the garden bed. Only countable garden things."""
+    grown = ["flower", "leaf", "apple", "corn", "strawberry", "mushroom"]
+    return _counting_rounds(["tree"], grown, "game.seeds")
+
+def build_bus_stop():
+    """Riders onto the bus, one per seat."""
+    riders = ["rabbit", "cat", "dog", "duck", "mouse", "bear", "panda", "frog"]
+    return _counting_rounds(["bus"], riders, "game.bus")
+
+
+# --- match_it (sort) engine --------------------------------------------------
+
+def _bins_for(r, attr, keys, per_bin=2):
+    """One bin per key, `per_bin` items each — never more than
+    kMaxInteractiveItems in total. Returns None if the vocab can't fill it."""
+    bins = []
+    for k in keys:
+        pool = [i for i in ITEMS if i.get(attr) == k]
+        if len(pool) < per_bin:
+            return None
+        bins.append({"key": k, "items": sorted(i["id"] for i in r.sample(pool, per_bin))})
+    return bins
+
+def _sorting_rounds(tag, attr, key_sets, prompt_key, repeats):
+    r = r_for(tag)
+    rounds = []
+    for _ in range(repeats):
+        for keys in key_sets:
+            b = _bins_for(r, attr, keys)
+            if b is None:
+                continue
+            rounds.append({
+                "attribute": attr, "bins": b,
+                "prompt": [prompt_key],
+                # the tub's spoken name is read from vo by the engine
+                "vo": [prompt_key] + [f"{attr}.{x['key']}" for x in b],
+            })
+    return rounds
+
+def build_tidy_up():
+    """Everything in the room goes somewhere: toys, clothes, dishes, food."""
+    key_sets = [("toy", "clothing", "household"),
+                ("toy", "food", "household"),
+                ("clothing", "household", "food"),
+                ("toy", "clothing", "food")]
+    return _sorting_rounds("tidy_up", "category", key_sets, "game.tidy", 4)
+
+def build_weather_wardrobe():
+    """Sunny, rainy, windy: what each kind of day needs. Driven by the
+    `weather` attribute in vocab.json — never guessed here."""
+    return _sorting_rounds("weather_wardrobe", "weather",
+                           [("sunny", "rainy", "windy")], "game.weather", 16)
+
+
+# --- find_the_same engine ----------------------------------------------------
+
+def _same_rounds(tag, pool_ids, prompt_key, count=20):
+    """One reference, three distractors from the same themed pool. The
+    reference is never among the distractors (the validator re-checks)."""
+    r = r_for(tag)
+    pool = [BY_ID[i] for i in pool_ids]
+    rounds = []
+    for k in range(count):
+        ref = pool[k % len(pool)]
+        distractors = rpick(r, pool, 3, exclude={ref["id"]})
+        rounds.append({
+            "tier": "easy" if k < count // 2 else "hard",
+            "reference": ref["id"],
+            "distractors": sorted(d["id"] for d in distractors),
+            "prompt": [prompt_key],
+            "vo": [prompt_key, f"item.{ref['id']}"],
+        })
+    return rounds
+
+def build_feelings_faces():
+    """Six feelings, matched face to face — the first emotional vocabulary."""
+    return _same_rounds("feelings_faces", ids(by(category="feeling")),
+                        "game.feelings")
+
+def build_sock_pairs():
+    """Things we wear, matched into pairs."""
+    return _same_rounds("sock_pairs", ids(by(category="clothing")), "game.socks")
+
+def build_spot_the_lantern():
+    """Festival things: find the twin among lanterns, candles and gifts."""
+    festival = ["key_lantern", "candle", "red_envelope", "mooncake", "dumpling",
+                "dragon_boat", "cake", "gift", "balloon", "moon"]
+    return _same_rounds("spot_the_lantern", festival, "game.lantern")
+
+
+# --- what_is_it (silhouette) engine ------------------------------------------
+
+def _mystery_rounds(tag, pool_ids, tier, prompt_key, count=16):
+    """A shape to guess and two other candidates. The prompt never names the
+    answer — that's the whole game."""
+    r = r_for(tag)
+    pool = [BY_ID[i] for i in pool_ids]
+    order = list(range(len(pool)))
+    r.shuffle(order)
+    rounds = []
+    for k in range(count):
+        ans = pool[order[k % len(order)]]
+        others = rpick(r, pool, 2, exclude={ans["id"]})
+        rounds.append({
+            "tier": tier,
+            "answer": ans["id"],
+            "distractors": sorted(o["id"] for o in others),
+            "prompt": [prompt_key],
+            "vo": [prompt_key, f"item.{ans['id']}"],
+        })
+    return rounds
+
+def build_peekaboo_animals():
+    """An animal peeks out as a silhouette; who is it?"""
+    return _mystery_rounds("peekaboo_animals", ids(by(category="animal")),
+                           "silhouette", "game.peekaboo")
+
+def build_shadow_puppets():
+    """The same silhouette panel, told as a shadow play on the wall."""
+    return _mystery_rounds("shadow_puppets", ids(by(category="animal")),
+                           "silhouette", "game.shadow")
+
+def build_zoom_out():
+    """Misted over, clearing slowly — a close-up pulling back."""
+    pool = ids(by(category=("food", "household", "toy", "nature", "clothing")))
+    return _mystery_rounds("zoom_out", pool, "reveal", "game.zoom")
+
+
+# --- big_and_small (order_line) engine ---------------------------------------
+
+def _size_order_rounds(tag, pool_ids, prompt_key, count=12):
+    """Trios genuinely ordered by the vocab `size` attribute, all three sizes
+    distinct so the puzzle has exactly one answer."""
+    r = r_for(tag)
+    pool = [BY_ID[i] for i in pool_ids]
+    buckets = {s: [i for i in pool if i["size"] == s] for s in SIZE_ORDER}
+    ladders = [(a, b, c) for ai, a in enumerate(SIZE_ORDER)
+               for bi, b in enumerate(SIZE_ORDER) if bi > ai
+               for ci, c in enumerate(SIZE_ORDER) if ci > bi
+               if buckets[a] and buckets[b] and buckets[c]]
+    rounds = []
+    for k in range(count):
+        a, b, c = ladders[k % len(ladders)]
+        trio = [r.choice(buckets[a])["id"], r.choice(buckets[b])["id"],
+                r.choice(buckets[c])["id"]]
+        rounds.append({
+            "dimension": "size", "orderedSmallToLarge": trio,
+            "prompt": [prompt_key],
+            "vo": [prompt_key] + [f"item.{t}" for t in trio],
+        })
+    return rounds
+
+def build_ladder_up():
+    """Short to tall, with things you look up at outdoors."""
+    pool = ids(by(category=("nature", "vehicle", "animal")))
+    return _size_order_rounds("ladder_up", pool, "game.ladder")
+
+def build_stacking_cups():
+    """Nesting things from the kitchen shelf, smallest first."""
+    pool = ids(by(category=("household", "food", "toy")))
+    return _size_order_rounds("stacking_cups", pool, "game.stack")
+
+def build_growing_up():
+    """Baby, big sister, grown-up: the family ordered by how big they are.
+    Genuinely a size ordering, and the first 'I am growing' idea."""
+    return _size_order_rounds("growing_up", ids(by(category="family")),
+                              "game.growing")
+
+# What happens first, next and last in a morning. Ordered by the sequence the
+# curator wrote here, not by a vocab attribute — the validator checks the
+# dimension and only enforces vocab size when `dimension` is "size".
+MORNING_SEQUENCES = [
+    ["pillow", "toothbrush", "shoe"],
+    ["eye", "toothbrush", "hat"],
+    ["pillow", "bowl", "book"],
+    ["toothbrush", "bowl", "shoe"],
+    ["pillow", "cup", "hat"],
+    ["eye", "bowl", "shoe"],
+    ["pillow", "toothbrush", "book"],
+    ["bowl", "toothbrush", "shoe"],
+    ["pillow", "hand", "toothbrush"],
+    ["eye", "hand", "bowl"],
+    ["pillow", "shoe", "bike"],
+    ["bowl", "hat", "bus"],
+]
+
+def build_morning_routine():
+    return [{"dimension": "sequence", "orderedSmallToLarge": trio,
+             "prompt": ["game.routine"],
+             "vo": ["game.routine"] + [f"item.{t}" for t in trio]}
+            for trio in MORNING_SEQUENCES]
+
+
+# --- pattern_parade engine ---------------------------------------------------
+
+def _pattern_rounds(tag, templates, palettes, prompt_key):
+    r = r_for(tag)
+    rounds = []
+    for name, seq in templates:
+        for p in palettes:
+            mapping = {"A": p[0], "B": p[1], "C": p[2]}
+            core = seq.rstrip("?")
+            body = [mapping[c] for c in core]
+            answer = mapping[seq_next(seq)]
+            choices = list(dict.fromkeys([answer, mapping["A"], mapping["B"],
+                                          mapping["C"]]))[:3]
+            while len(choices) < 3:
+                extra = r.choice(ITEMS)["id"]
+                if extra not in choices:
+                    choices.append(extra)
+            r.shuffle(choices)
+            rounds.append({"pattern": name, "template": seq, "sequence": body,
+                           "answer": answer, "choices": choices,
+                           "prompt": [prompt_key, "pattern.whatnext"],
+                           "vo": [prompt_key, "pattern.whatnext"]})
+    return rounds
+
+SIMPLE_TEMPLATES = [
+    ("AB",  "ABAB?"),   ("AB",  "ABABA?"),
+    ("AAB", "AABAAB?"), ("AAB", "AABAA?"),
+    ("ABB", "ABBABB?"), ("ABB", "ABBAB?"),
+    ("ABC", "ABCABC?"), ("ABC", "ABCAB?"),
+]
+
+def build_bead_necklace():
+    """Threading beads: the gentlest pattern game, one bead at a time."""
+    palettes = [("apple", "grape", "orange"), ("ball", "balloon", "block"),
+                ("shell", "flower", "leaf")]
+    return _pattern_rounds("bead_necklace", SIMPLE_TEMPLATES, palettes,
+                           "game.beads")
+
+def build_lantern_string():
+    """Festival lanterns strung along a wire."""
+    palettes = [("key_lantern", "candle", "star"),
+                ("red_envelope", "mooncake", "dumpling"),
+                ("gift", "cake", "balloon")]
+    return _pattern_rounds("lantern_string", SIMPLE_TEMPLATES, palettes,
+                           "game.lanterns_next")
+
+def build_flower_path():
+    """Age 5: longer repeating units (AABB, ABCB) along a garden path."""
+    templates = [("ABC", "ABCABC?"), ("ABC", "ABCAB?"), ("ABC", "ABCA?"),
+                 ("AABB", "AABBAABB?"), ("AABB", "AABBAA?"),
+                 ("ABCB", "ABCBABCB?")]
+    palettes = [("flower", "leaf", "shell"), ("flower", "tree", "rock"),
+                ("flower", "butterfly", "bee"), ("flower", "mushroom", "star")]
+    return _pattern_rounds("flower_path", templates, palettes,
+                           "game.flowers_next")
+
+
+# --- where_is_it (position) engine -------------------------------------------
+
+def _position_rounds(tag, pairs, actors, containers, prompt_key, count=12):
+    """Two rooms, the same actor and vessel in each, arranged by the two
+    words of `pair`. Only the six relations the engine can stage."""
+    rounds = []
+    for k in range(count):
+        a, b = pairs[k % len(pairs)]
+        target = a if k % 2 == 0 else b
+        actor = actors[k % len(actors)]
+        rounds.append({
+            "pair": [a, b], "target": target,
+            "actor": actor, "container": containers[k % len(containers)],
+            "prompt": [prompt_key, f"item.{actor}", f"position.{target}"],
+            "vo": [prompt_key, f"position.{a}", f"position.{b}",
+                   f"item.{actor}", "position.ask"],
+        })
+    return rounds
+
+def build_hide_seek():
+    """Someone is hiding. Listen to where, then tap that room."""
+    return _position_rounds("hide_seek", [("inside", "outside"), ("front", "behind")],
+                            ["cat", "mouse", "rabbit", "frog", "bird", "owl"],
+                            ["box", "basket", "bowl", "cup"], "game.hide")
+
+def build_owl_tree_house():
+    """Up in the branches or down by the roots."""
+    return _position_rounds("owl_tree_house", [("up", "down")],
+                            ["owl", "bird", "mouse", "cat"],
+                            ["basket", "box"], "game.treehouse")
+
+def build_set_table():
+    """On the table, in the bowl, beside it: laying a place for dinner."""
+    return _position_rounds("set_table", [("inside", "outside"), ("up", "down")],
+                            ["spoon", "egg", "apple", "cookie", "strawberry", "grape"],
+                            ["bowl", "cup", "basket"], "game.table")
+
+
+# id -> (engine, skill, builder). Names, ages and tier come from
+# content/catalog.json, which is the single source of truth for the 75 games.
+V3_GAMES = [
+    ("birthday_candles", "count_feed",     "counting",       build_birthday_candles),
+    ("share_cookies",    "count_feed",     "counting",       build_share_cookies),
+    ("garden_seeds",     "count_feed",     "counting",       build_garden_seeds),
+    ("bus_stop",         "count_feed",     "counting",       build_bus_stop),
+    ("tidy_up",          "match_it",       "classification", build_tidy_up),
+    ("weather_wardrobe", "match_it",       "classification", build_weather_wardrobe),
+    ("feelings_faces",   "find_the_same",  "discrimination", build_feelings_faces),
+    ("sock_pairs",       "find_the_same",  "discrimination", build_sock_pairs),
+    ("spot_the_lantern", "find_the_same",  "discrimination", build_spot_the_lantern),
+    ("peekaboo_animals", "what_is_it",     "recognition",    build_peekaboo_animals),
+    ("shadow_puppets",   "what_is_it",     "recognition",    build_shadow_puppets),
+    ("zoom_out",         "what_is_it",     "recognition",    build_zoom_out),
+    ("ladder_up",        "big_and_small",  "comparison",     build_ladder_up),
+    ("stacking_cups",    "big_and_small",  "comparison",     build_stacking_cups),
+    ("growing_up",       "big_and_small",  "comparison",     build_growing_up),
+    ("morning_routine",  "big_and_small",  "comparison",     build_morning_routine),
+    ("bead_necklace",    "pattern_parade", "patterns",       build_bead_necklace),
+    ("lantern_string",   "pattern_parade", "patterns",       build_lantern_string),
+    ("flower_path",      "pattern_parade", "patterns",       build_flower_path),
+    ("hide_seek",        "where_is_it",    "position",       build_hide_seek),
+    ("owl_tree_house",   "where_is_it",    "position",       build_owl_tree_house),
+    ("set_table",        "where_is_it",    "position",       build_set_table),
+]
+
+
 ACTIVITIES = [
     ("count_feed",     {"en":"Count and Feed","zh":"数一数"},      "counting",       3, build_count_feed),
     ("match_it",       {"en":"Match It","zh":"配对"},              "classification", 3, build_match_it),
@@ -346,15 +719,28 @@ def main():
                        "Edit vocab.json or the builders and re-run.",
            "seed": SEED, "activities": []}
     all_vo = set()
-    for aid, name, skill, min_age, builder in ACTIVITIES:
-        rounds = builder()
+
+    def emit(aid, engine, name, skill, min_age, free, rounds):
         for r in rounds:
             all_vo.update(r.get("vo", []))
         out["activities"].append({
-            "id": aid, "name": name, "skill": skill, "minAge": min_age,
-            "free": aid in FREE_ACTIVITIES,
+            "id": aid, "engine": engine, "name": name, "skill": skill,
+            "minAge": min_age, "free": free,
             "roundCount": len(rounds), "rounds": rounds,
         })
+
+    # The twelve v2 activities: each one is its own engine.
+    for aid, name, skill, min_age, builder in ACTIVITIES:
+        emit(aid, aid, name, skill, min_age, aid in FREE_ACTIVITIES, builder())
+
+    # v3 games: more content on those same engines. Name, age and tier are
+    # read from catalog.json so the two files can never disagree.
+    catalog = json.loads((CONTENT / "catalog.json").read_text(encoding="utf-8"))
+    cat_by_id = {g["id"]: g for g in catalog["games"]}
+    for gid, engine, skill, builder in V3_GAMES:
+        g = cat_by_id[gid]
+        emit(gid, engine, g["name"], skill, g["minAge"], g["free"], builder())
+
     # every item name is spoken somewhere
     for i in ITEMS:
         all_vo.add(f"item.{i['id']}")
@@ -365,8 +751,8 @@ def main():
     print(f"activities: {len(out['activities'])}")
     total = sum(a["roundCount"] for a in out["activities"])
     for a in out["activities"]:
-        print(f"  {a['id']:16s} {a['roundCount']:4d} rounds  age {a['minAge']}+  "
-              f"{'FREE' if a['free'] else 'paid'}")
+        print(f"  {a['id']:18s} {a['roundCount']:4d} rounds  age {a['minAge']}+  "
+              f"{'FREE' if a['free'] else 'paid'}  on {a['engine']}")
     print(f"total rounds: {total}")
     print(f"distinct VO keys: {len(out['voKeys'])}")
 

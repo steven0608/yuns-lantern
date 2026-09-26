@@ -4,6 +4,7 @@
  "activities": [
   {
    "id": "count_feed",
+   "engine": "count_feed",
    "name": {
     "en": "Count and Feed",
     "zh": "数一数"
@@ -407,6 +408,7 @@
   },
   {
    "id": "match_it",
+   "engine": "match_it",
    "name": {
     "en": "Match It",
     "zh": "配对"
@@ -1252,6 +1254,7 @@
   },
   {
    "id": "big_and_small",
+   "engine": "big_and_small",
    "name": {
     "en": "Big and Small",
     "zh": "比大小"
@@ -1475,6 +1478,7 @@
   },
   {
    "id": "shape_sorter",
+   "engine": "shape_sorter",
    "name": {
     "en": "Shape Sorter",
     "zh": "形状"
@@ -2232,6 +2236,7 @@
   },
   {
    "id": "find_the_same",
+   "engine": "find_the_same",
    "name": {
     "en": "Find the Same",
     "zh": "找相同"
@@ -2635,6 +2640,7 @@
   },
   {
    "id": "where_is_it",
+   "engine": "where_is_it",
    "name": {
     "en": "Where Is It?",
     "zh": "在哪里"
@@ -2918,6 +2924,7 @@
   },
   {
    "id": "puzzle_pieces",
+   "engine": "puzzle_pieces",
    "name": {
     "en": "Puzzle Pieces",
     "zh": "拼图"
@@ -3075,6 +3082,7 @@
   },
   {
    "id": "day_and_night",
+   "engine": "day_and_night",
    "name": {
     "en": "Day and Night",
     "zh": "白天黑夜"
@@ -3406,6 +3414,7 @@
   },
   {
    "id": "float_or_sink",
+   "engine": "float_or_sink",
    "name": {
     "en": "Float or Sink",
     "zh": "沉与浮"
@@ -3695,6 +3704,7 @@
   },
   {
    "id": "what_is_it",
+   "engine": "what_is_it",
    "name": {
     "en": "What Is It?",
     "zh": "猜一猜"
@@ -3996,6 +4006,7 @@
   },
   {
    "id": "pattern_parade",
+   "engine": "pattern_parade",
    "name": {
     "en": "Pattern Parade",
     "zh": "排排队"
@@ -5709,6 +5720,7 @@
   },
   {
    "id": "mirror_match",
+   "engine": "mirror_match",
    "name": {
     "en": "Mirror Match",
     "zh": "照镜子"
@@ -5863,6 +5875,7966 @@
      ]
     }
    ]
+  },
+  {
+   "id": "birthday_candles",
+   "engine": "count_feed",
+   "name": {
+    "en": "Birthday Candles",
+    "zh": "生日蜡烛"
+   },
+   "skill": "counting",
+   "minAge": 3,
+   "free": false,
+   "roundCount": 20,
+   "rounds": [
+    {
+     "tier": "to_five",
+     "target": 1,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 4,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.1"
+     ],
+     "vo": [
+      "game.candles",
+      "number.1",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 2,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 5,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.2"
+     ],
+     "vo": [
+      "game.candles",
+      "number.2",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 3,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 6,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.3"
+     ],
+     "vo": [
+      "game.candles",
+      "number.3",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 4,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 7,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.4"
+     ],
+     "vo": [
+      "game.candles",
+      "number.4",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 5,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 8,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.5"
+     ],
+     "vo": [
+      "game.candles",
+      "number.5",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 1,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 4,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.1"
+     ],
+     "vo": [
+      "game.candles",
+      "number.1",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 2,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 5,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.2"
+     ],
+     "vo": [
+      "game.candles",
+      "number.2",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 3,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 6,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.3"
+     ],
+     "vo": [
+      "game.candles",
+      "number.3",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 4,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 7,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.4"
+     ],
+     "vo": [
+      "game.candles",
+      "number.4",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 5,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 8,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.5"
+     ],
+     "vo": [
+      "game.candles",
+      "number.5",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 1,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 4,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.1"
+     ],
+     "vo": [
+      "game.candles",
+      "number.1",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 2,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 5,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.2"
+     ],
+     "vo": [
+      "game.candles",
+      "number.2",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 3,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 6,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.3"
+     ],
+     "vo": [
+      "game.candles",
+      "number.3",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 4,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 7,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.4"
+     ],
+     "vo": [
+      "game.candles",
+      "number.4",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 5,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 8,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.5"
+     ],
+     "vo": [
+      "game.candles",
+      "number.5",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 6,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 9,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.6"
+     ],
+     "vo": [
+      "game.candles",
+      "number.6",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 7,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 10,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.7"
+     ],
+     "vo": [
+      "game.candles",
+      "number.7",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 8,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 10,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.8"
+     ],
+     "vo": [
+      "game.candles",
+      "number.8",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 9,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 10,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.9"
+     ],
+     "vo": [
+      "game.candles",
+      "number.9",
+      "item.candle",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 10,
+     "feeder": "cake",
+     "item": "candle",
+     "supply": 10,
+     "prompt": [
+      "item.cake",
+      "game.candles",
+      "number.10"
+     ],
+     "vo": [
+      "game.candles",
+      "number.10",
+      "item.candle",
+      "item.cake"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "share_cookies",
+   "engine": "count_feed",
+   "name": {
+    "en": "Share the Cookies",
+    "zh": "分饼干"
+   },
+   "skill": "counting",
+   "minAge": 3,
+   "free": false,
+   "roundCount": 20,
+   "rounds": [
+    {
+     "tier": "to_five",
+     "target": 1,
+     "feeder": "bear",
+     "item": "cookie",
+     "supply": 4,
+     "prompt": [
+      "item.bear",
+      "game.cookies",
+      "number.1"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.1",
+      "item.cookie",
+      "item.bear"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 2,
+     "feeder": "rabbit",
+     "item": "cookie",
+     "supply": 5,
+     "prompt": [
+      "item.rabbit",
+      "game.cookies",
+      "number.2"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.2",
+      "item.cookie",
+      "item.rabbit"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 3,
+     "feeder": "panda",
+     "item": "cookie",
+     "supply": 6,
+     "prompt": [
+      "item.panda",
+      "game.cookies",
+      "number.3"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.3",
+      "item.cookie",
+      "item.panda"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 4,
+     "feeder": "dog",
+     "item": "cookie",
+     "supply": 7,
+     "prompt": [
+      "item.dog",
+      "game.cookies",
+      "number.4"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.4",
+      "item.cookie",
+      "item.dog"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 5,
+     "feeder": "cat",
+     "item": "cookie",
+     "supply": 8,
+     "prompt": [
+      "item.cat",
+      "game.cookies",
+      "number.5"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.5",
+      "item.cookie",
+      "item.cat"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 1,
+     "feeder": "duck",
+     "item": "cookie",
+     "supply": 4,
+     "prompt": [
+      "item.duck",
+      "game.cookies",
+      "number.1"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.1",
+      "item.cookie",
+      "item.duck"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 2,
+     "feeder": "mouse",
+     "item": "cookie",
+     "supply": 5,
+     "prompt": [
+      "item.mouse",
+      "game.cookies",
+      "number.2"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.2",
+      "item.cookie",
+      "item.mouse"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 3,
+     "feeder": "turtle",
+     "item": "cookie",
+     "supply": 6,
+     "prompt": [
+      "item.turtle",
+      "game.cookies",
+      "number.3"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.3",
+      "item.cookie",
+      "item.turtle"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 4,
+     "feeder": "bear",
+     "item": "cookie",
+     "supply": 7,
+     "prompt": [
+      "item.bear",
+      "game.cookies",
+      "number.4"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.4",
+      "item.cookie",
+      "item.bear"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 5,
+     "feeder": "rabbit",
+     "item": "cookie",
+     "supply": 8,
+     "prompt": [
+      "item.rabbit",
+      "game.cookies",
+      "number.5"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.5",
+      "item.cookie",
+      "item.rabbit"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 1,
+     "feeder": "panda",
+     "item": "cookie",
+     "supply": 4,
+     "prompt": [
+      "item.panda",
+      "game.cookies",
+      "number.1"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.1",
+      "item.cookie",
+      "item.panda"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 2,
+     "feeder": "dog",
+     "item": "cookie",
+     "supply": 5,
+     "prompt": [
+      "item.dog",
+      "game.cookies",
+      "number.2"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.2",
+      "item.cookie",
+      "item.dog"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 3,
+     "feeder": "cat",
+     "item": "cookie",
+     "supply": 6,
+     "prompt": [
+      "item.cat",
+      "game.cookies",
+      "number.3"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.3",
+      "item.cookie",
+      "item.cat"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 4,
+     "feeder": "duck",
+     "item": "cookie",
+     "supply": 7,
+     "prompt": [
+      "item.duck",
+      "game.cookies",
+      "number.4"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.4",
+      "item.cookie",
+      "item.duck"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 5,
+     "feeder": "mouse",
+     "item": "cookie",
+     "supply": 8,
+     "prompt": [
+      "item.mouse",
+      "game.cookies",
+      "number.5"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.5",
+      "item.cookie",
+      "item.mouse"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 6,
+     "feeder": "turtle",
+     "item": "cookie",
+     "supply": 9,
+     "prompt": [
+      "item.turtle",
+      "game.cookies",
+      "number.6"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.6",
+      "item.cookie",
+      "item.turtle"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 7,
+     "feeder": "bear",
+     "item": "cookie",
+     "supply": 10,
+     "prompt": [
+      "item.bear",
+      "game.cookies",
+      "number.7"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.7",
+      "item.cookie",
+      "item.bear"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 8,
+     "feeder": "rabbit",
+     "item": "cookie",
+     "supply": 10,
+     "prompt": [
+      "item.rabbit",
+      "game.cookies",
+      "number.8"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.8",
+      "item.cookie",
+      "item.rabbit"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 9,
+     "feeder": "panda",
+     "item": "cookie",
+     "supply": 10,
+     "prompt": [
+      "item.panda",
+      "game.cookies",
+      "number.9"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.9",
+      "item.cookie",
+      "item.panda"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 10,
+     "feeder": "dog",
+     "item": "cookie",
+     "supply": 10,
+     "prompt": [
+      "item.dog",
+      "game.cookies",
+      "number.10"
+     ],
+     "vo": [
+      "game.cookies",
+      "number.10",
+      "item.cookie",
+      "item.dog"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "garden_seeds",
+   "engine": "count_feed",
+   "name": {
+    "en": "Garden Seeds",
+    "zh": "种种子"
+   },
+   "skill": "counting",
+   "minAge": 3,
+   "free": false,
+   "roundCount": 20,
+   "rounds": [
+    {
+     "tier": "to_five",
+     "target": 1,
+     "feeder": "tree",
+     "item": "flower",
+     "supply": 4,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.1"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.1",
+      "item.flower",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 2,
+     "feeder": "tree",
+     "item": "leaf",
+     "supply": 5,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.2"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.2",
+      "item.leaf",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 3,
+     "feeder": "tree",
+     "item": "apple",
+     "supply": 6,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.3"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.3",
+      "item.apple",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 4,
+     "feeder": "tree",
+     "item": "corn",
+     "supply": 7,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.4"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.4",
+      "item.corn",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 5,
+     "feeder": "tree",
+     "item": "strawberry",
+     "supply": 8,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.5"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.5",
+      "item.strawberry",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 1,
+     "feeder": "tree",
+     "item": "mushroom",
+     "supply": 4,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.1"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.1",
+      "item.mushroom",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 2,
+     "feeder": "tree",
+     "item": "flower",
+     "supply": 5,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.2"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.2",
+      "item.flower",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 3,
+     "feeder": "tree",
+     "item": "leaf",
+     "supply": 6,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.3"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.3",
+      "item.leaf",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 4,
+     "feeder": "tree",
+     "item": "apple",
+     "supply": 7,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.4"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.4",
+      "item.apple",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 5,
+     "feeder": "tree",
+     "item": "corn",
+     "supply": 8,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.5"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.5",
+      "item.corn",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 1,
+     "feeder": "tree",
+     "item": "strawberry",
+     "supply": 4,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.1"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.1",
+      "item.strawberry",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 2,
+     "feeder": "tree",
+     "item": "mushroom",
+     "supply": 5,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.2"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.2",
+      "item.mushroom",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 3,
+     "feeder": "tree",
+     "item": "flower",
+     "supply": 6,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.3"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.3",
+      "item.flower",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 4,
+     "feeder": "tree",
+     "item": "leaf",
+     "supply": 7,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.4"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.4",
+      "item.leaf",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 5,
+     "feeder": "tree",
+     "item": "apple",
+     "supply": 8,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.5"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.5",
+      "item.apple",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 6,
+     "feeder": "tree",
+     "item": "corn",
+     "supply": 9,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.6"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.6",
+      "item.corn",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 7,
+     "feeder": "tree",
+     "item": "strawberry",
+     "supply": 10,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.7"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.7",
+      "item.strawberry",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 8,
+     "feeder": "tree",
+     "item": "mushroom",
+     "supply": 10,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.8"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.8",
+      "item.mushroom",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 9,
+     "feeder": "tree",
+     "item": "flower",
+     "supply": 10,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.9"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.9",
+      "item.flower",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 10,
+     "feeder": "tree",
+     "item": "leaf",
+     "supply": 10,
+     "prompt": [
+      "item.tree",
+      "game.seeds",
+      "number.10"
+     ],
+     "vo": [
+      "game.seeds",
+      "number.10",
+      "item.leaf",
+      "item.tree"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bus_stop",
+   "engine": "count_feed",
+   "name": {
+    "en": "Bus Stop",
+    "zh": "小巴士"
+   },
+   "skill": "counting",
+   "minAge": 4,
+   "free": false,
+   "roundCount": 20,
+   "rounds": [
+    {
+     "tier": "to_five",
+     "target": 1,
+     "feeder": "bus",
+     "item": "rabbit",
+     "supply": 4,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.1"
+     ],
+     "vo": [
+      "game.bus",
+      "number.1",
+      "item.rabbit",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 2,
+     "feeder": "bus",
+     "item": "cat",
+     "supply": 5,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.2"
+     ],
+     "vo": [
+      "game.bus",
+      "number.2",
+      "item.cat",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 3,
+     "feeder": "bus",
+     "item": "dog",
+     "supply": 6,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.3"
+     ],
+     "vo": [
+      "game.bus",
+      "number.3",
+      "item.dog",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 4,
+     "feeder": "bus",
+     "item": "duck",
+     "supply": 7,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.4"
+     ],
+     "vo": [
+      "game.bus",
+      "number.4",
+      "item.duck",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 5,
+     "feeder": "bus",
+     "item": "mouse",
+     "supply": 8,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.5"
+     ],
+     "vo": [
+      "game.bus",
+      "number.5",
+      "item.mouse",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 1,
+     "feeder": "bus",
+     "item": "bear",
+     "supply": 4,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.1"
+     ],
+     "vo": [
+      "game.bus",
+      "number.1",
+      "item.bear",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 2,
+     "feeder": "bus",
+     "item": "panda",
+     "supply": 5,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.2"
+     ],
+     "vo": [
+      "game.bus",
+      "number.2",
+      "item.panda",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 3,
+     "feeder": "bus",
+     "item": "frog",
+     "supply": 6,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.3"
+     ],
+     "vo": [
+      "game.bus",
+      "number.3",
+      "item.frog",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 4,
+     "feeder": "bus",
+     "item": "rabbit",
+     "supply": 7,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.4"
+     ],
+     "vo": [
+      "game.bus",
+      "number.4",
+      "item.rabbit",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_five",
+     "target": 5,
+     "feeder": "bus",
+     "item": "cat",
+     "supply": 8,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.5"
+     ],
+     "vo": [
+      "game.bus",
+      "number.5",
+      "item.cat",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 1,
+     "feeder": "bus",
+     "item": "dog",
+     "supply": 4,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.1"
+     ],
+     "vo": [
+      "game.bus",
+      "number.1",
+      "item.dog",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 2,
+     "feeder": "bus",
+     "item": "duck",
+     "supply": 5,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.2"
+     ],
+     "vo": [
+      "game.bus",
+      "number.2",
+      "item.duck",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 3,
+     "feeder": "bus",
+     "item": "mouse",
+     "supply": 6,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.3"
+     ],
+     "vo": [
+      "game.bus",
+      "number.3",
+      "item.mouse",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 4,
+     "feeder": "bus",
+     "item": "bear",
+     "supply": 7,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.4"
+     ],
+     "vo": [
+      "game.bus",
+      "number.4",
+      "item.bear",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 5,
+     "feeder": "bus",
+     "item": "panda",
+     "supply": 8,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.5"
+     ],
+     "vo": [
+      "game.bus",
+      "number.5",
+      "item.panda",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 6,
+     "feeder": "bus",
+     "item": "frog",
+     "supply": 9,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.6"
+     ],
+     "vo": [
+      "game.bus",
+      "number.6",
+      "item.frog",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 7,
+     "feeder": "bus",
+     "item": "rabbit",
+     "supply": 10,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.7"
+     ],
+     "vo": [
+      "game.bus",
+      "number.7",
+      "item.rabbit",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 8,
+     "feeder": "bus",
+     "item": "cat",
+     "supply": 10,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.8"
+     ],
+     "vo": [
+      "game.bus",
+      "number.8",
+      "item.cat",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 9,
+     "feeder": "bus",
+     "item": "dog",
+     "supply": 10,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.9"
+     ],
+     "vo": [
+      "game.bus",
+      "number.9",
+      "item.dog",
+      "item.bus"
+     ]
+    },
+    {
+     "tier": "to_ten",
+     "target": 10,
+     "feeder": "bus",
+     "item": "duck",
+     "supply": 10,
+     "prompt": [
+      "item.bus",
+      "game.bus",
+      "number.10"
+     ],
+     "vo": [
+      "game.bus",
+      "number.10",
+      "item.duck",
+      "item.bus"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tidy_up",
+   "engine": "match_it",
+   "name": {
+    "en": "Tidy Up Time",
+    "zh": "收拾玩具"
+   },
+   "skill": "classification",
+   "minAge": 3,
+   "free": false,
+   "roundCount": 16,
+   "rounds": [
+    {
+     "attribute": "category",
+     "bins": [
+      {
+       "key": "toy",
+       "items": [
+        "balloon",
+        "drum"
+       ]
+      },
+      {
+       "key": "clothing",
+       "items": [
+        "scarf",
+        "shoe"
+       ]
+      },
+      {
+       "key": "household",
+       "items": [
+        "cup",
+        "key_lantern"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.tidy"
+     ],
+     "vo": [
+      "game.tidy",
+      "category.toy",
+      "category.clothing",
+      "category.household"
+     ]
+    },
+    {
+     "attribute": "category",
+     "bins": [
+      {
+       "key": "toy",
+       "items": [
+        "drum",
+        "gift"
+       ]
+      },
+      {
+       "key": "food",
+       "items": [
+        "banana",
+        "dumpling"
+       ]
+      },
+      {
+       "key": "household",
+       "items": [
+        "lamp",
+        "spoon"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.tidy"
+     ],
+     "vo": [
+      "game.tidy",
+      "category.toy",
+      "category.food",
+      "category.household"
+     ]
+    },
+    {
+     "attribute": "category",
+     "bins": [
+      {
+       "key": "clothing",
+       "items": [
+        "hat",
+        "shoe"
+       ]
+      },
+      {
+       "key": "household",
+       "items": [
+        "candle",
+        "cup"
+       ]
+      },
+      {
+       "key": "food",
+       "items": [
+        "bread",
+        "watermelon"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.tidy"
+     ],
+     "vo": [
+      "game.tidy",
+      "category.clothing",
+      "category.household",
+      "category.food"
+     ]
+    },
+    {
+     "attribute": "category",
+     "bins": [
+      {
+       "key": "toy",
+       "items": [
+        "ball",
+        "block"
+       ]
+      },
+      {
+       "key": "clothing",
+       "items": [
+        "hat",
+        "sock"
+       ]
+      },
+      {
+       "key": "food",
+       "items": [
+        "egg",
+        "orange"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.tidy"
+     ],
+     "vo": [
+      "game.tidy",
+      "category.toy",
+      "category.clothing",
+      "category.food"
+     ]
+    },
+    {
+     "attribute": "category",
+     "bins": [
+      {
+       "key": "toy",
+       "items": [
+        "block",
+        "drum"
+       ]
+      },
+      {
+       "key": "clothing",
+       "items": [
+        "scarf",
+        "shoe"
+       ]
+      },
+      {
+       "key": "household",
+       "items": [
+        "bowl",
+        "lamp"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.tidy"
+     ],
+     "vo": [
+      "game.tidy",
+      "category.toy",
+      "category.clothing",
+      "category.household"
+     ]
+    },
+    {
+     "attribute": "category",
+     "bins": [
+      {
+       "key": "toy",
+       "items": [
+        "block",
+        "teddy"
+       ]
+      },
+      {
+       "key": "food",
+       "items": [
+        "banana",
+        "carrot"
+       ]
+      },
+      {
+       "key": "household",
+       "items": [
+        "bowl",
+        "toothbrush"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.tidy"
+     ],
+     "vo": [
+      "game.tidy",
+      "category.toy",
+      "category.food",
+      "category.household"
+     ]
+    },
+    {
+     "attribute": "category",
+     "bins": [
+      {
+       "key": "clothing",
+       "items": [
+        "shoe",
+        "umbrella"
+       ]
+      },
+      {
+       "key": "household",
+       "items": [
+        "lamp",
+        "spoon"
+       ]
+      },
+      {
+       "key": "food",
+       "items": [
+        "cake",
+        "watermelon"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.tidy"
+     ],
+     "vo": [
+      "game.tidy",
+      "category.clothing",
+      "category.household",
+      "category.food"
+     ]
+    },
+    {
+     "attribute": "category",
+     "bins": [
+      {
+       "key": "toy",
+       "items": [
+        "kite",
+        "teddy"
+       ]
+      },
+      {
+       "key": "clothing",
+       "items": [
+        "hat",
+        "shoe"
+       ]
+      },
+      {
+       "key": "food",
+       "items": [
+        "cookie",
+        "orange"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.tidy"
+     ],
+     "vo": [
+      "game.tidy",
+      "category.toy",
+      "category.clothing",
+      "category.food"
+     ]
+    },
+    {
+     "attribute": "category",
+     "bins": [
+      {
+       "key": "toy",
+       "items": [
+        "balloon",
+        "gift"
+       ]
+      },
+      {
+       "key": "clothing",
+       "items": [
+        "scarf",
+        "sock"
+       ]
+      },
+      {
+       "key": "household",
+       "items": [
+        "clock",
+        "spoon"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.tidy"
+     ],
+     "vo": [
+      "game.tidy",
+      "category.toy",
+      "category.clothing",
+      "category.household"
+     ]
+    },
+    {
+     "attribute": "category",
+     "bins": [
+      {
+       "key": "toy",
+       "items": [
+        "ball",
+        "kite"
+       ]
+      },
+      {
+       "key": "food",
+       "items": [
+        "egg",
+        "grape"
+       ]
+      },
+      {
+       "key": "household",
+       "items": [
+        "key",
+        "lamp"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.tidy"
+     ],
+     "vo": [
+      "game.tidy",
+      "category.toy",
+      "category.food",
+      "category.household"
+     ]
+    },
+    {
+     "attribute": "category",
+     "bins": [
+      {
+       "key": "clothing",
+       "items": [
+        "shoe",
+        "umbrella"
+       ]
+      },
+      {
+       "key": "household",
+       "items": [
+        "book",
+        "pillow"
+       ]
+      },
+      {
+       "key": "food",
+       "items": [
+        "cookie",
+        "orange"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.tidy"
+     ],
+     "vo": [
+      "game.tidy",
+      "category.clothing",
+      "category.household",
+      "category.food"
+     ]
+    },
+    {
+     "attribute": "category",
+     "bins": [
+      {
+       "key": "toy",
+       "items": [
+        "drum",
+        "gift"
+       ]
+      },
+      {
+       "key": "clothing",
+       "items": [
+        "scarf",
+        "shoe"
+       ]
+      },
+      {
+       "key": "food",
+       "items": [
+        "carrot",
+        "dumpling"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.tidy"
+     ],
+     "vo": [
+      "game.tidy",
+      "category.toy",
+      "category.clothing",
+      "category.food"
+     ]
+    },
+    {
+     "attribute": "category",
+     "bins": [
+      {
+       "key": "toy",
+       "items": [
+        "drum",
+        "kite"
+       ]
+      },
+      {
+       "key": "clothing",
+       "items": [
+        "sock",
+        "umbrella"
+       ]
+      },
+      {
+       "key": "household",
+       "items": [
+        "candle",
+        "clock"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.tidy"
+     ],
+     "vo": [
+      "game.tidy",
+      "category.toy",
+      "category.clothing",
+      "category.household"
+     ]
+    },
+    {
+     "attribute": "category",
+     "bins": [
+      {
+       "key": "toy",
+       "items": [
+        "kite",
+        "teddy"
+       ]
+      },
+      {
+       "key": "food",
+       "items": [
+        "corn",
+        "grape"
+       ]
+      },
+      {
+       "key": "household",
+       "items": [
+        "clock",
+        "spoon"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.tidy"
+     ],
+     "vo": [
+      "game.tidy",
+      "category.toy",
+      "category.food",
+      "category.household"
+     ]
+    },
+    {
+     "attribute": "category",
+     "bins": [
+      {
+       "key": "clothing",
+       "items": [
+        "hat",
+        "sock"
+       ]
+      },
+      {
+       "key": "household",
+       "items": [
+        "cup",
+        "pillow"
+       ]
+      },
+      {
+       "key": "food",
+       "items": [
+        "egg",
+        "mooncake"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.tidy"
+     ],
+     "vo": [
+      "game.tidy",
+      "category.clothing",
+      "category.household",
+      "category.food"
+     ]
+    },
+    {
+     "attribute": "category",
+     "bins": [
+      {
+       "key": "toy",
+       "items": [
+        "block",
+        "drum"
+       ]
+      },
+      {
+       "key": "clothing",
+       "items": [
+        "scarf",
+        "umbrella"
+       ]
+      },
+      {
+       "key": "food",
+       "items": [
+        "egg",
+        "strawberry"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.tidy"
+     ],
+     "vo": [
+      "game.tidy",
+      "category.toy",
+      "category.clothing",
+      "category.food"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "weather_wardrobe",
+   "engine": "match_it",
+   "name": {
+    "en": "Weather Wardrobe",
+    "zh": "天气衣橱"
+   },
+   "skill": "classification",
+   "minAge": 4,
+   "free": false,
+   "roundCount": 16,
+   "rounds": [
+    {
+     "attribute": "weather",
+     "bins": [
+      {
+       "key": "sunny",
+       "items": [
+        "ball",
+        "hat"
+       ]
+      },
+      {
+       "key": "rainy",
+       "items": [
+        "boat",
+        "umbrella"
+       ]
+      },
+      {
+       "key": "windy",
+       "items": [
+        "kite",
+        "leaf"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.weather"
+     ],
+     "vo": [
+      "game.weather",
+      "weather.sunny",
+      "weather.rainy",
+      "weather.windy"
+     ]
+    },
+    {
+     "attribute": "weather",
+     "bins": [
+      {
+       "key": "sunny",
+       "items": [
+        "ball",
+        "hat"
+       ]
+      },
+      {
+       "key": "rainy",
+       "items": [
+        "boat",
+        "umbrella"
+       ]
+      },
+      {
+       "key": "windy",
+       "items": [
+        "balloon",
+        "leaf"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.weather"
+     ],
+     "vo": [
+      "game.weather",
+      "weather.sunny",
+      "weather.rainy",
+      "weather.windy"
+     ]
+    },
+    {
+     "attribute": "weather",
+     "bins": [
+      {
+       "key": "sunny",
+       "items": [
+        "flower",
+        "hat"
+       ]
+      },
+      {
+       "key": "rainy",
+       "items": [
+        "cloud",
+        "shoe"
+       ]
+      },
+      {
+       "key": "windy",
+       "items": [
+        "balloon",
+        "kite"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.weather"
+     ],
+     "vo": [
+      "game.weather",
+      "weather.sunny",
+      "weather.rainy",
+      "weather.windy"
+     ]
+    },
+    {
+     "attribute": "weather",
+     "bins": [
+      {
+       "key": "sunny",
+       "items": [
+        "ball",
+        "hat"
+       ]
+      },
+      {
+       "key": "rainy",
+       "items": [
+        "cloud",
+        "umbrella"
+       ]
+      },
+      {
+       "key": "windy",
+       "items": [
+        "kite",
+        "leaf"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.weather"
+     ],
+     "vo": [
+      "game.weather",
+      "weather.sunny",
+      "weather.rainy",
+      "weather.windy"
+     ]
+    },
+    {
+     "attribute": "weather",
+     "bins": [
+      {
+       "key": "sunny",
+       "items": [
+        "hat",
+        "sun"
+       ]
+      },
+      {
+       "key": "rainy",
+       "items": [
+        "cloud",
+        "umbrella"
+       ]
+      },
+      {
+       "key": "windy",
+       "items": [
+        "balloon",
+        "kite"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.weather"
+     ],
+     "vo": [
+      "game.weather",
+      "weather.sunny",
+      "weather.rainy",
+      "weather.windy"
+     ]
+    },
+    {
+     "attribute": "weather",
+     "bins": [
+      {
+       "key": "sunny",
+       "items": [
+        "flower",
+        "sun"
+       ]
+      },
+      {
+       "key": "rainy",
+       "items": [
+        "cloud",
+        "umbrella"
+       ]
+      },
+      {
+       "key": "windy",
+       "items": [
+        "kite",
+        "leaf"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.weather"
+     ],
+     "vo": [
+      "game.weather",
+      "weather.sunny",
+      "weather.rainy",
+      "weather.windy"
+     ]
+    },
+    {
+     "attribute": "weather",
+     "bins": [
+      {
+       "key": "sunny",
+       "items": [
+        "ball",
+        "sun"
+       ]
+      },
+      {
+       "key": "rainy",
+       "items": [
+        "shoe",
+        "umbrella"
+       ]
+      },
+      {
+       "key": "windy",
+       "items": [
+        "balloon",
+        "leaf"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.weather"
+     ],
+     "vo": [
+      "game.weather",
+      "weather.sunny",
+      "weather.rainy",
+      "weather.windy"
+     ]
+    },
+    {
+     "attribute": "weather",
+     "bins": [
+      {
+       "key": "sunny",
+       "items": [
+        "ball",
+        "hat"
+       ]
+      },
+      {
+       "key": "rainy",
+       "items": [
+        "cloud",
+        "umbrella"
+       ]
+      },
+      {
+       "key": "windy",
+       "items": [
+        "balloon",
+        "kite"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.weather"
+     ],
+     "vo": [
+      "game.weather",
+      "weather.sunny",
+      "weather.rainy",
+      "weather.windy"
+     ]
+    },
+    {
+     "attribute": "weather",
+     "bins": [
+      {
+       "key": "sunny",
+       "items": [
+        "hat",
+        "sun"
+       ]
+      },
+      {
+       "key": "rainy",
+       "items": [
+        "boat",
+        "umbrella"
+       ]
+      },
+      {
+       "key": "windy",
+       "items": [
+        "balloon",
+        "kite"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.weather"
+     ],
+     "vo": [
+      "game.weather",
+      "weather.sunny",
+      "weather.rainy",
+      "weather.windy"
+     ]
+    },
+    {
+     "attribute": "weather",
+     "bins": [
+      {
+       "key": "sunny",
+       "items": [
+        "flower",
+        "hat"
+       ]
+      },
+      {
+       "key": "rainy",
+       "items": [
+        "boat",
+        "shoe"
+       ]
+      },
+      {
+       "key": "windy",
+       "items": [
+        "kite",
+        "leaf"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.weather"
+     ],
+     "vo": [
+      "game.weather",
+      "weather.sunny",
+      "weather.rainy",
+      "weather.windy"
+     ]
+    },
+    {
+     "attribute": "weather",
+     "bins": [
+      {
+       "key": "sunny",
+       "items": [
+        "ball",
+        "sun"
+       ]
+      },
+      {
+       "key": "rainy",
+       "items": [
+        "cloud",
+        "umbrella"
+       ]
+      },
+      {
+       "key": "windy",
+       "items": [
+        "balloon",
+        "kite"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.weather"
+     ],
+     "vo": [
+      "game.weather",
+      "weather.sunny",
+      "weather.rainy",
+      "weather.windy"
+     ]
+    },
+    {
+     "attribute": "weather",
+     "bins": [
+      {
+       "key": "sunny",
+       "items": [
+        "ball",
+        "hat"
+       ]
+      },
+      {
+       "key": "rainy",
+       "items": [
+        "boat",
+        "umbrella"
+       ]
+      },
+      {
+       "key": "windy",
+       "items": [
+        "kite",
+        "leaf"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.weather"
+     ],
+     "vo": [
+      "game.weather",
+      "weather.sunny",
+      "weather.rainy",
+      "weather.windy"
+     ]
+    },
+    {
+     "attribute": "weather",
+     "bins": [
+      {
+       "key": "sunny",
+       "items": [
+        "hat",
+        "sun"
+       ]
+      },
+      {
+       "key": "rainy",
+       "items": [
+        "cloud",
+        "umbrella"
+       ]
+      },
+      {
+       "key": "windy",
+       "items": [
+        "balloon",
+        "leaf"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.weather"
+     ],
+     "vo": [
+      "game.weather",
+      "weather.sunny",
+      "weather.rainy",
+      "weather.windy"
+     ]
+    },
+    {
+     "attribute": "weather",
+     "bins": [
+      {
+       "key": "sunny",
+       "items": [
+        "hat",
+        "sun"
+       ]
+      },
+      {
+       "key": "rainy",
+       "items": [
+        "boat",
+        "cloud"
+       ]
+      },
+      {
+       "key": "windy",
+       "items": [
+        "kite",
+        "leaf"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.weather"
+     ],
+     "vo": [
+      "game.weather",
+      "weather.sunny",
+      "weather.rainy",
+      "weather.windy"
+     ]
+    },
+    {
+     "attribute": "weather",
+     "bins": [
+      {
+       "key": "sunny",
+       "items": [
+        "ball",
+        "flower"
+       ]
+      },
+      {
+       "key": "rainy",
+       "items": [
+        "boat",
+        "shoe"
+       ]
+      },
+      {
+       "key": "windy",
+       "items": [
+        "balloon",
+        "kite"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.weather"
+     ],
+     "vo": [
+      "game.weather",
+      "weather.sunny",
+      "weather.rainy",
+      "weather.windy"
+     ]
+    },
+    {
+     "attribute": "weather",
+     "bins": [
+      {
+       "key": "sunny",
+       "items": [
+        "hat",
+        "sun"
+       ]
+      },
+      {
+       "key": "rainy",
+       "items": [
+        "shoe",
+        "umbrella"
+       ]
+      },
+      {
+       "key": "windy",
+       "items": [
+        "kite",
+        "leaf"
+       ]
+      }
+     ],
+     "prompt": [
+      "game.weather"
+     ],
+     "vo": [
+      "game.weather",
+      "weather.sunny",
+      "weather.rainy",
+      "weather.windy"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "feelings_faces",
+   "engine": "find_the_same",
+   "name": {
+    "en": "Feelings Faces",
+    "zh": "表情找朋友"
+   },
+   "skill": "discrimination",
+   "minAge": 3,
+   "free": false,
+   "roundCount": 20,
+   "rounds": [
+    {
+     "tier": "easy",
+     "reference": "happy",
+     "distractors": [
+      "angry",
+      "sad",
+      "sleepy"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.happy"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "sad",
+     "distractors": [
+      "scared",
+      "sleepy",
+      "surprised"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.sad"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "angry",
+     "distractors": [
+      "sad",
+      "scared",
+      "sleepy"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.angry"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "scared",
+     "distractors": [
+      "happy",
+      "sleepy",
+      "surprised"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.scared"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "surprised",
+     "distractors": [
+      "angry",
+      "happy",
+      "scared"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.surprised"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "sleepy",
+     "distractors": [
+      "angry",
+      "happy",
+      "sad"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.sleepy"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "happy",
+     "distractors": [
+      "angry",
+      "sad",
+      "scared"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.happy"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "sad",
+     "distractors": [
+      "angry",
+      "sleepy",
+      "surprised"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.sad"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "angry",
+     "distractors": [
+      "happy",
+      "scared",
+      "surprised"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.angry"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "scared",
+     "distractors": [
+      "angry",
+      "happy",
+      "surprised"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.scared"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "surprised",
+     "distractors": [
+      "angry",
+      "sad",
+      "scared"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.surprised"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "sleepy",
+     "distractors": [
+      "angry",
+      "happy",
+      "surprised"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.sleepy"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "happy",
+     "distractors": [
+      "sad",
+      "scared",
+      "sleepy"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.happy"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "sad",
+     "distractors": [
+      "angry",
+      "happy",
+      "scared"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.sad"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "angry",
+     "distractors": [
+      "sad",
+      "scared",
+      "surprised"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.angry"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "scared",
+     "distractors": [
+      "angry",
+      "sad",
+      "sleepy"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.scared"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "surprised",
+     "distractors": [
+      "angry",
+      "scared",
+      "sleepy"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.surprised"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "sleepy",
+     "distractors": [
+      "angry",
+      "happy",
+      "sad"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.sleepy"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "happy",
+     "distractors": [
+      "angry",
+      "scared",
+      "surprised"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.happy"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "sad",
+     "distractors": [
+      "happy",
+      "sleepy",
+      "surprised"
+     ],
+     "prompt": [
+      "game.feelings"
+     ],
+     "vo": [
+      "game.feelings",
+      "item.sad"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sock_pairs",
+   "engine": "find_the_same",
+   "name": {
+    "en": "Sock Pairs",
+    "zh": "找袜子"
+   },
+   "skill": "discrimination",
+   "minAge": 3,
+   "free": false,
+   "roundCount": 20,
+   "rounds": [
+    {
+     "tier": "easy",
+     "reference": "hat",
+     "distractors": [
+      "scarf",
+      "shoe",
+      "umbrella"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.hat"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "shoe",
+     "distractors": [
+      "hat",
+      "scarf",
+      "umbrella"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.shoe"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "sock",
+     "distractors": [
+      "hat",
+      "scarf",
+      "shoe"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.sock"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "scarf",
+     "distractors": [
+      "hat",
+      "shoe",
+      "umbrella"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.scarf"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "umbrella",
+     "distractors": [
+      "hat",
+      "scarf",
+      "shoe"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.umbrella"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "hat",
+     "distractors": [
+      "shoe",
+      "sock",
+      "umbrella"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.hat"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "shoe",
+     "distractors": [
+      "scarf",
+      "sock",
+      "umbrella"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.shoe"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "sock",
+     "distractors": [
+      "hat",
+      "scarf",
+      "shoe"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.sock"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "scarf",
+     "distractors": [
+      "hat",
+      "sock",
+      "umbrella"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.scarf"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "umbrella",
+     "distractors": [
+      "hat",
+      "shoe",
+      "sock"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.umbrella"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "hat",
+     "distractors": [
+      "shoe",
+      "sock",
+      "umbrella"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.hat"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "shoe",
+     "distractors": [
+      "hat",
+      "scarf",
+      "sock"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.shoe"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "sock",
+     "distractors": [
+      "hat",
+      "scarf",
+      "umbrella"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.sock"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "scarf",
+     "distractors": [
+      "shoe",
+      "sock",
+      "umbrella"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.scarf"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "umbrella",
+     "distractors": [
+      "hat",
+      "scarf",
+      "sock"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.umbrella"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "hat",
+     "distractors": [
+      "scarf",
+      "shoe",
+      "sock"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.hat"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "shoe",
+     "distractors": [
+      "hat",
+      "scarf",
+      "umbrella"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.shoe"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "sock",
+     "distractors": [
+      "hat",
+      "shoe",
+      "umbrella"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.sock"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "scarf",
+     "distractors": [
+      "shoe",
+      "sock",
+      "umbrella"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.scarf"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "umbrella",
+     "distractors": [
+      "hat",
+      "scarf",
+      "shoe"
+     ],
+     "prompt": [
+      "game.socks"
+     ],
+     "vo": [
+      "game.socks",
+      "item.umbrella"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "spot_the_lantern",
+   "engine": "find_the_same",
+   "name": {
+    "en": "Spot the Lantern",
+    "zh": "找灯笼"
+   },
+   "skill": "discrimination",
+   "minAge": 4,
+   "free": false,
+   "roundCount": 20,
+   "rounds": [
+    {
+     "tier": "easy",
+     "reference": "key_lantern",
+     "distractors": [
+      "candle",
+      "mooncake",
+      "red_envelope"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.key_lantern"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "candle",
+     "distractors": [
+      "dragon_boat",
+      "key_lantern",
+      "mooncake"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.candle"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "red_envelope",
+     "distractors": [
+      "balloon",
+      "candle",
+      "key_lantern"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.red_envelope"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "mooncake",
+     "distractors": [
+      "dumpling",
+      "key_lantern",
+      "moon"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.mooncake"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "dumpling",
+     "distractors": [
+      "balloon",
+      "key_lantern",
+      "red_envelope"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.dumpling"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "dragon_boat",
+     "distractors": [
+      "key_lantern",
+      "moon",
+      "red_envelope"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.dragon_boat"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "cake",
+     "distractors": [
+      "candle",
+      "dumpling",
+      "red_envelope"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "gift",
+     "distractors": [
+      "balloon",
+      "key_lantern",
+      "mooncake"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.gift"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "balloon",
+     "distractors": [
+      "candle",
+      "gift",
+      "key_lantern"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.balloon"
+     ]
+    },
+    {
+     "tier": "easy",
+     "reference": "moon",
+     "distractors": [
+      "candle",
+      "dragon_boat",
+      "mooncake"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.moon"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "key_lantern",
+     "distractors": [
+      "dragon_boat",
+      "dumpling",
+      "red_envelope"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.key_lantern"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "candle",
+     "distractors": [
+      "cake",
+      "gift",
+      "moon"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.candle"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "red_envelope",
+     "distractors": [
+      "balloon",
+      "dumpling",
+      "mooncake"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.red_envelope"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "mooncake",
+     "distractors": [
+      "cake",
+      "dragon_boat",
+      "moon"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.mooncake"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "dumpling",
+     "distractors": [
+      "cake",
+      "key_lantern",
+      "red_envelope"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.dumpling"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "dragon_boat",
+     "distractors": [
+      "candle",
+      "mooncake",
+      "red_envelope"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.dragon_boat"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "cake",
+     "distractors": [
+      "dragon_boat",
+      "dumpling",
+      "key_lantern"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.cake"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "gift",
+     "distractors": [
+      "dragon_boat",
+      "dumpling",
+      "red_envelope"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.gift"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "balloon",
+     "distractors": [
+      "dragon_boat",
+      "dumpling",
+      "gift"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.balloon"
+     ]
+    },
+    {
+     "tier": "hard",
+     "reference": "moon",
+     "distractors": [
+      "balloon",
+      "cake",
+      "red_envelope"
+     ],
+     "prompt": [
+      "game.lantern"
+     ],
+     "vo": [
+      "game.lantern",
+      "item.moon"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "peekaboo_animals",
+   "engine": "what_is_it",
+   "name": {
+    "en": "Peek-a-Boo Animals",
+    "zh": "躲猫猫"
+   },
+   "skill": "recognition",
+   "minAge": 3,
+   "free": false,
+   "roundCount": 16,
+   "rounds": [
+    {
+     "tier": "silhouette",
+     "answer": "mouse",
+     "distractors": [
+      "elephant",
+      "turtle"
+     ],
+     "prompt": [
+      "game.peekaboo"
+     ],
+     "vo": [
+      "game.peekaboo",
+      "item.mouse"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "elephant",
+     "distractors": [
+      "bear",
+      "duck"
+     ],
+     "prompt": [
+      "game.peekaboo"
+     ],
+     "vo": [
+      "game.peekaboo",
+      "item.elephant"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "frog",
+     "distractors": [
+      "bird",
+      "duck"
+     ],
+     "prompt": [
+      "game.peekaboo"
+     ],
+     "vo": [
+      "game.peekaboo",
+      "item.frog"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "owl",
+     "distractors": [
+      "cat",
+      "rabbit"
+     ],
+     "prompt": [
+      "game.peekaboo"
+     ],
+     "vo": [
+      "game.peekaboo",
+      "item.owl"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "bee",
+     "distractors": [
+      "butterfly",
+      "dog"
+     ],
+     "prompt": [
+      "game.peekaboo"
+     ],
+     "vo": [
+      "game.peekaboo",
+      "item.bee"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "dog",
+     "distractors": [
+      "owl",
+      "rabbit"
+     ],
+     "prompt": [
+      "game.peekaboo"
+     ],
+     "vo": [
+      "game.peekaboo",
+      "item.dog"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "fish",
+     "distractors": [
+      "bear",
+      "duck"
+     ],
+     "prompt": [
+      "game.peekaboo"
+     ],
+     "vo": [
+      "game.peekaboo",
+      "item.fish"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "bear",
+     "distractors": [
+      "panda",
+      "turtle"
+     ],
+     "prompt": [
+      "game.peekaboo"
+     ],
+     "vo": [
+      "game.peekaboo",
+      "item.bear"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "bird",
+     "distractors": [
+      "bear",
+      "frog"
+     ],
+     "prompt": [
+      "game.peekaboo"
+     ],
+     "vo": [
+      "game.peekaboo",
+      "item.bird"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "butterfly",
+     "distractors": [
+      "bear",
+      "frog"
+     ],
+     "prompt": [
+      "game.peekaboo"
+     ],
+     "vo": [
+      "game.peekaboo",
+      "item.butterfly"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "cat",
+     "distractors": [
+      "mouse",
+      "rabbit"
+     ],
+     "prompt": [
+      "game.peekaboo"
+     ],
+     "vo": [
+      "game.peekaboo",
+      "item.cat"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "turtle",
+     "distractors": [
+      "cat",
+      "rabbit"
+     ],
+     "prompt": [
+      "game.peekaboo"
+     ],
+     "vo": [
+      "game.peekaboo",
+      "item.turtle"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "panda",
+     "distractors": [
+      "bear",
+      "bee"
+     ],
+     "prompt": [
+      "game.peekaboo"
+     ],
+     "vo": [
+      "game.peekaboo",
+      "item.panda"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "rabbit",
+     "distractors": [
+      "cat",
+      "panda"
+     ],
+     "prompt": [
+      "game.peekaboo"
+     ],
+     "vo": [
+      "game.peekaboo",
+      "item.rabbit"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "duck",
+     "distractors": [
+      "mouse",
+      "turtle"
+     ],
+     "prompt": [
+      "game.peekaboo"
+     ],
+     "vo": [
+      "game.peekaboo",
+      "item.duck"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "mouse",
+     "distractors": [
+      "cat",
+      "rabbit"
+     ],
+     "prompt": [
+      "game.peekaboo"
+     ],
+     "vo": [
+      "game.peekaboo",
+      "item.mouse"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shadow_puppets",
+   "engine": "what_is_it",
+   "name": {
+    "en": "Shadow Puppets",
+    "zh": "手影戏"
+   },
+   "skill": "recognition",
+   "minAge": 4,
+   "free": false,
+   "roundCount": 16,
+   "rounds": [
+    {
+     "tier": "silhouette",
+     "answer": "frog",
+     "distractors": [
+      "butterfly",
+      "cat"
+     ],
+     "prompt": [
+      "game.shadow"
+     ],
+     "vo": [
+      "game.shadow",
+      "item.frog"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "rabbit",
+     "distractors": [
+      "bird",
+      "elephant"
+     ],
+     "prompt": [
+      "game.shadow"
+     ],
+     "vo": [
+      "game.shadow",
+      "item.rabbit"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "bee",
+     "distractors": [
+      "bear",
+      "dog"
+     ],
+     "prompt": [
+      "game.shadow"
+     ],
+     "vo": [
+      "game.shadow",
+      "item.bee"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "elephant",
+     "distractors": [
+      "bird",
+      "dog"
+     ],
+     "prompt": [
+      "game.shadow"
+     ],
+     "vo": [
+      "game.shadow",
+      "item.elephant"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "turtle",
+     "distractors": [
+      "bird",
+      "dog"
+     ],
+     "prompt": [
+      "game.shadow"
+     ],
+     "vo": [
+      "game.shadow",
+      "item.turtle"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "duck",
+     "distractors": [
+      "elephant",
+      "rabbit"
+     ],
+     "prompt": [
+      "game.shadow"
+     ],
+     "vo": [
+      "game.shadow",
+      "item.duck"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "panda",
+     "distractors": [
+      "bird",
+      "frog"
+     ],
+     "prompt": [
+      "game.shadow"
+     ],
+     "vo": [
+      "game.shadow",
+      "item.panda"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "bird",
+     "distractors": [
+      "elephant",
+      "owl"
+     ],
+     "prompt": [
+      "game.shadow"
+     ],
+     "vo": [
+      "game.shadow",
+      "item.bird"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "butterfly",
+     "distractors": [
+      "cat",
+      "elephant"
+     ],
+     "prompt": [
+      "game.shadow"
+     ],
+     "vo": [
+      "game.shadow",
+      "item.butterfly"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "fish",
+     "distractors": [
+      "bear",
+      "rabbit"
+     ],
+     "prompt": [
+      "game.shadow"
+     ],
+     "vo": [
+      "game.shadow",
+      "item.fish"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "bear",
+     "distractors": [
+      "cat",
+      "duck"
+     ],
+     "prompt": [
+      "game.shadow"
+     ],
+     "vo": [
+      "game.shadow",
+      "item.bear"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "owl",
+     "distractors": [
+      "bird",
+      "duck"
+     ],
+     "prompt": [
+      "game.shadow"
+     ],
+     "vo": [
+      "game.shadow",
+      "item.owl"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "mouse",
+     "distractors": [
+      "bee",
+      "rabbit"
+     ],
+     "prompt": [
+      "game.shadow"
+     ],
+     "vo": [
+      "game.shadow",
+      "item.mouse"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "dog",
+     "distractors": [
+      "bird",
+      "panda"
+     ],
+     "prompt": [
+      "game.shadow"
+     ],
+     "vo": [
+      "game.shadow",
+      "item.dog"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "cat",
+     "distractors": [
+      "bird",
+      "owl"
+     ],
+     "prompt": [
+      "game.shadow"
+     ],
+     "vo": [
+      "game.shadow",
+      "item.cat"
+     ]
+    },
+    {
+     "tier": "silhouette",
+     "answer": "frog",
+     "distractors": [
+      "owl",
+      "turtle"
+     ],
+     "prompt": [
+      "game.shadow"
+     ],
+     "vo": [
+      "game.shadow",
+      "item.frog"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zoom_out",
+   "engine": "what_is_it",
+   "name": {
+    "en": "Zoom Out",
+    "zh": "放大镜"
+   },
+   "skill": "recognition",
+   "minAge": 4,
+   "free": false,
+   "roundCount": 16,
+   "rounds": [
+    {
+     "tier": "reveal",
+     "answer": "tree",
+     "distractors": [
+      "balloon",
+      "dumpling"
+     ],
+     "prompt": [
+      "game.zoom"
+     ],
+     "vo": [
+      "game.zoom",
+      "item.tree"
+     ]
+    },
+    {
+     "tier": "reveal",
+     "answer": "lamp",
+     "distractors": [
+      "corn",
+      "kite"
+     ],
+     "prompt": [
+      "game.zoom"
+     ],
+     "vo": [
+      "game.zoom",
+      "item.lamp"
+     ]
+    },
+    {
+     "tier": "reveal",
+     "answer": "toothbrush",
+     "distractors": [
+      "cloud",
+      "star"
+     ],
+     "prompt": [
+      "game.zoom"
+     ],
+     "vo": [
+      "game.zoom",
+      "item.toothbrush"
+     ]
+    },
+    {
+     "tier": "reveal",
+     "answer": "cloud",
+     "distractors": [
+      "grape",
+      "sun"
+     ],
+     "prompt": [
+      "game.zoom"
+     ],
+     "vo": [
+      "game.zoom",
+      "item.cloud"
+     ]
+    },
+    {
+     "tier": "reveal",
+     "answer": "moon",
+     "distractors": [
+      "ball",
+      "spoon"
+     ],
+     "prompt": [
+      "game.zoom"
+     ],
+     "vo": [
+      "game.zoom",
+      "item.moon"
+     ]
+    },
+    {
+     "tier": "reveal",
+     "answer": "mushroom",
+     "distractors": [
+      "mooncake",
+      "toothbrush"
+     ],
+     "prompt": [
+      "game.zoom"
+     ],
+     "vo": [
+      "game.zoom",
+      "item.mushroom"
+     ]
+    },
+    {
+     "tier": "reveal",
+     "answer": "flower",
+     "distractors": [
+      "candle",
+      "rock"
+     ],
+     "prompt": [
+      "game.zoom"
+     ],
+     "vo": [
+      "game.zoom",
+      "item.flower"
+     ]
+    },
+    {
+     "tier": "reveal",
+     "answer": "mooncake",
+     "distractors": [
+      "leaf",
+      "mushroom"
+     ],
+     "prompt": [
+      "game.zoom"
+     ],
+     "vo": [
+      "game.zoom",
+      "item.mooncake"
+     ]
+    },
+    {
+     "tier": "reveal",
+     "answer": "hat",
+     "distractors": [
+      "egg",
+      "grape"
+     ],
+     "prompt": [
+      "game.zoom"
+     ],
+     "vo": [
+      "game.zoom",
+      "item.hat"
+     ]
+    },
+    {
+     "tier": "reveal",
+     "answer": "balloon",
+     "distractors": [
+      "key",
+      "sun"
+     ],
+     "prompt": [
+      "game.zoom"
+     ],
+     "vo": [
+      "game.zoom",
+      "item.balloon"
+     ]
+    },
+    {
+     "tier": "reveal",
+     "answer": "ball",
+     "distractors": [
+      "banana",
+      "bowl"
+     ],
+     "prompt": [
+      "game.zoom"
+     ],
+     "vo": [
+      "game.zoom",
+      "item.ball"
+     ]
+    },
+    {
+     "tier": "reveal",
+     "answer": "star",
+     "distractors": [
+      "ball",
+      "toothbrush"
+     ],
+     "prompt": [
+      "game.zoom"
+     ],
+     "vo": [
+      "game.zoom",
+      "item.star"
+     ]
+    },
+    {
+     "tier": "reveal",
+     "answer": "rainbow",
+     "distractors": [
+      "cup",
+      "sock"
+     ],
+     "prompt": [
+      "game.zoom"
+     ],
+     "vo": [
+      "game.zoom",
+      "item.rainbow"
+     ]
+    },
+    {
+     "tier": "reveal",
+     "answer": "scarf",
+     "distractors": [
+      "hat",
+      "key"
+     ],
+     "prompt": [
+      "game.zoom"
+     ],
+     "vo": [
+      "game.zoom",
+      "item.scarf"
+     ]
+    },
+    {
+     "tier": "reveal",
+     "answer": "bowl",
+     "distractors": [
+      "clock",
+      "kite"
+     ],
+     "prompt": [
+      "game.zoom"
+     ],
+     "vo": [
+      "game.zoom",
+      "item.bowl"
+     ]
+    },
+    {
+     "tier": "reveal",
+     "answer": "sun",
+     "distractors": [
+      "book",
+      "red_envelope"
+     ],
+     "prompt": [
+      "game.zoom"
+     ],
+     "vo": [
+      "game.zoom",
+      "item.sun"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ladder_up",
+   "engine": "big_and_small",
+   "name": {
+    "en": "Ladder Up",
+    "zh": "搭梯子"
+   },
+   "skill": "comparison",
+   "minAge": 3,
+   "free": false,
+   "roundCount": 12,
+   "rounds": [
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "butterfly",
+      "rabbit",
+      "dog"
+     ],
+     "prompt": [
+      "game.ladder"
+     ],
+     "vo": [
+      "game.ladder",
+      "item.butterfly",
+      "item.rabbit",
+      "item.dog"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "shell",
+      "owl",
+      "bear"
+     ],
+     "prompt": [
+      "game.ladder"
+     ],
+     "vo": [
+      "game.ladder",
+      "item.shell",
+      "item.owl",
+      "item.bear"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "mouse",
+      "rock",
+      "elephant"
+     ],
+     "prompt": [
+      "game.ladder"
+     ],
+     "vo": [
+      "game.ladder",
+      "item.mouse",
+      "item.rock",
+      "item.elephant"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "mouse",
+      "dog",
+      "panda"
+     ],
+     "prompt": [
+      "game.ladder"
+     ],
+     "vo": [
+      "game.ladder",
+      "item.mouse",
+      "item.dog",
+      "item.panda"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "shell",
+      "bike",
+      "tree"
+     ],
+     "prompt": [
+      "game.ladder"
+     ],
+     "vo": [
+      "game.ladder",
+      "item.shell",
+      "item.bike",
+      "item.tree"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "butterfly",
+      "car",
+      "elephant"
+     ],
+     "prompt": [
+      "game.ladder"
+     ],
+     "vo": [
+      "game.ladder",
+      "item.butterfly",
+      "item.car",
+      "item.elephant"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "turtle",
+      "bike",
+      "car"
+     ],
+     "prompt": [
+      "game.ladder"
+     ],
+     "vo": [
+      "game.ladder",
+      "item.turtle",
+      "item.bike",
+      "item.car"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "fish",
+      "dog",
+      "tree"
+     ],
+     "prompt": [
+      "game.ladder"
+     ],
+     "vo": [
+      "game.ladder",
+      "item.fish",
+      "item.dog",
+      "item.tree"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "turtle",
+      "car",
+      "tree"
+     ],
+     "prompt": [
+      "game.ladder"
+     ],
+     "vo": [
+      "game.ladder",
+      "item.turtle",
+      "item.car",
+      "item.tree"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "bike",
+      "bear",
+      "moon"
+     ],
+     "prompt": [
+      "game.ladder"
+     ],
+     "vo": [
+      "game.ladder",
+      "item.bike",
+      "item.bear",
+      "item.moon"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "leaf",
+      "cat",
+      "dog"
+     ],
+     "prompt": [
+      "game.ladder"
+     ],
+     "vo": [
+      "game.ladder",
+      "item.leaf",
+      "item.cat",
+      "item.dog"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "bird",
+      "cat",
+      "panda"
+     ],
+     "prompt": [
+      "game.ladder"
+     ],
+     "vo": [
+      "game.ladder",
+      "item.bird",
+      "item.cat",
+      "item.panda"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stacking_cups",
+   "engine": "big_and_small",
+   "name": {
+    "en": "Stacking Cups",
+    "zh": "叠叠杯"
+   },
+   "skill": "comparison",
+   "minAge": 3,
+   "free": false,
+   "roundCount": 12,
+   "rounds": [
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "candle",
+      "mooncake",
+      "pillow"
+     ],
+     "prompt": [
+      "game.stack"
+     ],
+     "vo": [
+      "game.stack",
+      "item.candle",
+      "item.mooncake",
+      "item.pillow"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "strawberry",
+      "orange",
+      "watermelon"
+     ],
+     "prompt": [
+      "game.stack"
+     ],
+     "vo": [
+      "game.stack",
+      "item.strawberry",
+      "item.orange",
+      "item.watermelon"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "cookie",
+      "teddy",
+      "watermelon"
+     ],
+     "prompt": [
+      "game.stack"
+     ],
+     "vo": [
+      "game.stack",
+      "item.cookie",
+      "item.teddy",
+      "item.watermelon"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "cup",
+      "teddy",
+      "watermelon"
+     ],
+     "prompt": [
+      "game.stack"
+     ],
+     "vo": [
+      "game.stack",
+      "item.cup",
+      "item.teddy",
+      "item.watermelon"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "toothbrush",
+      "spoon",
+      "cake"
+     ],
+     "prompt": [
+      "game.stack"
+     ],
+     "vo": [
+      "game.stack",
+      "item.toothbrush",
+      "item.spoon",
+      "item.cake"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "key",
+      "mushroom",
+      "window"
+     ],
+     "prompt": [
+      "game.stack"
+     ],
+     "vo": [
+      "game.stack",
+      "item.key",
+      "item.mushroom",
+      "item.window"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "dumpling",
+      "balloon",
+      "window"
+     ],
+     "prompt": [
+      "game.stack"
+     ],
+     "vo": [
+      "game.stack",
+      "item.dumpling",
+      "item.balloon",
+      "item.window"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "cup",
+      "cake",
+      "watermelon"
+     ],
+     "prompt": [
+      "game.stack"
+     ],
+     "vo": [
+      "game.stack",
+      "item.cup",
+      "item.cake",
+      "item.watermelon"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "candle",
+      "apple",
+      "clock"
+     ],
+     "prompt": [
+      "game.stack"
+     ],
+     "vo": [
+      "game.stack",
+      "item.candle",
+      "item.apple",
+      "item.clock"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "dumpling",
+      "carrot",
+      "watermelon"
+     ],
+     "prompt": [
+      "game.stack"
+     ],
+     "vo": [
+      "game.stack",
+      "item.dumpling",
+      "item.carrot",
+      "item.watermelon"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "candle",
+      "drum",
+      "watermelon"
+     ],
+     "prompt": [
+      "game.stack"
+     ],
+     "vo": [
+      "game.stack",
+      "item.candle",
+      "item.drum",
+      "item.watermelon"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "carrot",
+      "balloon",
+      "window"
+     ],
+     "prompt": [
+      "game.stack"
+     ],
+     "vo": [
+      "game.stack",
+      "item.carrot",
+      "item.balloon",
+      "item.window"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "growing_up",
+   "engine": "big_and_small",
+   "name": {
+    "en": "Growing Up",
+    "zh": "慢慢长大"
+   },
+   "skill": "comparison",
+   "minAge": 4,
+   "free": false,
+   "roundCount": 12,
+   "rounds": [
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "baby",
+      "brother",
+      "mom"
+     ],
+     "prompt": [
+      "game.growing"
+     ],
+     "vo": [
+      "game.growing",
+      "item.baby",
+      "item.brother",
+      "item.mom"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "baby",
+      "brother",
+      "grandpa"
+     ],
+     "prompt": [
+      "game.growing"
+     ],
+     "vo": [
+      "game.growing",
+      "item.baby",
+      "item.brother",
+      "item.grandpa"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "baby",
+      "brother",
+      "dad"
+     ],
+     "prompt": [
+      "game.growing"
+     ],
+     "vo": [
+      "game.growing",
+      "item.baby",
+      "item.brother",
+      "item.dad"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "baby",
+      "sister",
+      "grandma"
+     ],
+     "prompt": [
+      "game.growing"
+     ],
+     "vo": [
+      "game.growing",
+      "item.baby",
+      "item.sister",
+      "item.grandma"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "baby",
+      "sister",
+      "grandpa"
+     ],
+     "prompt": [
+      "game.growing"
+     ],
+     "vo": [
+      "game.growing",
+      "item.baby",
+      "item.sister",
+      "item.grandpa"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "baby",
+      "brother",
+      "grandpa"
+     ],
+     "prompt": [
+      "game.growing"
+     ],
+     "vo": [
+      "game.growing",
+      "item.baby",
+      "item.brother",
+      "item.grandpa"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "baby",
+      "sister",
+      "dad"
+     ],
+     "prompt": [
+      "game.growing"
+     ],
+     "vo": [
+      "game.growing",
+      "item.baby",
+      "item.sister",
+      "item.dad"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "baby",
+      "sister",
+      "dad"
+     ],
+     "prompt": [
+      "game.growing"
+     ],
+     "vo": [
+      "game.growing",
+      "item.baby",
+      "item.sister",
+      "item.dad"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "baby",
+      "brother",
+      "dad"
+     ],
+     "prompt": [
+      "game.growing"
+     ],
+     "vo": [
+      "game.growing",
+      "item.baby",
+      "item.brother",
+      "item.dad"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "baby",
+      "brother",
+      "grandma"
+     ],
+     "prompt": [
+      "game.growing"
+     ],
+     "vo": [
+      "game.growing",
+      "item.baby",
+      "item.brother",
+      "item.grandma"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "baby",
+      "sister",
+      "dad"
+     ],
+     "prompt": [
+      "game.growing"
+     ],
+     "vo": [
+      "game.growing",
+      "item.baby",
+      "item.sister",
+      "item.dad"
+     ]
+    },
+    {
+     "dimension": "size",
+     "orderedSmallToLarge": [
+      "baby",
+      "brother",
+      "grandpa"
+     ],
+     "prompt": [
+      "game.growing"
+     ],
+     "vo": [
+      "game.growing",
+      "item.baby",
+      "item.brother",
+      "item.grandpa"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "morning_routine",
+   "engine": "big_and_small",
+   "name": {
+    "en": "Morning Routine",
+    "zh": "早上做什么"
+   },
+   "skill": "comparison",
+   "minAge": 4,
+   "free": false,
+   "roundCount": 12,
+   "rounds": [
+    {
+     "dimension": "sequence",
+     "orderedSmallToLarge": [
+      "pillow",
+      "toothbrush",
+      "shoe"
+     ],
+     "prompt": [
+      "game.routine"
+     ],
+     "vo": [
+      "game.routine",
+      "item.pillow",
+      "item.toothbrush",
+      "item.shoe"
+     ]
+    },
+    {
+     "dimension": "sequence",
+     "orderedSmallToLarge": [
+      "eye",
+      "toothbrush",
+      "hat"
+     ],
+     "prompt": [
+      "game.routine"
+     ],
+     "vo": [
+      "game.routine",
+      "item.eye",
+      "item.toothbrush",
+      "item.hat"
+     ]
+    },
+    {
+     "dimension": "sequence",
+     "orderedSmallToLarge": [
+      "pillow",
+      "bowl",
+      "book"
+     ],
+     "prompt": [
+      "game.routine"
+     ],
+     "vo": [
+      "game.routine",
+      "item.pillow",
+      "item.bowl",
+      "item.book"
+     ]
+    },
+    {
+     "dimension": "sequence",
+     "orderedSmallToLarge": [
+      "toothbrush",
+      "bowl",
+      "shoe"
+     ],
+     "prompt": [
+      "game.routine"
+     ],
+     "vo": [
+      "game.routine",
+      "item.toothbrush",
+      "item.bowl",
+      "item.shoe"
+     ]
+    },
+    {
+     "dimension": "sequence",
+     "orderedSmallToLarge": [
+      "pillow",
+      "cup",
+      "hat"
+     ],
+     "prompt": [
+      "game.routine"
+     ],
+     "vo": [
+      "game.routine",
+      "item.pillow",
+      "item.cup",
+      "item.hat"
+     ]
+    },
+    {
+     "dimension": "sequence",
+     "orderedSmallToLarge": [
+      "eye",
+      "bowl",
+      "shoe"
+     ],
+     "prompt": [
+      "game.routine"
+     ],
+     "vo": [
+      "game.routine",
+      "item.eye",
+      "item.bowl",
+      "item.shoe"
+     ]
+    },
+    {
+     "dimension": "sequence",
+     "orderedSmallToLarge": [
+      "pillow",
+      "toothbrush",
+      "book"
+     ],
+     "prompt": [
+      "game.routine"
+     ],
+     "vo": [
+      "game.routine",
+      "item.pillow",
+      "item.toothbrush",
+      "item.book"
+     ]
+    },
+    {
+     "dimension": "sequence",
+     "orderedSmallToLarge": [
+      "bowl",
+      "toothbrush",
+      "shoe"
+     ],
+     "prompt": [
+      "game.routine"
+     ],
+     "vo": [
+      "game.routine",
+      "item.bowl",
+      "item.toothbrush",
+      "item.shoe"
+     ]
+    },
+    {
+     "dimension": "sequence",
+     "orderedSmallToLarge": [
+      "pillow",
+      "hand",
+      "toothbrush"
+     ],
+     "prompt": [
+      "game.routine"
+     ],
+     "vo": [
+      "game.routine",
+      "item.pillow",
+      "item.hand",
+      "item.toothbrush"
+     ]
+    },
+    {
+     "dimension": "sequence",
+     "orderedSmallToLarge": [
+      "eye",
+      "hand",
+      "bowl"
+     ],
+     "prompt": [
+      "game.routine"
+     ],
+     "vo": [
+      "game.routine",
+      "item.eye",
+      "item.hand",
+      "item.bowl"
+     ]
+    },
+    {
+     "dimension": "sequence",
+     "orderedSmallToLarge": [
+      "pillow",
+      "shoe",
+      "bike"
+     ],
+     "prompt": [
+      "game.routine"
+     ],
+     "vo": [
+      "game.routine",
+      "item.pillow",
+      "item.shoe",
+      "item.bike"
+     ]
+    },
+    {
+     "dimension": "sequence",
+     "orderedSmallToLarge": [
+      "bowl",
+      "hat",
+      "bus"
+     ],
+     "prompt": [
+      "game.routine"
+     ],
+     "vo": [
+      "game.routine",
+      "item.bowl",
+      "item.hat",
+      "item.bus"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bead_necklace",
+   "engine": "pattern_parade",
+   "name": {
+    "en": "Bead Necklace",
+    "zh": "串珠子"
+   },
+   "skill": "patterns",
+   "minAge": 4,
+   "free": false,
+   "roundCount": 24,
+   "rounds": [
+    {
+     "pattern": "AB",
+     "template": "ABAB?",
+     "sequence": [
+      "apple",
+      "grape",
+      "apple",
+      "grape"
+     ],
+     "answer": "apple",
+     "choices": [
+      "grape",
+      "apple",
+      "orange"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AB",
+     "template": "ABAB?",
+     "sequence": [
+      "ball",
+      "balloon",
+      "ball",
+      "balloon"
+     ],
+     "answer": "ball",
+     "choices": [
+      "balloon",
+      "block",
+      "ball"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AB",
+     "template": "ABAB?",
+     "sequence": [
+      "shell",
+      "flower",
+      "shell",
+      "flower"
+     ],
+     "answer": "shell",
+     "choices": [
+      "leaf",
+      "flower",
+      "shell"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AB",
+     "template": "ABABA?",
+     "sequence": [
+      "apple",
+      "grape",
+      "apple",
+      "grape",
+      "apple"
+     ],
+     "answer": "grape",
+     "choices": [
+      "apple",
+      "grape",
+      "orange"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AB",
+     "template": "ABABA?",
+     "sequence": [
+      "ball",
+      "balloon",
+      "ball",
+      "balloon",
+      "ball"
+     ],
+     "answer": "balloon",
+     "choices": [
+      "block",
+      "ball",
+      "balloon"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AB",
+     "template": "ABABA?",
+     "sequence": [
+      "shell",
+      "flower",
+      "shell",
+      "flower",
+      "shell"
+     ],
+     "answer": "flower",
+     "choices": [
+      "flower",
+      "shell",
+      "leaf"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AAB",
+     "template": "AABAAB?",
+     "sequence": [
+      "apple",
+      "apple",
+      "grape",
+      "apple",
+      "apple",
+      "grape"
+     ],
+     "answer": "apple",
+     "choices": [
+      "orange",
+      "grape",
+      "apple"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AAB",
+     "template": "AABAAB?",
+     "sequence": [
+      "ball",
+      "ball",
+      "balloon",
+      "ball",
+      "ball",
+      "balloon"
+     ],
+     "answer": "ball",
+     "choices": [
+      "ball",
+      "block",
+      "balloon"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AAB",
+     "template": "AABAAB?",
+     "sequence": [
+      "shell",
+      "shell",
+      "flower",
+      "shell",
+      "shell",
+      "flower"
+     ],
+     "answer": "shell",
+     "choices": [
+      "shell",
+      "leaf",
+      "flower"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AAB",
+     "template": "AABAA?",
+     "sequence": [
+      "apple",
+      "apple",
+      "grape",
+      "apple",
+      "apple"
+     ],
+     "answer": "grape",
+     "choices": [
+      "orange",
+      "grape",
+      "apple"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AAB",
+     "template": "AABAA?",
+     "sequence": [
+      "ball",
+      "ball",
+      "balloon",
+      "ball",
+      "ball"
+     ],
+     "answer": "balloon",
+     "choices": [
+      "block",
+      "balloon",
+      "ball"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AAB",
+     "template": "AABAA?",
+     "sequence": [
+      "shell",
+      "shell",
+      "flower",
+      "shell",
+      "shell"
+     ],
+     "answer": "flower",
+     "choices": [
+      "shell",
+      "flower",
+      "leaf"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABB",
+     "template": "ABBABB?",
+     "sequence": [
+      "apple",
+      "grape",
+      "grape",
+      "apple",
+      "grape",
+      "grape"
+     ],
+     "answer": "apple",
+     "choices": [
+      "apple",
+      "orange",
+      "grape"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABB",
+     "template": "ABBABB?",
+     "sequence": [
+      "ball",
+      "balloon",
+      "balloon",
+      "ball",
+      "balloon",
+      "balloon"
+     ],
+     "answer": "ball",
+     "choices": [
+      "ball",
+      "block",
+      "balloon"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABB",
+     "template": "ABBABB?",
+     "sequence": [
+      "shell",
+      "flower",
+      "flower",
+      "shell",
+      "flower",
+      "flower"
+     ],
+     "answer": "shell",
+     "choices": [
+      "shell",
+      "flower",
+      "leaf"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABB",
+     "template": "ABBAB?",
+     "sequence": [
+      "apple",
+      "grape",
+      "grape",
+      "apple",
+      "grape"
+     ],
+     "answer": "grape",
+     "choices": [
+      "orange",
+      "grape",
+      "apple"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABB",
+     "template": "ABBAB?",
+     "sequence": [
+      "ball",
+      "balloon",
+      "balloon",
+      "ball",
+      "balloon"
+     ],
+     "answer": "balloon",
+     "choices": [
+      "balloon",
+      "ball",
+      "block"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABB",
+     "template": "ABBAB?",
+     "sequence": [
+      "shell",
+      "flower",
+      "flower",
+      "shell",
+      "flower"
+     ],
+     "answer": "flower",
+     "choices": [
+      "leaf",
+      "shell",
+      "flower"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCABC?",
+     "sequence": [
+      "apple",
+      "grape",
+      "orange",
+      "apple",
+      "grape",
+      "orange"
+     ],
+     "answer": "apple",
+     "choices": [
+      "grape",
+      "orange",
+      "apple"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCABC?",
+     "sequence": [
+      "ball",
+      "balloon",
+      "block",
+      "ball",
+      "balloon",
+      "block"
+     ],
+     "answer": "ball",
+     "choices": [
+      "balloon",
+      "ball",
+      "block"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCABC?",
+     "sequence": [
+      "shell",
+      "flower",
+      "leaf",
+      "shell",
+      "flower",
+      "leaf"
+     ],
+     "answer": "shell",
+     "choices": [
+      "shell",
+      "leaf",
+      "flower"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCAB?",
+     "sequence": [
+      "apple",
+      "grape",
+      "orange",
+      "apple",
+      "grape"
+     ],
+     "answer": "orange",
+     "choices": [
+      "apple",
+      "orange",
+      "grape"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCAB?",
+     "sequence": [
+      "ball",
+      "balloon",
+      "block",
+      "ball",
+      "balloon"
+     ],
+     "answer": "block",
+     "choices": [
+      "ball",
+      "block",
+      "balloon"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCAB?",
+     "sequence": [
+      "shell",
+      "flower",
+      "leaf",
+      "shell",
+      "flower"
+     ],
+     "answer": "leaf",
+     "choices": [
+      "leaf",
+      "flower",
+      "shell"
+     ],
+     "prompt": [
+      "game.beads",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.beads",
+      "pattern.whatnext"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lantern_string",
+   "engine": "pattern_parade",
+   "name": {
+    "en": "Lantern String",
+    "zh": "挂灯笼"
+   },
+   "skill": "patterns",
+   "minAge": 4,
+   "free": false,
+   "roundCount": 24,
+   "rounds": [
+    {
+     "pattern": "AB",
+     "template": "ABAB?",
+     "sequence": [
+      "key_lantern",
+      "candle",
+      "key_lantern",
+      "candle"
+     ],
+     "answer": "key_lantern",
+     "choices": [
+      "candle",
+      "key_lantern",
+      "star"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AB",
+     "template": "ABAB?",
+     "sequence": [
+      "red_envelope",
+      "mooncake",
+      "red_envelope",
+      "mooncake"
+     ],
+     "answer": "red_envelope",
+     "choices": [
+      "red_envelope",
+      "dumpling",
+      "mooncake"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AB",
+     "template": "ABAB?",
+     "sequence": [
+      "gift",
+      "cake",
+      "gift",
+      "cake"
+     ],
+     "answer": "gift",
+     "choices": [
+      "gift",
+      "cake",
+      "balloon"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AB",
+     "template": "ABABA?",
+     "sequence": [
+      "key_lantern",
+      "candle",
+      "key_lantern",
+      "candle",
+      "key_lantern"
+     ],
+     "answer": "candle",
+     "choices": [
+      "key_lantern",
+      "star",
+      "candle"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AB",
+     "template": "ABABA?",
+     "sequence": [
+      "red_envelope",
+      "mooncake",
+      "red_envelope",
+      "mooncake",
+      "red_envelope"
+     ],
+     "answer": "mooncake",
+     "choices": [
+      "dumpling",
+      "mooncake",
+      "red_envelope"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AB",
+     "template": "ABABA?",
+     "sequence": [
+      "gift",
+      "cake",
+      "gift",
+      "cake",
+      "gift"
+     ],
+     "answer": "cake",
+     "choices": [
+      "balloon",
+      "cake",
+      "gift"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AAB",
+     "template": "AABAAB?",
+     "sequence": [
+      "key_lantern",
+      "key_lantern",
+      "candle",
+      "key_lantern",
+      "key_lantern",
+      "candle"
+     ],
+     "answer": "key_lantern",
+     "choices": [
+      "candle",
+      "star",
+      "key_lantern"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AAB",
+     "template": "AABAAB?",
+     "sequence": [
+      "red_envelope",
+      "red_envelope",
+      "mooncake",
+      "red_envelope",
+      "red_envelope",
+      "mooncake"
+     ],
+     "answer": "red_envelope",
+     "choices": [
+      "dumpling",
+      "mooncake",
+      "red_envelope"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AAB",
+     "template": "AABAAB?",
+     "sequence": [
+      "gift",
+      "gift",
+      "cake",
+      "gift",
+      "gift",
+      "cake"
+     ],
+     "answer": "gift",
+     "choices": [
+      "gift",
+      "balloon",
+      "cake"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AAB",
+     "template": "AABAA?",
+     "sequence": [
+      "key_lantern",
+      "key_lantern",
+      "candle",
+      "key_lantern",
+      "key_lantern"
+     ],
+     "answer": "candle",
+     "choices": [
+      "key_lantern",
+      "candle",
+      "star"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AAB",
+     "template": "AABAA?",
+     "sequence": [
+      "red_envelope",
+      "red_envelope",
+      "mooncake",
+      "red_envelope",
+      "red_envelope"
+     ],
+     "answer": "mooncake",
+     "choices": [
+      "dumpling",
+      "mooncake",
+      "red_envelope"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AAB",
+     "template": "AABAA?",
+     "sequence": [
+      "gift",
+      "gift",
+      "cake",
+      "gift",
+      "gift"
+     ],
+     "answer": "cake",
+     "choices": [
+      "cake",
+      "balloon",
+      "gift"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABB",
+     "template": "ABBABB?",
+     "sequence": [
+      "key_lantern",
+      "candle",
+      "candle",
+      "key_lantern",
+      "candle",
+      "candle"
+     ],
+     "answer": "key_lantern",
+     "choices": [
+      "candle",
+      "star",
+      "key_lantern"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABB",
+     "template": "ABBABB?",
+     "sequence": [
+      "red_envelope",
+      "mooncake",
+      "mooncake",
+      "red_envelope",
+      "mooncake",
+      "mooncake"
+     ],
+     "answer": "red_envelope",
+     "choices": [
+      "mooncake",
+      "red_envelope",
+      "dumpling"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABB",
+     "template": "ABBABB?",
+     "sequence": [
+      "gift",
+      "cake",
+      "cake",
+      "gift",
+      "cake",
+      "cake"
+     ],
+     "answer": "gift",
+     "choices": [
+      "gift",
+      "cake",
+      "balloon"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABB",
+     "template": "ABBAB?",
+     "sequence": [
+      "key_lantern",
+      "candle",
+      "candle",
+      "key_lantern",
+      "candle"
+     ],
+     "answer": "candle",
+     "choices": [
+      "candle",
+      "star",
+      "key_lantern"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABB",
+     "template": "ABBAB?",
+     "sequence": [
+      "red_envelope",
+      "mooncake",
+      "mooncake",
+      "red_envelope",
+      "mooncake"
+     ],
+     "answer": "mooncake",
+     "choices": [
+      "dumpling",
+      "red_envelope",
+      "mooncake"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABB",
+     "template": "ABBAB?",
+     "sequence": [
+      "gift",
+      "cake",
+      "cake",
+      "gift",
+      "cake"
+     ],
+     "answer": "cake",
+     "choices": [
+      "cake",
+      "balloon",
+      "gift"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCABC?",
+     "sequence": [
+      "key_lantern",
+      "candle",
+      "star",
+      "key_lantern",
+      "candle",
+      "star"
+     ],
+     "answer": "key_lantern",
+     "choices": [
+      "candle",
+      "key_lantern",
+      "star"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCABC?",
+     "sequence": [
+      "red_envelope",
+      "mooncake",
+      "dumpling",
+      "red_envelope",
+      "mooncake",
+      "dumpling"
+     ],
+     "answer": "red_envelope",
+     "choices": [
+      "dumpling",
+      "mooncake",
+      "red_envelope"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCABC?",
+     "sequence": [
+      "gift",
+      "cake",
+      "balloon",
+      "gift",
+      "cake",
+      "balloon"
+     ],
+     "answer": "gift",
+     "choices": [
+      "balloon",
+      "gift",
+      "cake"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCAB?",
+     "sequence": [
+      "key_lantern",
+      "candle",
+      "star",
+      "key_lantern",
+      "candle"
+     ],
+     "answer": "star",
+     "choices": [
+      "candle",
+      "star",
+      "key_lantern"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCAB?",
+     "sequence": [
+      "red_envelope",
+      "mooncake",
+      "dumpling",
+      "red_envelope",
+      "mooncake"
+     ],
+     "answer": "dumpling",
+     "choices": [
+      "mooncake",
+      "dumpling",
+      "red_envelope"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCAB?",
+     "sequence": [
+      "gift",
+      "cake",
+      "balloon",
+      "gift",
+      "cake"
+     ],
+     "answer": "balloon",
+     "choices": [
+      "gift",
+      "balloon",
+      "cake"
+     ],
+     "prompt": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.lanterns_next",
+      "pattern.whatnext"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "flower_path",
+   "engine": "pattern_parade",
+   "name": {
+    "en": "Flower Path",
+    "zh": "花花小路"
+   },
+   "skill": "patterns",
+   "minAge": 5,
+   "free": false,
+   "roundCount": 24,
+   "rounds": [
+    {
+     "pattern": "ABC",
+     "template": "ABCABC?",
+     "sequence": [
+      "flower",
+      "leaf",
+      "shell",
+      "flower",
+      "leaf",
+      "shell"
+     ],
+     "answer": "flower",
+     "choices": [
+      "shell",
+      "leaf",
+      "flower"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCABC?",
+     "sequence": [
+      "flower",
+      "tree",
+      "rock",
+      "flower",
+      "tree",
+      "rock"
+     ],
+     "answer": "flower",
+     "choices": [
+      "flower",
+      "tree",
+      "rock"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCABC?",
+     "sequence": [
+      "flower",
+      "butterfly",
+      "bee",
+      "flower",
+      "butterfly",
+      "bee"
+     ],
+     "answer": "flower",
+     "choices": [
+      "flower",
+      "bee",
+      "butterfly"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCABC?",
+     "sequence": [
+      "flower",
+      "mushroom",
+      "star",
+      "flower",
+      "mushroom",
+      "star"
+     ],
+     "answer": "flower",
+     "choices": [
+      "star",
+      "mushroom",
+      "flower"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCAB?",
+     "sequence": [
+      "flower",
+      "leaf",
+      "shell",
+      "flower",
+      "leaf"
+     ],
+     "answer": "shell",
+     "choices": [
+      "leaf",
+      "shell",
+      "flower"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCAB?",
+     "sequence": [
+      "flower",
+      "tree",
+      "rock",
+      "flower",
+      "tree"
+     ],
+     "answer": "rock",
+     "choices": [
+      "tree",
+      "flower",
+      "rock"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCAB?",
+     "sequence": [
+      "flower",
+      "butterfly",
+      "bee",
+      "flower",
+      "butterfly"
+     ],
+     "answer": "bee",
+     "choices": [
+      "bee",
+      "butterfly",
+      "flower"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCAB?",
+     "sequence": [
+      "flower",
+      "mushroom",
+      "star",
+      "flower",
+      "mushroom"
+     ],
+     "answer": "star",
+     "choices": [
+      "mushroom",
+      "star",
+      "flower"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCA?",
+     "sequence": [
+      "flower",
+      "leaf",
+      "shell",
+      "flower"
+     ],
+     "answer": "leaf",
+     "choices": [
+      "shell",
+      "flower",
+      "leaf"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCA?",
+     "sequence": [
+      "flower",
+      "tree",
+      "rock",
+      "flower"
+     ],
+     "answer": "tree",
+     "choices": [
+      "rock",
+      "flower",
+      "tree"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCA?",
+     "sequence": [
+      "flower",
+      "butterfly",
+      "bee",
+      "flower"
+     ],
+     "answer": "butterfly",
+     "choices": [
+      "butterfly",
+      "bee",
+      "flower"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABC",
+     "template": "ABCA?",
+     "sequence": [
+      "flower",
+      "mushroom",
+      "star",
+      "flower"
+     ],
+     "answer": "mushroom",
+     "choices": [
+      "star",
+      "mushroom",
+      "flower"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AABB",
+     "template": "AABBAABB?",
+     "sequence": [
+      "flower",
+      "flower",
+      "leaf",
+      "leaf",
+      "flower",
+      "flower",
+      "leaf",
+      "leaf"
+     ],
+     "answer": "flower",
+     "choices": [
+      "flower",
+      "leaf",
+      "shell"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AABB",
+     "template": "AABBAABB?",
+     "sequence": [
+      "flower",
+      "flower",
+      "tree",
+      "tree",
+      "flower",
+      "flower",
+      "tree",
+      "tree"
+     ],
+     "answer": "flower",
+     "choices": [
+      "flower",
+      "rock",
+      "tree"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AABB",
+     "template": "AABBAABB?",
+     "sequence": [
+      "flower",
+      "flower",
+      "butterfly",
+      "butterfly",
+      "flower",
+      "flower",
+      "butterfly",
+      "butterfly"
+     ],
+     "answer": "flower",
+     "choices": [
+      "bee",
+      "butterfly",
+      "flower"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AABB",
+     "template": "AABBAABB?",
+     "sequence": [
+      "flower",
+      "flower",
+      "mushroom",
+      "mushroom",
+      "flower",
+      "flower",
+      "mushroom",
+      "mushroom"
+     ],
+     "answer": "flower",
+     "choices": [
+      "star",
+      "mushroom",
+      "flower"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AABB",
+     "template": "AABBAA?",
+     "sequence": [
+      "flower",
+      "flower",
+      "leaf",
+      "leaf",
+      "flower",
+      "flower"
+     ],
+     "answer": "leaf",
+     "choices": [
+      "flower",
+      "leaf",
+      "shell"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AABB",
+     "template": "AABBAA?",
+     "sequence": [
+      "flower",
+      "flower",
+      "tree",
+      "tree",
+      "flower",
+      "flower"
+     ],
+     "answer": "tree",
+     "choices": [
+      "rock",
+      "tree",
+      "flower"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AABB",
+     "template": "AABBAA?",
+     "sequence": [
+      "flower",
+      "flower",
+      "butterfly",
+      "butterfly",
+      "flower",
+      "flower"
+     ],
+     "answer": "butterfly",
+     "choices": [
+      "bee",
+      "butterfly",
+      "flower"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "AABB",
+     "template": "AABBAA?",
+     "sequence": [
+      "flower",
+      "flower",
+      "mushroom",
+      "mushroom",
+      "flower",
+      "flower"
+     ],
+     "answer": "mushroom",
+     "choices": [
+      "star",
+      "mushroom",
+      "flower"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABCB",
+     "template": "ABCBABCB?",
+     "sequence": [
+      "flower",
+      "leaf",
+      "shell",
+      "leaf",
+      "flower",
+      "leaf",
+      "shell",
+      "leaf"
+     ],
+     "answer": "flower",
+     "choices": [
+      "flower",
+      "leaf",
+      "shell"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABCB",
+     "template": "ABCBABCB?",
+     "sequence": [
+      "flower",
+      "tree",
+      "rock",
+      "tree",
+      "flower",
+      "tree",
+      "rock",
+      "tree"
+     ],
+     "answer": "flower",
+     "choices": [
+      "rock",
+      "flower",
+      "tree"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABCB",
+     "template": "ABCBABCB?",
+     "sequence": [
+      "flower",
+      "butterfly",
+      "bee",
+      "butterfly",
+      "flower",
+      "butterfly",
+      "bee",
+      "butterfly"
+     ],
+     "answer": "flower",
+     "choices": [
+      "flower",
+      "bee",
+      "butterfly"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    },
+    {
+     "pattern": "ABCB",
+     "template": "ABCBABCB?",
+     "sequence": [
+      "flower",
+      "mushroom",
+      "star",
+      "mushroom",
+      "flower",
+      "mushroom",
+      "star",
+      "mushroom"
+     ],
+     "answer": "flower",
+     "choices": [
+      "mushroom",
+      "star",
+      "flower"
+     ],
+     "prompt": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ],
+     "vo": [
+      "game.flowers_next",
+      "pattern.whatnext"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hide_seek",
+   "engine": "where_is_it",
+   "name": {
+    "en": "Hide and Seek",
+    "zh": "捉迷藏"
+   },
+   "skill": "position",
+   "minAge": 4,
+   "free": false,
+   "roundCount": 12,
+   "rounds": [
+    {
+     "pair": [
+      "inside",
+      "outside"
+     ],
+     "target": "inside",
+     "actor": "cat",
+     "container": "box",
+     "prompt": [
+      "game.hide",
+      "item.cat",
+      "position.inside"
+     ],
+     "vo": [
+      "game.hide",
+      "position.inside",
+      "position.outside",
+      "item.cat",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "front",
+      "behind"
+     ],
+     "target": "behind",
+     "actor": "mouse",
+     "container": "basket",
+     "prompt": [
+      "game.hide",
+      "item.mouse",
+      "position.behind"
+     ],
+     "vo": [
+      "game.hide",
+      "position.front",
+      "position.behind",
+      "item.mouse",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "inside",
+      "outside"
+     ],
+     "target": "inside",
+     "actor": "rabbit",
+     "container": "bowl",
+     "prompt": [
+      "game.hide",
+      "item.rabbit",
+      "position.inside"
+     ],
+     "vo": [
+      "game.hide",
+      "position.inside",
+      "position.outside",
+      "item.rabbit",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "front",
+      "behind"
+     ],
+     "target": "behind",
+     "actor": "frog",
+     "container": "cup",
+     "prompt": [
+      "game.hide",
+      "item.frog",
+      "position.behind"
+     ],
+     "vo": [
+      "game.hide",
+      "position.front",
+      "position.behind",
+      "item.frog",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "inside",
+      "outside"
+     ],
+     "target": "inside",
+     "actor": "bird",
+     "container": "box",
+     "prompt": [
+      "game.hide",
+      "item.bird",
+      "position.inside"
+     ],
+     "vo": [
+      "game.hide",
+      "position.inside",
+      "position.outside",
+      "item.bird",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "front",
+      "behind"
+     ],
+     "target": "behind",
+     "actor": "owl",
+     "container": "basket",
+     "prompt": [
+      "game.hide",
+      "item.owl",
+      "position.behind"
+     ],
+     "vo": [
+      "game.hide",
+      "position.front",
+      "position.behind",
+      "item.owl",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "inside",
+      "outside"
+     ],
+     "target": "inside",
+     "actor": "cat",
+     "container": "bowl",
+     "prompt": [
+      "game.hide",
+      "item.cat",
+      "position.inside"
+     ],
+     "vo": [
+      "game.hide",
+      "position.inside",
+      "position.outside",
+      "item.cat",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "front",
+      "behind"
+     ],
+     "target": "behind",
+     "actor": "mouse",
+     "container": "cup",
+     "prompt": [
+      "game.hide",
+      "item.mouse",
+      "position.behind"
+     ],
+     "vo": [
+      "game.hide",
+      "position.front",
+      "position.behind",
+      "item.mouse",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "inside",
+      "outside"
+     ],
+     "target": "inside",
+     "actor": "rabbit",
+     "container": "box",
+     "prompt": [
+      "game.hide",
+      "item.rabbit",
+      "position.inside"
+     ],
+     "vo": [
+      "game.hide",
+      "position.inside",
+      "position.outside",
+      "item.rabbit",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "front",
+      "behind"
+     ],
+     "target": "behind",
+     "actor": "frog",
+     "container": "basket",
+     "prompt": [
+      "game.hide",
+      "item.frog",
+      "position.behind"
+     ],
+     "vo": [
+      "game.hide",
+      "position.front",
+      "position.behind",
+      "item.frog",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "inside",
+      "outside"
+     ],
+     "target": "inside",
+     "actor": "bird",
+     "container": "bowl",
+     "prompt": [
+      "game.hide",
+      "item.bird",
+      "position.inside"
+     ],
+     "vo": [
+      "game.hide",
+      "position.inside",
+      "position.outside",
+      "item.bird",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "front",
+      "behind"
+     ],
+     "target": "behind",
+     "actor": "owl",
+     "container": "cup",
+     "prompt": [
+      "game.hide",
+      "item.owl",
+      "position.behind"
+     ],
+     "vo": [
+      "game.hide",
+      "position.front",
+      "position.behind",
+      "item.owl",
+      "position.ask"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "owl_tree_house",
+   "engine": "where_is_it",
+   "name": {
+    "en": "Owl's Tree House",
+    "zh": "猫头鹰的树屋"
+   },
+   "skill": "position",
+   "minAge": 3,
+   "free": false,
+   "roundCount": 12,
+   "rounds": [
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "up",
+     "actor": "owl",
+     "container": "basket",
+     "prompt": [
+      "game.treehouse",
+      "item.owl",
+      "position.up"
+     ],
+     "vo": [
+      "game.treehouse",
+      "position.up",
+      "position.down",
+      "item.owl",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "down",
+     "actor": "bird",
+     "container": "box",
+     "prompt": [
+      "game.treehouse",
+      "item.bird",
+      "position.down"
+     ],
+     "vo": [
+      "game.treehouse",
+      "position.up",
+      "position.down",
+      "item.bird",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "up",
+     "actor": "mouse",
+     "container": "basket",
+     "prompt": [
+      "game.treehouse",
+      "item.mouse",
+      "position.up"
+     ],
+     "vo": [
+      "game.treehouse",
+      "position.up",
+      "position.down",
+      "item.mouse",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "down",
+     "actor": "cat",
+     "container": "box",
+     "prompt": [
+      "game.treehouse",
+      "item.cat",
+      "position.down"
+     ],
+     "vo": [
+      "game.treehouse",
+      "position.up",
+      "position.down",
+      "item.cat",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "up",
+     "actor": "owl",
+     "container": "basket",
+     "prompt": [
+      "game.treehouse",
+      "item.owl",
+      "position.up"
+     ],
+     "vo": [
+      "game.treehouse",
+      "position.up",
+      "position.down",
+      "item.owl",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "down",
+     "actor": "bird",
+     "container": "box",
+     "prompt": [
+      "game.treehouse",
+      "item.bird",
+      "position.down"
+     ],
+     "vo": [
+      "game.treehouse",
+      "position.up",
+      "position.down",
+      "item.bird",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "up",
+     "actor": "mouse",
+     "container": "basket",
+     "prompt": [
+      "game.treehouse",
+      "item.mouse",
+      "position.up"
+     ],
+     "vo": [
+      "game.treehouse",
+      "position.up",
+      "position.down",
+      "item.mouse",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "down",
+     "actor": "cat",
+     "container": "box",
+     "prompt": [
+      "game.treehouse",
+      "item.cat",
+      "position.down"
+     ],
+     "vo": [
+      "game.treehouse",
+      "position.up",
+      "position.down",
+      "item.cat",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "up",
+     "actor": "owl",
+     "container": "basket",
+     "prompt": [
+      "game.treehouse",
+      "item.owl",
+      "position.up"
+     ],
+     "vo": [
+      "game.treehouse",
+      "position.up",
+      "position.down",
+      "item.owl",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "down",
+     "actor": "bird",
+     "container": "box",
+     "prompt": [
+      "game.treehouse",
+      "item.bird",
+      "position.down"
+     ],
+     "vo": [
+      "game.treehouse",
+      "position.up",
+      "position.down",
+      "item.bird",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "up",
+     "actor": "mouse",
+     "container": "basket",
+     "prompt": [
+      "game.treehouse",
+      "item.mouse",
+      "position.up"
+     ],
+     "vo": [
+      "game.treehouse",
+      "position.up",
+      "position.down",
+      "item.mouse",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "down",
+     "actor": "cat",
+     "container": "box",
+     "prompt": [
+      "game.treehouse",
+      "item.cat",
+      "position.down"
+     ],
+     "vo": [
+      "game.treehouse",
+      "position.up",
+      "position.down",
+      "item.cat",
+      "position.ask"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "set_table",
+   "engine": "where_is_it",
+   "name": {
+    "en": "Set the Table",
+    "zh": "摆餐桌"
+   },
+   "skill": "position",
+   "minAge": 4,
+   "free": false,
+   "roundCount": 12,
+   "rounds": [
+    {
+     "pair": [
+      "inside",
+      "outside"
+     ],
+     "target": "inside",
+     "actor": "spoon",
+     "container": "bowl",
+     "prompt": [
+      "game.table",
+      "item.spoon",
+      "position.inside"
+     ],
+     "vo": [
+      "game.table",
+      "position.inside",
+      "position.outside",
+      "item.spoon",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "down",
+     "actor": "egg",
+     "container": "cup",
+     "prompt": [
+      "game.table",
+      "item.egg",
+      "position.down"
+     ],
+     "vo": [
+      "game.table",
+      "position.up",
+      "position.down",
+      "item.egg",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "inside",
+      "outside"
+     ],
+     "target": "inside",
+     "actor": "apple",
+     "container": "basket",
+     "prompt": [
+      "game.table",
+      "item.apple",
+      "position.inside"
+     ],
+     "vo": [
+      "game.table",
+      "position.inside",
+      "position.outside",
+      "item.apple",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "down",
+     "actor": "cookie",
+     "container": "bowl",
+     "prompt": [
+      "game.table",
+      "item.cookie",
+      "position.down"
+     ],
+     "vo": [
+      "game.table",
+      "position.up",
+      "position.down",
+      "item.cookie",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "inside",
+      "outside"
+     ],
+     "target": "inside",
+     "actor": "strawberry",
+     "container": "cup",
+     "prompt": [
+      "game.table",
+      "item.strawberry",
+      "position.inside"
+     ],
+     "vo": [
+      "game.table",
+      "position.inside",
+      "position.outside",
+      "item.strawberry",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "down",
+     "actor": "grape",
+     "container": "basket",
+     "prompt": [
+      "game.table",
+      "item.grape",
+      "position.down"
+     ],
+     "vo": [
+      "game.table",
+      "position.up",
+      "position.down",
+      "item.grape",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "inside",
+      "outside"
+     ],
+     "target": "inside",
+     "actor": "spoon",
+     "container": "bowl",
+     "prompt": [
+      "game.table",
+      "item.spoon",
+      "position.inside"
+     ],
+     "vo": [
+      "game.table",
+      "position.inside",
+      "position.outside",
+      "item.spoon",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "down",
+     "actor": "egg",
+     "container": "cup",
+     "prompt": [
+      "game.table",
+      "item.egg",
+      "position.down"
+     ],
+     "vo": [
+      "game.table",
+      "position.up",
+      "position.down",
+      "item.egg",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "inside",
+      "outside"
+     ],
+     "target": "inside",
+     "actor": "apple",
+     "container": "basket",
+     "prompt": [
+      "game.table",
+      "item.apple",
+      "position.inside"
+     ],
+     "vo": [
+      "game.table",
+      "position.inside",
+      "position.outside",
+      "item.apple",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "down",
+     "actor": "cookie",
+     "container": "bowl",
+     "prompt": [
+      "game.table",
+      "item.cookie",
+      "position.down"
+     ],
+     "vo": [
+      "game.table",
+      "position.up",
+      "position.down",
+      "item.cookie",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "inside",
+      "outside"
+     ],
+     "target": "inside",
+     "actor": "strawberry",
+     "container": "cup",
+     "prompt": [
+      "game.table",
+      "item.strawberry",
+      "position.inside"
+     ],
+     "vo": [
+      "game.table",
+      "position.inside",
+      "position.outside",
+      "item.strawberry",
+      "position.ask"
+     ]
+    },
+    {
+     "pair": [
+      "up",
+      "down"
+     ],
+     "target": "down",
+     "actor": "grape",
+     "container": "basket",
+     "prompt": [
+      "game.table",
+      "item.grape",
+      "position.down"
+     ],
+     "vo": [
+      "game.table",
+      "position.up",
+      "position.down",
+      "item.grape",
+      "position.ask"
+     ]
+    }
+   ]
   }
  ],
  "voKeys": [
@@ -5888,6 +13860,28 @@
   "floatsink.floats",
   "floatsink.intro",
   "floatsink.sinks",
+  "game.beads",
+  "game.bus",
+  "game.candles",
+  "game.cookies",
+  "game.feelings",
+  "game.flowers_next",
+  "game.growing",
+  "game.hide",
+  "game.ladder",
+  "game.lantern",
+  "game.lanterns_next",
+  "game.peekaboo",
+  "game.routine",
+  "game.seeds",
+  "game.shadow",
+  "game.socks",
+  "game.stack",
+  "game.table",
+  "game.tidy",
+  "game.treehouse",
+  "game.weather",
+  "game.zoom",
   "item.angry",
   "item.apple",
   "item.baby",
@@ -6016,6 +14010,9 @@
   "size.small",
   "size.tiny",
   "spotsame.intro",
+  "weather.rainy",
+  "weather.sunny",
+  "weather.windy",
   "whatisit.intro"
  ]
 }

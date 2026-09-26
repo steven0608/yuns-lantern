@@ -45,7 +45,7 @@ numbers_out_loud number_tracing rainbow_mixing fast_slow high_low word_pairs fes
 AGE5 = set("""flower_path tangram fix_bridge park_map paper_cutting reflection_lake light_shadow first_characters
 letter_friends color_by_number shape_pairs""".split())
 # Rounds already generated in content/activities.json for the original 12.
-ORIGINAL = {"count_feed": 30, "match_it": 23, "shape_sorter": 24, "find_the_same": 30, "float_or_sink": 12,
+ORIGINAL = {"count_feed": 30, "match_it": 26, "shape_sorter": 24, "find_the_same": 30, "float_or_sink": 12,
             "what_is_it": 24, "big_and_small": 15, "where_is_it": 18, "puzzle_pieces": 16, "day_and_night": 14,
             "pattern_parade": 80, "mirror_match": 16}
 ROUNDS = {"letter_friends": 26, "first_characters": 10, "number_tracing": 10, "shape_tracing": 8}

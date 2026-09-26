@@ -61,6 +61,8 @@ GROUP_TITLES = {
     "daynight": "Prompts — Day and Night", "floatsink": "Prompts — Float or Sink",
     "whatisit": "Prompts — What Is It?", "pattern": "Prompts — Pattern Parade",
     "mirror": "Prompts — Mirror Match",
+    "weather": "Kinds of day (Weather Wardrobe tubs)",
+    "game": "Prompts — the v3 games (one line each, spoken as the round opens)",
     "feedback": "Feedback lines (recorded with genuine warmth, never sing-song)",
     "ui": "Interface lines", "story": "Story mode narration",
 }
@@ -111,7 +113,7 @@ out.append("""
 for g in ["story", "ui", "feedback", "number", "color", "shape", "size",
           "category", "position", "matching", "counting", "comparing", "shapes",
           "spotsame", "puzzle", "daynight", "floatsink", "whatisit", "pattern",
-          "mirror", "item"]:
+          "mirror", "weather", "game", "item"]:
     if g not in groups:
         continue
     out.append(f"\n## {GROUP_TITLES.get(g, g)}\n")

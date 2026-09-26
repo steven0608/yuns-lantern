@@ -21,6 +21,12 @@ story = json.loads((CONTENT / "story.json").read_text(encoding="utf-8"))
 BY_ID = {i["id"]: i for i in vocab["items"]}
 SIZE_ORDER = ["tiny", "small", "medium", "large", "huge"]
 MAX_INTERACTIVE = 6
+# Mirrors lib/games/where_is_it/: the relations the engine stages and the
+# vessels it can draw. Content outside these sets renders an unanswerable room.
+RELATIONS = {"up", "down", "inside", "outside", "front", "behind"}
+VESSELS = {"box", "basket", "cup", "bowl"}
+# Mirrors lib/games/what_is_it/: silhouette panel or clearing mist.
+MYSTERY_TIERS = {"silhouette", "reveal"}
 
 errors, warnings = [], []
 
@@ -58,17 +64,38 @@ for it in vocab["items"]:
 # ---------------------------------------------------------------- activities
 act_by_id = {a["id"]: a for a in acts["activities"]}
 
+# A v2 activity is its own engine; a v3 game names the engine that plays it.
+# Everything below is checked per ENGINE, so every game on an engine gets the
+# same scrutiny as the original twelve — that is the whole point of E2.
+V2_ENGINES = {a["id"] for a in acts["activities"]
+              if a.get("engine", a["id"]) == a["id"]}
+
 for a in acts["activities"]:
-    aid = a["id"]
+    engine = a.get("engine", a["id"])
+    if engine not in act_by_id:
+        err(f"{a['id']}: engine '{engine}' is not an activity in this file")
+    elif engine not in V2_ENGINES:
+        err(f"{a['id']}: engine '{engine}' is itself a v3 game, not an engine")
+
+for a in acts["activities"]:
+    # `aid` drives the per-engine checks; messages still name the real game.
+    aid = a.get("engine", a["id"])
+    name = a["id"]
     if a["roundCount"] == 0:
-        err(f"{aid}: no rounds")
+        err(f"{name}: no rounds")
     if a["roundCount"] < 10:
-        warn(f"{aid}: only {a['roundCount']} rounds — thin for repeat play")
+        warn(f"{name}: only {a['roundCount']} rounds — thin for repeat play")
     if a["roundCount"] != len(a["rounds"]):
-        err(f"{aid}: roundCount {a['roundCount']} != actual {len(a['rounds'])}")
+        err(f"{name}: roundCount {a['roundCount']} != actual {len(a['rounds'])}")
 
     for n, r in enumerate(a["rounds"]):
-        tag = f"{aid}[{n}]"
+        tag = f"{name}[{n}]"
+        # A round may override the engine's spoken prompt; those keys must be
+        # declared in `vo` too, or the VO script never asks for them.
+        for field in ("prompt", "shortPrompt"):
+            for k in r.get(field, []):
+                if k not in r.get("vo", []):
+                    err(f"{tag}: {field} key '{k}' is not listed in vo")
 
         if aid == "count_feed":
             check_ids(tag, [r["feeder"], r["item"]])
@@ -102,11 +129,21 @@ for a in acts["activities"]:
             check_ids(tag, trio)
             if len(set(trio)) != 3:
                 err(f"{tag}: repeated item in ordering trio")
-            sizes = [SIZE_ORDER.index(BY_ID[i]["size"]) for i in trio]
-            if sizes != sorted(sizes):
-                err(f"{tag}: order is wrong — {list(zip(trio, sizes))}")
-            if len(set(sizes)) != 3:
-                err(f"{tag}: sizes not distinct, puzzle is ambiguous — {trio}")
+            dim = r.get("dimension", "size")
+            if dim == "size":
+                # The stated order must really be the vocab order, and all
+                # three sizes must differ or the puzzle has two answers.
+                sizes = [SIZE_ORDER.index(BY_ID[i]["size"]) for i in trio]
+                if sizes != sorted(sizes):
+                    err(f"{tag}: order is wrong — {list(zip(trio, sizes))}")
+                if len(set(sizes)) != 3:
+                    err(f"{tag}: sizes not distinct, puzzle is ambiguous — {trio}")
+            elif dim == "sequence":
+                # A curated first/next/last order (e.g. a morning routine);
+                # no vocab attribute ranks it, so only the ids are checked.
+                pass
+            else:
+                err(f"{tag}: unknown ordering dimension '{dim}'")
 
         elif aid == "shape_sorter":
             if len(r["shapes"]) > MAX_INTERACTIVE:
@@ -128,6 +165,15 @@ for a in acts["activities"]:
             check_ids(tag, [r["actor"]])
             if r["target"] not in r["pair"]:
                 err(f"{tag}: target '{r['target']}' not in pair {r['pair']}")
+            if len(set(r["pair"])) != 2:
+                err(f"{tag}: the two rooms show the same relation {r['pair']}")
+            for rel in r["pair"]:
+                # Only these six are staged by the engine; anything else
+                # falls back to two identical rooms, which has no answer.
+                if rel not in RELATIONS:
+                    err(f"{tag}: relation '{rel}' is not one the engine can stage")
+            if r["container"] not in VESSELS:
+                err(f"{tag}: container '{r['container']}' has no vessel art")
 
         elif aid == "day_and_night":
             check_ids(tag, r["day"] + r["night"] + r.get("either", []))
@@ -160,6 +206,13 @@ for a in acts["activities"]:
             check_ids(tag, [r["answer"]] + r["distractors"])
             if r["answer"] in r["distractors"]:
                 err(f"{tag}: answer among distractors")
+            if len(set(r["distractors"])) != len(r["distractors"]):
+                err(f"{tag}: duplicate distractors")
+            if r["tier"] not in MYSTERY_TIERS:
+                err(f"{tag}: unknown tier '{r['tier']}'")
+            # The prompt must never give the answer away.
+            if f"item.{r['answer']}" in r.get("prompt", []):
+                err(f"{tag}: the prompt names the answer")
 
         elif aid == "pattern_parade":
             check_ids(tag, r["sequence"] + r["choices"] + [r["answer"]])
