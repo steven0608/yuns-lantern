@@ -2,7 +2,7 @@
 
 **GENERATED — do not hand-edit. Edit `content/phrases.json`, `content/vocab.json`, or `content/story.json` and re-run `tools/build_vo_script.py`.**
 
-Total lines to record per language: **195** (×2 languages = **390** files)
+Total lines to record per language: **220** (×2 languages = **440** files)
 
 
 ## Direction for both voice actors
@@ -283,6 +283,45 @@ Total lines to record per language: **195** (×2 languages = **390** files)
 | Key | English | 中文 | Pinyin |
 |---|---|---|---|
 | `mirror.intro` | Make both sides match. | 让两边一模一样。 | ràng liǎng biān yì mú yí yàng. |
+
+## Kinds of day (Weather Wardrobe tubs)
+
+*3 lines*
+
+| Key | English | 中文 | Pinyin |
+|---|---|---|---|
+| `weather.rainy` | a rainy day | 雨天 | yǔ tiān |
+| `weather.sunny` | a sunny day | 晴天 | qíng tiān |
+| `weather.windy` | a windy day | 刮风天 | guā fēng tiān |
+
+## Prompts — the v3 games (one line each, spoken as the round opens)
+
+*22 lines*
+
+| Key | English | 中文 | Pinyin |
+|---|---|---|---|
+| `game.beads` | Which bead comes next? | 下一颗珠子是什么？ | xià yì kē zhū zi shì shén me? |
+| `game.bus` | Help this many friends onto the bus. | 让这么多小朋友上车。 | ràng zhè me duō xiǎo péng you shàng chē. |
+| `game.candles` | Put this many candles on the cake. | 在蛋糕上插这么多蜡烛。 | zài dàn gāo shang chā zhè me duō là zhú. |
+| `game.cookies` | Give your friend this many cookies. | 给小朋友这么多饼干。 | gěi xiǎo péng you zhè me duō bǐng gān. |
+| `game.feelings` | Which face feels the same? | 哪个表情和它一样？ | nǎ gè biǎo qíng hé tā yí yàng? |
+| `game.flowers_next` | Which one comes next on the path? | 小路上下一个是什么？ | xiǎo lù shang xià yí gè shì shén me? |
+| `game.growing` | Line them up, littlest to biggest. | 从最小的排到最大的。 | cóng zuì xiǎo de pái dào zuì dà de. |
+| `game.hide` | Listen. Where is your friend hiding? | 听一听。小朋友藏在哪里？ | tīng yi tīng. xiǎo péng you cáng zài nǎ lǐ? |
+| `game.ladder` | Build the ladder, short to tall. | 从矮到高搭梯子。 | cóng ǎi dào gāo dā tī zi. |
+| `game.lantern` | Find the lantern that looks just the same. | 找一个一模一样的灯笼。 | zhǎo yí gè yì mú yí yàng de dēng long. |
+| `game.lanterns_next` | Which lantern comes next? | 下一个灯笼是什么？ | xià yí gè dēng long shì shén me? |
+| `game.peekaboo` | Someone is peeking. Who is it? | 有人在偷看。是谁呀？ | yǒu rén zài tōu kàn. shì shéi ya? |
+| `game.routine` | What do we do first? | 我们先做什么？ | wǒ men xiān zuò shén me? |
+| `game.seeds` | Plant this many in the garden. | 在花园里种这么多。 | zài huā yuán lǐ zhòng zhè me duō. |
+| `game.shadow` | Whose shadow is this? | 这是谁的影子？ | zhè shì shéi de yǐng zi? |
+| `game.socks` | Find the one that matches. | 找出一样的那个。 | zhǎo chū yí yàng de nà gè. |
+| `game.stack` | Stack them up, smallest first. | 从最小的开始叠。 | cóng zuì xiǎo de kāi shǐ dié. |
+| `game.table` | Where does this one go? | 这个该放在哪里？ | zhè ge gāi fàng zài nǎ lǐ? |
+| `game.tidy` | Let's put everything where it belongs. | 我们把东西放回家。 | wǒ men bǎ dōng xi fàng huí jiā. |
+| `game.treehouse` | Which floor of the tree house? | 在树屋的哪一层？ | zài shù wū de nǎ yì céng? |
+| `game.weather` | What do we need for each kind of day? | 每种天气要带什么？ | měi zhǒng tiān qì yào dài shén me? |
+| `game.zoom` | Look closely. What is it? | 仔细看。这是什么？ | zǐ xì kàn. zhè shì shén me? |
 
 ## Object names (spoken whenever an object is named or celebrated)
 

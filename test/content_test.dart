@@ -47,9 +47,34 @@ void main() {
     }
   });
 
-  test('all 12 activities have an engine registered', () async {
+  // Every activity — the original 12 and every v3 game layered on them —
+  // must name an engine the registry can actually play.
+  test('every activity has an engine registered', () async {
     final c = await Content.load();
-    final missing = c.activities.keys.where((id) => !gameRegistry.containsKey(id)).toList();
+    final missing = c.activities.values
+        .where((a) => !gameRegistry.containsKey(a.engine))
+        .map((a) => '${a.id} (engine ${a.engine})')
+        .toList();
     expect(missing, isEmpty, reason: 'activities without an engine: $missing');
+    for (final a in c.activities.values) {
+      expect(gameFor(a)?.id, a.id, reason: '${a.id} does not bind to its rounds');
+    }
+  });
+
+  // A round may override the engine's spoken prompt; both keys must have copy.
+  test('every prompt override has copy in both languages', () async {
+    final c = await Content.load();
+    for (final a in c.activities.values) {
+      for (final r in a.rounds) {
+        for (final field in ['prompt', 'shortPrompt']) {
+          if (r.data[field] == null) continue;
+          for (final k in r.strings(field)) {
+            final line = c.lineFor(k);
+            expect(line, isNotNull, reason: '${a.id}[${r.index}] $field key $k has no copy');
+            expect(line!.en.isNotEmpty && line.zh.isNotEmpty, isTrue);
+          }
+        }
+      }
+    }
   });
 }
