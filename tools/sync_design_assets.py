@@ -49,6 +49,20 @@ def copy_art():
                 shutil.copy2(f, IMG / sub / f.name)
 
 
+def copy_tales():
+    """Tale covers and page art: design/png/tales/<tale_id>/{cover,p1..pN}.png.
+    The reader prefers a real page image over its auto-illustration, so pages
+    light up one file at a time as an illustrator replaces the templates."""
+    src = PNG / "tales"
+    if not src.exists():
+        return
+    for tale in sorted(p for p in src.iterdir() if p.is_dir()):
+        out = IMG / "tales" / tale.name
+        out.mkdir(parents=True, exist_ok=True)
+        for f in tale.glob("*.png"):
+            shutil.copy2(f, out / f.name)
+
+
 def copy_audio():
     """design/audio (music loops, stings, new SFX) -> assets/audio."""
     src = ROOT / "design" / "audio"
@@ -104,6 +118,7 @@ def pubspec_assets():
 
 if __name__ == "__main__":
     copy_art()
+    copy_tales()
     copy_audio()
     app_icons()
     brand()

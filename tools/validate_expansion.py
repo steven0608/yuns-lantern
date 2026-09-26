@@ -66,7 +66,15 @@ def main():
         check_text(tag, g["name"]["en"], g["name"]["zh"])
         if BANNED_EN.search(g["goal"]):
             err(f"{tag}: fail-state word in goal")
-    # the original 12 must stay consistent with activities.json
+    # a game marked "built" must really exist in activities.json, and vice versa
+    act_ids = {a["id"] for a in acts["activities"]}
+    for g in games:
+        if g["status"] == "built" and g["id"] not in act_ids:
+            err(f"game {g['id']}: status 'built' but not in activities.json")
+        if g["status"] != "built" and g["id"] in act_ids:
+            err(f"game {g['id']}: in activities.json but status is '{g['status']}'")
+
+    # every built game must stay consistent with activities.json
     for a in acts["activities"]:
         match = [g for g in games if g["id"] == a["id"]]
         if not match:
@@ -114,7 +122,8 @@ def main():
         for e in errors:
             print("  -", e)
         sys.exit(1)
-    print(f"OK: 15 engines, 75 games ({sum(g['free'] for g in games)} free), 75 tales ({written} written)")
+    built = sum(1 for g in games if g["status"] == "built")
+    print(f"OK: 15 engines, 75 games ({sum(g['free'] for g in games)} free, {built} built), 75 tales ({written} written)")
 
 
 if __name__ == "__main__":

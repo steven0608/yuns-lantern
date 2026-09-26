@@ -33,6 +33,81 @@ flutter:
     - assets/images/lands/
     - assets/images/lights/
     - assets/images/scenes/
+    - assets/images/tales/tale_01/
+    - assets/images/tales/tale_02/
+    - assets/images/tales/tale_03/
+    - assets/images/tales/tale_04/
+    - assets/images/tales/tale_05/
+    - assets/images/tales/tale_06/
+    - assets/images/tales/tale_07/
+    - assets/images/tales/tale_08/
+    - assets/images/tales/tale_09/
+    - assets/images/tales/tale_10/
+    - assets/images/tales/tale_11/
+    - assets/images/tales/tale_12/
+    - assets/images/tales/tale_13/
+    - assets/images/tales/tale_14/
+    - assets/images/tales/tale_15/
+    - assets/images/tales/tale_16/
+    - assets/images/tales/tale_17/
+    - assets/images/tales/tale_18/
+    - assets/images/tales/tale_19/
+    - assets/images/tales/tale_20/
+    - assets/images/tales/tale_21/
+    - assets/images/tales/tale_22/
+    - assets/images/tales/tale_23/
+    - assets/images/tales/tale_24/
+    - assets/images/tales/tale_25/
+    - assets/images/tales/tale_26/
+    - assets/images/tales/tale_27/
+    - assets/images/tales/tale_28/
+    - assets/images/tales/tale_29/
+    - assets/images/tales/tale_30/
+    - assets/images/tales/tale_31/
+    - assets/images/tales/tale_32/
+    - assets/images/tales/tale_33/
+    - assets/images/tales/tale_34/
+    - assets/images/tales/tale_35/
+    - assets/images/tales/tale_36/
+    - assets/images/tales/tale_37/
+    - assets/images/tales/tale_38/
+    - assets/images/tales/tale_39/
+    - assets/images/tales/tale_40/
+    - assets/images/tales/tale_41/
+    - assets/images/tales/tale_42/
+    - assets/images/tales/tale_43/
+    - assets/images/tales/tale_44/
+    - assets/images/tales/tale_45/
+    - assets/images/tales/tale_46/
+    - assets/images/tales/tale_47/
+    - assets/images/tales/tale_48/
+    - assets/images/tales/tale_49/
+    - assets/images/tales/tale_50/
+    - assets/images/tales/tale_51/
+    - assets/images/tales/tale_52/
+    - assets/images/tales/tale_53/
+    - assets/images/tales/tale_54/
+    - assets/images/tales/tale_55/
+    - assets/images/tales/tale_56/
+    - assets/images/tales/tale_57/
+    - assets/images/tales/tale_58/
+    - assets/images/tales/tale_59/
+    - assets/images/tales/tale_60/
+    - assets/images/tales/tale_61/
+    - assets/images/tales/tale_62/
+    - assets/images/tales/tale_63/
+    - assets/images/tales/tale_64/
+    - assets/images/tales/tale_65/
+    - assets/images/tales/tale_66/
+    - assets/images/tales/tale_67/
+    - assets/images/tales/tale_68/
+    - assets/images/tales/tale_69/
+    - assets/images/tales/tale_70/
+    - assets/images/tales/tale_71/
+    - assets/images/tales/tale_72/
+    - assets/images/tales/tale_73/
+    - assets/images/tales/tale_74/
+    - assets/images/tales/tale_75/
     - assets/images/tiles/
     - assets/images/ui/
     - assets/audio/sfx/
@@ -44,6 +119,7 @@ flutter:
     - assets/audio/vo/en/daynight/
     - assets/audio/vo/en/feedback/
     - assets/audio/vo/en/floatsink/
+    - assets/audio/vo/en/game/
     - assets/audio/vo/en/item/
     - assets/audio/vo/en/matching/
     - assets/audio/vo/en/mirror/
@@ -93,7 +169,53 @@ flutter:
     - assets/audio/vo/en/tales/tale_28/
     - assets/audio/vo/en/tales/tale_29/
     - assets/audio/vo/en/tales/tale_30/
+    - assets/audio/vo/en/tales/tale_31/
+    - assets/audio/vo/en/tales/tale_32/
+    - assets/audio/vo/en/tales/tale_33/
+    - assets/audio/vo/en/tales/tale_34/
+    - assets/audio/vo/en/tales/tale_35/
+    - assets/audio/vo/en/tales/tale_36/
+    - assets/audio/vo/en/tales/tale_37/
+    - assets/audio/vo/en/tales/tale_38/
+    - assets/audio/vo/en/tales/tale_39/
+    - assets/audio/vo/en/tales/tale_40/
+    - assets/audio/vo/en/tales/tale_41/
+    - assets/audio/vo/en/tales/tale_42/
+    - assets/audio/vo/en/tales/tale_43/
+    - assets/audio/vo/en/tales/tale_44/
+    - assets/audio/vo/en/tales/tale_45/
+    - assets/audio/vo/en/tales/tale_46/
+    - assets/audio/vo/en/tales/tale_47/
+    - assets/audio/vo/en/tales/tale_48/
+    - assets/audio/vo/en/tales/tale_49/
+    - assets/audio/vo/en/tales/tale_50/
+    - assets/audio/vo/en/tales/tale_51/
+    - assets/audio/vo/en/tales/tale_52/
+    - assets/audio/vo/en/tales/tale_53/
+    - assets/audio/vo/en/tales/tale_54/
+    - assets/audio/vo/en/tales/tale_55/
+    - assets/audio/vo/en/tales/tale_56/
+    - assets/audio/vo/en/tales/tale_57/
+    - assets/audio/vo/en/tales/tale_58/
+    - assets/audio/vo/en/tales/tale_59/
+    - assets/audio/vo/en/tales/tale_60/
+    - assets/audio/vo/en/tales/tale_61/
+    - assets/audio/vo/en/tales/tale_62/
+    - assets/audio/vo/en/tales/tale_63/
+    - assets/audio/vo/en/tales/tale_64/
+    - assets/audio/vo/en/tales/tale_65/
+    - assets/audio/vo/en/tales/tale_66/
+    - assets/audio/vo/en/tales/tale_67/
+    - assets/audio/vo/en/tales/tale_68/
+    - assets/audio/vo/en/tales/tale_69/
+    - assets/audio/vo/en/tales/tale_70/
+    - assets/audio/vo/en/tales/tale_71/
+    - assets/audio/vo/en/tales/tale_72/
+    - assets/audio/vo/en/tales/tale_73/
+    - assets/audio/vo/en/tales/tale_74/
+    - assets/audio/vo/en/tales/tale_75/
     - assets/audio/vo/en/ui/
+    - assets/audio/vo/en/weather/
     - assets/audio/vo/en/whatisit/
     - assets/audio/vo/zh/category/
     - assets/audio/vo/zh/color/
@@ -102,6 +224,7 @@ flutter:
     - assets/audio/vo/zh/daynight/
     - assets/audio/vo/zh/feedback/
     - assets/audio/vo/zh/floatsink/
+    - assets/audio/vo/zh/game/
     - assets/audio/vo/zh/item/
     - assets/audio/vo/zh/matching/
     - assets/audio/vo/zh/mirror/
@@ -151,7 +274,53 @@ flutter:
     - assets/audio/vo/zh/tales/tale_28/
     - assets/audio/vo/zh/tales/tale_29/
     - assets/audio/vo/zh/tales/tale_30/
+    - assets/audio/vo/zh/tales/tale_31/
+    - assets/audio/vo/zh/tales/tale_32/
+    - assets/audio/vo/zh/tales/tale_33/
+    - assets/audio/vo/zh/tales/tale_34/
+    - assets/audio/vo/zh/tales/tale_35/
+    - assets/audio/vo/zh/tales/tale_36/
+    - assets/audio/vo/zh/tales/tale_37/
+    - assets/audio/vo/zh/tales/tale_38/
+    - assets/audio/vo/zh/tales/tale_39/
+    - assets/audio/vo/zh/tales/tale_40/
+    - assets/audio/vo/zh/tales/tale_41/
+    - assets/audio/vo/zh/tales/tale_42/
+    - assets/audio/vo/zh/tales/tale_43/
+    - assets/audio/vo/zh/tales/tale_44/
+    - assets/audio/vo/zh/tales/tale_45/
+    - assets/audio/vo/zh/tales/tale_46/
+    - assets/audio/vo/zh/tales/tale_47/
+    - assets/audio/vo/zh/tales/tale_48/
+    - assets/audio/vo/zh/tales/tale_49/
+    - assets/audio/vo/zh/tales/tale_50/
+    - assets/audio/vo/zh/tales/tale_51/
+    - assets/audio/vo/zh/tales/tale_52/
+    - assets/audio/vo/zh/tales/tale_53/
+    - assets/audio/vo/zh/tales/tale_54/
+    - assets/audio/vo/zh/tales/tale_55/
+    - assets/audio/vo/zh/tales/tale_56/
+    - assets/audio/vo/zh/tales/tale_57/
+    - assets/audio/vo/zh/tales/tale_58/
+    - assets/audio/vo/zh/tales/tale_59/
+    - assets/audio/vo/zh/tales/tale_60/
+    - assets/audio/vo/zh/tales/tale_61/
+    - assets/audio/vo/zh/tales/tale_62/
+    - assets/audio/vo/zh/tales/tale_63/
+    - assets/audio/vo/zh/tales/tale_64/
+    - assets/audio/vo/zh/tales/tale_65/
+    - assets/audio/vo/zh/tales/tale_66/
+    - assets/audio/vo/zh/tales/tale_67/
+    - assets/audio/vo/zh/tales/tale_68/
+    - assets/audio/vo/zh/tales/tale_69/
+    - assets/audio/vo/zh/tales/tale_70/
+    - assets/audio/vo/zh/tales/tale_71/
+    - assets/audio/vo/zh/tales/tale_72/
+    - assets/audio/vo/zh/tales/tale_73/
+    - assets/audio/vo/zh/tales/tale_74/
+    - assets/audio/vo/zh/tales/tale_75/
     - assets/audio/vo/zh/ui/
+    - assets/audio/vo/zh/weather/
     - assets/audio/vo/zh/whatisit/
 
   # Bundled, never system fallback (CLAUDE.md). Both SIL OFL 1.1 — see assets/fonts/OFL.txt.

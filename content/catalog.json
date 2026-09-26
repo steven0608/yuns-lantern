@@ -210,7 +210,7 @@
    "minAge": 3,
    "free": true,
    "rounds": 30,
-   "status": "built-content"
+   "status": "built"
   },
   {
    "number": 2,
@@ -224,7 +224,7 @@
    "minAge": 3,
    "free": false,
    "rounds": 20,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 3,
@@ -238,7 +238,7 @@
    "minAge": 4,
    "free": false,
    "rounds": 20,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 4,
@@ -252,7 +252,7 @@
    "minAge": 3,
    "free": false,
    "rounds": 20,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 5,
@@ -266,7 +266,7 @@
    "minAge": 3,
    "free": false,
    "rounds": 20,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 6,
@@ -280,7 +280,7 @@
    "minAge": 3,
    "free": true,
    "rounds": 26,
-   "status": "built-content"
+   "status": "built"
   },
   {
    "number": 7,
@@ -294,7 +294,7 @@
    "minAge": 3,
    "free": true,
    "rounds": 24,
-   "status": "built-content"
+   "status": "built"
   },
   {
    "number": 8,
@@ -308,7 +308,7 @@
    "minAge": 4,
    "free": false,
    "rounds": 14,
-   "status": "built-content"
+   "status": "built"
   },
   {
    "number": 9,
@@ -322,7 +322,7 @@
    "minAge": 3,
    "free": false,
    "rounds": 16,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 10,
@@ -336,7 +336,7 @@
    "minAge": 4,
    "free": false,
    "rounds": 16,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 11,
@@ -350,7 +350,7 @@
    "minAge": 3,
    "free": true,
    "rounds": 30,
-   "status": "built-content"
+   "status": "built"
   },
   {
    "number": 12,
@@ -378,7 +378,7 @@
    "minAge": 3,
    "free": false,
    "rounds": 20,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 14,
@@ -392,7 +392,7 @@
    "minAge": 3,
    "free": false,
    "rounds": 20,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 15,
@@ -406,7 +406,7 @@
    "minAge": 4,
    "free": false,
    "rounds": 20,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 16,
@@ -420,7 +420,7 @@
    "minAge": 3,
    "free": true,
    "rounds": 24,
-   "status": "built-content"
+   "status": "built"
   },
   {
    "number": 17,
@@ -434,7 +434,7 @@
    "minAge": 3,
    "free": false,
    "rounds": 16,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 18,
@@ -462,7 +462,7 @@
    "minAge": 4,
    "free": false,
    "rounds": 16,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 20,
@@ -476,7 +476,7 @@
    "minAge": 4,
    "free": false,
    "rounds": 16,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 21,
@@ -490,7 +490,7 @@
    "minAge": 3,
    "free": false,
    "rounds": 15,
-   "status": "built-content"
+   "status": "built"
   },
   {
    "number": 22,
@@ -504,7 +504,7 @@
    "minAge": 3,
    "free": false,
    "rounds": 12,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 23,
@@ -518,7 +518,7 @@
    "minAge": 4,
    "free": false,
    "rounds": 12,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 24,
@@ -532,7 +532,7 @@
    "minAge": 4,
    "free": false,
    "rounds": 12,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 25,
@@ -546,7 +546,7 @@
    "minAge": 3,
    "free": false,
    "rounds": 12,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 26,
@@ -560,7 +560,7 @@
    "minAge": 4,
    "free": false,
    "rounds": 80,
-   "status": "built-content"
+   "status": "built"
   },
   {
    "number": 27,
@@ -574,7 +574,7 @@
    "minAge": 4,
    "free": false,
    "rounds": 24,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 28,
@@ -588,7 +588,7 @@
    "minAge": 4,
    "free": false,
    "rounds": 24,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 29,
@@ -616,7 +616,7 @@
    "minAge": 5,
    "free": false,
    "rounds": 24,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 31,
@@ -630,7 +630,7 @@
    "minAge": 3,
    "free": false,
    "rounds": 16,
-   "status": "built-content"
+   "status": "built"
   },
   {
    "number": 32,
@@ -700,7 +700,7 @@
    "minAge": 3,
    "free": false,
    "rounds": 18,
-   "status": "built-content"
+   "status": "built"
   },
   {
    "number": 37,
@@ -714,7 +714,7 @@
    "minAge": 4,
    "free": false,
    "rounds": 12,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 38,
@@ -728,7 +728,7 @@
    "minAge": 4,
    "free": false,
    "rounds": 12,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 39,
@@ -742,7 +742,7 @@
    "minAge": 3,
    "free": false,
    "rounds": 12,
-   "status": "planned"
+   "status": "built"
   },
   {
    "number": 40,
@@ -770,7 +770,7 @@
    "minAge": 4,
    "free": false,
    "rounds": 16,
-   "status": "built-content"
+   "status": "built"
   },
   {
    "number": 42,
@@ -840,7 +840,7 @@
    "minAge": 3,
    "free": true,
    "rounds": 12,
-   "status": "built-content"
+   "status": "built"
   },
   {
    "number": 47,

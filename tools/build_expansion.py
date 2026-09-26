@@ -44,10 +44,21 @@ hide_seek set_table mirror_match butterfly_wings face_builder melt_or_not magnet
 numbers_out_loud number_tracing rainbow_mixing fast_slow high_low word_pairs festival_pairs""".split())
 AGE5 = set("""flower_path tangram fix_bridge park_map paper_cutting reflection_lake light_shadow first_characters
 letter_friends color_by_number shape_pairs""".split())
-# Rounds already generated in content/activities.json for the original 12.
-ORIGINAL = {"count_feed": 30, "match_it": 26, "shape_sorter": 24, "find_the_same": 30, "float_or_sink": 12,
-            "what_is_it": 24, "big_and_small": 15, "where_is_it": 18, "puzzle_pieces": 16, "day_and_night": 14,
-            "pattern_parade": 80, "mirror_match": 16}
+# Round counts for every game that exists in content/activities.json. Keep in step with
+# the app session: validate_expansion.py fails if these drift from activities.json.
+BUILT = {
+    # the original 12
+    "count_feed": 30, "match_it": 26, "big_and_small": 15, "shape_sorter": 24, "find_the_same": 30,
+    "where_is_it": 18, "puzzle_pieces": 16, "day_and_night": 14, "float_or_sink": 12, "what_is_it": 24,
+    "pattern_parade": 80, "mirror_match": 16,
+    # E2: built as data on the existing engines (2026-09-26)
+    "birthday_candles": 20, "share_cookies": 20, "garden_seeds": 20, "bus_stop": 20, "tidy_up": 16,
+    "weather_wardrobe": 16, "feelings_faces": 20, "sock_pairs": 20, "spot_the_lantern": 20,
+    "peekaboo_animals": 16, "shadow_puppets": 16, "zoom_out": 16, "ladder_up": 12, "stacking_cups": 12,
+    "growing_up": 12, "morning_routine": 12, "bead_necklace": 24, "lantern_string": 24, "flower_path": 24,
+    "hide_seek": 12, "owl_tree_house": 12, "set_table": 12,
+}
+ORIGINAL = BUILT   # name kept for the generator below
 ROUNDS = {"letter_friends": 26, "first_characters": 10, "number_tracing": 10, "shape_tracing": 8}
 
 # engine -> [(id, EN, 中文, learning goal)]
@@ -1068,7 +1079,7 @@ def build():
                 number=n, id=gid, engine=e, name={"en": en, "zh": zh}, goal=goal,
                 minAge=5 if gid in AGE5 else 4 if gid in AGE4 else 3, free=gid in FREE,
                 rounds=ORIGINAL.get(gid, ROUNDS.get(gid, next(x[6] for x in ENGINES if x[0] == e))),
-                status="built-content" if gid in ORIGINAL else "planned"))
+                status="built" if gid in BUILT else "planned"))
     themes = [dict(id=t, name={"en": en, "zh": zh}) for t, en, zh in THEMES]
     tales, n = [], 0
     for t, *_ in THEMES:

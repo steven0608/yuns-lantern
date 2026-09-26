@@ -61,6 +61,14 @@ class Content {
     final catalogJson = await optional('content/catalog.json');
     final libraryJson = await optional('content/library.json');
 
+    Set<String> finalPages = const {};
+    if (files.contains('assets/images/tales/final.txt')) {
+      finalPages = const LineSplitter()
+          .convert(await b.loadString('assets/images/tales/final.txt'))
+          .map((l) => l.trim())
+          .where((l) => l.isNotEmpty && !l.startsWith('#'))
+          .toSet();
+    }
     final vocab = {
       for (final i in vocabJson['items'] as List)
         (i as Json)['id'] as String: VocabItem(i),
@@ -78,7 +86,7 @@ class Content {
       phrases,
       activities,
       Story(storyJson),
-      ArtCatalog(artJson, files),
+      ArtCatalog(artJson, files)..finalTalePages = finalPages,
       engines: {
         for (final e in catalogJson?['engines'] as List? ?? const [])
           (e as Json)['id'] as String: CatalogEngine(e),
@@ -156,7 +164,10 @@ class ArtCatalog {
   /// A game's own icon (`design/png/games/{id}.png`) or, for the 12 v2
   /// activities, their home-screen tile.
   String? tileImage(String activityId) {
-    for (final path in ['assets/images/games/$activityId.png', 'assets/images/tiles/$activityId.png']) {
+    for (final path in [
+      'assets/images/games/$activityId.png',
+      'assets/images/tiles/$activityId.png',
+    ]) {
       if (files.contains(path)) return path;
     }
     return null;
@@ -168,6 +179,14 @@ class ArtCatalog {
   }
 
   String? taleArt(String path) => files.contains(path) ? path : null;
+
+  /// Illustrated pages an artist has finished, listed one per line in
+  /// assets/images/tales/final.txt. Anything else stays auto-illustrated, so
+  /// the child keeps the tappable characters.
+  Set<String> finalTalePages = const {};
+
+  String? finalTaleArt(String path) =>
+      finalTalePages.contains(path) ? taleArt(path) : null;
 
   String? lightImage(String name) {
     final path = 'assets/images/lights/$name.png';

@@ -51,7 +51,7 @@ Each iteration: build the next unchecked items → run the validators → review
 - [x] Canvas board "Visual grammar · what do I do here?"
 - [ ] Fold in `docs/UX_REVIEW.md` findings when the app session's reviewer finishes
 - [ ] Apply the grammar to the existing screen boards (Activity, Land, Reader) so they model it
-- [ ] Flip catalog `status` planned → built for the 22 new E2 games (waiting on ids + round counts from the app session)
+- [x] Catalog `status`: 34 built / 41 planned, 681 rounds; two-way drift check added to `validate_expansion.py`
 
 ### Iteration 8: audio
 - [x] Music: 5 seamless loops (home, story_map, lands, reader, bedtime) + 2 stings (celebrate, light_found), −18/−16 LUFS, `design/audio/gen_audio.py`
@@ -75,6 +75,7 @@ Each iteration: build the next unchecked items → run the validators → review
 - [ ] Palette `inkSoft` fails 4.5:1 for small text on paper (4.26:1)
 
 ## Log
+- **Iteration 10**: catalog status + round counts for all 34 built games (verified against activities.json); two-way drift check; EXPANSION notes the 3 games blocked on E3 engine work.
 - **Iteration 9**: tale covers + page-art template for all 75; visual grammar spec and board, answering Steven's "not clear what to do" and the app session's four UX questions.
 - **Iteration 8**: tales 56–75 written (75/75 complete); rewrote the rhyme tale so the Chinese pages rhyme in Chinese rather than transliterating English.
 - **Iteration 7**: tales 31–55 written (55/75); caught and fixed catalog drift (match_it 23→26 rounds) and a fail-state word in tale_49 copy.

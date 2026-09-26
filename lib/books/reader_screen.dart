@@ -89,7 +89,12 @@ class _ReaderScreenState extends State<ReaderScreen> {
   Widget _body(BuildContext context) {
     final s = context.services;
     final lang = context.lang;
-    final art = s.content.art.taleArt(tale.pageArt(_page));
+    // Page art is used only once it is FINAL art (listed in
+    // assets/images/tales/final.txt). The design session's page templates are
+    // a staged still; the auto-illustration beats them for a child because
+    // every character on it is tappable and says its own word
+    // (docs/EXPANSION.md §5). Covers are real art and always used.
+    final art = s.content.art.finalTaleArt(tale.pageArt(_page));
     final text = tale.pages[_page - 1];
     final both = s.settings.bookLanguage == 'both';
 

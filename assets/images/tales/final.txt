@@ -1,0 +1,5 @@
+# Finished tale page art, one path per line. A page listed here is drawn by an
+# artist and shown as-is; every other page is auto-illustrated from its text so
+# the characters stay tappable (docs/EXPANSION.md §5). Covers are always used.
+# Example:
+# assets/images/tales/tale_01/p1.png

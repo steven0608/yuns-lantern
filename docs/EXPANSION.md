@@ -64,6 +64,16 @@ Each engine is one folder in `lib/games/<engine>/`, depends only on `core/` and 
 | 14 | `color_fill` | pick a colour, tap a region | new | none: open-ended |
 | 15 | `music_echo` | tap the pattern back | new | pattern plays again, slower |
 
+**Build status** lives in `catalog.json` as `status`: `built` (rounds exist in `activities.json`) or `planned`. As of 2026-09-26: **34 built, 681 rounds**. `validate_expansion.py` checks both directions, so a game cannot be marked built without content, or hold content while marked planned.
+
+Three catalog games are blocked on engine work, not content, and stay `planned` until E3:
+
+| Game | Engine | What the engine needs |
+|---|---|---|
+| `melt_or_not` | `try_see` | staging other than a water tank (sun, warmth) |
+| `plant_grows` | `try_see` | a result that plays over time, not an instant outcome |
+| `who_made_tracks` | `silhouette` | a panel that shows a *trace* of the answer (footprints), not the answer's own outline |
+
 Round schemas: add one per engine to `content/activities.json` via `tools/build_content.py`, following the existing 12. Each round lists its `vo` keys, as now.
 
 ## 4. Finding things (information architecture)
