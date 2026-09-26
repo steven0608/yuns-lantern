@@ -83,7 +83,7 @@ class _ChapterRunnerState extends State<ChapterRunner> {
           chapter: widget.chapter,
           part: part,
           onDone: _advance,
-          onHome: () => Navigator.of(context).pop(),
+          onHome: () => goHome(context),
         ),
         _Play(:final game) => ActivitySession(
           key: ValueKey('p$_i'),

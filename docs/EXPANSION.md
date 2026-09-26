@@ -26,11 +26,11 @@ python3 tools/build_expansion.py && python3 tools/validate_expansion.py
 
 | Question | Decision | Why |
 |---|---|---|
-| Two apps (Chinese, English)? | **One app, both languages.** Parent picks the language; default follows the device. Two localized App Store listings (English, 简体中文). | One codebase, one purchase, Family Sharing works, and bilingual families switch freely. Already how v2 works (§9 of SPEC). |
+| Two apps (Chinese, English)? | **One app, both languages.** Parent picks the language; default follows the device. **US App Store only** (Steven, 2026-09-25), with an English listing and a 简体中文 localization. | One codebase, one purchase, Family Sharing works, and bilingual families switch freely. Already how v2 works (§9 of SPEC). |
 | A third language mode? | **Add "Both" (双语) for stories:** each page is read in the child's main language, then the other. | This is the Mandarin-learning pitch in MONETIZATION.md. |
 | 75 separate mini-games? | **75 games on 15 engines.** Each engine is one Flutter widget tree driven by data. A game is an engine + a content set + art. | 15 well-tested engines beat 75 one-offs for one maintainer. Adding a game is data, not code (CLAUDE.md: content is data). |
 | How does a 3-year-old find 75 games? | **Never show more than 6 at once** (§4). | Choice overload; the 6-item rule applies to menus too. |
-| Free tier | **12 games + story chapters 1–2 + 5 tales** (was 6 games). One free game from each new engine family. | Parents see the breadth before paying. Revisit with MONETIZATION.md. |
+| Free tier | **12 games + story chapters 1–2 + 5 tales** (was 6 games) at App Store release. **Until then everything is free** on web and TestFlight (`YL_ALL_FREE=true`, Steven 2026-09-25). | Parents see the breadth before paying; testers see everything. Revisit with MONETIZATION.md. |
 | Name | **Keep Yun's Lantern / 小云的灯笼.** | Works in both languages, ties to the Lantern Festival, already in the content. Alternatives on the design canvas. |
 
 ## 2. What stays the same

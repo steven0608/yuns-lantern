@@ -1,5 +1,7 @@
 # How This App Makes Money Without Ads
 
+> **Decisions, 2026-09-25 (Steven):** (1) **US App Store only**: no mainland China listing and no ICP filing. The app stays fully bilingual, and the audience is US families (see below). (2) **Everything is free during testing**: web and TestFlight builds use `YL_ALL_FREE=true`. The App Store release keeps the free tier + $12.99 unlock described here.
+
 Run `python3 tools/revenue_model.py` to reproduce or change any number here.
 
 ---
@@ -13,6 +15,8 @@ This app has **two** paying audiences, not one:
 2. **English-speaking families who want their child to learn Mandarin.** Far smaller, far less served, and **dramatically higher willingness to pay.** These parents already spend $30–80/hour on Mandarin tutors, $500+/year on immersion programmes, and buy every Mandarin-for-kids product that exists. Almost none of it is good.
 
 Audience 2 is the business. Audience 1 is the bonus.
+
+**With a US-only launch**, Audience 1 means Chinese-speaking families *in the US*. Many are heritage-language families who want their child to *keep* Mandarin, and they buy for the same reasons as Audience 2. The 简体中文 listing localization is for them.
 
 This reframes everything: your App Store listing, your screenshots, and your keywords should lead with **"Mandarin for young children"**, not "preschool math." The math curriculum is the *vehicle* — it's what makes the Mandarin exposure meaningful rather than flashcard drilling. That's a genuinely differentiated pitch, and it's why a parent pays $12.99 instead of downloading a free counting app.
 
@@ -91,13 +95,14 @@ The free tier is deliberately generous and genuinely complete — a child can pl
 - **No purchase UI is ever visible to the child.** Locked content is not shown to them at all — no padlocks, no teasers, no "ask a grown-up!" popups.
 - **No countdown timers, no limited-time offers, no scarcity language.** The UK Children's Code prohibits nudge techniques toward children, and California's AADC mirrors it.
 - **Restore Purchases must work.** Apple rejects apps without it.
-- **Price honestly in every region.** Set explicit CNY/TWD/HKD/SGD tiers rather than letting Apple auto-convert.
+- **Price honestly.** US storefront only for now (USD). If other storefronts open later, set explicit local tiers rather than letting Apple auto-convert.
 
 ---
 
 ## Sequence
 
-1. **Ship free tier + $12.99 unlock.** Kids Category, 4+, no ads, no analytics, no data collection.
+0. **Test with everything free** (`YL_ALL_FREE=true` on web and TestFlight) so every game and tale gets real use before the paywall exists.
+1. **Ship free tier + $12.99 unlock on the US App Store.** Kids Category, 4+, no ads, no analytics, no data collection.
 2. **Month 1–3: reviews and ASO.** Bilingual listing with separate zh-Hans metadata. Lead with Mandarin learning.
 3. **Month 2: start the school outreach.** Forty emails. Free semester for the first ten in exchange for a testimonial.
 4. **Month 6: decide on subscription** — only if you've shipped three chapters on time.

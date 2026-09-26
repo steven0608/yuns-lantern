@@ -313,7 +313,7 @@ class _ActivitySessionState extends State<ActivitySession> {
 
   void _home() {
     _s.audio.stopVO();
-    Navigator.of(context).maybePop();
+    goHome(context);
   }
 
   @override

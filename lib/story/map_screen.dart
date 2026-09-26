@@ -167,7 +167,7 @@ class MapScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(4),
                         child: RoundButton(
                           icon: Icons.home_rounded,
-                          onTap: () => Navigator.of(context).pop(),
+                          onTap: () => goHome(context),
                         ),
                       ),
                     ),

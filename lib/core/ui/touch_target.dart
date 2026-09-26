@@ -148,3 +148,10 @@ class RoundButton extends StatelessWidget {
     );
   }
 }
+
+/// The house button always means Home — never "back one screen". A child who
+/// taps it from a game inside a land inside Play lands on the three doors.
+void goHome(BuildContext context) {
+  context.services.audio.stopVO();
+  Navigator.of(context).popUntil((route) => route.isFirst);
+}

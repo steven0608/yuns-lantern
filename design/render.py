@@ -19,6 +19,10 @@ JOBS = {
 # Vocabulary items (design/gen_items.py), one per content/vocab.json id.
 for f in sorted(os.listdir(os.path.join(SRC, "items"))) if os.path.isdir(os.path.join(SRC, "items")) else []:
     JOBS[os.path.join("items", f)] = [(os.path.join("items", f.replace(".svg", ".png")), 256)]
+# One icon per catalog game: design/png/games/<game_id>.png (320 = 2x a 160 pt tile).
+import json as _json
+for _g in _json.load(open(os.path.join(HERE, "..", "content", "catalog.json"), encoding="utf-8"))["games"]:
+    JOBS.setdefault(f"icon_{_g['id']}.svg", []).append((f"games/{_g['id']}.png", 320))
 # One icon per Lantern Land (engine): its signature game's tile, 2x of the 160 pt tile.
 LANDS = {"count_feed": "count_feed", "sort_bins": "match_it", "find_same": "find_the_same", "silhouette": "what_is_it",
          "order_line": "big_and_small", "pattern": "pattern_parade", "jigsaw": "puzzle_pieces", "position": "where_is_it",

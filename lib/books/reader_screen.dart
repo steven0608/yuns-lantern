@@ -195,7 +195,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
                       icon: Icons.home_rounded,
                       onTap: () {
                         s.audio.stopVO();
-                        Navigator.of(context).maybePop();
+                        goHome(context);
                       },
                     ),
                   ),
@@ -338,7 +338,7 @@ class _TheEnd extends StatelessWidget {
               ),
             RoundButton(
               icon: Icons.home_rounded,
-              onTap: () => Navigator.of(context).maybePop(),
+              onTap: () => goHome(context),
               diameter: 112,
             ),
           ],

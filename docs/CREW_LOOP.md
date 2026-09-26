@@ -15,16 +15,16 @@ Hard rules for every item: `CLAUDE.md`. Build order: `design/HANDOFF.md` §2. Pe
 
 ### V2 — ship the 12 games
 - [x] 11 engines merged (count_feed, float_or_sink, what_is_it, big_and_small, pattern_parade, mirror_match, where_is_it, puzzle_pieces, match_it, shape_sorter, find_the_same)
-- [ ] day_and_night (crew agent running)
+- [x] day_and_night (12/12 v2 engines built)
 - [x] DraggableItem follows global finger position (crew recommendation)
-- [ ] Vocab art matches vocab colour/shape (design session; Match It shows the swatch meanwhile)
+- [x] Vocab art matches vocab colour/shape (91 drawings synced; ItemArt prefers them)
 - [ ] Every engine: content insets keep 64 px from the home/replay buttons (games_test with `checkGaps: true`)
 - [ ] Golden tests per activity at 844×390 and 1194×834, en + zh (HANDOFF V2)
 - [ ] Web offline after first visit (service worker caching the app shell + free tier)
 
 ### E1 — framework ✅ (Home v3, Lands, Books, reader EN/中文/Both, music)
 - [ ] Swap in the design session's Home v3 / Lands / Books / Reader boards when they land
-- [ ] Land icons from `design/png/lands/<engine>.png` via sync
+- [x] Land icons from `design/png/lands/<engine>.png` via sync
 
 ### E2 — more games on existing engines (data only: rounds + prompts + VO)
 Rounds may carry `prompt` / `shortPrompt` VO keys that override the engine default, so a new game needs no Dart.
@@ -48,10 +48,12 @@ Rounds may carry `prompt` / `shortPrompt` VO keys that override the engine defau
 
 ### E4 — Lantern Tales
 - [x] Reader + narration for written tales (5)
-- [ ] Narration placeholders regenerated whenever the design session writes more tales
+- [x] Narration placeholders regenerated whenever the design session writes more tales (30 tales)
 - [ ] Tale page art wired as it lands (`design/png/tales/<tale_id>/p<N>.png`)
 
 ### E5 / R — launch
+- [x] iOS signing via App Store Connect API key + TestFlight upload (`docs/TESTFLIGHT.md`; Steven adds the 4 secrets)
+- [x] US App Store only; everything free for testing (`YL_ALL_FREE`)
 - [ ] Landing page from `landing/` at the Pages root, app at `/play/`
 - [ ] StoreKit product + TestFlight signing secrets (Steven: Apple Developer account)
 - [ ] Release build fails while `assets/audio/vo/PLACEHOLDER.txt` exists (native-speaker VO required)

@@ -6,6 +6,7 @@ import 'package:yuns_lantern/books/books_screen.dart';
 import 'package:yuns_lantern/books/reader_screen.dart';
 import 'package:yuns_lantern/core/ui/touch_target.dart';
 import 'package:yuns_lantern/play/catalog_view.dart';
+import 'package:yuns_lantern/games/shared/activity_scaffold.dart';
 import 'package:yuns_lantern/play/lands_screen.dart';
 import 'package:yuns_lantern/screens/home_screen.dart';
 import 'package:yuns_lantern/screens/parent/parent_area.dart';
@@ -105,6 +106,26 @@ void main() {
     await pumpApp(tester, s, home: ReaderScreen(tale: tale));
     expect(find.text(tale.pages.first.zh), findsOneWidget);
     expect(find.text(tale.pages.first.en), findsOneWidget);
+  });
+
+  testWidgets('the house button always goes all the way home', (tester) async {
+    final s = await testServices();
+    await pumpApp(tester, s, home: const HomeScreen());
+    await tester.pump(const Duration(seconds: 2));
+    final nav = tester.state<NavigatorState>(find.byType(Navigator));
+    final land = s.lands.firstWhere((l) => s.gamesInLand(l.id).length > 1);
+    nav.push(MaterialPageRoute<void>(builder: (_) => const LandsScreen()));
+    nav.push(MaterialPageRoute<void>(builder: (_) => LandScreen(land: land)));
+    nav.push(MaterialPageRoute<void>(builder: (_) => ActivitySession(game: s.gamesInLand(land.id).first)));
+    await tester.pump(const Duration(seconds: 1));
+    await tester.pump(const Duration(seconds: 1));
+    await tester.tap(find.byIcon(Icons.home_rounded).last);
+    await tester.pump(const Duration(seconds: 1));
+    await tester.pump(const Duration(seconds: 1));
+    expect(find.byType(ActivitySession), findsNothing);
+    expect(find.byType(LandScreen), findsNothing);
+    expect(find.byType(LandsScreen), findsNothing);
+    expect(find.byType(HomeScreen), findsOneWidget);
   });
 
   testWidgets('home v3: three doors', (tester) async {

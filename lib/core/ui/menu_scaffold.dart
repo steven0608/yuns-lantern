@@ -63,7 +63,7 @@ class MenuScaffold extends StatelessWidget {
                 padding: const EdgeInsets.all(4),
                 child: RoundButton(
                   icon: Icons.home_rounded,
-                  onTap: onHome ?? () => Navigator.of(context).maybePop(),
+                  onTap: onHome ?? () => goHome(context),
                 ),
               ),
             ),

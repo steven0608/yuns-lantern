@@ -29,10 +29,12 @@ python3 tools/validate_content.py && python3 tools/validate_expansion.py && flut
 | Purpose | free demo, sharing, teacher use | full app | full app, primary design size |
 | Orientation | landscape layout; in portrait, show Yun turning a phone (picture only, no text) | landscape only | landscape only |
 | Reference size (pt) | 1194 × 834 letterboxed on desktop; phones as iPhone | 844 × 390 (also test 667 × 375 SE and 932 × 430 Pro Max) | 1194 × 834 (also 1024 × 768 and 1366 × 1024) |
-| Purchases | none: free tier only. Parent area (behind the gate) says the full version is on iPhone and iPad, with an App Store link | StoreKit 2 via `in_app_purchase` | same |
+| Purchases | none. **For now everything is free** (build flag `YL_ALL_FREE=true`, child age defaults to 5) so all content can be tested | StoreKit 2 via `in_app_purchase`. TestFlight builds use `YL_ALL_FREE=true`; the App Store release build keeps the free tier + one-time unlock | same |
 | Offline | service worker caches the app shell and the free-tier content after first load | always offline | always offline |
 | Audio | first tap unlocks audio (browser rule): open on a start screen where the child taps Yun | normal | normal |
 | Data | no analytics, no cookies, no third-party requests; same rule as the app | Kids Category, "Data Not Collected" | same |
+| Store | n/a | **US App Store only** (no mainland China listing, no ICP filing). Listing in English + a 简体中文 localization | same |
+| Build / upload | GitHub Pages from `master` | `.github/workflows/ios.yml`: App Store Connect API key, Xcode automatic signing, uploads to TestFlight (`docs/TESTFLIGHT.md`) | same |
 
 ### Responsive rules (all engines)
 
@@ -67,7 +69,7 @@ python3 tools/validate_content.py && python3 tools/validate_expansion.py && flut
 > Build the landing page from `landing/` (produced by the design session), deploy it as the Pages site root, and move the web app to `/play/`. Accept when: the landing page makes no third-party requests (check in CI), works on a phone, and links to the App Store listing and to `/play/`.
 
 ### Phase R: App Store release
-> StoreKit 2 unlock + restore, privacy policy page (from the landing page), App Privacy "Data Not Collected", Kids Category ages 5 and under, localized listings (English, 简体中文), screenshots at 6.9" iPhone and 13" iPad from the canvas screens, app preview video from real footage. Native-speaker Mandarin VO replaces TTS placeholders before submission; the release build fails if `assets/audio/vo/_PLACEHOLDER` exists.
+> Build without `YL_ALL_FREE` so the free tier + StoreKit 2 unlock + restore are live. US storefront only. Privacy policy page (from the landing page), App Privacy "Data Not Collected", Kids Category ages 5 and under, listing in English with a 简体中文 localization (US parents who read Chinese), screenshots at 6.9" iPhone and 13" iPad from the canvas screens, app preview video from real footage. Native-speaker Mandarin VO replaces TTS placeholders before submission; the release build fails if `assets/audio/vo/_PLACEHOLDER` exists.
 
 ## 3. Asset contract
 
@@ -85,8 +87,14 @@ python3 tools/validate_content.py && python3 tools/validate_expansion.py && flut
 - [ ] Golden tests: EN + 中文 × iPhone + iPad
 - [ ] Web: works after first load with the network off
 
-## 5. Open decisions for Steven
+## 5. Decisions
 
-1. **Web demo scope:** free tier only (recommended), or everything free on the web?
-2. **Mainland China App Store:** apps there need an ICP filing number; confirm whether to list in China mainland, or only in regions like Taiwan, Hong Kong, Singapore and the US at first.
+| # | Question | Decision (Steven, 2026-09-25) |
+|---|---|---|
+| 1 | Web demo scope | **Everything free for now**, on web and TestFlight (`YL_ALL_FREE=true`), so all content can be tested. The App Store release keeps the free tier + IAP; revisit web scope before launch. |
+| 2 | Which App Stores | **US App Store only.** No mainland China listing, no ICP filing. The app stays fully bilingual; the audience is US families (Mandarin learning, MONETIZATION.md). |
+
+Still open:
+
 3. **Voice actors:** about 1,850 VO files at full v3 scope (EXPANSION.md §6). Record v2's 332 first.
+4. **Family art skin tones:** one warm tone for now; revisit if Steven wants a range.
