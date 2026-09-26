@@ -18,10 +18,11 @@ Each iteration: build the next unchecked items → run the validators → review
 - [x] Ownership split agreed with the app session (it owns lib/, assets/, CI and git; design owns design/, docs/EXPANSION.md, catalog/library)
 
 ### Iteration 2: brand
-- [ ] Logo: mark + EN wordmark + 中文 wordmark + lockups (horizontal, stacked, app-icon crop), SVG
-- [ ] Name exploration board (keep Yun's Lantern + 3 alternatives, both languages)
-- [ ] Landing page design on the canvas (EN + 中文)
-- [ ] Landing page source in `landing/` (static, no third-party requests)
+- [x] Logo: lantern mark with Yun's face + EN/中文 wordmarks + lockups (horizontal, stacked, mark, night, favicon) → `design/gen_logo.py`, `design/render_brand.py`
+- [x] Name: kept Yun's Lantern / 小云的灯笼 (works in both languages, ties to the Lantern Festival, already in the content) — no alternatives board needed
+- [x] Landing page design on the canvas (EN + 中文 + phone)
+- [x] Landing page source in `landing/` (`design/build_landing.py`; verified zero third-party requests at 1280 and 390 wide)
+- [x] Marketing screenshots `design/png/shots/` (`design/gen_shots.py`)
 
 ### Iteration 2b: phone layouts (requested by the app session) ✅
 - [x] `design/png/map_phone.png`: 844 × 390 map whose path winds as a 2 × 4 snake (88 pt stops, ≥ 64 pt gaps) + Map (iPhone) board
@@ -67,6 +68,7 @@ Each iteration: build the next unchecked items → run the validators → review
 - [ ] Palette `inkSoft` fails 4.5:1 for small text on paper (4.26:1)
 
 ## Log
+- **Iteration 6**: logo + lockups, marketing screenshots, bilingual landing page in `landing/` (zero external requests), "Logo & lockups" and "Landing page" boards.
 - **Iteration 5**: 58 new game icons (75 total) + "Game icons · 75" board; Sort It land boards use real icons; US-only + all-free decisions written into HANDOFF/EXPANSION/MONETIZATION.
 - **Iteration 4**: 91 vocab items drawn (all vocab.json ids incl. 27 E2 additions), symmetric Mirror Match items verified, bear feeder moved to characters/bear_basket.png; peer notified.
 - **Iteration 3**: 13 v3 screen boards (iPad + iPhone), 5 new engine icons, 15 land icons, tales 6–30 written (30/75); vocab attribute fixes proposed to the app session.

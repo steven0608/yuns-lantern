@@ -73,6 +73,18 @@ def app_icons():
         master.resize((px, px), Image.LANCZOS).save(web / name)
 
 
+def brand():
+    """Web favicon + apple-touch-icon from the lantern mark (design/png/brand)."""
+    mark = PNG / "brand" / "logo_mark.png"
+    if not mark.exists():
+        return
+    src = Image.open(mark).convert("RGBA")
+    flat = Image.new("RGBA", src.size, (251, 241, 225, 255))  # paper, for opaque icons
+    flat.alpha_composite(src)
+    src.resize((32, 32), Image.LANCZOS).save(ROOT / "web" / "favicon.png")
+    flat.convert("RGB").resize((180, 180), Image.LANCZOS).save(ROOT / "web" / "icons" / "apple-touch-icon.png")
+
+
 def pubspec_assets():
     dirs = ["content/"]
     for base in ["assets/images", "assets/audio/sfx", "assets/audio/music", "assets/audio/vo", "assets/fonts"]:
@@ -94,4 +106,5 @@ if __name__ == "__main__":
     copy_art()
     copy_audio()
     app_icons()
+    brand()
     pubspec_assets()

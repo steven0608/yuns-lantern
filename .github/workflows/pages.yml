@@ -1,4 +1,7 @@
 name: Deploy web demo to GitHub Pages
+# Site shape (docs/EXPANSION.md §8, design/HANDOFF.md Phase E5):
+#   /            the landing page (landing/, built by the design session)
+#   /play/       the Flutter web app (test build: everything unlocked)
 on:
   push:
     branches: [master]
@@ -16,13 +19,28 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      BASE: /${{ github.event.repository.name }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: "Landing page makes no third-party requests (EXPANSION §8)"
+        run: |
+          # Any absolute URL in a src/href/url() that isn't our own repo link fails the build.
+          if grep -rhoE '(src|href)="https?://[^"]+"|url\(https?://[^)]+\)' landing \
+               --include=*.html --include=*.css --include=*.js \
+             | grep -v 'github.com/${{ github.repository }}' | grep . ; then
+            echo "::error::landing/ references a third-party URL"; exit 1
+          fi
+          echo "landing/: no third-party requests"
+
       - uses: subosito/flutter-action@v2
         with: { channel: stable, cache: true }
       - run: flutter pub get
-      - name: "Build (base href = /<repo>/; test build - everything unlocked)"
-        run: flutter build web --release --base-href "/${{ github.event.repository.name }}/" --dart-define=YL_ALL_FREE=true
+
+      - name: "Build the app for /play/ (test build - everything unlocked)"
+        run: flutter build web --release --base-href "$BASE/play/" --dart-define=YL_ALL_FREE=true
+
       - name: "Cache-bust (Pages serves files with max-age=600 and no content hash)"
         # Without this a returning visitor can run a stale main.dart.js, or a
         # mix of old code and new assets, for up to 10 minutes after a deploy.
@@ -32,8 +50,19 @@ jobs:
           sed -i "s#\"mainJsPath\":\"main.dart.js\"#\"mainJsPath\":\"main.dart.js?v=$v\"#" build/web/flutter_bootstrap.js
           grep -q "flutter_bootstrap.js?v=$v" build/web/index.html
           grep -q "main.dart.js?v=$v" build/web/flutter_bootstrap.js
+
+      - name: Assemble the site
+        run: |
+          mkdir -p _site
+          cp -r landing/. _site/
+          mkdir -p _site/play
+          cp -r build/web/. _site/play/
+          touch _site/.nojekyll
+          test -f _site/index.html && test -f _site/play/index.html && test -f _site/zh/index.html
+
       - uses: actions/upload-pages-artifact@v3
-        with: { path: build/web }
+        with: { path: _site }
+
   deploy:
     needs: build
     runs-on: ubuntu-latest

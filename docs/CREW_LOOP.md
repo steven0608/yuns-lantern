@@ -54,6 +54,7 @@ Rounds may carry `prompt` / `shortPrompt` VO keys that override the engine defau
 ### E5 / R — launch
 - [x] iOS signing via App Store Connect API key + TestFlight upload (`docs/TESTFLIGHT.md`; Steven adds the 4 secrets)
 - [x] US App Store only; everything free for testing (`YL_ALL_FREE`)
-- [ ] Landing page from `landing/` at the Pages root, app at `/play/`
+- [x] Landing page (EN + 中文) at the Pages root, app at `/play/`; CI fails on any third-party URL in landing/
+- [x] Logo + lantern-mark favicon and apple-touch-icon
 - [ ] StoreKit product + TestFlight signing secrets (Steven: Apple Developer account)
 - [ ] Release build fails while `assets/audio/vo/PLACEHOLDER.txt` exists (native-speaker VO required)
